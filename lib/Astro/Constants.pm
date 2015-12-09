@@ -99,6 +99,8 @@ Some of these modules also do lists and hashes
 This list also includes modules on Units.
 
 =for :list
+* L<Astro::Constants::MKS>
+* L<Astro::Constants::CGS>
 * L<Astro::SLA>
 * L<Astro::Cosmology>
 * L<Physics::Unit>

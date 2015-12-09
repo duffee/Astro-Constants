@@ -34,9 +34,10 @@ while (<$fh_in>) {
 		print "Error with $_";
 	}
 
-	$writer->startTag('constant');
+	$writer->startTag('PhysicalConstant');
 	$writer->dataElement('name', $long, 'type' => 'long');
 	$writer->dataElement('name', $short, 'type' => 'short');
+	$writer->emptyTag('alternateName');
 	$writer->dataElement('description', $description);
 
 	#print "Extra stuff in \n", $_ if $extra;
@@ -56,8 +57,7 @@ while (<$fh_in>) {
 	$writer->emptyTag('minValue');
 
 	my $search_term = $short =~ s/A_//r;
-	$writer->emptyTag('link', 'href' => "http://physics.nist.gov/cgi-bin/cuu/Value?$search_term");
-	$writer->emptyTag('url', );
+	$writer->emptyTag('url', 'href' => "http://physics.nist.gov/cgi-bin/cuu/Value?$search_term");
 
 	$writer->startTag('categoryList');
 	$writer->startTag('category');
