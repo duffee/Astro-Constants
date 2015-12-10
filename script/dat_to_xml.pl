@@ -13,7 +13,10 @@ open my $fh_in, '<', $ARGV[0];
 my $output = IO::File->new($ARGV[1], 'w');
 
 my $xml;
+my $category = $ARGV[0] =~ s%.*?([^/]+)\.dat%$1%r;
 my $writer = XML::Writer->new( OUTPUT => $output, DATA_INDENT => 4, );
+$writer->setDataMode(1);
+
 write_collection_header($writer);
 
 while (<$fh_in>) {
@@ -60,10 +63,9 @@ while (<$fh_in>) {
 	$writer->emptyTag('url', 'href' => "http://physics.nist.gov/cgi-bin/cuu/Value?$search_term");
 
 	$writer->startTag('categoryList');
-	$writer->startTag('category');
+	$writer->dataElement('category', $category);
 	$writer->endTag();
-	$writer->endTag();
-	$writer->endTag('constant');
+	$writer->endTag('PhysicalConstant');
 }
 
 $writer->endTag('items');
@@ -81,11 +83,13 @@ sub write_collection_header {
 
 	$w->xmlDecl( 'UTF-8' );
 	$w->startTag('Collection');
+	$w->dataElement('title', 'Astro::Constants');
 	$w->startTag('description');
-		$w->characters('Physical constants for astronomy');
+		$w->characters('Physical constants for astronomy for use in Astro::Constants v0.10');
 	$w->endTag();
 	$w->dataElement('timestamp', scalar localtime );
-	$w->emptyTag('version');
+	$w->dataElement('version', 'v0.10');
+	$w->dataElement('source', '2014 CODATA');
 	$w->emptyTag('link', href => 'http://metacpan.org/pod/Astro::Constants');
 
 	$w->startTag('items');

@@ -22,7 +22,7 @@ open my $cgs_fh, '>', "$lib/Astro/Constants/CGS.pm";
 write_module_header($mks_fh, 'Astro::Constants::MKS');
 write_module_header($cgs_fh, 'Astro::Constants::CGS');
 
-for my $constant ( $xml->getElementsByTagName('constant') ) {
+for my $constant ( $xml->getElementsByTagName('PhysicalConstant') ) {
 	my ($short_name, $long_name, $mks_value, $cgs_value, ) = undef;
 
 	for my $name ( $constant->getChildrenByTagName('name') ) {
