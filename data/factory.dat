@@ -29,7 +29,7 @@ A_AA	ANGSTROM	Angstrom	1e-8	1e-10	0.1
 A_Jy	JANSKY	Jansky	1e-23	1e-26	0.1
 A_rhoc	RHO_C	critical density /h^2	1.8791e-29	1.8791e-26	0.0001
 A_sigma	STEFAN_BOLTZMANN	Stefan-Boltzmann constant	5.67040e-5	5.67040e-8	0.00001
-A_arad	A_RAD	radiation density constant	7.5646e-15	7.5646e-16	0.0001
+A_arad	A_RAD	radiation density constant	7.565723e-15	7.565723e-16	2.3e-6
 A_sigmaT	THOMSON_XSECTION	Thomson cross-section	6.6524585e-25	6.6524585e-29	0.0000001
 A_re	ELECTRON_RADIUS	classical electron radius	2.817941e-13	2.817941e-15	0.000001
 A_a0	BOHR_RADIUS	Bohr radius	5.29177208e-9	5.29177208e-11	0.00000001
