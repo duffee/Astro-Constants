@@ -1,0 +1,4 @@
+Module design
+=============
+* keep module thread-safe, no global variables so that it can be used
+	for parallel processing
