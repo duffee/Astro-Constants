@@ -132,5 +132,5 @@ sub write_constant {
 	my ($fh, $value, $long_name, $short_name) = @_;
 
 	say $fh "use constant $long_name => $value;";
-	say $fh "use constant $short_name = $value;" if $short_name;
+	say $fh "use constant $short_name => $value;" if $short_name;
 }
