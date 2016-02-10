@@ -157,7 +157,7 @@
         <PhysicalConstant>
             <name type="long">A_RAD</name>
             <name type="short">A_arad</name>
-            <alternateName />
+            <alternateName>DENSITY_RADIATION</alternateName>
             <description>radiation density constant</description>
             <value system="MKS">7.565723e-16</value>
             <value system="CGS">7.565723e-15</value>
