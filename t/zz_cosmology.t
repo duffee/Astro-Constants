@@ -3,7 +3,7 @@
 use strict;
 use Test::More;
 use Astro::Constants::MKS qw/ALPHA DENSITY_RADIATION DENSITY_CRITICAL_RHOc SPEED_LIGHT 
-		GRAVITATIONAL PARSEC ASTRONOMICAL_UNIT TIME_HUBBLE PI STEFAN_BOLTZMANN
+		GRAVITATIONAL PARSEC ASTRONOMICAL_UNIT HUBBLE_TIME PI STEFAN_BOLTZMANN
 		IMPEDANCE_VACUUM
 	/;
 
@@ -14,7 +14,7 @@ is_within( ALPHA, 1/137.035999139, 2.3e-10, 'fine structure constant to within 2
 # now rho_c is 3*H^2/8*PI*G
 my $hubble_constant = 100 * 1e3 / 1e6 / PARSEC;	# +/-0.77, 2013-03-21 Planck Mission
 
-is_within( TIME_HUBBLE, 1/$hubble_constant, 1.3e-4, 
+is_within( HUBBLE_TIME, 1/$hubble_constant, 1.3e-4, 
 	'Hubble time is the inverse of the hubble constant');
 
 is_within( DENSITY_RADIATION, 4 * STEFAN_BOLTZMANN / SPEED_LIGHT, 2.3e-6,

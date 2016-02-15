@@ -1,7 +1,7 @@
 package Astro::Constants;
 # ABSTRACT: this library provides physical constants for use in Astronomy
 
-'They are not constant but are changing still. - Cymbeline, Act II, Scene5';
+'They are not constant but are changing still. - Cymbeline, Act II, Scene 5';
 =head1 SYNOPSIS
 
 	use strict;		# important!
