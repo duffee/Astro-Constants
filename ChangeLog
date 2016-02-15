@@ -6,6 +6,9 @@ adjective_noun to noun_adjective.  Values are being updated to reflect
 the ones found at nist.gov.
 The data files are being moved to xml files and broken up by category.
 
+If there is a deep desire for read-only variables, I will write a new
+module that uses Lexical::Import.
+
 List of name changes
 ====================
 For compatibilities sake, I should create all the
@@ -37,7 +40,6 @@ EARTH_RADIUS		RADIUS_EARTH
 THOMSON_XSECTION	THOMSON_CROSS_SECTION
 ELECTRON_RADIUS		RADIUS_ELECTRON
 BOHR_RADIUS			RADIUS_BOHR
-HUBBLE_TIME			TIME_HUBBLE
 SOLAR_TEMPERATURE	TEMPERATURE_SOLAR_SURFACE
 CMB_TEMPERATURE		TEMPERATURE_CMB
 SOLAR_DENSITY		DENSITY_SOLAR
@@ -56,4 +58,11 @@ YEAR_TROPICAL			365.242 190		Astronomical Almanac 1993 (update)
 YEAR_SIDEREAL			365.256 363		Astronomical Almanac 1993 (update)
 YEAR_ANOMALISTIC		365.259 635		Astronomical Almanac 1993 (update)
 YEAR_ECLIPSE			346.620 073		Astronomical Almanac 1993 (update)
+
+Candidates for removal
+======================
+
+HUBBLE_TIME - this constant is inherited from Jeremy Bailin's Astroconst.
+	It is the inverse of the Hubble constant, valued at 100 km/s/Mpc and
+	is not constant.  Suggest moving it into Astro::Cosmology
 

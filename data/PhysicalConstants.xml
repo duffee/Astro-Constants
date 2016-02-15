@@ -53,7 +53,7 @@
             <dimensions />
             <maxValue />
             <minValue />
-            <url href="http://physics.nist.gov/cgi-bin/cuu/Value?G" />
+            <url href="http://physics.nist.gov/cgi-bin/cuu/Value?bg" />
             <categoryList>
                 <category>fundamental</category>
                 <category>cosmology</category>
@@ -71,7 +71,7 @@
             <dimensions />
             <maxValue />
             <minValue />
-            <url href="http://physics.nist.gov/cgi-bin/cuu/Value?eV" />
+            <url href="http://physics.nist.gov/cgi-bin/cuu/Value?tevj" />
             <categoryList>
                 <category>fundamental</category>
                 <category>conversion</category>
@@ -204,7 +204,7 @@
             <dimensions />
             <maxValue />
             <minValue />
-            <url href="http://physics.nist.gov/cgi-bin/cuu/Value?alpha" />
+            <url href="http://physics.nist.gov/cgi-bin/cuu/Value?alph" />
             <categoryList>
                 <category>fundamental</category>
                 <category>cosmology</category>
@@ -437,8 +437,9 @@
         </PhysicalConstant>
         <PhysicalConstant>
             <name type="long">YEAR_TROPICAL</name>
+            <alternateName />
             <description>the period of time for the ecliptic longitude of the Sun to increase 360 degrees, approximated by the Gregorian calendar</description>
-            <value>31556925.1</value>
+            <value>31_556_925.1</value>
             <uncertainty type="absolute">0.1</uncertainty>
             <dimensions />
             <maxValue>31556959</maxValue>
@@ -451,6 +452,7 @@
         </PhysicalConstant>
         <PhysicalConstant>
             <name type="long">YEAR_SIDEREAL</name>
+            <alternateName />
             <description>the period of revolution of the Earth around the Sun in a fixed reference frame</description>
             <value>31_558_149.8</value>
             <uncertainty type="absolute">1</uncertainty>
@@ -465,6 +467,7 @@
         </PhysicalConstant>
         <PhysicalConstant>
             <name type="long">YEAR_ANOMALISTIC</name>
+            <alternateName />
             <description>the period between successive passages of the Earth through perihelion</description>
             <value>31_558_432.6</value>
             <uncertainty type="absolute">0.1</uncertainty>
@@ -479,6 +482,7 @@
         </PhysicalConstant>
         <PhysicalConstant>
             <name type="long">YEAR_ECLIPSE</name>
+            <alternateName />
             <description>the period between successive passages of the Sun (as seen from the geocenter) through the same lunar node</description>
             <value>29_947_974.3</value>
             <uncertainty type="absolute">0.1</uncertainty>
@@ -544,14 +548,14 @@
         <PhysicalConstant>
             <name type="long">HUBBLE_TIME</name>
             <name type="short">A_tH</name>
-            <alternateName>TIME_HUBBLE</alternateName>
-            <description>Hubble time *h</description>
+            <alternateName />
+            <description>Hubble time *h, the inverse of Hubble's constant valued at 100 km/s/Mpc (DEPRECATED - see ChangeLog)</description>
             <value>3.0853056e17</value>
             <uncertainty type="relative">0.0000001</uncertainty>
             <dimensions />
             <maxValue />
             <minValue />
-            <url href="http://physics.nist.gov/cgi-bin/cuu/Value?tH" />
+            <url href="" />
             <categoryList>
                 <category>cosmology</category>
             </categoryList>
