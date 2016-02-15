@@ -143,7 +143,7 @@ This constant can also be accessed through the short name $A_sigma (deprecated)
     7.565723e-16	MKS
     7.565723e-15	CGS
 
-radiation density constant
+radiation density constant, 4 * sigma / c
 
 
 This constant can also be accessed through the short name $A_arad (deprecated)
