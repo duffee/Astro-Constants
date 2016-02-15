@@ -147,6 +147,7 @@
             <maxValue />
             <minValue />
             <url href="http://physics.nist.gov/cgi-bin/cuu/Value?sigma" />
+            <url href="https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_constant" />
             <categoryList>
                 <category>fundamental</category>
                 <category>cosmology</category>
@@ -158,14 +159,14 @@
             <name type="long">A_RAD</name>
             <name type="short">A_arad</name>
             <alternateName>DENSITY_RADIATION</alternateName>
-            <description>radiation density constant</description>
+            <description>radiation density constant, 4 * sigma / c</description>
             <value system="MKS">7.565723e-16</value>
             <value system="CGS">7.565723e-15</value>
             <uncertainty type="relative">2.3e-6</uncertainty>
             <dimensions />
             <maxValue />
             <minValue />
-            <url href="http://physics.nist.gov/cgi-bin/cuu/Value?arad" />
+            <url href="https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_constant" />
             <categoryList>
                 <category>fundamental</category>
                 <category>cosmology</category>
@@ -184,7 +185,7 @@
             <dimensions />
             <maxValue />
             <minValue />
-            <url href="http://physics.nist.gov/cgi-bin/cuu/Value?Wien" />
+            <url href="http://physics.nist.gov/cgi-bin/cuu/Value?bwien" />
             <categoryList>
                 <category>fundamental</category>
                 <category>electromagnetic</category>
@@ -241,7 +242,7 @@
             <dimensions />
             <maxValue />
             <minValue />
-            <url href="http://physics.nist.gov/cgi-bin/cuu/Value?eps0" />
+            <url href="http://physics.nist.gov/cgi-bin/cuu/Value?ep0" />
             <categoryList>
                 <category>fundamental</category>
                 <category>electromagnetic</category>

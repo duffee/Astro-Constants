@@ -24,3 +24,6 @@ nytprof.out
 # Dist::Zilla generated files
 Astro-Constants-*
 *.gz
+
+# files I don't want to see
+data/old
