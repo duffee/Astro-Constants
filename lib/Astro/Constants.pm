@@ -30,12 +30,31 @@ and are mostly based on the 2014 CODATA values from NIST.
 
 The problem with long constants is that they are not interpolated
 in double quotish situations because they are really inlined functions.
-The problem with short name constants is that they are not read-only
-and can be assigned to which will mess up your program.
+The problem with short name constants is that they use L<Scalar::Constant>
+instead of L<constant> and are 33% slower.
+
+=head2 Why use this module
+
+You are tired of typing in all those numbers and having to make sure that they are
+all correct.  How many significant figures is enough or too much?  Where's the
+definitive source, Wikipedia?  And which mass does "$m1" refer to, solar or lunar?
+
+The constant values in this module are protected against accidental re-assignment
+in your code.  The test suite protects them against accidental finger trouble in my code. 
+Other people are using this module, so more eyeballs are looking for errors
+and we all benefit.  The constant names are a little longer than you might like,
+but you gain in the long run from readable, sharable code that is clear in meaning.
+Your programming errors are a little easier to find when you can see that the units 
+don't match.  Isn't it reassuring that you can verify how a number is produced
+and which meeting of which standards body is responsible for its value?
+
+Trusting someone else's code does carry some risk, which you _should_ consider, 
+but have you also considered the risk of doing it yourself with no one to check your work?
 
 =head1 EXPORT
 
-Nothing is exported by default.  Select from the following tags:
+Nothing is exported by default, so the module doesn't clobber any of your variables.  
+Select from the following tags:
 
 =for :list
 * long		(use this one to get the most constants)
@@ -228,7 +247,7 @@ This constant can also be accessed through the short name $A_exp (deprecated)
     1.660539040e-27	MKS
     1.660539040e-24	CGS
 
-atomic mass unit
+atomic mass unit, 1 u
 
 
 This constant can also be accessed through the short name $A_amu (deprecated)
@@ -598,6 +617,16 @@ mass of Hydrogen atom
 This constant can also be accessed through the short name $A_mH (deprecated)
 
 
+=method MASS_ALPHA
+
+    6.644_657_230e-27
+
+mass of alpha particle
+
+
+This constant can also be accessed through the short name $A_ma (deprecated)
+
+
 =method ELECTRON_RADIUS
 
     2.8179403227e-15	MKS
@@ -625,14 +654,24 @@ This constant can also be accessed through the short name $A_a0 (deprecated)
 * L<Astro::Cosmology>
 * L<PDL|Perl Data Language>
 * L<http://physics.nist.gov/|NIST>
+* L<http://asa.usno.navy.mil|Astronomical Almanac>
 * L<http://neilb.org/reviews/constants.html|Neil Bower's review on providing read-only values>
+* L<Test::Number::Delta>
+* L<Test::Deep::NumberTolerant> for testing values within objects
+
+Reference Documents:
+=for :list
+* L<http://aa.usno.navy.mil/publications/reports/Luzumetal2011.pdf|IAU 2009 system of astronomical constants>
+* L<http://asa.usno.navy.mil/static/files/2016/Astronomical_Constants_2016.pdf|Astronomical Constants 2016.pdf>
+* L<https://www.iau.org/publications/proceedings_rules/units/|IAU recommendations concerning units>
+* L<http://syrte.obspm.fr/IAU_resolutions/Res_IAU2012_B2.pdf|Re-definition of the Astronomical Unit>
 
 =head1 ISSUES
 
 File issues at the Github repository L<https://github.com/duffee/Astro-Constants/>
 
 Using C<strict> is a must with this code.  Any constants you forgot to import will
-evaluate to 0 and silently introduce errors in your code.
+evaluate to 0 and silently introduce errors in your code.  Caveat Programmer.
 
 =head2 Extending the data set
 
@@ -676,7 +715,7 @@ No warranty expressed or implied.  This is free software.  If you
 want someone to assume the risk of an incorrect value, you better
 be paying them.
 
-(What would you want me to test for you to depend on this module?)
+(What would you want me to test in order for you to depend on this module?)
 
 I<from Jeremy Bailin's astroconst header files>
 

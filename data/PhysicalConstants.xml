@@ -302,14 +302,14 @@
             <name type="long">ATOMIC_MASS_UNIT</name>
             <name type="short">A_amu</name>
             <alternateName />
-            <description>atomic mass unit</description>
+            <description>atomic mass unit, 1 u</description>
             <value system="MKS">1.660539040e-27</value>
             <value system="CGS">1.660539040e-24</value>
             <uncertainty type="relative">1.2e-8</uncertainty>
             <dimensions />
             <maxValue />
             <minValue />
-            <url href="http://physics.nist.gov/cgi-bin/cuu/Value?amu" />
+            <url href="http://physics.nist.gov/cgi-bin/cuu/Value?ukg" />
             <categoryList>
                 <category>conversion</category>
                 <category>nuclear</category>
@@ -415,9 +415,10 @@
             <dimensions />
             <maxValue />
             <minValue />
-            <url href="http://physics.nist.gov/cgi-bin/cuu/Value?NA" />
+            <url href="http://physics.nist.gov/cgi-bin/cuu/Value?na" />
             <categoryList>
                 <category>conversion</category>
+                <category>nuclear</category>
             </categoryList>
         </PhysicalConstant>
         <PhysicalConstant>
@@ -809,7 +810,7 @@
             <dimensions />
             <maxValue />
             <minValue />
-            <url href="http://physics.nist.gov/cgi-bin/cuu/Value?sigmaT" />
+            <url href="http://physics.nist.gov/cgi-bin/cuu/Value?sigmae" />
             <categoryList>
                 <category>electromagnetic</category>
                 <category>nuclear</category>
@@ -873,7 +874,21 @@
             <dimensions />
             <maxValue />
             <minValue />
-            <url href="http://physics.nist.gov/cgi-bin/cuu/Value?mH" />
+            <url href="http://physics.nist.gov/cgi-bin/cuu/Value?" />
+            <categoryList>
+                <category>nuclear</category>
+            </categoryList>
+        </PhysicalConstant>
+        <PhysicalConstant>
+            <name type="long">MASS_ALPHA</name>
+            <name type="short">A_ma</name>
+            <description>mass of alpha particle</description>
+            <value>6.644_657_230e-27</value>
+            <uncertainty type="relative">1.2e-8</uncertainty>
+            <dimensions />
+            <maxValue />
+            <minValue />
+            <url href="http://physics.nist.gov/cgi-bin/cuu/Value?mal" />
             <categoryList>
                 <category>nuclear</category>
             </categoryList>
@@ -906,7 +921,7 @@
             <dimensions />
             <maxValue />
             <minValue />
-            <url href="http://physics.nist.gov/cgi-bin/cuu/Value?a0" />
+            <url href="http://physics.nist.gov/cgi-bin/cuu/Value?bohrrada0" />
             <categoryList>
                 <category>electromagnetic</category>
                 <category>nuclear</category>

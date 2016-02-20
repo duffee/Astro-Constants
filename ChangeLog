@@ -66,3 +66,6 @@ HUBBLE_TIME - this constant is inherited from Jeremy Bailin's Astroconst.
 	It is the inverse of the Hubble constant, valued at 100 km/s/Mpc and
 	is not constant.  Suggest moving it into Astro::Cosmology
 
+Introduced
+==========
+MASS_ALPHA
