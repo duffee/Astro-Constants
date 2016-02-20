@@ -362,8 +362,8 @@ the period between successive passages of the Sun (as seen from the geocenter) t
 
 =method SOLAR_MASS
 
-    1.9885e30	MKS
-    1.9885e33	CGS
+    1.9884e30	MKS
+    1.9884e33	CGS
 
 solar mass
 
@@ -446,8 +446,8 @@ This constant can also be accessed through the short name $A_rsun (deprecated)
 
 =method EARTH_MASS
 
-    5.9726e24	MKS
-    5.9726e27	CGS
+    5.9722e24	MKS
+    5.9722e27	CGS
 
 mass of Earth
 
@@ -457,8 +457,8 @@ This constant can also be accessed through the short name $A_mearth (deprecated)
 
 =method EARTH_RADIUS
 
-    6.371e6	MKS
-    6.371e8	CGS
+    6.378_136_6e6	MKS
+    6.378_136_6e8	CGS
 
 radius of Earth
 

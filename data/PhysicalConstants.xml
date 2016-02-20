@@ -502,9 +502,9 @@
             <name type="short">A_msun</name>
             <alternateName>MASS_SOLAR</alternateName>
             <description>solar mass</description>
-            <value system="MKS">1.9885e30</value>
-            <value system="CGS">1.9885e33</value>
-            <uncertainty type="relative">5e-5</uncertainty>
+            <value system="MKS">1.9884e30</value>
+            <value system="CGS">1.9884e33</value>
+            <uncertainty type="relative">0.0001</uncertainty>
             <dimensions />
             <maxValue />
             <minValue />
@@ -620,7 +620,7 @@
             <dimensions />
             <maxValue />
             <minValue />
-            <url href="http://physics.nist.gov/cgi-bin/cuu/Value?rsun" />
+            <url href="http://asa.usno.navy.mil/static/files/2016/Astronomical_Constants_2016.pdf" />
             <categoryList>
                 <category>planetary</category>
             </categoryList>
@@ -630,13 +630,13 @@
             <name type="short">A_mearth</name>
             <alternateName>MASS_EARTH</alternateName>
             <description>mass of Earth</description>
-            <value system="MKS">5.9726e24</value>
-            <value system="CGS">5.9726e27</value>
-            <uncertainty type="relative">1.7e-5</uncertainty>
+            <value system="MKS">5.9722e24</value>
+            <value system="CGS">5.9722e27</value>
+            <uncertainty type="absolute">6e20</uncertainty>
             <dimensions />
             <maxValue />
             <minValue />
-            <url href="http://physics.nist.gov/cgi-bin/cuu/Value?mearth" />
+            <url href="http://asa.usno.navy.mil/static/files/2016/Astronomical_Constants_2016.pdf" />
             <categoryList>
                 <category>planetary</category>
             </categoryList>
@@ -646,13 +646,13 @@
             <name type="short">A_rearth</name>
             <alternateName>RADIUS_EARTH</alternateName>
             <description>radius of Earth</description>
-            <value system="MKS">6.371e6</value>
-            <value system="CGS">6.371e8</value>
-            <uncertainty type="relative">0.0002</uncertainty>
+            <value system="MKS">6.378_136_6e6</value>
+            <value system="CGS">6.378_136_6e8</value>
+            <uncertainty type="absolute">0.1</uncertainty>
             <dimensions />
             <maxValue />
             <minValue />
-            <url href="http://physics.nist.gov/cgi-bin/cuu/Value?rearth" />
+            <url href="http://asa.usno.navy.mil/static/files/2016/Astronomical_Constants_2016.pdf" />
             <categoryList>
                 <category>planetary</category>
             </categoryList>

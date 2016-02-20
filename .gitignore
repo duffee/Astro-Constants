@@ -27,3 +27,4 @@ Astro-Constants-*
 
 # files I don't want to see
 data/old
+data/references
