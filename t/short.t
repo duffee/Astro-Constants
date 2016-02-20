@@ -1,6 +1,6 @@
+use strict;
 use Test::More;
 use Astro::Constants::MKS qw/:short/;
-
 
 	is($A_c, 299_792_458, 'SPEED_LIGHT');
 	is($A_k, 1.380_648_52e-23, 'BOLTZMANN');

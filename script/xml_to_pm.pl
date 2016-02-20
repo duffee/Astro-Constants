@@ -134,7 +134,7 @@ $display
 $description
 
 POD
-	say $fh "This constant can also be accessed through the short name \$$short_name (deprecated)\n" if $short_name;
+	say $fh "This constant can also be accessed through the variable \$$short_name (which may be deprecated)\n" if $short_name;
 }
 
 sub write_pod_synopsis {
@@ -167,10 +167,13 @@ library and are available through the import tag C<:short>.
 The values are stored in F<Physical_Constants.xml> in the B<data> directory
 and are mostly based on the 2014 CODATA values from NIST.
 
-The problem with long constants is that they are not interpolated
-in double quotish situations because they are really inlined functions.
-The problem with short name constants is that they use L<Scalar::Constant>
-instead of L<constant> and are 33% slower.
+Long name constants are constructed with the L<constant> pragma and
+are not interpolated in double quotish situations because they are 
+really inlined functions.
+Short name constants are constructed with the age-old idiom of fiddling
+with the symbol table using typeglobs, e.g. C<*PI = \3.14159>,
+and may be slower than the long name constants.
+I<This could do with some benchmarking.>
 
 =head2 Why use this module
 
@@ -187,8 +190,9 @@ Your programming errors are a little easier to find when you can see that the un
 don't match.  Isn't it reassuring that you can verify how a number is produced
 and which meeting of which standards body is responsible for its value?
 
-Trusting someone else's code does carry some risk, which you _should_ consider, 
-but have you also considered the risk of doing it yourself with no one to check your work?
+Trusting someone else's code does carry some risk, which you I<should> consider, 
+but have you also considered the risk of doing it yourself with no one else 
+to check your work?
 
 =head1 EXPORT
 
@@ -233,10 +237,20 @@ Reference Documents:
 
 =head1 ISSUES
 
-File issues at the Github repository L<https://github.com/duffee/Astro-Constants/>
+File issues/suggestions at the Github repository L<https://github.com/duffee/Astro-Constants/>.
+The venerable L<https://rt.cpan.org/Dist/Display.html?Status=Active&Queue=Astro-Constants|RT>
+is the canonical bug tracker that is clocked by L<https://metacpan.org/pod/Astro::Constants|meta::cpan>.
 
 Using C<strict> is a must with this code.  Any constants you forgot to import will
 evaluate to 0 and silently introduce errors in your code.  Caveat Programmer.
+
+If you are using this module, drop me a line using any available means at your 
+disposal, including
+*gasp* email (address in the Author section), to let me know how you're using it. 
+What new features would you like to see?
+If you've had an experience with using the module, let other people know what you
+think, good or bad, by rating it at
+L<http://cpanratings.perl.org/rate/?distribution=Astro-Constants|cpanratings>.
 
 =head2 Extending the data set
 
@@ -309,5 +323,5 @@ sub write_constant {
 	my ($fh, $value, $long_name, $short_name) = @_;
 
 	say $fh "use constant $long_name => $value;";
-	say $fh "use Scalar::Constant $short_name => $value;" if $short_name;
+	say $fh "\*$short_name = \\$value;" if $short_name;
 }

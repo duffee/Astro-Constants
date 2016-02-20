@@ -1,3 +1,4 @@
+use strict;
 use Test::More;
 use Astro::Constants::MKS qw/:long/;
 
