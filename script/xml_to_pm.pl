@@ -90,17 +90,14 @@ sub write_module_header {
 package $name;
 # ABSTRACT: this library provides physical constants for use in Astronomy
 
-HEADER
-	if ($name eq 'Astro::Constants') {
-		print $fh "'They are not constant but are changing still. - Cymbeline, Act II, Scene 5';\n\n";
-	}
-	else {
-		print $fh <<IMPORT;
 use strict;
 use warnings;
-use base qw/Exporter/;
-
-IMPORT
+HEADER
+	if ($name eq 'Astro::Constants') {
+		print $fh "\n  'They are not constant but are changing still. - Cymbeline, Act II, Scene 5';\n\n";
+	}
+	else {
+		print $fh "use base qw/Exporter/;\n\n";
 	}
 }
 
@@ -254,25 +251,29 @@ the documentation.  Use C<perldoc Astro::Constants> for that information.
 
 =for :list
 * L<Astro::Cosmology>
-* L<PDL|Perl Data Language>
-* L<http://physics.nist.gov/|NIST>
-* L<http://asa.usno.navy.mil|Astronomical Almanac>
-* L<http://neilb.org/reviews/constants.html|Neil Bower's review on providing read-only values>
+* L<Perl Data Language|PDL>
+* L<NIST|http://physics.nist.gov/>
+* L<Astronomical Almanac|http://asa.usno.navy.mil>
+* L<Neil Bower's review on providing read-only values|http://neilb.org/reviews/constants.html>
 * L<Test::Number::Delta>
 * L<Test::Deep::NumberTolerant> for testing values within objects
 
 Reference Documents:
 =for :list
-* L<http://aa.usno.navy.mil/publications/reports/Luzumetal2011.pdf|IAU 2009 system of astronomical constants>
-* L<http://asa.usno.navy.mil/static/files/2016/Astronomical_Constants_2016.pdf|Astronomical Constants 2016.pdf>
-* L<https://www.iau.org/publications/proceedings_rules/units/|IAU recommendations concerning units>
-* L<http://syrte.obspm.fr/IAU_resolutions/Res_IAU2012_B2.pdf|Re-definition of the Astronomical Unit>
+* L<IAU 2009 system of astronomical constants|http://aa.usno.navy.mil/publications/reports/Luzumetal2011.pdf>
+* L<Astronomical Constants 2016.pdf|http://asa.usno.navy.mil/static/files/2016/Astronomical_Constants_2016.pdf>
+* L<IAU recommendations concerning units|https://www.iau.org/publications/proceedings_rules/units/>
+* L<Re-definition of the Astronomical Unit|http://syrte.obspm.fr/IAU_resolutions/Res_IAU2012_B2.pdf>
+
+=head1 REPOSITORY
+
+* L<https://github.com/duffee/Astro-Constants>
 
 =head1 ISSUES
 
 File issues/suggestions at the Github repository L<https://github.com/duffee/Astro-Constants/>.
-The venerable L<https://rt.cpan.org/Dist/Display.html?Status=Active&Queue=Astro-Constants|RT>
-is the canonical bug tracker that is clocked by L<https://metacpan.org/pod/Astro::Constants|meta::cpan>.
+The venerable L<RT|https://rt.cpan.org/Dist/Display.html?Status=Active&Queue=Astro-Constants>
+is the canonical bug tracker that is clocked by L<meta::cpan|https://metacpan.org/pod/Astro::Constants>.
 
 Using C<strict> is a must with this code.  Any constants you forgot to import will
 evaluate to 0 and silently introduce errors in your code.  Caveat Programmer.
@@ -283,7 +284,7 @@ disposal, including
 What new features would you like to see?
 If you've had an experience with using the module, let other people know what you
 think, good or bad, by rating it at
-L<http://cpanratings.perl.org/rate/?distribution=Astro-Constants|cpanratings>.
+L<cpanratings|http://cpanratings.perl.org/rate/?distribution=Astro-Constants>.
 
 =head2 Extending the data set
 
@@ -307,7 +308,7 @@ important information coming at the beginning of the name.
 =head1 ASTROCONST  X<ASTROCONST>
 
 (Gleaned from the Astroconst home page -
-L<http://web.astroconst.org|http://web.astroconst.org> )
+L<web.astroconst.org|http://web.astroconst.org> )
 
 Astroconst is a set of header files in various languages (currently C,
 Fortran, Perl, Java, IDL and Gnuplot) that provide a variety of useful
