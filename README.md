@@ -5,7 +5,7 @@ Tired of your programs producing garbage because you mis-typed the gravitational
 or assigned a value instead of checking equality?  Why not rely on a module that does
 all that work for you and gives you all the constants ready to use with a simple
 ```
-use Astro::Constants qw/cosmology/;
+use Astro::Constants qw/:cosmology/;
 ```
 
 While no-one can give bomb-proof guarantees that these values are correct (indeed, 
