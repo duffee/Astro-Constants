@@ -1,21 +1,24 @@
 v0.10
 =====
-A lot of interface-breaking changes here, including moving the short forms
-from variables ($A_c) to constants (A_c) and changing long names from
-adjective_noun to noun_adjective.  Values are being updated to reflect
-the ones found at nist.gov.
-The data files are being moved to xml files and broken up by category.
+A couple of interface-breaking changes:
+* 'list_constants' and 'describe_constant' have been removed and
+	people are directed to the docs, 'perldoc Astro::Constants'
+* 'precision' is broken at the moment and will be fixed in the next version
 
-If there is a deep desire for read-only variables, I will write a new
-module that uses Lexical::Import.
+These changes are enhancements/improvements:
+* Values are now stored in an XML file, PhysicalConstants.xml
+* Values have been updated using NIST's CODATA 2014 and the IAU 2009/2012
+	System of Astronomical Constants
+* Long names have an added alternate name to facilitate migrating from
+	adjective_noun to noun_adjective.
+
 
 List of name changes
 ====================
-For compatibilities sake, I should create all the
-old long names as aliases, so that you can use both
-and warn of the breaking change in the documentation.
-Import them all as :old
+New names are added in to the file with <alternateName> tag
 
+old					new
+===					===
 LIGHT_SPEED			SPEED_LIGHT
 ELECTRON_CHARGE 	CHARGE_ELEMENTARY
 A_RAD				DENSITY_RADIATION
@@ -46,18 +49,18 @@ SOLAR_DENSITY		DENSITY_SOLAR
 EARTH_DENSITY		DENSITY_EARTH
 SOLAR_GRAVITY		GRAVITY_SOLAR
 EARTH_GRAVITY		GRAVITY_EARTH
-SOLAR_V_MAG			MAGNITUDE_SOLAR_V				done
+SOLAR_V_MAG			MAGNITUDE_SOLAR_V
 SOLAR_V_ABS_MAG		MAGNITUDE_SOLAR_V_ABSOLUTE
 LUNAR_RADIUS		RADIUS_LUNAR
 LUNAR_MASS			MASS_LUNAR
 LUNAR_SM_AXIS		AXIS_SM_LUNAR
 LUNAR_ECCENTRICITY	ECCENTRICITY_LUNAR
 
-add in new definitions to <cat>conversion
-YEAR_TROPICAL			365.242 190		Astronomical Almanac 1993 (update)
-YEAR_SIDEREAL			365.256 363		Astronomical Almanac 1993 (update)
-YEAR_ANOMALISTIC		365.259 635		Astronomical Almanac 1993 (update)
-YEAR_ECLIPSE			346.620 073		Astronomical Almanac 1993 (update)
+add in new definitions to <category>conversion
+YEAR_TROPICAL			365.242 190
+YEAR_SIDEREAL			365.256 363
+YEAR_ANOMALISTIC		365.259 635
+YEAR_ECLIPSE			346.620 073
 
 Candidates for removal
 ======================
@@ -68,4 +71,4 @@ HUBBLE_TIME - this constant is inherited from Jeremy Bailin's Astroconst.
 
 Introduced
 ==========
-MASS_ALPHA
+MASS_ALPHA	- mass of the alpha particle
