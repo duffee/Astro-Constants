@@ -92,14 +92,13 @@ package $name;
 
 HEADER
 	if ($name eq 'Astro::Constants') {
-		print $fh "'They are not constant but are changing still. - Cymbeline, Act II, Scene 5';\n";
+		print $fh "'They are not constant but are changing still. - Cymbeline, Act II, Scene 5';\n\n";
 	}
 	else {
 		print $fh <<IMPORT;
 use strict;
 use warnings;
 use base qw/Exporter/;
-use Scalar::Constant;
 
 IMPORT
 	}
@@ -110,9 +109,18 @@ sub write_module_footer {
 
 	print $fh <<FOOT;
 
+# some helper functions
+sub pretty {
+	if (\@_ > 1) {
+		return map { sprintf("\%1.5e", \$_) } \@_;
+	}
+	return sprintf("\%1.5e", shift);
+}
+
 our \@EXPORT_OK = qw( 
 	@{$tags->{long}}
 	@{$tags->{short}}
+	pretty
 );
 
 our \%EXPORT_TAGS = ( 
@@ -229,6 +237,19 @@ sub write_pod_footer {
 	my ($fh, ) = @_;
 
 	say $fh <<POD;
+=method pretty
+
+This is a helper function that rounds a value or list of values to 5 significant figures.
+
+=method precision
+
+Currently broken.  It will return in v0.11
+
+=head2 Deprecated functions
+
+I've gotten rid of C<list_constants> and C<describe_constants> because they are now in
+the documentation.  Use C<perldoc Astro::Constants> for that information.
+
 =head1 SEE ALSO
 
 =for :list

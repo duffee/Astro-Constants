@@ -2,6 +2,7 @@ package Astro::Constants;
 # ABSTRACT: this library provides physical constants for use in Astronomy
 
 'They are not constant but are changing still. - Cymbeline, Act II, Scene 5';
+
 =head1 SYNOPSIS
 
 	use strict;		# important!
@@ -651,6 +652,19 @@ Bohr radius
 
 
 This constant can also be accessed through the variable $A_a0 (which may be deprecated)
+
+=method pretty
+
+This is a helper function that rounds a value or list of values to 5 significant figures.
+
+=method precision
+
+Currently broken.  It will return in v0.11
+
+=head2 Deprecated functions
+
+I've gotten rid of C<list_constants> and C<describe_constants> because they are now in
+the documentation.  Use C<perldoc Astro::Constants> for that information.
 
 =head1 SEE ALSO
 
