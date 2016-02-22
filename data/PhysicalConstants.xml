@@ -829,6 +829,7 @@
             <minValue />
             <url href="http://physics.nist.gov/cgi-bin/cuu/Value?me" />
             <categoryList>
+                <category>electromagnetic</category>
                 <category>nuclear</category>
             </categoryList>
         </PhysicalConstant>

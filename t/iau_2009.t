@@ -3,7 +3,7 @@ use Test::More;
 use Test::Number::Delta;
 use Astro::Constants::MKS qw/:long/;
 
-diag("Testing values found in IAU 2009/2012 System of Astronomical Constants");
+diag("Testing values from IAU 2009/2012 System of Astronomical Constants");
 
 is(SPEED_LIGHT, 299_792_458, 'SPEED_LIGHT');
 delta_within(ASTRONOMICAL_UNIT, 149_597_870_700, 100, 'ASTRONOMICAL_UNIT in metres');

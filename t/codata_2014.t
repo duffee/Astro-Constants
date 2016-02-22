@@ -2,7 +2,7 @@ use strict;
 use Test::More;
 use Astro::Constants::MKS qw/:long/;
 
-diag("Test MKS values for all long names");
+diag("Testing values from CODATA 2014");
 
 subtest fundamental => sub {
 	is(SPEED_LIGHT, 299_792_458, 'SPEED_LIGHT');

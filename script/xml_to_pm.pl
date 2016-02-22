@@ -12,7 +12,7 @@ use XML::LibXML;
 
 #die "Usage: $0 infile outfile" unless @ARGV == 1;
 
-my (@long, @short, );
+my ($tagname, );
 
 my $xml = XML::LibXML->load_xml(location => 'data/PhysicalConstants.xml');
 
@@ -56,21 +56,28 @@ for my $constant ( $xml->getElementsByTagName('PhysicalConstant') ) {
 			if $values->{cgs} || $values->{value};
 
 
-	push @long, $long_name if $long_name;
-	push @short, '$' . $short_name if $short_name;
+	push @{$tagname->{long}}, $long_name if $long_name;
+	push @{$tagname->{short}}, '$' . $short_name if $short_name;
 		
-	my $alternate;
+	my $alternate = undef;
 	if ( $constant->getChildrenByTagName('alternateName')
 			&& ($alternate = $constant->getChildrenByTagName('alternateName')->shift()->textContent()) ) {
-		push @long, $alternate;
+		push @{$tagname->{long}}, $alternate;
 		write_constant($mks_fh, ($values->{mks} || $values->{value}), $alternate) if $values->{mks} || $values->{value};
 		write_constant($cgs_fh, ($values->{cgs} || $values->{value}), $alternate) if $values->{cgs} || $values->{value};
+	}
+
+	for my $cat_node ( $constant->getElementsByTagName('category') ) {
+		my $category =	$cat_node->textContent();
+		next unless $category;
+		push @{$tagname->{$category}}, $long_name;
+		push @{$tagname->{$category}}, $alternate if $alternate;
 	}
 }
 
 write_pod_footer($ac_fh);
-write_module_footer($mks_fh, \@long, \@short);
-write_module_footer($cgs_fh, \@long, \@short);
+write_module_footer($mks_fh, $tagname);
+write_module_footer($cgs_fh, $tagname);
 
 exit;
 
@@ -99,22 +106,27 @@ IMPORT
 }
 
 sub write_module_footer {
-	my ($fh, $long_ref, $short_ref) = @_;
+	my ($fh, $tags) = @_;
 
-	print $fh <<FOOTER;
+	print $fh <<FOOT;
 
 our \@EXPORT_OK = qw( 
-	@{$long_ref}
-	@{$short_ref}
-    );
+	@{$tags->{long}}
+	@{$tags->{short}}
+);
 
 our \%EXPORT_TAGS = ( 
-	long => [qw/ @{$long_ref} /],
-	short => [qw/ @{$short_ref} /],
-	);
+FOOT
+
+	for my $name (keys $tags) {
+		print $fh "\t$name => [qw/ @{$tags->{$name}} /],\n";
+	}
+
+	print $fh <<FOOT;
+);
 
 'Perl is my Igor';
-FOOTER
+FOOT
 
 }
 
