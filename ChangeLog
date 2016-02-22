@@ -6,6 +6,7 @@ A couple of interface-breaking changes:
 * 'precision' is broken at the moment and will be fixed in the next version
 
 These changes are enhancements/improvements:
+* Short name constants are now *actually* constant and cannot be assigned to
 * Values are now stored in an XML file, PhysicalConstants.xml
 * Values have been updated using NIST's CODATA 2014 and the IAU 2009/2012
 	System of Astronomical Constants
