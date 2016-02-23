@@ -74,6 +74,7 @@ Select from the following tags:
 * :planetary
 * :electromagnetic
 * :nuclear
+* :alternates
 
 
 
@@ -85,7 +86,8 @@ Select from the following tags:
 speed of light in a vacuum
 
 
-This constant is also available using the short name $A_c
+This constant is also available using the short name C<$A_c>
+as well as the alternate name C<LIGHT_SPEED> (imported using the :alternate tag for backwards compatibility)
 
 
 =method BOLTZMANN
@@ -96,7 +98,7 @@ This constant is also available using the short name $A_c
 Boltzmann's constant
 
 
-This constant is also available using the short name $A_k
+This constant is also available using the short name C<$A_k>
 
 
 =method GRAVITATIONAL
@@ -107,7 +109,7 @@ This constant is also available using the short name $A_k
 universal gravitational constant
 
 
-This constant is also available using the short name $A_G
+This constant is also available using the short name C<$A_G>
 
 
 =method ELECTRON_VOLT
@@ -118,7 +120,7 @@ This constant is also available using the short name $A_G
 electron volt
 
 
-This constant is also available using the short name $A_eV
+This constant is also available using the short name C<$A_eV>
 
 
 =method PLANCK
@@ -129,7 +131,7 @@ This constant is also available using the short name $A_eV
 Planck constant
 
 
-This constant is also available using the short name $A_h
+This constant is also available using the short name C<$A_h>
 
 
 =method H_BAR
@@ -140,7 +142,8 @@ This constant is also available using the short name $A_h
 Planck's constant /2pi
 
 
-This constant is also available using the short name $A_hbar
+This constant is also available using the short name C<$A_hbar>
+as well as the alternate name C<HBAR> (imported using the :alternate tag for backwards compatibility)
 
 
 =method ELECTRON_CHARGE
@@ -151,7 +154,8 @@ This constant is also available using the short name $A_hbar
 electron charge (defined positive)
 
 
-This constant is also available using the short name $A_e
+This constant is also available using the short name C<$A_e>
+as well as the alternate name C<CHARGE_ELEMENTARY> (imported using the :alternate tag for backwards compatibility)
 
 
 =method STEFAN_BOLTZMANN
@@ -162,7 +166,7 @@ This constant is also available using the short name $A_e
 Stefan-Boltzmann constant
 
 
-This constant is also available using the short name $A_sigma
+This constant is also available using the short name C<$A_sigma>
 
 
 =method DENSITY_RADIATION
@@ -173,7 +177,8 @@ This constant is also available using the short name $A_sigma
 radiation density constant, 4 * sigma / c
 
 
-This constant is also available using the short name $A_arad
+This constant is also available using the short name C<$A_arad>
+as well as the alternate name C<A_RAD> (imported using the :alternate tag for backwards compatibility)
 
 
 =method WIEN
@@ -184,7 +189,7 @@ This constant is also available using the short name $A_arad
 Wien wavelength displacement law constant
 
 
-This constant is also available using the short name $A_Wien
+This constant is also available using the short name C<$A_Wien>
 
 
 =method ALPHA
@@ -195,7 +200,7 @@ This constant is also available using the short name $A_Wien
 fine structure constant
 
 
-This constant is also available using the short name $A_alpha
+This constant is also available using the short name C<$A_alpha>
 
 
 =method IMPEDANCE_VACUUM
@@ -205,7 +210,8 @@ This constant is also available using the short name $A_alpha
 characteristic impedance of vacuum
 
 
-This constant is also available using the short name $A_Z0
+This constant is also available using the short name C<$A_Z0>
+as well as the alternate name C<VACUUM_IMPEDANCE> (imported using the :alternate tag for backwards compatibility)
 
 
 =method PERMITIV_FREE_SPACE
@@ -216,7 +222,8 @@ This constant is also available using the short name $A_Z0
 permittivity of free space, epsilon_0, the electric constant
 
 
-This constant is also available using the short name $A_eps0
+This constant is also available using the short name C<$A_eps0>
+as well as the alternate name C<PERMITIVITY_0> (imported using the :alternate tag for backwards compatibility)
 
 
 =method PERMEABL_FREE_SPACE
@@ -227,7 +234,8 @@ This constant is also available using the short name $A_eps0
 permeability of free space, mu_0, the magnetic constant
 
 
-This constant is also available using the short name $A_mu0
+This constant is also available using the short name C<$A_mu0>
+as well as these alternate names (imported using the :alternate tag): PERMEABILITY_0, CONSTANT_MAGNETIC
 
 
 =method PI
@@ -237,7 +245,7 @@ This constant is also available using the short name $A_mu0
 trig constant pi
 
 
-This constant is also available using the short name $A_pi
+This constant is also available using the short name C<$A_pi>
 
 
 =method EXP
@@ -247,7 +255,7 @@ This constant is also available using the short name $A_pi
 base of natural logarithm
 
 
-This constant is also available using the short name $A_exp
+This constant is also available using the short name C<$A_exp>
 
 
 =method ATOMIC_MASS_UNIT
@@ -258,7 +266,7 @@ This constant is also available using the short name $A_exp
 atomic mass unit, 1 u
 
 
-This constant is also available using the short name $A_amu
+This constant is also available using the short name C<$A_amu>
 
 
 =method PARSEC
@@ -269,7 +277,7 @@ This constant is also available using the short name $A_amu
 parsec
 
 
-This constant is also available using the short name $A_pc
+This constant is also available using the short name C<$A_pc>
 
 
 =method ASTRONOMICAL_UNIT
@@ -280,7 +288,7 @@ This constant is also available using the short name $A_pc
 astronomical unit
 
 
-This constant is also available using the short name $A_AU
+This constant is also available using the short name C<$A_AU>
 
 
 =method LIGHT_YEAR
@@ -291,7 +299,7 @@ This constant is also available using the short name $A_AU
 the distance that light travels in vacuum in one Julian year
 
 
-This constant is also available using the short name $A_ly
+This constant is also available using the short name C<$A_ly>
 
 
 =method ANGSTROM
@@ -302,7 +310,7 @@ This constant is also available using the short name $A_ly
 Angstrom
 
 
-This constant is also available using the short name $A_AA
+This constant is also available using the short name C<$A_AA>
 
 
 =method JANSKY
@@ -313,7 +321,7 @@ This constant is also available using the short name $A_AA
 Jansky
 
 
-This constant is also available using the short name $A_Jy
+This constant is also available using the short name C<$A_Jy>
 
 
 =method AVOGADRO
@@ -323,7 +331,7 @@ This constant is also available using the short name $A_Jy
 Avogadro's number
 
 
-This constant is also available using the short name $A_NA
+This constant is also available using the short name C<$A_NA>
 
 
 =method YEAR
@@ -333,7 +341,8 @@ This constant is also available using the short name $A_NA
 defined as exactly 365.25 days of 86400 SI seconds
 
 
-This constant is also available using the short name $A_yr
+This constant is also available using the short name C<$A_yr>
+as well as the alternate name C<YEAR_JULIAN> (imported using the :alternate tag for backwards compatibility)
 
 
 =method YEAR_TROPICAL
@@ -341,6 +350,7 @@ This constant is also available using the short name $A_yr
     31_556_925.1
 
 the period of time for the ecliptic longitude of the Sun to increase 360 degrees, approximated by the Gregorian calendar
+
 
 
 
@@ -352,11 +362,13 @@ the period of revolution of the Earth around the Sun in a fixed reference frame
 
 
 
+
 =method YEAR_ANOMALISTIC
 
     31_558_432.6
 
 the period between successive passages of the Earth through perihelion
+
 
 
 
@@ -368,6 +380,7 @@ the period between successive passages of the Sun (as seen from the geocenter) t
 
 
 
+
 =method MASS_SOLAR
 
     1.9884e30	MKS
@@ -376,7 +389,8 @@ the period between successive passages of the Sun (as seen from the geocenter) t
 solar mass
 
 
-This constant is also available using the short name $A_msun
+This constant is also available using the short name C<$A_msun>
+as well as the alternate name C<SOLAR_MASS> (imported using the :alternate tag for backwards compatibility)
 
 
 =method LUMINOSITY_SOLAR
@@ -387,7 +401,8 @@ This constant is also available using the short name $A_msun
 solar luminosity
 
 
-This constant is also available using the short name $A_Lsun
+This constant is also available using the short name C<$A_Lsun>
+as well as the alternate name C<SOLAR_LUMINOSITY> (imported using the :alternate tag for backwards compatibility)
 
 
 =method DENSITY_CRITICAL_RHOc
@@ -398,7 +413,8 @@ This constant is also available using the short name $A_Lsun
 critical density /h^2
 
 
-This constant is also available using the short name $A_rhoc
+This constant is also available using the short name C<$A_rhoc>
+as well as the alternate name C<RHO_C> (imported using the :alternate tag for backwards compatibility)
 
 
 =method HUBBLE_TIME
@@ -408,7 +424,7 @@ This constant is also available using the short name $A_rhoc
 Hubble time *h, the inverse of Hubble's constant valued at 100 km/s/Mpc (DEPRECATED - see ChangeLog)
 
 
-This constant is also available using the short name $A_tH
+This constant is also available using the short name C<$A_tH>
 
 
 =method TEMPERATURE_CMB
@@ -418,7 +434,8 @@ This constant is also available using the short name $A_tH
 cosmic microwave background temperature in Kelvin
 
 
-This constant is also available using the short name $A_TCMB
+This constant is also available using the short name C<$A_TCMB>
+as well as the alternate name C<CMB_TEMPERATURE> (imported using the :alternate tag for backwards compatibility)
 
 
 =method MAGNITUDE_SOLAR_V
@@ -428,7 +445,8 @@ This constant is also available using the short name $A_TCMB
 solar V magnitude
 
 
-This constant is also available using the short name $A_Vsun
+This constant is also available using the short name C<$A_Vsun>
+as well as the alternate name C<SOLAR_V_MAG> (imported using the :alternate tag for backwards compatibility)
 
 
 =method MAGNITUDE_SOLAR_V_ABSOLUTE
@@ -438,7 +456,8 @@ This constant is also available using the short name $A_Vsun
 solar absolute V magnitude
 
 
-This constant is also available using the short name $A_MVsun
+This constant is also available using the short name C<$A_MVsun>
+as well as the alternate name C<SOLAR_V_ABS_MAG> (imported using the :alternate tag for backwards compatibility)
 
 
 =method RADIUS_SOLAR
@@ -449,7 +468,8 @@ This constant is also available using the short name $A_MVsun
 solar radius
 
 
-This constant is also available using the short name $A_rsun
+This constant is also available using the short name C<$A_rsun>
+as well as the alternate name C<SOLAR_RADIUS> (imported using the :alternate tag for backwards compatibility)
 
 
 =method MASS_EARTH
@@ -460,7 +480,8 @@ This constant is also available using the short name $A_rsun
 mass of Earth
 
 
-This constant is also available using the short name $A_mearth
+This constant is also available using the short name C<$A_mearth>
+as well as the alternate name C<EARTH_MASS> (imported using the :alternate tag for backwards compatibility)
 
 
 =method RADIUS_EARTH
@@ -471,7 +492,8 @@ This constant is also available using the short name $A_mearth
 radius of Earth
 
 
-This constant is also available using the short name $A_rearth
+This constant is also available using the short name C<$A_rearth>
+as well as the alternate name C<EARTH_RADIUS> (imported using the :alternate tag for backwards compatibility)
 
 
 =method TEMPERATURE_SOLAR_SURFACE
@@ -481,7 +503,8 @@ This constant is also available using the short name $A_rearth
 surface temperature of sun
 
 
-This constant is also available using the short name $A_Tsun
+This constant is also available using the short name C<$A_Tsun>
+as well as the alternate name C<SOLAR_TEMPERATURE> (imported using the :alternate tag for backwards compatibility)
 
 
 =method DENSITY_SOLAR
@@ -492,7 +515,8 @@ This constant is also available using the short name $A_Tsun
 mean solar density
 
 
-This constant is also available using the short name $A_dsun
+This constant is also available using the short name C<$A_dsun>
+as well as the alternate name C<SOLAR_DENSITY> (imported using the :alternate tag for backwards compatibility)
 
 
 =method DENSITY_EARTH
@@ -503,7 +527,8 @@ This constant is also available using the short name $A_dsun
 mean Earth density
 
 
-This constant is also available using the short name $A_dearth
+This constant is also available using the short name C<$A_dearth>
+as well as the alternate name C<EARTH_DENSITY> (imported using the :alternate tag for backwards compatibility)
 
 
 =method GRAVITY_SOLAR
@@ -514,7 +539,8 @@ This constant is also available using the short name $A_dearth
 solar surface gravity
 
 
-This constant is also available using the short name $A_gsun
+This constant is also available using the short name C<$A_gsun>
+as well as the alternate name C<SOLAR_GRAVITY> (imported using the :alternate tag for backwards compatibility)
 
 
 =method GRAVITY_EARTH
@@ -525,7 +551,8 @@ This constant is also available using the short name $A_gsun
 Earth surface gravity
 
 
-This constant is also available using the short name $A_gearth
+This constant is also available using the short name C<$A_gearth>
+as well as the alternate name C<EARTH_GRAVITY> (imported using the :alternate tag for backwards compatibility)
 
 
 =method RADIUS_LUNAR
@@ -536,7 +563,8 @@ This constant is also available using the short name $A_gearth
 lunar radius
 
 
-This constant is also available using the short name $A_rmoon
+This constant is also available using the short name C<$A_rmoon>
+as well as the alternate name C<LUNAR_RADIUS> (imported using the :alternate tag for backwards compatibility)
 
 
 =method MASS_LUNAR
@@ -547,7 +575,8 @@ This constant is also available using the short name $A_rmoon
 lunar mass
 
 
-This constant is also available using the short name $A_mmoon
+This constant is also available using the short name C<$A_mmoon>
+as well as the alternate name C<LUNAR_MASS> (imported using the :alternate tag for backwards compatibility)
 
 
 =method AXIS_SM_LUNAR
@@ -558,7 +587,8 @@ This constant is also available using the short name $A_mmoon
 lunar orbital semi-major axis
 
 
-This constant is also available using the short name $A_amoon
+This constant is also available using the short name C<$A_amoon>
+as well as the alternate name C<LUNAR_SM_AXIS> (imported using the :alternate tag for backwards compatibility)
 
 
 =method ECCENTRICITY_LUNAR
@@ -568,7 +598,8 @@ This constant is also available using the short name $A_amoon
 lunar orbital eccentricity
 
 
-This constant is also available using the short name $A_emoon
+This constant is also available using the short name C<$A_emoon>
+as well as the alternate name C<LUNAR_ECCENTRICITY> (imported using the :alternate tag for backwards compatibility)
 
 
 =method THOMSON_CROSS_SECTION
@@ -579,7 +610,8 @@ This constant is also available using the short name $A_emoon
 Thomson cross-section
 
 
-This constant is also available using the short name $A_sigmaT
+This constant is also available using the short name C<$A_sigmaT>
+as well as the alternate name C<THOMSON_XSECTION> (imported using the :alternate tag for backwards compatibility)
 
 
 =method MASS_ELECTRON
@@ -590,7 +622,8 @@ This constant is also available using the short name $A_sigmaT
 mass of electron
 
 
-This constant is also available using the short name $A_me
+This constant is also available using the short name C<$A_me>
+as well as the alternate name C<ELECTRON_MASS> (imported using the :alternate tag for backwards compatibility)
 
 
 =method MASS_PROTON
@@ -601,7 +634,8 @@ This constant is also available using the short name $A_me
 mass of proton
 
 
-This constant is also available using the short name $A_mp
+This constant is also available using the short name C<$A_mp>
+as well as the alternate name C<PROTON_MASS> (imported using the :alternate tag for backwards compatibility)
 
 
 =method MASS_NEUTRON
@@ -612,7 +646,8 @@ This constant is also available using the short name $A_mp
 neutron mass
 
 
-This constant is also available using the short name $A_mn
+This constant is also available using the short name C<$A_mn>
+as well as the alternate name C<NEUTRON_MASS> (imported using the :alternate tag for backwards compatibility)
 
 
 =method MASS_HYDROGEN
@@ -622,7 +657,8 @@ This constant is also available using the short name $A_mn
 mass of Hydrogen atom
 
 
-This constant is also available using the short name $A_mH
+This constant is also available using the short name C<$A_mH>
+as well as the alternate name C<HYDROGEN_MASS> (imported using the :alternate tag for backwards compatibility)
 
 
 =method MASS_ALPHA
@@ -632,7 +668,7 @@ This constant is also available using the short name $A_mH
 mass of alpha particle
 
 
-This constant is also available using the short name $A_ma
+This constant is also available using the short name C<$A_ma>
 
 
 =method RADIUS_ELECTRON
@@ -643,7 +679,8 @@ This constant is also available using the short name $A_ma
 classical electron radius
 
 
-This constant is also available using the short name $A_re
+This constant is also available using the short name C<$A_re>
+as well as the alternate name C<ELECTRON_RADIUS> (imported using the :alternate tag for backwards compatibility)
 
 
 =method RADIUS_BOHR
@@ -654,7 +691,8 @@ This constant is also available using the short name $A_re
 Bohr radius
 
 
-This constant is also available using the short name $A_a0
+This constant is also available using the short name C<$A_a0>
+as well as the alternate name C<BOHR_RADIUS> (imported using the :alternate tag for backwards compatibility)
 
 =method pretty
 

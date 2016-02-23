@@ -48,19 +48,9 @@ for my $constant ( $xml->getElementsByTagName('PhysicalConstant') ) {
 		}
 	}
 
-
-	write_method_pod($ac_fh, $long_name, $short_name, $description, $values);
-	write_constant($mks_fh, ($values->{mks} || $values->{value}), $long_name, $short_name) 
-			if $values->{mks} || $values->{value};
-	write_constant($cgs_fh, ($values->{cgs} || $values->{value}), $long_name, $short_name) 
-			if $values->{cgs} || $values->{value};
-
-
-	push @{$tagname->{long}}, $long_name if $long_name;
-	push @{$tagname->{short}}, '$' . $short_name if $short_name;
-		
 	# recognise that there can be more than one alternateName
 	my $alternate = undef;
+	my @alternates = ();
 	if ( $constant->getChildrenByTagName('alternateName') ) {
 		for my $node ( $constant->getChildrenByTagName('alternateName') ) {
 			$alternate = $node->textContent();
@@ -68,6 +58,7 @@ for my $constant ( $xml->getElementsByTagName('PhysicalConstant') ) {
 
 			push @{$tagname->{alternates}}, $alternate;
 			push @{$tagname->{long}}, $alternate;
+			push @alternates, $alternate;
 
 			write_constant($mks_fh, ($values->{mks} || $values->{value}), $alternate) 
 				if $values->{mks} || $values->{value};
@@ -75,6 +66,17 @@ for my $constant ( $xml->getElementsByTagName('PhysicalConstant') ) {
 				if $values->{cgs} || $values->{value};
 		}
 	}
+
+	#### write to the module files
+	write_method_pod($ac_fh, $long_name, $short_name, $description, $values, \@alternates);
+	write_constant($mks_fh, ($values->{mks} || $values->{value}), $long_name, $short_name) 
+			if $values->{mks} || $values->{value};
+	write_constant($cgs_fh, ($values->{cgs} || $values->{value}), $long_name, $short_name) 
+			if $values->{cgs} || $values->{value};
+
+	push @{$tagname->{long}}, $long_name if $long_name;
+	push @{$tagname->{short}}, '$' . $short_name if $short_name;
+		
 
 	for my $cat_node ( $constant->getElementsByTagName('category') ) {
 		my $category =	$cat_node->textContent();
@@ -145,7 +147,7 @@ FOOT
 }
 
 sub write_method_pod {
-	my ($fh, $long_name, $short_name, $description, $values) = @_;
+	my ($fh, $long_name, $short_name, $description, $values, $alt_ref, ) = @_;
 
 	my $display;
 	$display .= "    $values->{mks}\tMKS\n" if $values->{mks};
@@ -160,7 +162,23 @@ $display
 $description
 
 POD
-	say $fh "This constant is also available using the short name \$$short_name\n" if $short_name;
+	say $fh "This constant is also available using the short name C<\$$short_name>" if $short_name;
+	if ($short_name && @$alt_ref > 1) {
+		say $fh 'as well as these alternate names (imported using the :alternate tag): ', join ', ', @$alt_ref;
+	}
+	elsif ($short_name && @$alt_ref) {
+		say $fh 'as well as the alternate name C<', $alt_ref->[0], 
+				"> (imported using the :alternate tag for backwards compatibility)";
+	}
+	elsif (@$alt_ref > 1) {
+		say $fh "This constant is also available using these alternate names (imported using the :alternate tag): ", 
+				join ', ', @$alt_ref;
+	}
+	elsif (@$alt_ref) {
+		say $fh "This constant is also available using the alternate name C<", $alt_ref->[0], 
+                "> (imported using the :alternate tag for backwards compatibility)";
+	}
+	print $fh "\n";
 }
 
 sub write_pod_synopsis {
