@@ -1,15 +1,18 @@
 package Astro::Constants;
 # ABSTRACT: this library provides physical constants for use in Astronomy
 
-'They are not constant but are changing still. - Cymbeline, Act II, Scene 5';
+use strict;
+use warnings;
+
+  'They are not constant but are changing still. - Cymbeline, Act II, Scene 5';
 
 =head1 SYNOPSIS
 
-	use strict;		# important!
+    use strict;		# important!
     use Astro::Constants::MKS qw/:long/;
 
-	# to calculate the gravitational force of the Sun on the Earth in Newtons, use GMm/r^2
-	my $force_sun_earth = GRAVITATIONAL * MASS_SOLAR * MASS_EARTH / ASTRONOMICAL_UNIT**2;
+    # to calculate the gravitational force of the Sun on the Earth in Newtons, use GMm/r^2
+    my $force_sun_earth = GRAVITATIONAL * MASS_SOLAR * MASS_EARTH / ASTRONOMICAL_UNIT**2;
 
 =head1 DESCRIPTION
 
@@ -62,19 +65,19 @@ Nothing is exported by default, so the module doesn't clobber any of your variab
 Select from the following tags:
 
 =for :list
-* long		(use this one to get the most constants)
-* short
-* fundamental
-* conversion
-* mathematics
-* cosmology
-* planetary
-* electromagnetic
-* nuclear
+* :long		(use this one to get the most constants)
+* :short
+* :fundamental
+* :conversion
+* :mathematics
+* :cosmology
+* :planetary
+* :electromagnetic
+* :nuclear
 
 
 
-=method LIGHT_SPEED
+=method SPEED_LIGHT
 
     2.99792458e8	MKS
     2.99792458e10	CGS
@@ -82,7 +85,7 @@ Select from the following tags:
 speed of light in a vacuum
 
 
-This constant can also be accessed through the variable $A_c (which may be deprecated)
+This constant is also available using the short name $A_c
 
 
 =method BOLTZMANN
@@ -93,7 +96,7 @@ This constant can also be accessed through the variable $A_c (which may be depre
 Boltzmann's constant
 
 
-This constant can also be accessed through the variable $A_k (which may be deprecated)
+This constant is also available using the short name $A_k
 
 
 =method GRAVITATIONAL
@@ -104,7 +107,7 @@ This constant can also be accessed through the variable $A_k (which may be depre
 universal gravitational constant
 
 
-This constant can also be accessed through the variable $A_G (which may be deprecated)
+This constant is also available using the short name $A_G
 
 
 =method ELECTRON_VOLT
@@ -115,7 +118,7 @@ This constant can also be accessed through the variable $A_G (which may be depre
 electron volt
 
 
-This constant can also be accessed through the variable $A_eV (which may be deprecated)
+This constant is also available using the short name $A_eV
 
 
 =method PLANCK
@@ -126,10 +129,10 @@ This constant can also be accessed through the variable $A_eV (which may be depr
 Planck constant
 
 
-This constant can also be accessed through the variable $A_h (which may be deprecated)
+This constant is also available using the short name $A_h
 
 
-=method HBAR
+=method H_BAR
 
     1.054571800e-34	MKS
     1.054571800e-27	CGS
@@ -137,7 +140,7 @@ This constant can also be accessed through the variable $A_h (which may be depre
 Planck's constant /2pi
 
 
-This constant can also be accessed through the variable $A_hbar (which may be deprecated)
+This constant is also available using the short name $A_hbar
 
 
 =method ELECTRON_CHARGE
@@ -148,7 +151,7 @@ This constant can also be accessed through the variable $A_hbar (which may be de
 electron charge (defined positive)
 
 
-This constant can also be accessed through the variable $A_e (which may be deprecated)
+This constant is also available using the short name $A_e
 
 
 =method STEFAN_BOLTZMANN
@@ -159,10 +162,10 @@ This constant can also be accessed through the variable $A_e (which may be depre
 Stefan-Boltzmann constant
 
 
-This constant can also be accessed through the variable $A_sigma (which may be deprecated)
+This constant is also available using the short name $A_sigma
 
 
-=method A_RAD
+=method DENSITY_RADIATION
 
     7.565723e-16	MKS
     7.565723e-15	CGS
@@ -170,7 +173,7 @@ This constant can also be accessed through the variable $A_sigma (which may be d
 radiation density constant, 4 * sigma / c
 
 
-This constant can also be accessed through the variable $A_arad (which may be deprecated)
+This constant is also available using the short name $A_arad
 
 
 =method WIEN
@@ -181,7 +184,7 @@ This constant can also be accessed through the variable $A_arad (which may be de
 Wien wavelength displacement law constant
 
 
-This constant can also be accessed through the variable $A_Wien (which may be deprecated)
+This constant is also available using the short name $A_Wien
 
 
 =method ALPHA
@@ -192,17 +195,17 @@ This constant can also be accessed through the variable $A_Wien (which may be de
 fine structure constant
 
 
-This constant can also be accessed through the variable $A_alpha (which may be deprecated)
+This constant is also available using the short name $A_alpha
 
 
-=method VACUUM_IMPEDANCE
+=method IMPEDANCE_VACUUM
 
     376.730313461
 
 characteristic impedance of vacuum
 
 
-This constant can also be accessed through the variable $A_Z0 (which may be deprecated)
+This constant is also available using the short name $A_Z0
 
 
 =method PERMITIV_FREE_SPACE
@@ -213,7 +216,7 @@ This constant can also be accessed through the variable $A_Z0 (which may be depr
 permittivity of free space, epsilon_0, the electric constant
 
 
-This constant can also be accessed through the variable $A_eps0 (which may be deprecated)
+This constant is also available using the short name $A_eps0
 
 
 =method PERMEABL_FREE_SPACE
@@ -224,7 +227,7 @@ This constant can also be accessed through the variable $A_eps0 (which may be de
 permeability of free space, mu_0, the magnetic constant
 
 
-This constant can also be accessed through the variable $A_mu0 (which may be deprecated)
+This constant is also available using the short name $A_mu0
 
 
 =method PI
@@ -234,7 +237,7 @@ This constant can also be accessed through the variable $A_mu0 (which may be dep
 trig constant pi
 
 
-This constant can also be accessed through the variable $A_pi (which may be deprecated)
+This constant is also available using the short name $A_pi
 
 
 =method EXP
@@ -244,7 +247,7 @@ This constant can also be accessed through the variable $A_pi (which may be depr
 base of natural logarithm
 
 
-This constant can also be accessed through the variable $A_exp (which may be deprecated)
+This constant is also available using the short name $A_exp
 
 
 =method ATOMIC_MASS_UNIT
@@ -255,7 +258,7 @@ This constant can also be accessed through the variable $A_exp (which may be dep
 atomic mass unit, 1 u
 
 
-This constant can also be accessed through the variable $A_amu (which may be deprecated)
+This constant is also available using the short name $A_amu
 
 
 =method PARSEC
@@ -266,7 +269,7 @@ This constant can also be accessed through the variable $A_amu (which may be dep
 parsec
 
 
-This constant can also be accessed through the variable $A_pc (which may be deprecated)
+This constant is also available using the short name $A_pc
 
 
 =method ASTRONOMICAL_UNIT
@@ -277,7 +280,7 @@ This constant can also be accessed through the variable $A_pc (which may be depr
 astronomical unit
 
 
-This constant can also be accessed through the variable $A_AU (which may be deprecated)
+This constant is also available using the short name $A_AU
 
 
 =method LIGHT_YEAR
@@ -288,7 +291,7 @@ This constant can also be accessed through the variable $A_AU (which may be depr
 the distance that light travels in vacuum in one Julian year
 
 
-This constant can also be accessed through the variable $A_ly (which may be deprecated)
+This constant is also available using the short name $A_ly
 
 
 =method ANGSTROM
@@ -299,7 +302,7 @@ This constant can also be accessed through the variable $A_ly (which may be depr
 Angstrom
 
 
-This constant can also be accessed through the variable $A_AA (which may be deprecated)
+This constant is also available using the short name $A_AA
 
 
 =method JANSKY
@@ -310,7 +313,7 @@ This constant can also be accessed through the variable $A_AA (which may be depr
 Jansky
 
 
-This constant can also be accessed through the variable $A_Jy (which may be deprecated)
+This constant is also available using the short name $A_Jy
 
 
 =method AVOGADRO
@@ -320,7 +323,7 @@ This constant can also be accessed through the variable $A_Jy (which may be depr
 Avogadro's number
 
 
-This constant can also be accessed through the variable $A_NA (which may be deprecated)
+This constant is also available using the short name $A_NA
 
 
 =method YEAR
@@ -330,7 +333,7 @@ This constant can also be accessed through the variable $A_NA (which may be depr
 defined as exactly 365.25 days of 86400 SI seconds
 
 
-This constant can also be accessed through the variable $A_yr (which may be deprecated)
+This constant is also available using the short name $A_yr
 
 
 =method YEAR_TROPICAL
@@ -365,7 +368,7 @@ the period between successive passages of the Sun (as seen from the geocenter) t
 
 
 
-=method SOLAR_MASS
+=method MASS_SOLAR
 
     1.9884e30	MKS
     1.9884e33	CGS
@@ -373,10 +376,10 @@ the period between successive passages of the Sun (as seen from the geocenter) t
 solar mass
 
 
-This constant can also be accessed through the variable $A_msun (which may be deprecated)
+This constant is also available using the short name $A_msun
 
 
-=method SOLAR_LUMINOSITY
+=method LUMINOSITY_SOLAR
 
     3.846e26	MKS
     3.846e33	CGS
@@ -384,10 +387,10 @@ This constant can also be accessed through the variable $A_msun (which may be de
 solar luminosity
 
 
-This constant can also be accessed through the variable $A_Lsun (which may be deprecated)
+This constant is also available using the short name $A_Lsun
 
 
-=method RHO_C
+=method DENSITY_CRITICAL_RHOc
 
     1.8791e-26	MKS
     1.8791e-29	CGS
@@ -395,7 +398,7 @@ This constant can also be accessed through the variable $A_Lsun (which may be de
 critical density /h^2
 
 
-This constant can also be accessed through the variable $A_rhoc (which may be deprecated)
+This constant is also available using the short name $A_rhoc
 
 
 =method HUBBLE_TIME
@@ -405,40 +408,40 @@ This constant can also be accessed through the variable $A_rhoc (which may be de
 Hubble time *h, the inverse of Hubble's constant valued at 100 km/s/Mpc (DEPRECATED - see ChangeLog)
 
 
-This constant can also be accessed through the variable $A_tH (which may be deprecated)
+This constant is also available using the short name $A_tH
 
 
-=method CMB_TEMPERATURE
+=method TEMPERATURE_CMB
 
     2.725
 
-cosmic microwave background temperature
+cosmic microwave background temperature in Kelvin
 
 
-This constant can also be accessed through the variable $A_TCMB (which may be deprecated)
+This constant is also available using the short name $A_TCMB
 
 
-=method SOLAR_V_MAG
+=method MAGNITUDE_SOLAR_V
 
     -26.74
 
 solar V magnitude
 
 
-This constant can also be accessed through the variable $A_Vsun (which may be deprecated)
+This constant is also available using the short name $A_Vsun
 
 
-=method SOLAR_V_ABS_MAG
+=method MAGNITUDE_SOLAR_V_ABSOLUTE
 
     4.83
 
 solar absolute V magnitude
 
 
-This constant can also be accessed through the variable $A_MVsun (which may be deprecated)
+This constant is also available using the short name $A_MVsun
 
 
-=method SOLAR_RADIUS
+=method RADIUS_SOLAR
 
     6.96e8	MKS
     6.96e10	CGS
@@ -446,10 +449,10 @@ This constant can also be accessed through the variable $A_MVsun (which may be d
 solar radius
 
 
-This constant can also be accessed through the variable $A_rsun (which may be deprecated)
+This constant is also available using the short name $A_rsun
 
 
-=method EARTH_MASS
+=method MASS_EARTH
 
     5.9722e24	MKS
     5.9722e27	CGS
@@ -457,10 +460,10 @@ This constant can also be accessed through the variable $A_rsun (which may be de
 mass of Earth
 
 
-This constant can also be accessed through the variable $A_mearth (which may be deprecated)
+This constant is also available using the short name $A_mearth
 
 
-=method EARTH_RADIUS
+=method RADIUS_EARTH
 
     6.378_136_6e6	MKS
     6.378_136_6e8	CGS
@@ -468,20 +471,20 @@ This constant can also be accessed through the variable $A_mearth (which may be 
 radius of Earth
 
 
-This constant can also be accessed through the variable $A_rearth (which may be deprecated)
+This constant is also available using the short name $A_rearth
 
 
-=method SOLAR_TEMPERATURE
+=method TEMPERATURE_SOLAR_SURFACE
 
     5778
 
 surface temperature of sun
 
 
-This constant can also be accessed through the variable $A_Tsun (which may be deprecated)
+This constant is also available using the short name $A_Tsun
 
 
-=method SOLAR_DENSITY
+=method DENSITY_SOLAR
 
     1408	MKS
     1.408	CGS
@@ -489,10 +492,10 @@ This constant can also be accessed through the variable $A_Tsun (which may be de
 mean solar density
 
 
-This constant can also be accessed through the variable $A_dsun (which may be deprecated)
+This constant is also available using the short name $A_dsun
 
 
-=method EARTH_DENSITY
+=method DENSITY_EARTH
 
     5514	MKS
     5.514	CGS
@@ -500,10 +503,10 @@ This constant can also be accessed through the variable $A_dsun (which may be de
 mean Earth density
 
 
-This constant can also be accessed through the variable $A_dearth (which may be deprecated)
+This constant is also available using the short name $A_dearth
 
 
-=method SOLAR_GRAVITY
+=method GRAVITY_SOLAR
 
     274.0	MKS
     27400	CGS
@@ -511,10 +514,10 @@ This constant can also be accessed through the variable $A_dearth (which may be 
 solar surface gravity
 
 
-This constant can also be accessed through the variable $A_gsun (which may be deprecated)
+This constant is also available using the short name $A_gsun
 
 
-=method EARTH_GRAVITY
+=method GRAVITY_EARTH
 
     9.78	MKS
     978	CGS
@@ -522,10 +525,10 @@ This constant can also be accessed through the variable $A_gsun (which may be de
 Earth surface gravity
 
 
-This constant can also be accessed through the variable $A_gearth (which may be deprecated)
+This constant is also available using the short name $A_gearth
 
 
-=method LUNAR_RADIUS
+=method RADIUS_LUNAR
 
     1.7381e6	MKS
     1.7381e8	CGS
@@ -533,10 +536,10 @@ This constant can also be accessed through the variable $A_gearth (which may be 
 lunar radius
 
 
-This constant can also be accessed through the variable $A_rmoon (which may be deprecated)
+This constant is also available using the short name $A_rmoon
 
 
-=method LUNAR_MASS
+=method MASS_LUNAR
 
     7.342e22	MKS
     7.342e25	CGS
@@ -544,10 +547,10 @@ This constant can also be accessed through the variable $A_rmoon (which may be d
 lunar mass
 
 
-This constant can also be accessed through the variable $A_mmoon (which may be deprecated)
+This constant is also available using the short name $A_mmoon
 
 
-=method LUNAR_SM_AXIS
+=method AXIS_SM_LUNAR
 
     3.844e8	MKS
     3.844e10	CGS
@@ -555,20 +558,20 @@ This constant can also be accessed through the variable $A_mmoon (which may be d
 lunar orbital semi-major axis
 
 
-This constant can also be accessed through the variable $A_amoon (which may be deprecated)
+This constant is also available using the short name $A_amoon
 
 
-=method LUNAR_ECCENTRICITY
+=method ECCENTRICITY_LUNAR
 
     0.0549
 
 lunar orbital eccentricity
 
 
-This constant can also be accessed through the variable $A_emoon (which may be deprecated)
+This constant is also available using the short name $A_emoon
 
 
-=method THOMSON_XSECTION
+=method THOMSON_CROSS_SECTION
 
     6.6524587158e-29	MKS
     6.6524587158e-25	CGS
@@ -576,10 +579,10 @@ This constant can also be accessed through the variable $A_emoon (which may be d
 Thomson cross-section
 
 
-This constant can also be accessed through the variable $A_sigmaT (which may be deprecated)
+This constant is also available using the short name $A_sigmaT
 
 
-=method ELECTRON_MASS
+=method MASS_ELECTRON
 
     9.10938356e-31	MKS
     9.10938356e-28	CGS
@@ -587,10 +590,10 @@ This constant can also be accessed through the variable $A_sigmaT (which may be 
 mass of electron
 
 
-This constant can also be accessed through the variable $A_me (which may be deprecated)
+This constant is also available using the short name $A_me
 
 
-=method PROTON_MASS
+=method MASS_PROTON
 
     1.672621898e-27	MKS
     1.672621898e-24	CGS
@@ -598,10 +601,10 @@ This constant can also be accessed through the variable $A_me (which may be depr
 mass of proton
 
 
-This constant can also be accessed through the variable $A_mp (which may be deprecated)
+This constant is also available using the short name $A_mp
 
 
-=method NEUTRON_MASS
+=method MASS_NEUTRON
 
     1.674927471e-27	MKS
     1.674927471e-24	CGS
@@ -609,17 +612,17 @@ This constant can also be accessed through the variable $A_mp (which may be depr
 neutron mass
 
 
-This constant can also be accessed through the variable $A_mn (which may be deprecated)
+This constant is also available using the short name $A_mn
 
 
-=method HYDROGEN_MASS
+=method MASS_HYDROGEN
 
     1.67372e-24
 
 mass of Hydrogen atom
 
 
-This constant can also be accessed through the variable $A_mH (which may be deprecated)
+This constant is also available using the short name $A_mH
 
 
 =method MASS_ALPHA
@@ -629,10 +632,10 @@ This constant can also be accessed through the variable $A_mH (which may be depr
 mass of alpha particle
 
 
-This constant can also be accessed through the variable $A_ma (which may be deprecated)
+This constant is also available using the short name $A_ma
 
 
-=method ELECTRON_RADIUS
+=method RADIUS_ELECTRON
 
     2.8179403227e-15	MKS
     2.8179403227e-13	CGS
@@ -640,10 +643,10 @@ This constant can also be accessed through the variable $A_ma (which may be depr
 classical electron radius
 
 
-This constant can also be accessed through the variable $A_re (which may be deprecated)
+This constant is also available using the short name $A_re
 
 
-=method BOHR_RADIUS
+=method RADIUS_BOHR
 
     5.2917721067e-11	MKS
     5.2917721067e-9	CGS
@@ -651,7 +654,7 @@ This constant can also be accessed through the variable $A_re (which may be depr
 Bohr radius
 
 
-This constant can also be accessed through the variable $A_a0 (which may be deprecated)
+This constant is also available using the short name $A_a0
 
 =method pretty
 
@@ -670,25 +673,30 @@ the documentation.  Use C<perldoc Astro::Constants> for that information.
 
 =for :list
 * L<Astro::Cosmology>
-* L<PDL|Perl Data Language>
-* L<http://physics.nist.gov/|NIST>
-* L<http://asa.usno.navy.mil|Astronomical Almanac>
-* L<http://neilb.org/reviews/constants.html|Neil Bower's review on providing read-only values>
+* L<Perl Data Language|PDL>
+* L<NIST|http://physics.nist.gov>
+* L<Astronomical Almanac|http://asa.usno.navy.mil>
+* L<Neil Bower's review on providing read-only values|http://neilb.org/reviews/constants.html>
 * L<Test::Number::Delta>
 * L<Test::Deep::NumberTolerant> for testing values within objects
 
 Reference Documents:
+
 =for :list
-* L<http://aa.usno.navy.mil/publications/reports/Luzumetal2011.pdf|IAU 2009 system of astronomical constants>
-* L<http://asa.usno.navy.mil/static/files/2016/Astronomical_Constants_2016.pdf|Astronomical Constants 2016.pdf>
-* L<https://www.iau.org/publications/proceedings_rules/units/|IAU recommendations concerning units>
-* L<http://syrte.obspm.fr/IAU_resolutions/Res_IAU2012_B2.pdf|Re-definition of the Astronomical Unit>
+* L<IAU 2009 system of astronomical constants|http://aa.usno.navy.mil/publications/reports/Luzumetal2011.pdf>
+* L<Astronomical Constants 2016.pdf|http://asa.usno.navy.mil/static/files/2016/Astronomical_Constants_2016.pdf>
+* L<IAU recommendations concerning units|https://www.iau.org/publications/proceedings_rules/units>
+* L<Re-definition of the Astronomical Unit|http://syrte.obspm.fr/IAU_resolutions/Res_IAU2012_B2.pdf>
+
+=head1 REPOSITORY
+
+* L<https://github.com/duffee/Astro-Constants>
 
 =head1 ISSUES
 
-File issues/suggestions at the Github repository L<https://github.com/duffee/Astro-Constants/>.
-The venerable L<https://rt.cpan.org/Dist/Display.html?Status=Active&Queue=Astro-Constants|RT>
-is the canonical bug tracker that is clocked by L<https://metacpan.org/pod/Astro::Constants|meta::cpan>.
+File issues/suggestions at the Github repository L<https://github.com/duffee/Astro-Constants>.
+The venerable L<RT|https://rt.cpan.org/Dist/Display.html?Status=Active&Queue=Astro-Constants>
+is the canonical bug tracker that is clocked by L<meta::cpan|https://metacpan.org/pod/Astro::Constants>.
 
 Using C<strict> is a must with this code.  Any constants you forgot to import will
 evaluate to 0 and silently introduce errors in your code.  Caveat Programmer.
@@ -699,7 +707,7 @@ disposal, including
 What new features would you like to see?
 If you've had an experience with using the module, let other people know what you
 think, good or bad, by rating it at
-L<http://cpanratings.perl.org/rate/?distribution=Astro-Constants|cpanratings>.
+L<cpanratings|http://cpanratings.perl.org/rate/?distribution=Astro-Constants>.
 
 =head2 Extending the data set
 
@@ -723,7 +731,7 @@ important information coming at the beginning of the name.
 =head1 ASTROCONST  X<ASTROCONST>
 
 (Gleaned from the Astroconst home page -
-L<http://web.astroconst.org|http://web.astroconst.org> )
+L<astroconst.org|http://web.astroconst.org> )
 
 Astroconst is a set of header files in various languages (currently C,
 Fortran, Perl, Java, IDL and Gnuplot) that provide a variety of useful

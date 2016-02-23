@@ -59,12 +59,21 @@ for my $constant ( $xml->getElementsByTagName('PhysicalConstant') ) {
 	push @{$tagname->{long}}, $long_name if $long_name;
 	push @{$tagname->{short}}, '$' . $short_name if $short_name;
 		
+	# recognise that there can be more than one alternateName
 	my $alternate = undef;
-	if ( $constant->getChildrenByTagName('alternateName')
-			&& ($alternate = $constant->getChildrenByTagName('alternateName')->shift()->textContent()) ) {
-		push @{$tagname->{long}}, $alternate;
-		write_constant($mks_fh, ($values->{mks} || $values->{value}), $alternate) if $values->{mks} || $values->{value};
-		write_constant($cgs_fh, ($values->{cgs} || $values->{value}), $alternate) if $values->{cgs} || $values->{value};
+	if ( $constant->getChildrenByTagName('alternateName') ) {
+		for my $node ( $constant->getChildrenByTagName('alternateName') ) {
+			$alternate = $node->textContent();
+			next unless $alternate =~ /\S/;
+
+			push @{$tagname->{alternates}}, $alternate;
+			push @{$tagname->{long}}, $alternate;
+
+			write_constant($mks_fh, ($values->{mks} || $values->{value}), $alternate) 
+				if $values->{mks} || $values->{value};
+			write_constant($cgs_fh, ($values->{cgs} || $values->{value}), $alternate) 
+				if $values->{cgs} || $values->{value};
+		}
 	}
 
 	for my $cat_node ( $constant->getElementsByTagName('category') ) {
@@ -151,7 +160,7 @@ $display
 $description
 
 POD
-	say $fh "This constant can also be accessed through the variable \$$short_name (which may be deprecated)\n" if $short_name;
+	say $fh "This constant is also available using the short name \$$short_name\n" if $short_name;
 }
 
 sub write_pod_synopsis {
@@ -160,11 +169,11 @@ sub write_pod_synopsis {
 	say $fh <<'POD';
 =head1 SYNOPSIS
 
-	use strict;		# important!
+    use strict;		# important!
     use Astro::Constants::MKS qw/:long/;
 
-	# to calculate the gravitational force of the Sun on the Earth in Newtons, use GMm/r^2
-	my $force_sun_earth = GRAVITATIONAL * MASS_SOLAR * MASS_EARTH / ASTRONOMICAL_UNIT**2;
+    # to calculate the gravitational force of the Sun on the Earth in Newtons, use GMm/r^2
+    my $force_sun_earth = GRAVITATIONAL * MASS_SOLAR * MASS_EARTH / ASTRONOMICAL_UNIT**2;
 
 =head1 DESCRIPTION
 
@@ -217,15 +226,16 @@ Nothing is exported by default, so the module doesn't clobber any of your variab
 Select from the following tags:
 
 =for :list
-* long		(use this one to get the most constants)
-* short
-* fundamental
-* conversion
-* mathematics
-* cosmology
-* planetary
-* electromagnetic
-* nuclear
+* :long		(use this one to get the most constants)
+* :short
+* :fundamental
+* :conversion
+* :mathematics
+* :cosmology
+* :planetary
+* :electromagnetic
+* :nuclear
+* :alternates
 
 POD
 }
@@ -252,17 +262,18 @@ the documentation.  Use C<perldoc Astro::Constants> for that information.
 =for :list
 * L<Astro::Cosmology>
 * L<Perl Data Language|PDL>
-* L<NIST|http://physics.nist.gov/>
+* L<NIST|http://physics.nist.gov>
 * L<Astronomical Almanac|http://asa.usno.navy.mil>
 * L<Neil Bower's review on providing read-only values|http://neilb.org/reviews/constants.html>
 * L<Test::Number::Delta>
 * L<Test::Deep::NumberTolerant> for testing values within objects
 
 Reference Documents:
+
 =for :list
 * L<IAU 2009 system of astronomical constants|http://aa.usno.navy.mil/publications/reports/Luzumetal2011.pdf>
 * L<Astronomical Constants 2016.pdf|http://asa.usno.navy.mil/static/files/2016/Astronomical_Constants_2016.pdf>
-* L<IAU recommendations concerning units|https://www.iau.org/publications/proceedings_rules/units/>
+* L<IAU recommendations concerning units|https://www.iau.org/publications/proceedings_rules/units>
 * L<Re-definition of the Astronomical Unit|http://syrte.obspm.fr/IAU_resolutions/Res_IAU2012_B2.pdf>
 
 =head1 REPOSITORY
@@ -271,7 +282,7 @@ Reference Documents:
 
 =head1 ISSUES
 
-File issues/suggestions at the Github repository L<https://github.com/duffee/Astro-Constants/>.
+File issues/suggestions at the Github repository L<https://github.com/duffee/Astro-Constants>.
 The venerable L<RT|https://rt.cpan.org/Dist/Display.html?Status=Active&Queue=Astro-Constants>
 is the canonical bug tracker that is clocked by L<meta::cpan|https://metacpan.org/pod/Astro::Constants>.
 
@@ -308,7 +319,7 @@ important information coming at the beginning of the name.
 =head1 ASTROCONST  X<ASTROCONST>
 
 (Gleaned from the Astroconst home page -
-L<web.astroconst.org|http://web.astroconst.org> )
+L<astroconst.org|http://web.astroconst.org> )
 
 Astroconst is a set of header files in various languages (currently C,
 Fortran, Perl, Java, IDL and Gnuplot) that provide a variety of useful

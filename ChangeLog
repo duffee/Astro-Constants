@@ -16,7 +16,8 @@ These changes are enhancements/improvements:
 
 List of name changes
 ====================
-New names are added in to the file with <alternateName> tag
+New names have replaced the old names which are retained in the file using 
+the <alternateName> tag
 
 old					new
 ===					===
@@ -24,10 +25,6 @@ LIGHT_SPEED			SPEED_LIGHT
 ELECTRON_CHARGE 	CHARGE_ELEMENTARY
 A_RAD				DENSITY_RADIATION
 VACUUM_IMPEDANCE	IMPEDANCE_VACUUM
-
-PERMITIV_FREE_SPACE	PERMITIVITY_0
-PERMEABL_FREE_SPACE	PERMEABILITY_0
-
 HBAR				H_BAR
 ELECTRON_MASS		MASS_ELECTRON
 PROTON_MASS			MASS_PROTON
@@ -56,6 +53,10 @@ LUNAR_RADIUS		RADIUS_LUNAR
 LUNAR_MASS			MASS_LUNAR
 LUNAR_SM_AXIS		AXIS_SM_LUNAR
 LUNAR_ECCENTRICITY	ECCENTRICITY_LUNAR
+
+These 2 have had new names added, but I'm not sure which I like more
+PERMITIV_FREE_SPACE	PERMITIVITY_0
+PERMEABL_FREE_SPACE	PERMEABILITY_0
 
 add in new definitions to <category>conversion
 YEAR_TROPICAL			365.242 190

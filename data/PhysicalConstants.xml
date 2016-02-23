@@ -8,9 +8,9 @@
     <link href="http://metacpan.org/pod/Astro::Constants" />
     <items>
         <PhysicalConstant>
-            <name type="long">LIGHT_SPEED</name>
+            <name type="long">SPEED_LIGHT</name>
             <name type="short">A_c</name>
-            <alternateName>SPEED_LIGHT</alternateName>
+            <alternateName>LIGHT_SPEED</alternateName>
             <description>speed of light in a vacuum</description>
             <value system="MKS">2.99792458e8</value>
             <value system="CGS">2.99792458e10</value>
@@ -99,9 +99,9 @@
             </categoryList>
         </PhysicalConstant>
         <PhysicalConstant>
-            <name type="long">HBAR</name>
+            <name type="long">H_BAR</name>
             <name type="short">A_hbar</name>
-            <alternateName>H_BAR</alternateName>
+            <alternateName>HBAR</alternateName>
             <description>Planck's constant /2pi</description>
             <value system="MKS">1.054571800e-34</value>
             <value system="CGS">1.054571800e-27</value>
@@ -156,9 +156,9 @@
             </categoryList>
         </PhysicalConstant>
         <PhysicalConstant>
-            <name type="long">A_RAD</name>
+            <name type="long">DENSITY_RADIATION</name>
             <name type="short">A_arad</name>
-            <alternateName>DENSITY_RADIATION</alternateName>
+            <alternateName>A_RAD</alternateName>
             <description>radiation density constant, 4 * sigma / c</description>
             <value system="MKS">7.565723e-16</value>
             <value system="CGS">7.565723e-15</value>
@@ -214,9 +214,9 @@
             </categoryList>
         </PhysicalConstant>
         <PhysicalConstant>
-            <name type="long">VACUUM_IMPEDANCE</name>
+            <name type="long">IMPEDANCE_VACUUM</name>
             <name type="short">A_Z0</name>
-            <alternateName>IMPEDANCE_VACUUM</alternateName>
+            <alternateName>VACUUM_IMPEDANCE</alternateName>
             <description>characteristic impedance of vacuum</description>
             <value>376.730313461</value>
             <uncertainty type="relative">1e-50</uncertainty>
@@ -498,9 +498,9 @@
             </categoryList>
         </PhysicalConstant>
         <PhysicalConstant>
-            <name type="long">SOLAR_MASS</name>
+            <name type="long">MASS_SOLAR</name>
             <name type="short">A_msun</name>
-            <alternateName>MASS_SOLAR</alternateName>
+            <alternateName>SOLAR_MASS</alternateName>
             <description>solar mass</description>
             <value system="MKS">1.9884e30</value>
             <value system="CGS">1.9884e33</value>
@@ -515,9 +515,9 @@
             </categoryList>
         </PhysicalConstant>
         <PhysicalConstant>
-            <name type="long">SOLAR_LUMINOSITY</name>
+            <name type="long">LUMINOSITY_SOLAR</name>
             <name type="short">A_Lsun</name>
-            <alternateName>LUMINOSITY_SOLAR</alternateName>
+            <alternateName>SOLAR_LUMINOSITY</alternateName>
             <description>solar luminosity</description>
             <value system="MKS">3.846e26</value>
             <value system="CGS">3.846e33</value>
@@ -532,9 +532,9 @@
             </categoryList>
         </PhysicalConstant>
         <PhysicalConstant>
-            <name type="long">RHO_C</name>
+            <name type="long">DENSITY_CRITICAL_RHOc</name>
             <name type="short">A_rhoc</name>
-            <alternateName>DENSITY_CRITICAL_RHOc</alternateName>
+            <alternateName>RHO_C</alternateName>
             <description>critical density /h^2</description>
             <value system="MKS">1.8791e-26</value>
             <value system="CGS">1.8791e-29</value>
@@ -563,10 +563,10 @@
             </categoryList>
         </PhysicalConstant>
         <PhysicalConstant>
-            <name type="long">CMB_TEMPERATURE</name>
+            <name type="long">TEMPERATURE_CMB</name>
             <name type="short">A_TCMB</name>
-            <alternateName>TEMPERATURE_CMB</alternateName>
-            <description>cosmic microwave background temperature</description>
+            <alternateName>CMB_TEMPERATURE</alternateName>
+            <description>cosmic microwave background temperature in Kelvin</description>
             <value>2.725</value>
             <uncertainty type="relative">0.0007</uncertainty>
             <dimensions />
@@ -578,9 +578,9 @@
             </categoryList>
         </PhysicalConstant>
         <PhysicalConstant>
-            <name type="long">SOLAR_V_MAG</name>
+            <name type="long">MAGNITUDE_SOLAR_V</name>
             <name type="short">A_Vsun</name>
-            <alternateName>MAGNITUDE_SOLAR_V</alternateName>
+            <alternateName>SOLAR_V_MAG</alternateName>
             <description>solar V magnitude</description>
             <value>-26.74</value>
             <uncertainty type="relative">0.0004</uncertainty>
@@ -594,9 +594,9 @@
             </categoryList>
         </PhysicalConstant>
         <PhysicalConstant>
-            <name type="long">SOLAR_V_ABS_MAG</name>
+            <name type="long">MAGNITUDE_SOLAR_V_ABSOLUTE</name>
             <name type="short">A_MVsun</name>
-            <alternateName>MAGNITUDE_SOLAR_V_ABSOLUTE</alternateName>
+            <alternateName>SOLAR_V_ABS_MAG</alternateName>
             <description>solar absolute V magnitude</description>
             <value>4.83</value>
             <uncertainty type="relative">0.002</uncertainty>
@@ -610,9 +610,9 @@
             </categoryList>
         </PhysicalConstant>
         <PhysicalConstant>
-            <name type="long">SOLAR_RADIUS</name>
+            <name type="long">RADIUS_SOLAR</name>
             <name type="short">A_rsun</name>
-            <alternateName>RADIUS_SOLAR</alternateName>
+            <alternateName>SOLAR_RADIUS</alternateName>
             <description>solar radius</description>
             <value system="MKS">6.96e8</value>
             <value system="CGS">6.96e10</value>
@@ -626,9 +626,9 @@
             </categoryList>
         </PhysicalConstant>
         <PhysicalConstant>
-            <name type="long">EARTH_MASS</name>
+            <name type="long">MASS_EARTH</name>
             <name type="short">A_mearth</name>
-            <alternateName>MASS_EARTH</alternateName>
+            <alternateName>EARTH_MASS</alternateName>
             <description>mass of Earth</description>
             <value system="MKS">5.9722e24</value>
             <value system="CGS">5.9722e27</value>
@@ -642,9 +642,9 @@
             </categoryList>
         </PhysicalConstant>
         <PhysicalConstant>
-            <name type="long">EARTH_RADIUS</name>
+            <name type="long">RADIUS_EARTH</name>
             <name type="short">A_rearth</name>
-            <alternateName>RADIUS_EARTH</alternateName>
+            <alternateName>EARTH_RADIUS</alternateName>
             <description>radius of Earth</description>
             <value system="MKS">6.378_136_6e6</value>
             <value system="CGS">6.378_136_6e8</value>
@@ -658,9 +658,9 @@
             </categoryList>
         </PhysicalConstant>
         <PhysicalConstant>
-            <name type="long">SOLAR_TEMPERATURE</name>
+            <name type="long">TEMPERATURE_SOLAR_SURFACE</name>
             <name type="short">A_Tsun</name>
-            <alternateName>TEMPERATURE_SOLAR_SURFACE</alternateName>
+            <alternateName>SOLAR_TEMPERATURE</alternateName>
             <description>surface temperature of sun</description>
             <value>5778</value>
             <uncertainty type="relative">0.0002</uncertainty>
@@ -673,9 +673,9 @@
             </categoryList>
         </PhysicalConstant>
         <PhysicalConstant>
-            <name type="long">SOLAR_DENSITY</name>
+            <name type="long">DENSITY_SOLAR</name>
             <name type="short">A_dsun</name>
-            <alternateName>DENSITY_SOLAR</alternateName>
+            <alternateName>SOLAR_DENSITY</alternateName>
             <description>mean solar density</description>
             <value system="MKS">1408</value>
             <value system="CGS">1.408</value>
@@ -689,9 +689,9 @@
             </categoryList>
         </PhysicalConstant>
         <PhysicalConstant>
-            <name type="long">EARTH_DENSITY</name>
+            <name type="long">DENSITY_EARTH</name>
             <name type="short">A_dearth</name>
-            <alternateName>DENSITY_EARTH</alternateName>
+            <alternateName>EARTH_DENSITY</alternateName>
             <description>mean Earth density</description>
             <value system="MKS">5514</value>
             <value system="CGS">5.514</value>
@@ -705,9 +705,9 @@
             </categoryList>
         </PhysicalConstant>
         <PhysicalConstant>
-            <name type="long">SOLAR_GRAVITY</name>
+            <name type="long">GRAVITY_SOLAR</name>
             <name type="short">A_gsun</name>
-            <alternateName>GRAVITY_SOLAR</alternateName>
+            <alternateName>SOLAR_GRAVITY</alternateName>
             <description>solar surface gravity</description>
             <value system="MKS">274.0</value>
             <value system="CGS">27400</value>
@@ -721,9 +721,9 @@
             </categoryList>
         </PhysicalConstant>
         <PhysicalConstant>
-            <name type="long">EARTH_GRAVITY</name>
+            <name type="long">GRAVITY_EARTH</name>
             <name type="short">A_gearth</name>
-            <alternateName>GRAVITY_EARTH</alternateName>
+            <alternateName>EARTH_GRAVITY</alternateName>
             <description>Earth surface gravity</description>
             <value system="MKS">9.78</value>
             <value system="CGS">978</value>
@@ -737,9 +737,9 @@
             </categoryList>
         </PhysicalConstant>
         <PhysicalConstant>
-            <name type="long">LUNAR_RADIUS</name>
+            <name type="long">RADIUS_LUNAR</name>
             <name type="short">A_rmoon</name>
-            <alternateName>RADIUS_LUNAR</alternateName>
+            <alternateName>LUNAR_RADIUS</alternateName>
             <description>lunar radius</description>
             <value system="MKS">1.7381e6</value>
             <value system="CGS">1.7381e8</value>
@@ -753,9 +753,9 @@
             </categoryList>
         </PhysicalConstant>
         <PhysicalConstant>
-            <name type="long">LUNAR_MASS</name>
+            <name type="long">MASS_LUNAR</name>
             <name type="short">A_mmoon</name>
-            <alternateName>MASS_LUNAR</alternateName>
+            <alternateName>LUNAR_MASS</alternateName>
             <description>lunar mass</description>
             <value system="MKS">7.342e22</value>
             <value system="CGS">7.342e25</value>
@@ -769,9 +769,9 @@
             </categoryList>
         </PhysicalConstant>
         <PhysicalConstant>
-            <name type="long">LUNAR_SM_AXIS</name>
+            <name type="long">AXIS_SM_LUNAR</name>
             <name type="short">A_amoon</name>
-            <alternateName>AXIS_SM_LUNAR</alternateName>
+            <alternateName>LUNAR_SM_AXIS</alternateName>
             <description>lunar orbital semi-major axis</description>
             <value system="MKS">3.844e8</value>
             <value system="CGS">3.844e10</value>
@@ -785,9 +785,9 @@
             </categoryList>
         </PhysicalConstant>
         <PhysicalConstant>
-            <name type="long">LUNAR_ECCENTRICITY</name>
+            <name type="long">ECCENTRICITY_LUNAR</name>
             <name type="short">A_emoon</name>
-            <alternateName>ECCENTRICITY_LUNAR</alternateName>
+            <alternateName>LUNAR_ECCENTRICITY</alternateName>
             <description>lunar orbital eccentricity</description>
             <value>0.0549</value>
             <uncertainty type="relative">0.002</uncertainty>
@@ -800,9 +800,9 @@
             </categoryList>
         </PhysicalConstant>
         <PhysicalConstant>
-            <name type="long">THOMSON_XSECTION</name>
+            <name type="long">THOMSON_CROSS_SECTION</name>
             <name type="short">A_sigmaT</name>
-            <alternateName>THOMSON_CROSS_SECTION</alternateName>
+            <alternateName>THOMSON_XSECTION</alternateName>
             <description>Thomson cross-section</description>
             <value system="MKS">6.6524587158e-29</value>
             <value system="CGS">6.6524587158e-25</value>
@@ -817,9 +817,9 @@
             </categoryList>
         </PhysicalConstant>
         <PhysicalConstant>
-            <name type="long">ELECTRON_MASS</name>
+            <name type="long">MASS_ELECTRON</name>
             <name type="short">A_me</name>
-            <alternateName>MASS_ELECTRON</alternateName>
+            <alternateName>ELECTRON_MASS</alternateName>
             <description>mass of electron</description>
             <value system="MKS">9.10938356e-31</value>
             <value system="CGS">9.10938356e-28</value>
@@ -834,9 +834,9 @@
             </categoryList>
         </PhysicalConstant>
         <PhysicalConstant>
-            <name type="long">PROTON_MASS</name>
+            <name type="long">MASS_PROTON</name>
             <name type="short">A_mp</name>
-            <alternateName>MASS_PROTON</alternateName>
+            <alternateName>PROTON_MASS</alternateName>
             <description>mass of proton</description>
             <value system="MKS">1.672621898e-27</value>
             <value system="CGS">1.672621898e-24</value>
@@ -850,9 +850,9 @@
             </categoryList>
         </PhysicalConstant>
         <PhysicalConstant>
-            <name type="long">NEUTRON_MASS</name>
+            <name type="long">MASS_NEUTRON</name>
             <name type="short">A_mn</name>
-            <alternateName>MASS_NEUTRON</alternateName>
+            <alternateName>NEUTRON_MASS</alternateName>
             <description>neutron mass</description>
             <value system="MKS">1.674927471e-27</value>
             <value system="CGS">1.674927471e-24</value>
@@ -866,9 +866,9 @@
             </categoryList>
         </PhysicalConstant>
         <PhysicalConstant>
-            <name type="long">HYDROGEN_MASS</name>
+            <name type="long">MASS_HYDROGEN</name>
             <name type="short">A_mH</name>
-            <alternateName>MASS_HYDROGEN</alternateName>
+            <alternateName>HYDROGEN_MASS</alternateName>
             <description>mass of Hydrogen atom</description>
             <value>1.67372e-24</value>
             <uncertainty type="relative">1.67372e-27 1e-5</uncertainty>
@@ -895,9 +895,9 @@
             </categoryList>
         </PhysicalConstant>
         <PhysicalConstant>
-            <name type="long">ELECTRON_RADIUS</name>
+            <name type="long">RADIUS_ELECTRON</name>
             <name type="short">A_re</name>
-            <alternateName>RADIUS_ELECTRON</alternateName>
+            <alternateName>ELECTRON_RADIUS</alternateName>
             <description>classical electron radius</description>
             <value system="MKS">2.8179403227e-15</value>
             <value system="CGS">2.8179403227e-13</value>
@@ -912,9 +912,9 @@
             </categoryList>
         </PhysicalConstant>
         <PhysicalConstant>
-            <name type="long">BOHR_RADIUS</name>
+            <name type="long">RADIUS_BOHR</name>
             <name type="short">A_a0</name>
-            <alternateName>RADIUS_BOHR</alternateName>
+            <alternateName>BOHR_RADIUS</alternateName>
             <description>Bohr radius</description>
             <value system="MKS">5.2917721067e-11</value>
             <value system="CGS">5.2917721067e-9</value>
