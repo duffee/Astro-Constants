@@ -13,6 +13,7 @@ use XML::LibXML;
 #die "Usage: $0 infile outfile" unless @ARGV == 1;
 
 my ($tagname, );
+my $dzil_methodtag = q{=method};
 
 my $xml = XML::LibXML->load_xml(location => 'data/PhysicalConstants.xml');
 
@@ -156,7 +157,7 @@ sub write_method_pod {
 
 	say $fh <<"POD";	# writing for Dist::Zilla enhanced Pod
 
-=method $long_name
+$dzil_methodtag $long_name
 
 $display
 $description
@@ -262,11 +263,11 @@ sub write_pod_footer {
 	my ($fh, ) = @_;
 
 	say $fh <<POD;
-=method pretty
+$dzil_methodtag pretty
 
 This is a helper function that rounds a value or list of values to 5 significant figures.
 
-=method precision
+$dzil_methodtag precision
 
 Currently broken.  It will return in v0.11
 
