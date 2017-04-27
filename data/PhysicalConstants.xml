@@ -284,6 +284,36 @@
             </categoryList>
         </PhysicalConstant>
         <PhysicalConstant>
+            <name type="long">FOUR_PI</name>
+            <name type="short">A_4pi</name>
+            <alternateName />
+            <description>trig constant pi times 4 (shorthand in some calculations)</description>
+            <value>12.5663706143592</value>
+            <uncertainty type="relative">0.0000000000001</uncertainty>
+            <dimensions />
+            <maxValue />
+            <minValue />
+            <url href="http://physics.nist.gov/cgi-bin/cuu/Value?pi" />
+            <categoryList>
+                <category>mathematical</category>
+            </categoryList>
+        </PhysicalConstant>
+        <PhysicalConstant>
+            <name type="long">STERADIAN</name>
+            <name type="short">A_ster</name>
+            <alternateName />
+            <description>a measure of solid angle in square degrees</description>
+            <value>57.2957795130823</value>
+            <uncertainty type="relative">0.00000000000001</uncertainty>
+            <dimensions />
+            <maxValue />
+            <minValue />
+            <url href="http://physics.nist.gov/cgi-bin/cuu/Value?pi" />
+            <categoryList>
+                <category>conversion</category>
+            </categoryList>
+        </PhysicalConstant>
+        <PhysicalConstant>
             <name type="long">EXP</name>
             <name type="short">A_exp</name>
             <alternateName />
