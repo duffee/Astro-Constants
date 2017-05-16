@@ -838,5 +838,7 @@ Doug Burke, for giving me the idea to write this module in the
 first place, tidying up Makefile.PL, testing and improving the
 documentation.
 
+=cut
 
+1;
 

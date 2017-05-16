@@ -11,5 +11,16 @@ for current status on issues.
 
 The author keeps forgetting how to run dzil.
 
-* dzil build - builds the module
-* dzil dist	- builds a distribution for uploading
+* dzil build	- builds the module
+* dzil test		- tests the module
+* dzil release	- builds a distribution for uploading
+
+## Perl Critic
+
+Errors that appear on perlcritic and why the design ignores them
+
+### stern
+* use constant	- it's faster than other constant modules
+* unpack @_		- just because
+* Module does not end with "1;"	- it ends with a string.  that's just how I roll
+

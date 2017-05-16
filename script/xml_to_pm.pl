@@ -144,7 +144,7 @@ our \@EXPORT_OK = qw(
 	pretty precision
 );
 
-our \%EXPORT_TAGS = ( 
+our \%EXPORT_TAGS = (
 FOOT
 
 	for my $name (keys %{$tags}) {
@@ -398,7 +398,9 @@ Doug Burke, for giving me the idea to write this module in the
 first place, tidying up Makefile.PL, testing and improving the
 documentation.
 
+=cut
 
+1;
 POD
 }
 
