@@ -1,6 +1,10 @@
-v0.11	2017 April
+v0.11	2017 May
 =====
-Added the following constants for compatability with Astro::Constants
+* Fixed precision() 
+
+* Added the following constants for compatability with Astro::Cosmology
+
+Added
 -----
 
 FOUR_PI 	- 4 * PI
@@ -10,6 +14,7 @@ Deprecated
 ----------
 
 HUBBLE_TIME	- should move to Astro::Cosmology as it's not really constant
+
 
 v0.10
 =====

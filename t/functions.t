@@ -8,6 +8,10 @@ is( pretty(ELECTRON_VOLT), 1.602_18e-19, 'ELECTRON_VOLT rounded to 5 sig figs');
 
 TODO: {
 	local $todo = q/need to implement 'precision'/;
+
+	is( precision('GRAVITATIONAL'), 4.7e-5, 'relative uncertainty in GRAVITATIONAL');
+	is( precision('MASS_EARTH'), 6e20, 'absolute uncertainty in MASS_EARTH');
+
 }
 
 done_testing();

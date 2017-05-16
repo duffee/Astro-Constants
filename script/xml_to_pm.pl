@@ -85,6 +85,11 @@ for my $constant ( $xml->getElementsByTagName('PhysicalConstant') ) {
 		push @{$tagname->{$category}}, $long_name;
 		push @{$tagname->{$category}}, $alternate if $alternate;
 	}
+
+	my $precision = $constant->getChildrenByTagName('uncertainty');
+	store_precision($long_name, 
+		$precision->shift()->textContent(), 
+		$precision->getAttribute('type'));
 }
 
 write_pod_footer($ac_fh);
@@ -116,6 +121,8 @@ HEADER
 sub write_module_footer {
 	my ($fh, $tags) = @_;
 
+	write_precision($fh);
+
 	print $fh <<FOOT;
 
 # some helper functions
@@ -124,6 +131,11 @@ sub pretty {
 		return map { sprintf("\%1.3e", \$_) } \@_;
 	}
 	return sprintf("\%1.3e", shift);
+}
+
+sub precision {
+	my (\$name, \$type) = @_;
+	return \$_precision{\$name}->{value};
 }
 
 our \@EXPORT_OK = qw( 
@@ -135,7 +147,7 @@ our \@EXPORT_OK = qw(
 our \%EXPORT_TAGS = ( 
 FOOT
 
-	for my $name (keys $tags) {
+	for my $name (keys %{$tags}) {
 		print $fh "\t$name => [qw/ @{$tags->{$name}} /],\n";
 	}
 
@@ -281,7 +293,14 @@ This is a helper function that rounds a value or list of values to 5 significant
 
 $dzil_methodtag precision
 
-Currently broken.  It will return in v0.11
+Give this method the string of the constant and it returns the precision or uncertainty
+listed.
+
+  \$rel_precision = precision('GRAVITATIONAL');
+  \$abs_precision = precision('MASS_EARTH');
+
+At the moment you need to know whether the uncertainty is relative or absolute.
+Looking to fix this in future versions.
 
 =head2 Deprecated functions
 
@@ -400,4 +419,23 @@ sub write_constant {
 
 	say $fh "use constant $long_name => $value;";
 	say $fh "\*$short_name = \\$value;" if $short_name;
+}
+
+my %precision;
+sub store_precision {
+	my ($name, $precision, $type) = @_;
+
+	$precision{$name}->{value} = $precision;
+	$precision{$name}->{type} = $type;
+}
+
+sub write_precision {
+	my ($fh) = @_;
+
+	say $fh "\n", 'my %_precision = (';
+	for my $name (sort keys %precision) {
+		my ($value, $type) = @{$precision{$name}}{qw/value type/};
+		say "\t$name \t=> {value => $value, \ttype => $type},"; 
+	}
+	say ')';
 }
