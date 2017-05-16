@@ -902,7 +902,7 @@
             <alternateName>HYDROGEN_MASS</alternateName>
             <description>mass of Hydrogen atom</description>
             <value>1.67372e-24</value>
-            <uncertainty type="relative">1.67372e-27 1e-5</uncertainty>
+            <uncertainty type="relative">1e-5</uncertainty>
             <dimensions />
             <maxValue />
             <minValue />

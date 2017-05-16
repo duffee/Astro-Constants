@@ -86,9 +86,9 @@ for my $constant ( $xml->getElementsByTagName('PhysicalConstant') ) {
 		push @{$tagname->{$category}}, $alternate if $alternate;
 	}
 
-	my $precision = $constant->getChildrenByTagName('uncertainty');
+	my $precision = $constant->getChildrenByTagName('uncertainty')->shift();
 	store_precision($long_name, 
-		$precision->shift()->textContent(), 
+		$precision->textContent(), 
 		$precision->getAttribute('type'));
 }
 
@@ -134,14 +134,14 @@ sub pretty {
 }
 
 sub precision {
-	my (\$name, \$type) = @_;
+	my (\$name, \$type) = \@_;
 	return \$_precision{\$name}->{value};
 }
 
 our \@EXPORT_OK = qw( 
 	@{$tags->{long}}
 	@{$tags->{short}}
-	pretty
+	pretty precision
 );
 
 our \%EXPORT_TAGS = ( 
@@ -423,7 +423,7 @@ sub write_precision {
 	say $fh "\n", 'my %_precision = (';
 	for my $name (sort keys %precision) {
 		my ($value, $type) = @{$precision{$name}}{qw/value type/};
-		say "\t$name \t=> {value => $value, \ttype => $type},"; 
+		say $fh "\t$name \t=> {value => $value, \ttype => '$type'},"; 
 	}
-	say ')';
+	say $fh ');';
 }

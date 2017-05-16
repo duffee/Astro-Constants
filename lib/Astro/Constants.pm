@@ -64,17 +64,17 @@ to check your work?
 Nothing is exported by default, so the module doesn't clobber any of your variables.  
 Select from the following tags:
 
-=for :list
-* :long		(use this one to get the most constants)
-* :short
-* :fundamental
-* :conversion
-* :mathematics
-* :cosmology
-* :planetary
-* :electromagnetic
-* :nuclear
-* :alternates
+-=for :list
+-* :long                (use this one to get the most constants)
+-* :short
+-* :fundamental
+-* :conversion
+-* :mathematics
+-* :cosmology
+-* :planetary
+-* :electromagnetic
+-* :nuclear
+-* :alternates
 
 
 
@@ -246,6 +246,27 @@ trig constant pi
 
 
 This constant is also available using the short name C<$A_pi>
+
+
+=method FOUR_PI
+
+    12.5663706143592
+
+trig constant pi times 4 (shorthand for some calculations)
+
+
+This constant is also available using the short name C<$A_4pi>
+as well as the alternate name C<FOURPI> (imported using the :alternate tag for backwards compatibility)
+
+
+=method STERADIAN
+
+    57.2957795130823
+
+a measure of solid angle in square degrees
+
+
+This constant is also available using the short name C<$A_ster>
 
 
 =method EXP
@@ -700,7 +721,14 @@ This is a helper function that rounds a value or list of values to 5 significant
 
 =method precision
 
-Currently broken.  It will return in v0.11
+Give this method the string of the constant and it returns the precision or uncertainty
+listed.
+
+  $rel_precision = precision('GRAVITATIONAL');
+  $abs_precision = precision('MASS_EARTH');
+
+At the moment you need to know whether the uncertainty is relative or absolute.
+Looking to fix this in future versions.
 
 =head2 Deprecated functions
 
