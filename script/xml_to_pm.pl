@@ -256,29 +256,17 @@ to check your work?
 Nothing is exported by default, so the module doesn't clobber any of your variables.  
 Select from the following tags:
 
-=over 
-
-=item * :long		(use this one to get the most constants)
-
-=item * :short
-
-=item * :fundamental
-
-=item * :conversion
-
-=item * :mathematics
-
-=item * :cosmology
-
-=item * :planetary
-
-=item * :electromagnetic
-
-=item * :nuclear
-
-=item * :alternates
-
-=back
+-=for :list
+-* :long                (use this one to get the most constants)
+-* :short
+-* :fundamental
+-* :conversion
+-* :mathematics
+-* :cosmology
+-* :planetary
+-* :electromagnetic
+-* :nuclear
+-* :alternates
 
 POD
 }
