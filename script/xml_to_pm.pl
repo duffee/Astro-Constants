@@ -147,7 +147,7 @@ our \@EXPORT_OK = qw(
 our \%EXPORT_TAGS = (
 FOOT
 
-	for my $name (keys %{$tags}) {
+	for my $name (sort keys %{$tags}) {
 		print $fh "\t$name => [qw/ @{$tags->{$name}} /],\n";
 	}
 
