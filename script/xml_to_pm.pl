@@ -121,9 +121,9 @@ sub write_module_footer {
 # some helper functions
 sub pretty {
 	if (\@_ > 1) {
-		return map { sprintf("\%1.5e", \$_) } \@_;
+		return map { sprintf("\%1.3e", \$_) } \@_;
 	}
-	return sprintf("\%1.5e", shift);
+	return sprintf("\%1.3e", shift);
 }
 
 our \@EXPORT_OK = qw( 
@@ -244,17 +244,29 @@ to check your work?
 Nothing is exported by default, so the module doesn't clobber any of your variables.  
 Select from the following tags:
 
-=for :list
-* :long		(use this one to get the most constants)
-* :short
-* :fundamental
-* :conversion
-* :mathematics
-* :cosmology
-* :planetary
-* :electromagnetic
-* :nuclear
-* :alternates
+=over 
+
+=item * :long		(use this one to get the most constants)
+
+=item * :short
+
+=item * :fundamental
+
+=item * :conversion
+
+=item * :mathematics
+
+=item * :cosmology
+
+=item * :planetary
+
+=item * :electromagnetic
+
+=item * :nuclear
+
+=item * :alternates
+
+=back
 
 POD
 }
