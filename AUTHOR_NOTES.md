@@ -2,9 +2,10 @@
 
 * precision() - make the function aware of the difference between 
 absolute and relative uncertainty
+* do some benchmarking on the short forms
 
 As always check 
-[the github repository] (https://github.com/duffee/Astro-Constants/issues "Astro::Constants issues")
+[the github repository](https://github.com/duffee/Astro-Constants/issues "Astro::Constants issues")
 for current status on issues.
 
 # Author Notes

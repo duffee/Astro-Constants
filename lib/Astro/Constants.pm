@@ -25,6 +25,13 @@ centimetres /grams /seconds
 with B<Astro::Constants::CGS> and metres /kilograms /seconds with
 B<Astro::Constants::MKS>.
 
+The C<:long> tag imports all the constants in their long name forms
+(i.e. GRAVITATIONAL).  Useful subsets can be imported with these tags:
+C<:fundamental> C<:conversion> C<:mathematics> C<:cosmology> 
+C<:planetary> C<:electromagnetic> or C<:nuclear>.
+Alternate names such as LIGHT_SPEED instead of SPEED_LIGHT or HBAR
+instead of H_BAR are imported with C<:alternates>.  I'd like
+to move away from their use, but they have been in the module for years.
 Short forms of the constant names are included to provide backwards
 compatibility with older versions based on Jeremy Bailin's Astroconst
 library and are available through the import tag C<:short>.
@@ -38,7 +45,6 @@ really inlined functions.
 Short name constants are constructed with the age-old idiom of fiddling
 with the symbol table using typeglobs, e.g. C<*PI = \3.14159>,
 and may be slower than the long name constants.
-I<This could do with some benchmarking.>
 
 =head2 Why use this module
 
@@ -64,17 +70,17 @@ to check your work?
 Nothing is exported by default, so the module doesn't clobber any of your variables.  
 Select from the following tags:
 
--=for :list
--* :long                (use this one to get the most constants)
--* :short
--* :fundamental
--* :conversion
--* :mathematics
--* :cosmology
--* :planetary
--* :electromagnetic
--* :nuclear
--* :alternates
+=for :list
+* :long                (use this one to get the most constants)
+* :short
+* :fundamental
+* :conversion
+* :mathematics
+* :cosmology
+* :planetary
+* :electromagnetic
+* :nuclear
+* :alternates
 
 
 
@@ -840,5 +846,4 @@ documentation.
 
 =cut
 
-1;
 
