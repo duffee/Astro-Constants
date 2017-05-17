@@ -1,5 +1,6 @@
 # Astro-Constants
-This Perl module provides physical constants usefull for astronomy in MKS and CGS systems
+This Perl module provides physical constants useful for astronomy and physics
+in the MKS and CGS systems.
 
 Tired of your programs producing garbage because you mis-typed the gravitational constant
 or assigned a value instead of checking equality?  Why not rely on a module that does
