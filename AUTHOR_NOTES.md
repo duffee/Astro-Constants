@@ -12,9 +12,10 @@ for current status on issues.
 
 The author keeps forgetting how to run dzil.
 
-* dzil build	- builds the module
-* dzil test		- tests the module
-* dzil release	- builds a distribution for uploading
+* ```dzil build```	- builds the module
+* ```dzil test```		- tests the module
+* ```dzil release```	- builds a distribution for uploading to CPAN
+* ```dzil authordeps --missing```	- find missing module dependancies
 
 ## Perl Critic
 
