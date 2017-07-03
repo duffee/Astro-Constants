@@ -135,6 +135,9 @@ sub pretty {
 
 sub precision {
 	my (\$name, \$type) = \@_;
+	warn "precision() requires a string, not the constant value" 
+		unless exists \$_precision{\$name};
+
 	return \$_precision{\$name}->{value};
 }
 

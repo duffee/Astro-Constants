@@ -139,9 +139,9 @@ use constant MASS_PROTON => 1.672621898e-27;
 use constant NEUTRON_MASS => 1.674927471e-27;
 use constant MASS_NEUTRON => 1.674927471e-27;
 *A_mn = \1.674927471e-27;
-use constant HYDROGEN_MASS => 1.67372e-24;
-use constant MASS_HYDROGEN => 1.67372e-24;
-*A_mH = \1.67372e-24;
+use constant HYDROGEN_MASS => 1.6738e-27;
+use constant MASS_HYDROGEN => 1.6738e-27;
+*A_mH = \1.6738e-27;
 use constant MASS_ALPHA => 6.644_657_230e-27;
 *A_ma = \6.644_657_230e-27;
 use constant ELECTRON_RADIUS => 2.8179403227e-15;
@@ -182,7 +182,7 @@ my %_precision = (
 	MASS_ALPHA 	=> {value => 1.2e-8, 	type => 'relative'},
 	MASS_EARTH 	=> {value => 6e20, 	type => 'absolute'},
 	MASS_ELECTRON 	=> {value => 1.2e-8, 	type => 'relative'},
-	MASS_HYDROGEN 	=> {value => 1e-5, 	type => 'relative'},
+	MASS_HYDROGEN 	=> {value => 3.3e-31, 	type => 'absolute'},
 	MASS_LUNAR 	=> {value => 0.0002, 	type => 'relative'},
 	MASS_NEUTRON 	=> {value => 1.2e-8, 	type => 'relative'},
 	MASS_PROTON 	=> {value => 1.2e-8, 	type => 'relative'},
@@ -221,6 +221,9 @@ sub pretty {
 
 sub precision {
 	my ($name, $type) = @_;
+	warn "precision() requires a string, not the constant value" 
+		unless exists $_precision{$name};
+
 	return $_precision{$name}->{value};
 }
 

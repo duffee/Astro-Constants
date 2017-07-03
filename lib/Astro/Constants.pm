@@ -679,9 +679,11 @@ as well as the alternate name C<NEUTRON_MASS> (imported using the :alternate tag
 
 =method MASS_HYDROGEN
 
-    1.67372e-24
+    1.6738e-27
 
-mass of Hydrogen atom
+mass of Hydrogen atom --   
+This value is from the IUPAC and is a little smaller than MASS_PROTON + MASS_ELECTRON, but within the uncertainty given here.  The current value is 1.008u +/- 0.0002 derived from a range of terrestrial materials.  If this is for precision work, you had best understand what you're using.  See https://iupac.org/what-we-do/periodic-table-of-elements/
+
 
 
 This constant is also available using the short name C<$A_mH>

@@ -900,13 +900,16 @@
             <name type="long">MASS_HYDROGEN</name>
             <name type="short">A_mH</name>
             <alternateName>HYDROGEN_MASS</alternateName>
-            <description>mass of Hydrogen atom</description>
-            <value>1.67372e-24</value>
-            <uncertainty type="relative">1e-5</uncertainty>
+            <description>mass of Hydrogen atom --   
+This value is from the IUPAC and is a little smaller than MASS_PROTON + MASS_ELECTRON, but within the uncertainty given here.  The current value is 1.008u +/- 0.0002 derived from a range of terrestrial materials.  If this is for precision work, you had best understand what you're using.  See https://iupac.org/what-we-do/periodic-table-of-elements/
+</description>
+            <value>1.6738e-27</value>
+            <uncertainty type="absolute">3.3e-31</uncertainty>
+            <uncertainty type="relative">0.0002</uncertainty>
             <dimensions />
             <maxValue />
             <minValue />
-            <url href="http://physics.nist.gov/cgi-bin/cuu/Value?" />
+            <url href="https://www.degruyter.com/downloadpdf/j/pac.2016.88.issue-3/pac-2015-0305/pac-2015-0305.pdf" />
             <categoryList>
                 <category>nuclear</category>
             </categoryList>

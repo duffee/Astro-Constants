@@ -1,3 +1,8 @@
+v0.12	2017 July
+====
+* Fixed MASS_HYDROGEN
+* added warning for undefined constants in precision
+
 v0.11	2017 May
 =====
 * Fixed precision() 
