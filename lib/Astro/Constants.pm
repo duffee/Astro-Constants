@@ -1,6 +1,7 @@
 package Astro::Constants;
 # ABSTRACT: this library provides physical constants for use in Astronomy
 
+use 5.006;
 use strict;
 use warnings;
 
