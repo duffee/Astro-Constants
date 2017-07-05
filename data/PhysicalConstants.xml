@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Collection>
     <title>Astro::Constants</title>
-    <description>Physical constants for astronomy for use in Astro::Constants v0.10</description>
-    <timestamp>Thu Dec 10 15:30:55 2015</timestamp>
-    <version>v0.10</version>
+    <description>Physical constants for astronomy for use in Astro::Constants v0.12</description>
+    <timestamp>Wed Jul 5 10:30:55 2017</timestamp>
+    <version>v0.12</version>
     <source>2014 CODATA</source>
     <link href="http://metacpan.org/pod/Astro::Constants" />
     <items>
