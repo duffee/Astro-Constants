@@ -14,6 +14,7 @@ use XML::LibXML;
 
 my ($tagname, );
 my $dzil_methodtag = q{=method};
+my $ALTERNATES_IN_LONG_TAG = 0;
 
 my $xml = XML::LibXML->load_xml(location => 'data/PhysicalConstants.xml');
 
@@ -58,7 +59,8 @@ for my $constant ( $xml->getElementsByTagName('PhysicalConstant') ) {
 			next unless $alternate =~ /\S/;
 
 			push @{$tagname->{alternates}}, $alternate;
-			push @{$tagname->{long}}, $alternate;
+			push @{$tagname->{long}}, $alternate if $ALTERNATES_IN_LONG_TAG;
+			# if alternateName tag has type="deprecated", put in $tagname->{deprecated} not $tagname->{long}
 			push @alternates, $alternate;
 
 			write_constant($mks_fh, ($values->{mks} || $values->{value}), $alternate) 

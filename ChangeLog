@@ -1,7 +1,8 @@
-v0.12	2017 July
+v0.12	2017 Sep
 ====
 * Fixed MASS_HYDROGEN
 * added warning for undefined constants in precision
+* removed alternateNames from :long export tag
 
 v0.11	2017 May
 =====
@@ -21,7 +22,7 @@ Deprecated
 HUBBLE_TIME	- should move to Astro::Cosmology as it's not really constant
 
 
-v0.10
+v0.10	2016 Feb
 =====
 A couple of interface-breaking changes:
 * 'list_constants' and 'describe_constant' have been removed and

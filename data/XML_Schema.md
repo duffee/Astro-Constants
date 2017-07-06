@@ -21,7 +21,9 @@ Options are enclosed in [ ]'s and defaults are **bolded**.
 
 * **name**	- the name of the constant as used in your programming language
  * *type*	- attribute which describes how the name is used.  [**long**, short]
-* **alternativeName**	- used for older names, aliases
+* **alternateName**	- used for older names, aliases, can be more than one
+ * *type*	- attribute which describes how the alternateName is used.  [alias, deprecated]
+ * *version* - version of Constants file in which type decided
 * **description**	- text to describe the constant
 * **value**	- the numerical value of the constant
  * *system*	- the system of units for the value [**MKS**, CGS]
@@ -34,7 +36,7 @@ Options are enclosed in [ ]'s and defaults are **bolded**.
 * **categoryList**	- a list of *category* items that the constant belongs to
 * **deprecated**	- used to flag a constant that has been deprecated and will be removed from future versions. 
  * *date*	- date of deprecation decision
- * *version*	- version of deprecation decision
+ * *version*	- version of PhysicalConstants file when deprecated
 
 ### category
 I use these to export groups of constants into the namespace.
