@@ -1,14 +1,19 @@
+%Author Notes
+
 # To Do list
 
-* precision() - make the function aware of the difference between 
+* ```precision()``` - make the function aware of the difference between 
 absolute and relative uncertainty
-* do some benchmarking on the short forms
+* do some benchmarking on the short forms vs the long names
 
 As always check 
 [the github repository](https://github.com/duffee/Astro-Constants/issues "Astro::Constants issues")
 for current status on issues.
 
-# Author Notes
+
+# How to Release
+
+## Using Dzil
 
 The author keeps forgetting how to run dzil.
 
@@ -16,6 +21,22 @@ The author keeps forgetting how to run dzil.
 * ```dzil test```		- tests the module
 * ```dzil release```	- builds a distribution for uploading to CPAN
 * ```dzil authordeps --missing```	- find missing module dependancies
+
+## Release checklist
+
+* tests pass
+* update version in dist.ini
+* check [CPANTS](http://matrix.cpantesters.org/?dist=Astro-Constants)
+* check [RT](https://rt.cpan.org/Public/Dist/Display.html?Name=Astro-Constants)
+* check [Git Pulse](https://github.com/duffee/Astro-Constants/pulse/monthly) for pending issues and pull requests
+* update ChangeLog with history from ```git log```
+* link Constants.pm to Constants/DatasourceYear.pm or move old version of Constants.pm to Constants/2017.pm if changes to values in PhysicalConstants.xml
+* update git repo tag to new version number
+* build CPAN release - ```dzil release```
+* [upload](https://pause.perl.org/pause/authenquery?ACTION=add_uri) to CPAN (dzil could do this)
+* email announcement to the Quantified Onion group
+
+# Design Decisions
 
 ## Perl Critic
 
@@ -26,15 +47,33 @@ Errors that appear on perlcritic and why the design ignores them
 * unpack @_		- just because
 * Module does not end with "1;"	- it ends with a string.  that's just how I roll
 
-## Deprecation
+
+# Making changes to *PhysicalConstants.xml*
+
+## Adding a Constant
+
+There is a script that will add a number of constants to the Constants file
+ script/add_constants.pl
+assumes the following:
+* value in units of MKS
+* the uncertainty or precision is given relative to the value
+
+## Modifying a Constant
+
+For now I edit the XML with XML Copy Editor.
+Rather than building an editor, I should have a validator.
+
+## Deprecating a Constant
+
 One step per version.  No faster.
 
 * if changing name, move name to alternateName
 * add to alternate tag
 * announce decision to deprecate in upcoming version
 * add deprecated tag
-** emit warning
-** removed from long
+ * emit warning on using (in Constants.pm)
+ * removed from long
+* add notice of deprecation in ChangeLog
 
 ### Changing a Name
 
