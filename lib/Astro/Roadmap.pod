@@ -1,0 +1,22 @@
+=head1 ROADMAP
+
+Here we set out the vision for the future of C<Astro::Constants>.
+
+=head1 v0.13
+
+=for :list
+* deprecate Astro::Constants::CGS 
+* Final warning of long name deprecation
+ 
+=head1 v0.14
+
+=for :list
+* looking at Units for constants (in the <dimensions/> tag)
+* benchmarking
+* constant value verification
+
+=head1 v0.15
+
+=head1 v0.17
+
+=cut
