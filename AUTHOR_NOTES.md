@@ -35,6 +35,7 @@ The author keeps forgetting how to run dzil.
 * build CPAN release - ```dzil release```
 * [upload](https://pause.perl.org/pause/authenquery?ACTION=add_uri) to CPAN (dzil could do this)
 * email announcement to the Quantified Onion group
+* add missing steps to this checklist
 
 # Design Decisions
 
