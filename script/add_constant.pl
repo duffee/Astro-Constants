@@ -2,6 +2,10 @@
 #
 # Adds a constant to PhysicalConstants.xml
 # Boyd Duffee, July 2017
+#
+# TODO
+# - check that constant name does not already exist
+# - write out a file of local changes so that the main file can be patched
 
 use strict;
 use autodie;
@@ -11,6 +15,9 @@ use XML::LibXML;
 my $file = $ARGV[0] || '../data/PhysicalConstants.xml';
 die "Can't file $file (run from the script directory)" unless -f $file;
 
+my $bak = $file . '.bak';
+die "Script won't overwrite backup file $bak  Stopping." if -f $bak;
+
 my $xml = XML::LibXML->load_xml(location => $file, no_blanks => 1);
 my ($short, $long, $description, $cgs, $value, $precision, $category_list, @categories,
 	$dimensions, $minValue, $maxValue, $url,  );
@@ -19,19 +26,6 @@ my %category = ( fundamental => 1 , cosmology => 1, electromagnetic => 1,
 	planetary => 1, conversion => 1, nuclear => 1, mathematical => 1,
 ); 
 
-($short, $long) = ('A_s', 'NAME_LONG');
-@categories = (qw/fundamental nuclear conversion/);
-($value, $precision) = ('2.99e8', 0.01);
-$description = <<EOT;
-This is a long description.
-It takes many lines
-'cuz I do
-EOT
-$url = 'http://localhost/constant';
-
-append_to_list();
-write_entries();
-exit;
 
 my $add_constant = 1;
 while ($add_constant) {
@@ -85,23 +79,24 @@ EDIT
 
 sub write_entries {
 	print <<"EDIT";
-I would have written this to $file
-short name\t $short
+These are the values that will be written to $file
 long name\t $long
+short name\t $short
 description\t $description
 value \t $value
 precision\t $precision
 categories\t $category_list
 
 I should ask if you really want to overwrite the file,
-but I do it automatically for now.
+but I do it automatically for now.  The original file 
+was written to $bak
 EDIT
 
-	my $bak = $file . '.bak';
-	print "link $file, $bak";
+	rename $file, $bak;
 
-	open my $fh, '>', 'constants.xml';
+	open my $fh, '>', $file;
     print {$fh} $xml->toString(2);
+	close $fh;
 }
 
 sub append_to_list {
@@ -126,13 +121,13 @@ sub append_to_list {
         $e->appendText( $description );
         $new_constant->addChild($e);
     }
-    if ($value) {
+    if (defined $value) {
         my $e = XML::LibXML::Element->new('value');
         $e->setAttribute( 'system', 'MKS' );
         $e->appendText( $value );
         $new_constant->addChild($e);
     }
-    if ($precision) {
+    if (defined $precision) {
         my $e = XML::LibXML::Element->new('uncertainty');
         $e->setAttribute( 'type', 'relative' );
         $e->appendText( $precision );
@@ -146,7 +141,7 @@ sub append_to_list {
 	else {
 		$new_constant->addChild( XML::LibXML::Element->new('dimensions') );
 	}
-    if ($maxValue) {
+    if (defined $maxValue) {
         my $e = XML::LibXML::Element->new('maxValue');
         $e->appendText( $maxValue );
         $new_constant->addChild($e);
@@ -154,7 +149,7 @@ sub append_to_list {
 	else {
 		$new_constant->addChild( XML::LibXML::Element->new('maxValue') );
 	}
-    if ($minValue) {
+    if (defined $minValue) {
         my $e = XML::LibXML::Element->new('minValue');
         $e->appendText( $minValue );
         $new_constant->addChild($e);
@@ -185,7 +180,7 @@ sub append_to_list {
 sub get_short_name {
 	print "Short name for constant (A_c)\t";
 	$short = <STDIN>;
-	chomp $short;
+	$short =~ s/\s//g;
 }
 
 sub get_long_name {
@@ -197,6 +192,7 @@ sub get_long_name {
 			print "This field is mandatory\n";
 			redo GET_NAME;
 		}
+		$long =~ s/\s//g;
 	}
 }
 
@@ -209,7 +205,8 @@ sub get_description {
 sub get_value {
 	print "Value for constant (2.99e8)\t";
 	$value = <STDIN>;
-	chomp $value;
+	$value =~ s/\s*$//g;
+	$value =~ s/^\s*//g;
 }
 
 sub get_precision {

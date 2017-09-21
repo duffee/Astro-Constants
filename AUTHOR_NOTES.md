@@ -1,4 +1,4 @@
-%Author Notes
+% Author Notes
 
 # To Do list
 
