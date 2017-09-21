@@ -1,10 +1,14 @@
-% Author Notes
+# Author Notes
+
+These are the Author's notes to himself.
 
 # To Do list
 
 * ```precision()``` - make the function aware of the difference between 
 absolute and relative uncertainty
 * do some benchmarking on the short forms vs the long names
+* add_constants.pl shouldn't duplicate a constant
+* deprecation should be semi-automated
 
 As always check 
 [the github repository](https://github.com/duffee/Astro-Constants/issues "Astro::Constants issues")
