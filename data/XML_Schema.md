@@ -60,3 +60,7 @@ Here are some possibilities.
 
 * **name**	- could add a *language* attribute for names in other programming languages [ruby, python, go].
 * **value** - for *system*, MKS could change to SI.  Why, Oh Why would you introduce imperial measurements?
+
+# Proposed Changes
+
+* change ```<url href=""/>``` to ```<source url="http://site" />``` in v0.14
