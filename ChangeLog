@@ -1,4 +1,4 @@
-v0.12	2017 Sep
+v0.12	2017 Oct
 ====
 * Fixed MASS_HYDROGEN
 * added warning for undefined constants in precision
