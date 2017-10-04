@@ -1,6 +1,8 @@
 use strict;
 use Test::More;
-use XML::LibXML;
+eval "use XML::LibXML 2.0100";
+plan skip_all => "XML::LibXML 2.0100 required for validating PhysicalConstants against the schema" 
+	if $@;
 
 my $schema_file = 'data/PhysicalConstants.xsd';
 my $xml_file = 'data/PhysicalConstants.xml';
