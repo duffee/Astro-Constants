@@ -58,4 +58,17 @@ How can this schema be extended.  We want flexibility, but not breaking changes.
 Here are some possibilities.
 
 * **name**	- could add a *language* attribute for names in other programming languages [ruby, python, go].
-* **value** - for *system*, MKS could change to SI.  Why Oh Why would you introduce imperial measurements?
+* **value**	- for *system*, MKS could change to SI.  Why Oh Why would you introduce imperial measurements?
+* **source**	- original source for this constant
+  * should the Collection source element be a sourceList instead?
+
+* **symbol**	- symbol used for the constants, for non-ascii symbols, the representation in various markups is listed
+  * element can be an ascii symbol or contain a **symbolRepresentation** complexType
+
+## Re-design Schema
+
+This is what I think the Schema should become.
+
+* **Collection > source** should become **Collection > SourceList > Source**
+  * where **Source** has a *name*, *URI*, *date-published* and possibly *authority* in order to identify the source
+* **dimensions** should become a complexType containing all the basic units

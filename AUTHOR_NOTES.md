@@ -9,6 +9,8 @@ absolute and relative uncertainty
 * do some benchmarking on the short forms vs the long names
 * add_constants.pl shouldn't duplicate a constant
 * deprecation should be semi-automated
+* add symbols and sources to PhysicalConstants.xml
+* check the data/XML_Schema.md file for notes on how to modify the schema
 
 As always check 
 [the github repository](https://github.com/duffee/Astro-Constants/issues "Astro::Constants issues")
@@ -105,3 +107,23 @@ One step per version.  No faster.
 * remove constant from PhysicalConstants file (to RemovedConstants.xml?)
  * note removal in ChangeLog
 
+## Add *symbol* to PhysicalConstants.xml schema
+
+* adding entity "symbol" to schema
+  * no type attribute required if constant is a Latin character
+  * otherwise
+    * unicode
+    * description, usually the unicode description of the character(s)
+    * latex and html are the representations to produce the symbol
+      * need to find the XML representation of & so that I can produce &pi; in valid XML
+    * ascii - how symbol is traditionally rendered in ascii format
+* take a look a the diff between PhysicalConstants.xml and PhysicalConstants_with_symbols.xml
+
+
+# Design decisions
+
+## PhysicalConstants
+
+I chose to keep the Constant definitions in XML for its language independance and validation tools.
+Other people have the ability to edit the file and I'd like a way of verifying that the definition
+file is correct before the processing tools get blown out of the water.
