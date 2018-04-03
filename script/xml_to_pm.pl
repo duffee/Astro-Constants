@@ -119,6 +119,24 @@ HEADER
 	else {
 		print $fh "use base qw/Exporter/;\n\n";
 	}
+	if ($name eq 'Astro::Constants::CGS') {
+		print $fh q(warn "use of $name is deprecated and will be removed from the package in version 0.15";\n);
+		print $fh q(warn "write new code to use Astro::Constants::MKS instead";\n\n);
+		print $fh <<"NOTICE";
+warn "use of $name is deprecated and will be removed from the package in version 0.15";
+warn "write new code to use Astro::Constants::MKS instead";
+
+=head1 NOTICE OF DEPRECATION
+
+This module is now deprecated and will be removed from the package in version 0.15.
+Write new code to use L<Astro::Constants> or check the documentation.
+The IAU stopped using cgs units last century, so it's about time this module was archived.
+
+=cut
+
+
+NOTICE
+	}
 }
 
 sub write_module_footer {

@@ -1,6 +1,7 @@
 v0.13	2018 May
 ====
 * adding symbols to PhysicalConstants.xml definition file
+* adding deprecation warning to Astro::Constants::CGS - to be removed from package v0.15
 
 v0.12	2017 Sep
 ====
