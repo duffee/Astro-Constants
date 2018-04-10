@@ -165,6 +165,7 @@ sub precision {
 our \@EXPORT_OK = qw( 
 	@{$tags->{long}}
 	@{$tags->{short}}
+	@{$tags->{alternates}}
 	pretty precision
 );
 
@@ -175,8 +176,10 @@ FOOT
 		print $fh "\t$name => [qw/ @{$tags->{$name}} /],\n";
 	}
 
+	print $fh ");\n";
+	print $fh "push \@EXPORT_OK, qw/@{$tags->{deprecated}}/;\n" 
+		if exists $tags->{deprecated} && @{$tags->{deprecated}};
 	print $fh <<FOOT;
-);
 
 'Perl is my Igor';
 FOOT

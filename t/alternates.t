@@ -1,6 +1,6 @@
 use strict;
 use Test::More;
-use Astro::Constants::MKS qw/:long/;
+use Astro::Constants::MKS qw/:long :alternates/;
 
 # test that all of a constant's alternate values are included
 

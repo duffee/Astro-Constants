@@ -374,7 +374,7 @@
             <dimensions />
             <maxValue />
             <minValue />
-            <url href="https://cneos.jpl.nasa.gov/glossary/au.html" />
+            <url href="http://physics.nist.gov/cgi-bin/cuu/Value?AU" />
             <categoryList>
                 <category>conversion</category>
                 <category>cosmology</category>

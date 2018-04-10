@@ -57,6 +57,12 @@ Errors that appear on perlcritic and why the design ignores them
 
 # Making changes to *PhysicalConstants.xml*
 
+_Any changes should be kept_  
+Look in ```data/old_versions/constants_YEAR_VERSION.xml```
+As a change is made, make copy of PhysicalConstants.xml  to the year and 
+upcoming release version of Astro::Constants
+
+
 ## Adding a Constant
 
 There is a script that will add a number of constants to the Constants file

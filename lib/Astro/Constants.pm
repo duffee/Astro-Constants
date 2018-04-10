@@ -72,16 +72,16 @@ Nothing is exported by default, so the module doesn't clobber any of your variab
 Select from the following tags:
 
 =for :list
-* :long                (use this one to get the most constants)
-* :short
-* :fundamental
-* :conversion
-* :mathematics
-* :cosmology
-* :planetary
-* :electromagnetic
-* :nuclear
-* :alternates
+* C<:long>                (use this one to get the most constants)
+* C<:short>
+* C<:fundamental>
+* C<:conversion>
+* C<:mathematics>
+* C<:cosmology>
+* C<:planetary>
+* C<:electromagnetic>
+* C<:nuclear>
+* C<:alternates>
 
 
 

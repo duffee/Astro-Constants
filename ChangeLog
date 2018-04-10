@@ -3,8 +3,8 @@ v0.13	2018 May
 * adding symbols to PhysicalConstants.xml definition file
 * adding deprecation warning to Astro::Constants::CGS - to be removed from package v0.15
 
-v0.12	2017 Sep
-====
+v0.12	2017 Oct
+=====
 * Fixed MASS_HYDROGEN
 * added warning for undefined constants in precision
 * removed alternateNames from :long export tag

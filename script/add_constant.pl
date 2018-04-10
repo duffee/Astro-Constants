@@ -14,6 +14,8 @@ use XML::LibXML;
 
 my $file = $ARGV[0] || '../data/PhysicalConstants.xml';
 die "Can't file $file (run from the script directory)" unless -f $file;
+my $schema_file = $file;
+$schema_file =~ s/\.xml$/.xsd/; 
 
 my $bak = $file . '.bak';
 die "Script won't overwrite backup file $bak  Stopping." if -f $bak;
@@ -90,8 +92,20 @@ categories\t $category_list
 I should ask if you really want to overwrite the file,
 but I do it automatically for now.  The original file 
 was written to $bak
+
+I should really, REALLY, validate the new xml file
+against PhysicalConstant.xsd before overwriting the main file.
 EDIT
 
+	if (-f $schema_file) {
+		my $schema =  XML::LibXML::Schema->new( location => $schema_file );
+		eval { $schema->validate( $xml ); };
+		warn "Couldn't validate PhysicalConstants.xml against $schema_file: \n\t$@" 
+			if $@;
+	}
+	else {
+		warn "No XML Schema file to validate against at $schema_file";
+	}
 	rename $file, $bak;
 
 	open my $fh, '>', $file;
