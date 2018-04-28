@@ -751,6 +751,7 @@ the documentation.  Use C<perldoc Astro::Constants> for that information.
 * L<Perl Data Language|PDL>
 * L<NIST|http://physics.nist.gov>
 * L<Astronomical Almanac|http://asa.usno.navy.mil>
+* L<IAU 2015 Resolution B3|http://iopscience.iop.org/article/10.3847/0004-6256/152/2/41/meta>
 * L<Neil Bower's review on providing read-only values|http://neilb.org/reviews/constants.html>
 * L<Test::Number::Delta>
 * L<Test::Deep::NumberTolerant> for testing values within objects

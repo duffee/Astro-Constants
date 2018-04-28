@@ -14,7 +14,6 @@ use XML::LibXML;
 
 my ($tagname, );
 my $dzil_methodtag = q{=method};
-my $ALTERNATES_IN_LONG_TAG = 0;
 
 my $xml = XML::LibXML->load_xml(location => 'data/PhysicalConstants.xml');
 
@@ -59,8 +58,12 @@ for my $constant ( $xml->getElementsByTagName('PhysicalConstant') ) {
 			next unless $alternate =~ /\S/;
 
 			push @{$tagname->{alternates}}, $alternate;
-			push @{$tagname->{long}}, $alternate if $ALTERNATES_IN_LONG_TAG;
-			# if alternateName tag has type="deprecated", put in $tagname->{deprecated} not $tagname->{long}
+			if ($node->hasAttribute('type') && $node->getAttribute('type') eq 'deprecated') {
+				push @{$tagname->{deprecated}}, $alternate;
+			}
+			else {
+				push @{$tagname->{long}}, $alternate;
+			}
 			push @alternates, $alternate;
 
 			write_constant($mks_fh, ($values->{mks} || $values->{value}), $alternate) 
@@ -120,8 +123,8 @@ HEADER
 		print $fh "use base qw/Exporter/;\n\n";
 	}
 	if ($name eq 'Astro::Constants::CGS') {
-		print $fh q(warn "use of $name is deprecated and will be removed from the package in version 0.15";\n);
-		print $fh q(warn "write new code to use Astro::Constants::MKS instead";\n\n);
+		print $fh qq(warn "use of $name is deprecated and will be removed from the package in version 0.15";\n);
+		print $fh qq(warn "write new code to use Astro::Constants::MKS instead";\n\n);
 		print $fh <<"NOTICE";
 warn "use of $name is deprecated and will be removed from the package in version 0.15";
 warn "write new code to use Astro::Constants::MKS instead";
@@ -335,6 +338,7 @@ the documentation.  Use C<perldoc Astro::Constants> for that information.
 * L<Perl Data Language|PDL>
 * L<NIST|http://physics.nist.gov>
 * L<Astronomical Almanac|http://asa.usno.navy.mil>
+* L<IAU 2015 Resolution B3|http://iopscience.iop.org/article/10.3847/0004-6256/152/2/41/meta>
 * L<Neil Bower's review on providing read-only values|http://neilb.org/reviews/constants.html>
 * L<Test::Number::Delta>
 * L<Test::Deep::NumberTolerant> for testing values within objects
