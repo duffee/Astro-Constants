@@ -31,7 +31,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element ref="name" maxOccurs="unbounded"/>
-        <xs:element name="alternateName" type="xs:string"/>
+        <xs:element name="alternateName" minOccurs="0" maxOccurs="unbounded" type="xs:string"/>
         <xs:element ref="symbol" minOccurs="0" maxOccurs="unbounded"/>
         <xs:element name="description" type="xs:string"/>
         <xs:element ref="value" maxOccurs="unbounded"/>

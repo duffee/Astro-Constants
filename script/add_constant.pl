@@ -109,7 +109,7 @@ EDIT
 	rename $file, $bak;
 
 	open my $fh, '>', $file;
-    print {$fh} $xml->toString(2);
+	print {$fh} $xml->toString(2);
 	close $fh;
 }
 
