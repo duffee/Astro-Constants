@@ -2,6 +2,8 @@ v0.13	2018 May
 ====
 * adding symbols to PhysicalConstants.xml definition file
 * adding deprecation warning to Astro::Constants::CGS - to be removed from package v0.15
+* alternateName element in PhysicalConstants.xml can now take a "type" attribute
+* alternateName with type=deprecated are now listed with the deprecated tag, not the long tag
 
 v0.12	2017 Oct
 =====
