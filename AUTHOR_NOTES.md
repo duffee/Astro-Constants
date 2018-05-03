@@ -27,6 +27,7 @@ The author keeps forgetting how to run dzil.
 * ```dzil test```		- tests the module
 * ```dzil release```	- builds a distribution for uploading to CPAN
 * ```dzil authordeps --missing```	- find missing module dependancies
+* ```dzil mkrpmspec```	- part of the Fedora RPM build process
 
 ## Release checklist
 

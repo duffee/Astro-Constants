@@ -1,8 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-  elementFormDefault="qualified">
-
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
   <xs:element name="Collection">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        This schema definition was developed for Astro::Constants v0.13
+        to validate the PhysicalConstants.xml file after adding data
+        Boyd Duffee, May 2018.
+      </xs:documentation>
+    </xs:annotation>
     <xs:complexType>
       <xs:sequence>
         <xs:element name="title" type="xs:string"/>
@@ -30,11 +35,11 @@
   <xs:element name="PhysicalConstant">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="name" maxOccurs="unbounded"/>
+        <xs:element ref="name" maxOccurs="unbounded" minOccurs="1"/>
         <xs:element name="alternateName" minOccurs="0" maxOccurs="unbounded" type="xs:string"/>
         <xs:element ref="symbol" minOccurs="0" maxOccurs="unbounded"/>
         <xs:element name="description" type="xs:string"/>
-        <xs:element ref="value" maxOccurs="unbounded"/>
+        <xs:element ref="value" minOccurs="1" maxOccurs="unbounded"/>
         <xs:element ref="uncertainty" maxOccurs="unbounded"/>
         <xs:element name="dimensions" type="xs:string"/>
         <xs:element name="maxValue" type="xs:string"/>
@@ -51,8 +56,16 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="symbol">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+      The symbol element can contain a string of ascii characters
+      or uses the symbolRepresentation definition in order to hold more information
+    </xs:documentation>
+    </xs:annotation>
     <xs:complexType mixed="true">
-      <xs:attribute name="type" type="xs:string" use="optional"/>
+      <xs:choice>
+        <xs:element ref="symbolRepresentation" minOccurs="0"/>
+      </xs:choice>
     </xs:complexType>
   </xs:element>
   <xs:element name="value">
@@ -75,6 +88,18 @@
       <xs:sequence>
         <xs:element name="category" type="xs:string" maxOccurs="unbounded"/>
       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="symbolRepresentation">
+    <xs:complexType>
+      <xs:choice maxOccurs="6">
+        <xs:element name="unicode" type="xs:string"/>
+        <xs:element name="codepoint" type="xs:string"/>
+        <xs:element name="description" type="xs:string"/>
+        <xs:element name="latex" type="xs:string"/>
+        <xs:element name="html" type="xs:string"/>
+        <xs:element name="ascii" type="xs:string"/>
+      </xs:choice>
     </xs:complexType>
   </xs:element>
   <xs:element name="deprecated">
