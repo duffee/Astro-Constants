@@ -6,6 +6,7 @@
 # TODO
 # - check that constant name does not already exist
 # - write out a file of local changes so that the main file can be patched
+# - use relative paths to run script from anywhere
 
 use strict;
 use autodie;

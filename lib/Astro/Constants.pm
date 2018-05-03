@@ -724,6 +724,26 @@ Bohr radius
 This constant is also available using the short name C<$A_a0>
 as well as the alternate name C<BOHR_RADIUS> (imported using the :alternate tag for backwards compatibility)
 
+
+=method RADIUS_JUPITER
+
+    69_911_000	MKS
+
+Volumetric mean radius of Jupiter
+
+
+This constant is also available using the short name C<$A_rjup>
+
+
+=method MASS_JUPITER
+
+    1.89819e27	MKS
+
+mass of Jupiter
+
+
+This constant is also available using the short name C<$A_mjup>
+
 =method pretty
 
 This is a helper function that rounds a value or list of values to 5 significant figures.
