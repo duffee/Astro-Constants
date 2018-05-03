@@ -1,5 +1,5 @@
 package Astro::Constants::MKS;
-# ABSTRACT: this library provides physical constants for use in Astronomy
+# ABSTRACT: This library provides physical constants for use in Physics and Astronomy based on values from CODATA2014.
 
 use 5.006;
 use strict;

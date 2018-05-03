@@ -24,6 +24,8 @@ nytprof.out
 # Dist::Zilla generated files
 Astro-Constants-*
 *.gz
+# generated for packaging rpm
+dzil.spec
 
 # files I don't want to see
 data/old
