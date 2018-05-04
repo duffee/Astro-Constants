@@ -118,9 +118,9 @@
       </categoryList>
     </PhysicalConstant>
     <PhysicalConstant>
-      <name type="long">CHARGE_ELEMENTARY</name>
+      <name type="long">ELECTRON_CHARGE</name>
       <name type="short">A_e</name>
-      <alternateName>ELECTRON_CHARGE</alternateName>
+      <alternateName>CHARGE_ELEMENTARY</alternateName>
       <description>electron charge (defined positive)</description>
       <value system="MKS">1.6021766208e-19</value>
       <value system="CGS">4.8032046729e-10</value>

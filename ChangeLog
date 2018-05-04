@@ -4,6 +4,10 @@ v0.13	2018 May
 * adding deprecation warning to Astro::Constants::CGS - to be removed from package v0.15
 * alternateName element in PhysicalConstants.xml can now take a "type" attribute
 * alternateName with type=deprecated are now listed with the deprecated tag, not the long tag
+* adding RADIUS_JUPITER and MASS_JUPITER to the definition file
+* adding notice of deprecation to Astro::Constants::CGS
+* updating schema definition to accommodate symbol elements and allow attributes in alternateName
+* switched ELECTRON_CHARGE to CHARGE_ELEMENTARY in long name and alternateName
 
 v0.12	2017 Oct
 =====
