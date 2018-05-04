@@ -153,7 +153,7 @@ This constant is also available using the short name C<$A_hbar>
 as well as the alternate name C<HBAR> (imported using the :alternate tag for backwards compatibility)
 
 
-=method ELECTRON_CHARGE
+=method CHARGE_ELEMENTARY
 
     1.6021766208e-19	MKS
     4.8032046729e-10	CGS
@@ -162,7 +162,7 @@ electron charge (defined positive)
 
 
 This constant is also available using the short name C<$A_e>
-as well as the alternate name C<CHARGE_ELEMENTARY> (imported using the :alternate tag for backwards compatibility)
+as well as the alternate name C<ELECTRON_CHARGE> (imported using the :alternate tag for backwards compatibility)
 
 
 =method STEFAN_BOLTZMANN
