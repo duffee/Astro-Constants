@@ -96,11 +96,10 @@ sub write_module_header {
 	my ($fh, $name) = @_;
 
 	print $fh <<HEADER;
-package $name;
-# ABSTRACT: this library provides physical constants for use in Astronomy
-
 use v6;
 unit class Astro::Constants:ver<0.0.1>:auth<github:Duffee>;
+
+# ABSTRACT: this library provides physical constants for use in Astronomy
 
 HEADER
 	if ($name eq 'Astro::Constants') {

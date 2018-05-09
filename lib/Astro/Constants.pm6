@@ -1,8 +1,7 @@
-package Astro::Constants;
-# ABSTRACT: this library provides physical constants for use in Astronomy
-
 use v6;
 unit class Astro::Constants:ver<0.0.1>:auth<github:Duffee>;
+
+# ABSTRACT: this library provides physical constants for use in Astronomy
 
 
   'They are not constant but are changing still. - Cymbeline, Act II, Scene 5';
