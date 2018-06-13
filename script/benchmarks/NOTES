@@ -36,3 +36,14 @@ using k in calculations (where k = 1/4 PI epsilon_0) is about as fast as
 just including 1/4 PI epsilon_0 in the calculation.  There is no
 real speedup (differences are about 5% either way) and the only gain
 is in readability.
+
+Profiling
+=========
+
+using ```
+perl -d:NYTProf profile_long.pl
+nytprofhtml --open
+```
+to examine the time that a program spends starting up, it looks like there's no
+speed up to be found in importing a smaller tag.  It spends about 4ms whether
+it's looking up ```:long``` or ```:planetary```.
