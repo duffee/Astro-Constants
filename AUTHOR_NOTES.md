@@ -6,11 +6,12 @@ These are the Author's notes to himself.
 
 * ```precision()``` - make the function aware of the difference between 
 absolute and relative uncertainty
-* do some benchmarking on the short forms vs the long names
+* ~~do some benchmarking on the short forms vs the long names~~
 * add_constants.pl shouldn't duplicate a constant
 * deprecation should be semi-automated
 * add symbols and sources to PhysicalConstants.xml
 * check the data/XML_Schema.md file for notes on how to modify the schema
+* consider adding Coulomb's constant k = 1/4 PI epsilon_0 for better readability (not speed)
 
 As always check 
 [the github repository](https://github.com/duffee/Astro-Constants/issues "Astro::Constants issues")
