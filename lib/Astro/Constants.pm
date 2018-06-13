@@ -66,6 +66,13 @@ Trusting someone else's code does carry some risk, which you I<should> consider,
 but have you also considered the risk of doing it yourself with no one else 
 to check your work?
 
+=head3 And plus, it's B<FASTER>
+
+Benchmarking has shown that the imported constants can be more than 3 times
+faster than using variables or other constant modules because of the way
+the compiler optimizes your code.  So, if you've got a lot of calculating to do,
+this is the module to do it with.
+
 =head1 EXPORT
 
 Nothing is exported by default, so the module doesn't clobber any of your variables.  
