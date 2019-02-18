@@ -96,7 +96,6 @@ Select from the following tags:
 
 speed of light in a vacuum
 
-
 This constant is also available using the alternate name C<LIGHT_SPEED> (imported using the :alternate tag for backwards compatibility)
 
 =end pod
@@ -110,8 +109,6 @@ our constant SPEED_LIGHT is export(:fundamental :cosmology :electromagnetic) = 2
 
 Boltzmann's constant
 
-
-
 =end pod
 
 our constant BOLTZMANN is export(:fundamental :electromagnetic) = 1.38064852e-23;
@@ -122,8 +119,6 @@ our constant BOLTZMANN is export(:fundamental :electromagnetic) = 1.38064852e-23
     6.67408e-8	CGS
 
 universal gravitational constant
-
-
 
 =end pod
 
@@ -136,8 +131,6 @@ our constant GRAVITATIONAL is export(:fundamental :cosmology :planetary) = 6.674
 
 electron volt
 
-
-
 =end pod
 
 our constant ELECTRON_VOLT is export(:fundamental :conversion :electromagnetic :nuclear) = 1.6021766208e-19;
@@ -149,8 +142,6 @@ our constant ELECTRON_VOLT is export(:fundamental :conversion :electromagnetic :
 
 Planck constant
 
-
-
 =end pod
 
 our constant PLANCK is export(:fundamental :cosmology :electromagnetic :nuclear) = 6.626070040e-34;
@@ -161,7 +152,6 @@ our constant PLANCK is export(:fundamental :cosmology :electromagnetic :nuclear)
     1.054571800e-27	CGS
 
 Planck's constant /2pi
-
 
 This constant is also available using the alternate name C<HBAR> (imported using the :alternate tag for backwards compatibility)
 
@@ -176,7 +166,6 @@ our constant H_BAR is export(:fundamental :cosmology :electromagnetic :nuclear) 
 
 electron charge (defined positive)
 
-
 This constant is also available using the alternate name C<ELECTRON_CHARGE> (imported using the :alternate tag for backwards compatibility)
 
 =end pod
@@ -190,8 +179,6 @@ our constant CHARGE_ELEMENTARY is export(:fundamental :electromagnetic :nuclear)
 
 Stefan-Boltzmann constant
 
-
-
 =end pod
 
 our constant STEFAN_BOLTZMANN is export(:fundamental :cosmology :electromagnetic :nuclear) = 5.670367e-8;
@@ -202,7 +189,6 @@ our constant STEFAN_BOLTZMANN is export(:fundamental :cosmology :electromagnetic
     7.565723e-15	CGS
 
 radiation density constant, 4 * sigma / c
-
 
 This constant is also available using the alternate name C<A_RAD> (imported using the :alternate tag for backwards compatibility)
 
@@ -217,8 +203,6 @@ our constant DENSITY_RADIATION is export(:fundamental :cosmology :electromagneti
 
 Wien wavelength displacement law constant
 
-
-
 =end pod
 
 our constant WIEN is export(:fundamental :electromagnetic :cosmology :planetary :nuclear) = 2.8977729e-3;
@@ -230,8 +214,6 @@ our constant WIEN is export(:fundamental :electromagnetic :cosmology :planetary 
 
 fine structure constant
 
-
-
 =end pod
 
 our constant ALPHA is export(:fundamental :cosmology :electromagnetic :nuclear) = 7.2973525664e-3;
@@ -241,7 +223,6 @@ our constant ALPHA is export(:fundamental :cosmology :electromagnetic :nuclear) 
     376.730313461
 
 characteristic impedance of vacuum
-
 
 This constant is also available using the alternate name C<VACUUM_IMPEDANCE> (imported using the :alternate tag for backwards compatibility)
 
@@ -256,7 +237,6 @@ our constant IMPEDANCE_VACUUM is export(:fundamental :cosmology :electromagnetic
 
 permittivity of free space, epsilon_0, the electric constant
 
-
 This constant is also available using the alternate name C<PERMITIVITY_0> (imported using the :alternate tag for backwards compatibility)
 
 =end pod
@@ -270,7 +250,6 @@ our constant PERMITIV_FREE_SPACE is export(:fundamental :electromagnetic :nuclea
 
 permeability of free space, mu_0, the magnetic constant
 
-
 This constant is also available using these alternate names (imported using the :alternate tag): PERMEABILITY_0, CONSTANT_MAGNETIC
 
 =end pod
@@ -283,8 +262,6 @@ our constant PERMEABL_FREE_SPACE is export(:fundamental :electromagnetic :nuclea
 
 trig constant pi
 
-
-
 =end pod
 
 our constant PI is export(:mathematical) = 3.14159265358979324;
@@ -294,7 +271,6 @@ our constant PI is export(:mathematical) = 3.14159265358979324;
     12.5663706143592
 
 trig constant pi times 4 (shorthand for some calculations)
-
 
 This constant is also available using the alternate name C<FOURPI> (imported using the :alternate tag for backwards compatibility)
 
@@ -308,8 +284,6 @@ our constant FOUR_PI is export(:mathematical) = 12.5663706143592;
 
 a measure of solid angle in square degrees
 
-
-
 =end pod
 
 our constant STERADIAN is export(:conversion) = 57.2957795130823;
@@ -319,8 +293,6 @@ our constant STERADIAN is export(:conversion) = 57.2957795130823;
     2.71828182846
 
 base of natural logarithm
-
-
 
 =end pod
 
@@ -333,8 +305,6 @@ our constant EXP is export(:mathematical) = 2.71828182846;
 
 atomic mass unit, 1 u
 
-
-
 =end pod
 
 our constant ATOMIC_MASS_UNIT is export(:conversion :nuclear) = 1.660539040e-27;
@@ -345,8 +315,6 @@ our constant ATOMIC_MASS_UNIT is export(:conversion :nuclear) = 1.660539040e-27;
     3.08567758149e18	CGS
 
 parsec
-
-
 
 =end pod
 
@@ -359,8 +327,6 @@ our constant PARSEC is export(:conversion :cosmology :planetary) = 3.08567758149
 
 astronomical unit
 
-
-
 =end pod
 
 our constant ASTRONOMICAL_UNIT is export(:conversion :cosmology :planetary) = 149_597_870_700;
@@ -371,8 +337,6 @@ our constant ASTRONOMICAL_UNIT is export(:conversion :cosmology :planetary) = 14
     9.4607304725808e17	CGS
 
 the distance that light travels in vacuum in one Julian year
-
-
 
 =end pod
 
@@ -385,8 +349,6 @@ our constant LIGHT_YEAR is export(:conversion :cosmology :planetary) = 9_460_730
 
 Angstrom
 
-
-
 =end pod
 
 our constant ANGSTROM is export(:conversion :electromagnetic :nuclear) = 1e-10;
@@ -398,8 +360,6 @@ our constant ANGSTROM is export(:conversion :electromagnetic :nuclear) = 1e-10;
 
 Jansky
 
-
-
 =end pod
 
 our constant JANSKY is export(:conversion :cosmology :electromagnetic) = 1e-26;
@@ -410,8 +370,6 @@ our constant JANSKY is export(:conversion :cosmology :electromagnetic) = 1e-26;
 
 Avogadro's number
 
-
-
 =end pod
 
 our constant AVOGADRO is export(:conversion :nuclear) = 6.022140857e23;
@@ -421,7 +379,6 @@ our constant AVOGADRO is export(:conversion :nuclear) = 6.022140857e23;
     31_557_600
 
 defined as exactly 365.25 days of 86400 SI seconds
-
 
 This constant is also available using the alternate name C<YEAR_JULIAN> (imported using the :alternate tag for backwards compatibility)
 
@@ -435,8 +392,6 @@ our constant YEAR is export(:conversion :cosmology) = 31_557_600;
 
 the period of time for the ecliptic longitude of the Sun to increase 360 degrees, approximated by the Gregorian calendar
 
-
-
 =end pod
 
 our constant YEAR_TROPICAL is export(:conversion :cosmology) = 31_556_925.1;
@@ -446,8 +401,6 @@ our constant YEAR_TROPICAL is export(:conversion :cosmology) = 31_556_925.1;
     31_558_149.8
 
 the period of revolution of the Earth around the Sun in a fixed reference frame
-
-
 
 =end pod
 
@@ -459,8 +412,6 @@ our constant YEAR_SIDEREAL is export(:conversion :cosmology) = 31_558_149.8;
 
 the period between successive passages of the Earth through perihelion
 
-
-
 =end pod
 
 our constant YEAR_ANOMALISTIC is export(:conversion :planetary) = 31_558_432.6;
@@ -470,8 +421,6 @@ our constant YEAR_ANOMALISTIC is export(:conversion :planetary) = 31_558_432.6;
     29_947_974.3
 
 the period between successive passages of the Sun (as seen from the geocenter) through the same lunar node
-
-
 
 =end pod
 
@@ -483,7 +432,6 @@ our constant YEAR_ECLIPSE is export(:conversion :planetary) = 29_947_974.3;
     1.9884e33	CGS
 
 solar mass
-
 
 This constant is also available using the alternate name C<SOLAR_MASS> (imported using the :alternate tag for backwards compatibility)
 
@@ -498,7 +446,6 @@ our constant MASS_SOLAR is export(:cosmology :planetary) = 1.9884e30;
 
 solar luminosity
 
-
 This constant is also available using the alternate name C<SOLAR_LUMINOSITY> (imported using the :alternate tag for backwards compatibility)
 
 =end pod
@@ -512,7 +459,6 @@ our constant LUMINOSITY_SOLAR is export(:cosmology :planetary) = 3.846e26;
 
 critical density /h^2
 
-
 This constant is also available using the alternate name C<RHO_C> (imported using the :alternate tag for backwards compatibility)
 
 =end pod
@@ -525,8 +471,6 @@ our constant DENSITY_CRITICAL_RHOc is export(:cosmology) = 1.8791e-26;
 
 Hubble time *h, the inverse of Hubble's constant valued at 100 km/s/Mpc (DEPRECATED - see ChangeLog)
 
-
-
 =end pod
 
 our constant HUBBLE_TIME is export(:cosmology) = 3.0853056e17;
@@ -536,7 +480,6 @@ our constant HUBBLE_TIME is export(:cosmology) = 3.0853056e17;
     2.725
 
 cosmic microwave background temperature in Kelvin
-
 
 This constant is also available using the alternate name C<CMB_TEMPERATURE> (imported using the :alternate tag for backwards compatibility)
 
@@ -550,7 +493,6 @@ our constant TEMPERATURE_CMB is export(:cosmology) = 2.725;
 
 solar V magnitude
 
-
 This constant is also available using the alternate name C<SOLAR_V_MAG> (imported using the :alternate tag for backwards compatibility)
 
 =end pod
@@ -562,7 +504,6 @@ our constant MAGNITUDE_SOLAR_V is export(:cosmology :planetary) = -26.74;
     4.83
 
 solar absolute V magnitude
-
 
 This constant is also available using the alternate name C<SOLAR_V_ABS_MAG> (imported using the :alternate tag for backwards compatibility)
 
@@ -577,7 +518,6 @@ our constant MAGNITUDE_SOLAR_V_ABSOLUTE is export(:cosmology :planetary) = 4.83;
 
 solar radius
 
-
 This constant is also available using the alternate name C<SOLAR_RADIUS> (imported using the :alternate tag for backwards compatibility)
 
 =end pod
@@ -590,7 +530,6 @@ our constant RADIUS_SOLAR is export(:planetary) = 6.96e8;
     5.9722e27	CGS
 
 mass of Earth
-
 
 This constant is also available using the alternate name C<EARTH_MASS> (imported using the :alternate tag for backwards compatibility)
 
@@ -605,7 +544,6 @@ our constant MASS_EARTH is export(:planetary) = 5.9722e24;
 
 radius of Earth
 
-
 This constant is also available using the alternate name C<EARTH_RADIUS> (imported using the :alternate tag for backwards compatibility)
 
 =end pod
@@ -617,7 +555,6 @@ our constant RADIUS_EARTH is export(:planetary) = 6.378_136_6e6;
     5778
 
 surface temperature of sun
-
 
 This constant is also available using the alternate name C<SOLAR_TEMPERATURE> (imported using the :alternate tag for backwards compatibility)
 
@@ -632,7 +569,6 @@ our constant TEMPERATURE_SOLAR_SURFACE is export(:planetary) = 5778;
 
 mean solar density
 
-
 This constant is also available using the alternate name C<SOLAR_DENSITY> (imported using the :alternate tag for backwards compatibility)
 
 =end pod
@@ -645,7 +581,6 @@ our constant DENSITY_SOLAR is export(:planetary) = 1408;
     5.514	CGS
 
 mean Earth density
-
 
 This constant is also available using the alternate name C<EARTH_DENSITY> (imported using the :alternate tag for backwards compatibility)
 
@@ -660,7 +595,6 @@ our constant DENSITY_EARTH is export(:planetary) = 5514;
 
 solar surface gravity
 
-
 This constant is also available using the alternate name C<SOLAR_GRAVITY> (imported using the :alternate tag for backwards compatibility)
 
 =end pod
@@ -673,7 +607,6 @@ our constant GRAVITY_SOLAR is export(:planetary) = 274.0;
     978	CGS
 
 Earth surface gravity
-
 
 This constant is also available using the alternate name C<EARTH_GRAVITY> (imported using the :alternate tag for backwards compatibility)
 
@@ -688,7 +621,6 @@ our constant GRAVITY_EARTH is export(:planetary) = 9.78;
 
 lunar radius
 
-
 This constant is also available using the alternate name C<LUNAR_RADIUS> (imported using the :alternate tag for backwards compatibility)
 
 =end pod
@@ -701,7 +633,6 @@ our constant RADIUS_LUNAR is export(:planetary) = 1.7381e6;
     7.342e25	CGS
 
 lunar mass
-
 
 This constant is also available using the alternate name C<LUNAR_MASS> (imported using the :alternate tag for backwards compatibility)
 
@@ -716,7 +647,6 @@ our constant MASS_LUNAR is export(:planetary) = 7.342e22;
 
 lunar orbital semi-major axis
 
-
 This constant is also available using the alternate name C<LUNAR_SM_AXIS> (imported using the :alternate tag for backwards compatibility)
 
 =end pod
@@ -728,7 +658,6 @@ our constant AXIS_SM_LUNAR is export(:planetary) = 3.844e8;
     0.0549
 
 lunar orbital eccentricity
-
 
 This constant is also available using the alternate name C<LUNAR_ECCENTRICITY> (imported using the :alternate tag for backwards compatibility)
 
@@ -743,7 +672,6 @@ our constant ECCENTRICITY_LUNAR is export(:planetary) = 0.0549;
 
 Thomson cross-section
 
-
 This constant is also available using the alternate name C<THOMSON_XSECTION> (imported using the :alternate tag for backwards compatibility)
 
 =end pod
@@ -756,7 +684,6 @@ our constant THOMSON_CROSS_SECTION is export(:electromagnetic :nuclear) = 6.6524
     9.10938356e-28	CGS
 
 mass of electron
-
 
 This constant is also available using the alternate name C<ELECTRON_MASS> (imported using the :alternate tag for backwards compatibility)
 
@@ -771,7 +698,6 @@ our constant MASS_ELECTRON is export(:electromagnetic :nuclear) = 9.10938356e-31
 
 mass of proton
 
-
 This constant is also available using the alternate name C<PROTON_MASS> (imported using the :alternate tag for backwards compatibility)
 
 =end pod
@@ -784,7 +710,6 @@ our constant MASS_PROTON is export(:nuclear) = 1.672621898e-27;
     1.674927471e-24	CGS
 
 neutron mass
-
 
 This constant is also available using the alternate name C<NEUTRON_MASS> (imported using the :alternate tag for backwards compatibility)
 
@@ -799,8 +724,6 @@ our constant MASS_NEUTRON is export(:nuclear) = 1.674927471e-27;
 mass of Hydrogen atom --   
 This value is from the IUPAC and is a little smaller than MASS_PROTON + MASS_ELECTRON, but within the uncertainty given here.  The current value is 1.008u +/- 0.0002 derived from a range of terrestrial materials.  If this is for precision work, you had best understand what you're using.  See https://iupac.org/what-we-do/periodic-table-of-elements/
 
-
-
 This constant is also available using the alternate name C<HYDROGEN_MASS> (imported using the :alternate tag for backwards compatibility)
 
 =end pod
@@ -813,8 +736,6 @@ our constant MASS_HYDROGEN is export(:nuclear) = 1.6738e-27;
 
 mass of alpha particle
 
-
-
 =end pod
 
 our constant MASS_ALPHA is export(:nuclear) = 6.644_657_230e-27;
@@ -825,7 +746,6 @@ our constant MASS_ALPHA is export(:nuclear) = 6.644_657_230e-27;
     2.8179403227e-13	CGS
 
 classical electron radius
-
 
 This constant is also available using the alternate name C<ELECTRON_RADIUS> (imported using the :alternate tag for backwards compatibility)
 
@@ -840,7 +760,6 @@ our constant RADIUS_ELECTRON is export(:nuclear :electromagnetic) = 2.8179403227
 
 Bohr radius
 
-
 This constant is also available using the alternate name C<BOHR_RADIUS> (imported using the :alternate tag for backwards compatibility)
 
 =end pod
@@ -853,8 +772,6 @@ our constant RADIUS_BOHR is export(:electromagnetic :nuclear) = 5.2917721067e-11
 
 Volumetric mean radius of Jupiter
 
-
-
 =end pod
 
 our constant RADIUS_JUPITER is export(:planetary) = 69_911_000;
@@ -864,8 +781,6 @@ our constant RADIUS_JUPITER is export(:planetary) = 69_911_000;
     1.89819e27	MKS
 
 mass of Jupiter
-
-
 
 =end pod
 

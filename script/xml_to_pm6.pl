@@ -35,6 +35,7 @@ for my $constant ( $xml->getElementsByTagName('PhysicalConstant') ) {
 	}
 
 	my $description = $constant->getChildrenByTagName('description')->shift()->textContent();
+	chomp $description;
 	for my $value ( $constant->getChildrenByTagName('value') ) {
 		if ( $value->hasAttribute('system') ) {
 			$values->{mks} = $value->textContent() if $value->getAttribute('system') eq 'MKS';
@@ -124,17 +125,16 @@ $dzil_methodtag $long_name
 
 $display
 $description
-
 POD
 	if (@$alt_ref > 1) {
 		say $fh "This constant is also available using these alternate names (imported using the :alternate tag): ", 
-				join ', ', @$alt_ref;
+				join(', ', @$alt_ref), "\n";
 	}
 	elsif (@$alt_ref) {
 		say $fh "This constant is also available using the alternate name C<", $alt_ref->[0], 
-                "> (imported using the :alternate tag for backwards compatibility)";
+                "> (imported using the :alternate tag for backwards compatibility)\n";
 	}
-	print $fh "\n=end pod\n\n";
+	print $fh "=end pod\n\n";
 }
 
 sub write_pod_synopsis {
