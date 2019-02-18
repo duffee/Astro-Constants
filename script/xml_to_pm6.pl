@@ -14,7 +14,7 @@ use XML::LibXML;
 
 my $VERSION = '0.0.4';
 my ($tagname, );
-my $dzil_methodtag = q{=method};
+my $dzil_methodtag = q{=head3};
 
 my $xml = XML::LibXML->load_xml(location => 'data/PhysicalConstants.xml');
 
@@ -126,15 +126,7 @@ $display
 $description
 
 POD
-	say $fh "This constant is also available using the short name C<\$$short_name>" if $short_name;
-	if ($short_name && @$alt_ref > 1) {
-		say $fh 'as well as these alternate names (imported using the :alternate tag): ', join ', ', @$alt_ref;
-	}
-	elsif ($short_name && @$alt_ref) {
-		say $fh 'as well as the alternate name C<', $alt_ref->[0], 
-				"> (imported using the :alternate tag for backwards compatibility)";
-	}
-	elsif (@$alt_ref > 1) {
+	if (@$alt_ref > 1) {
 		say $fh "This constant is also available using these alternate names (imported using the :alternate tag): ", 
 				join ', ', @$alt_ref;
 	}
@@ -142,7 +134,7 @@ POD
 		say $fh "This constant is also available using the alternate name C<", $alt_ref->[0], 
                 "> (imported using the :alternate tag for backwards compatibility)";
 	}
-	print $fh "\n=cut\n\n";
+	print $fh "\n=end pod\n\n";
 }
 
 sub write_pod_synopsis {
@@ -222,19 +214,16 @@ this is the module to do it with.
 Nothing is exported by default, so the module doesn't clobber any of your variables.  
 Select from the following tags:
 
-=for :list
-* C<:long>                (use this one to get the most constants)
-* C<:short>
-* C<:fundamental>
-* C<:conversion>
-* C<:mathematics>
-* C<:cosmology>
-* C<:planetary>
-* C<:electromagnetic>
-* C<:nuclear>
-* C<:alternates>
-
-=end pod
+=item C<:long>                (use this one to get the most constants)
+=item C<:short>
+=item C<:fundamental>
+=item C<:conversion>
+=item C<:mathematics>
+=item C<:cosmology>
+=item C<:planetary>
+=item C<:electromagnetic>
+=item C<:nuclear>
+=item C<:alternates>
 
 POD
 }
@@ -267,23 +256,21 @@ the documentation.  Use C<perldoc Astro::Constants> for that information.
 
 =head1 SEE ALSO
 
-=for :list
-* L<Astro::Cosmology>
-* L<Perl Data Language|PDL>
-* L<NIST|http://physics.nist.gov>
-* L<Astronomical Almanac|http://asa.usno.navy.mil>
-* L<IAU 2015 Resolution B3|http://iopscience.iop.org/article/10.3847/0004-6256/152/2/41/meta>
-* L<Neil Bower's review on providing read-only values|http://neilb.org/reviews/constants.html>
-* L<Test::Number::Delta>
-* L<Test::Deep::NumberTolerant> for testing values within objects
+=item L<Astro::Cosmology>
+=item L<Perl Data Language|PDL>
+=item L<NIST|http://physics.nist.gov>
+=item L<Astronomical Almanac|http://asa.usno.navy.mil>
+=item L<IAU 2015 Resolution B3|http://iopscience.iop.org/article/10.3847/0004-6256/152/2/41/meta>
+=item L<Neil Bower's review on providing read-only values|http://neilb.org/reviews/constants.html>
+=item L<Test::Number::Delta>
+=item L<Test::Deep::NumberTolerant> for testing values within objects
 
 Reference Documents:
 
-=for :list
-* L<IAU 2009 system of astronomical constants|http://aa.usno.navy.mil/publications/reports/Luzumetal2011.pdf>
-* L<Astronomical Constants 2016.pdf|http://asa.usno.navy.mil/static/files/2016/Astronomical_Constants_2016.pdf>
-* L<IAU recommendations concerning units|https://www.iau.org/publications/proceedings_rules/units>
-* L<Re-definition of the Astronomical Unit|http://syrte.obspm.fr/IAU_resolutions/Res_IAU2012_B2.pdf>
+=item L<IAU 2009 system of astronomical constants|http://aa.usno.navy.mil/publications/reports/Luzumetal2011.pdf>
+=item L<Astronomical Constants 2016.pdf|http://asa.usno.navy.mil/static/files/2016/Astronomical_Constants_2016.pdf>
+=item L<IAU recommendations concerning units|https://www.iau.org/publications/proceedings_rules/units>
+=item L<Re-definition of the Astronomical Unit|http://syrte.obspm.fr/IAU_resolutions/Res_IAU2012_B2.pdf>
 
 =head1 REPOSITORY
 
@@ -382,8 +369,8 @@ sub write_constant {
 	$export_categories = '(:'. join(" :", @{$categories}) . ')'
 		if ref $categories && @{$categories};
 
-	say $fh join q{ }, grep { defined }
-		'our constant', $long_name, 'is export', $export_categories, "= $value;";
+	say $fh join q{}, grep { defined }
+		'our constant ', $long_name, ' is export', $export_categories, " = $value;";
 }
 
 my %precision;
