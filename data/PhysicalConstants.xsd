@@ -14,7 +14,7 @@
         <xs:element name="description" type="xs:string"/>
         <xs:element name="timestamp" type="xs:string"/>
         <xs:element name="version" type="xs:string"/>
-        <xs:element name="source" type="xs:string"/>
+        <xs:element name="reference_standard" type="xs:string"/>
         <xs:element ref="link"/>
         <xs:element ref="items"/>
       </xs:sequence>
@@ -44,7 +44,7 @@
         <xs:element name="dimensions" type="xs:string"/>
         <xs:element name="maxValue" type="xs:string"/>
         <xs:element name="minValue" type="xs:string"/>
-        <xs:element ref="url" maxOccurs="unbounded"/>
+        <xs:element ref="source" maxOccurs="unbounded"/>
         <xs:element ref="categoryList"/>
         <xs:element ref="deprecated" minOccurs="0"/>
       </xs:sequence>
@@ -84,9 +84,9 @@
       <xs:attribute name="type" type="xs:string" use="required"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="url">
+  <xs:element name="source">
     <xs:complexType>
-      <xs:attribute name="href" type="xs:string" use="required"/>
+      <xs:attribute name="url" type="xs:anyURI" use="required"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="categoryList">

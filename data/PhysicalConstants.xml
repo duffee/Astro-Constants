@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <Collection>
   <title>Astro::Constants</title>
   <description>Physical constants for astronomy for use in Astro::Constants v0.12</description>
   <timestamp>Wed Jul 5 10:30:55 2017</timestamp>
   <version>v0.12</version>
-  <source>2014 CODATA</source>
+  <reference_standard>2014 CODATA</reference_standard>
   <link href="http://metacpan.org/pod/Astro::Constants"/>
   <items>
     <PhysicalConstant>
@@ -18,7 +18,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?c"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?c"/>
       <categoryList>
         <category>fundamental</category>
         <category>cosmology</category>
@@ -36,7 +36,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?k"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?k"/>
       <categoryList>
         <category>fundamental</category>
         <category>electromagnetic</category>
@@ -53,7 +53,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?bg"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?bg"/>
       <categoryList>
         <category>fundamental</category>
         <category>cosmology</category>
@@ -71,7 +71,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?tevj"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?tevj"/>
       <categoryList>
         <category>fundamental</category>
         <category>conversion</category>
@@ -90,7 +90,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?h"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?h"/>
       <categoryList>
         <category>fundamental</category>
         <category>cosmology</category>
@@ -109,7 +109,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?hbar"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?hbar"/>
       <categoryList>
         <category>fundamental</category>
         <category>cosmology</category>
@@ -128,7 +128,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?e"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?e"/>
       <categoryList>
         <category>fundamental</category>
         <category>electromagnetic</category>
@@ -146,8 +146,8 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?sigma"/>
-      <url href="https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_constant"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?sigma"/>
+      <source url="https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_constant"/>
       <categoryList>
         <category>fundamental</category>
         <category>cosmology</category>
@@ -166,7 +166,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_constant"/>
+      <source url="https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_constant"/>
       <categoryList>
         <category>fundamental</category>
         <category>cosmology</category>
@@ -185,7 +185,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?bwien"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?bwien"/>
       <categoryList>
         <category>fundamental</category>
         <category>electromagnetic</category>
@@ -205,7 +205,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?alph"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?alph"/>
       <categoryList>
         <category>fundamental</category>
         <category>cosmology</category>
@@ -223,7 +223,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?Z0"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?Z0"/>
       <categoryList>
         <category>fundamental</category>
         <category>cosmology</category>
@@ -242,7 +242,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?ep0"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?ep0"/>
       <categoryList>
         <category>fundamental</category>
         <category>electromagnetic</category>
@@ -261,7 +261,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?mu0"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?mu0"/>
       <categoryList>
         <category>fundamental</category>
         <category>electromagnetic</category>
@@ -278,7 +278,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?pi"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?pi"/>
       <categoryList>
         <category>mathematical</category>
       </categoryList>
@@ -293,7 +293,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?pi"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?pi"/>
       <categoryList>
         <category>mathematical</category>
       </categoryList>
@@ -308,7 +308,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?pi"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?pi"/>
       <categoryList>
         <category>conversion</category>
       </categoryList>
@@ -323,7 +323,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?exp"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?exp"/>
       <categoryList>
         <category>mathematical</category>
       </categoryList>
@@ -339,7 +339,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?ukg"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?ukg"/>
       <categoryList>
         <category>conversion</category>
         <category>nuclear</category>
@@ -356,7 +356,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?pc"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?pc"/>
       <categoryList>
         <category>conversion</category>
         <category>cosmology</category>
@@ -374,7 +374,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="https://cneos.jpl.nasa.gov/glossary/au.html"/>
+      <source url="https://cneos.jpl.nasa.gov/glossary/au.html"/>
       <categoryList>
         <category>conversion</category>
         <category>cosmology</category>
@@ -392,7 +392,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?ly"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?ly"/>
       <categoryList>
         <category>conversion</category>
         <category>cosmology</category>
@@ -410,7 +410,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?AA"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?AA"/>
       <categoryList>
         <category>conversion</category>
         <category>electromagnetic</category>
@@ -428,7 +428,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?Jy"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?Jy"/>
       <categoryList>
         <category>conversion</category>
         <category>cosmology</category>
@@ -445,7 +445,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?na"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?na"/>
       <categoryList>
         <category>conversion</category>
         <category>nuclear</category>
@@ -461,7 +461,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?yr"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?yr"/>
       <categoryList>
         <category>conversion</category>
         <category>cosmology</category>
@@ -476,7 +476,7 @@
       <dimensions/>
       <maxValue>31556959</maxValue>
       <minValue>31556892</minValue>
-      <url href="https://en.wikipedia.org/wiki/Tropical_year"/>
+      <source url="https://en.wikipedia.org/wiki/Tropical_year"/>
       <categoryList>
         <category>conversion</category>
         <category>cosmology</category>
@@ -491,7 +491,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="https://en.wikipedia.org/wiki/Sidereal_year"/>
+      <source url="https://en.wikipedia.org/wiki/Sidereal_year"/>
       <categoryList>
         <category>conversion</category>
         <category>cosmology</category>
@@ -506,7 +506,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://asa.usno.navy.mil/SecM/Glossary.html"/>
+      <source url="http://asa.usno.navy.mil/SecM/Glossary.html"/>
       <categoryList>
         <category>conversion</category>
         <category>planetary</category>
@@ -521,7 +521,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?yr"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?yr"/>
       <categoryList>
         <category>conversion</category>
         <category>planetary</category>
@@ -538,7 +538,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?msun"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?msun"/>
       <categoryList>
         <category>cosmology</category>
         <category>planetary</category>
@@ -555,7 +555,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?Lsun"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?Lsun"/>
       <categoryList>
         <category>cosmology</category>
         <category>planetary</category>
@@ -572,7 +572,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?rhoc"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?rhoc"/>
       <categoryList>
         <category>cosmology</category>
       </categoryList>
@@ -587,7 +587,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href=""/>
+      <source url=""/>
       <categoryList>
         <category>cosmology</category>
       </categoryList>
@@ -603,7 +603,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?TCMB"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?TCMB"/>
       <categoryList>
         <category>cosmology</category>
       </categoryList>
@@ -618,7 +618,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?Vsun"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?Vsun"/>
       <categoryList>
         <category>cosmology</category>
         <category>planetary</category>
@@ -634,7 +634,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?MVsun"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?MVsun"/>
       <categoryList>
         <category>cosmology</category>
         <category>planetary</category>
@@ -651,7 +651,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://asa.usno.navy.mil/static/files/2016/Astronomical_Constants_2016.pdf"/>
+      <source url="http://asa.usno.navy.mil/static/files/2016/Astronomical_Constants_2016.pdf"/>
       <categoryList>
         <category>planetary</category>
       </categoryList>
@@ -667,7 +667,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://asa.usno.navy.mil/static/files/2016/Astronomical_Constants_2016.pdf"/>
+      <source url="http://asa.usno.navy.mil/static/files/2016/Astronomical_Constants_2016.pdf"/>
       <categoryList>
         <category>planetary</category>
       </categoryList>
@@ -683,7 +683,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://asa.usno.navy.mil/static/files/2016/Astronomical_Constants_2016.pdf"/>
+      <source url="http://asa.usno.navy.mil/static/files/2016/Astronomical_Constants_2016.pdf"/>
       <categoryList>
         <category>planetary</category>
       </categoryList>
@@ -698,7 +698,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?Tsun"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?Tsun"/>
       <categoryList>
         <category>planetary</category>
       </categoryList>
@@ -714,7 +714,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?dsun"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?dsun"/>
       <categoryList>
         <category>planetary</category>
       </categoryList>
@@ -730,7 +730,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?dearth"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?dearth"/>
       <categoryList>
         <category>planetary</category>
       </categoryList>
@@ -746,7 +746,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?gsun"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?gsun"/>
       <categoryList>
         <category>planetary</category>
       </categoryList>
@@ -762,7 +762,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?gearth"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?gearth"/>
       <categoryList>
         <category>planetary</category>
       </categoryList>
@@ -778,7 +778,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?rmoon"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?rmoon"/>
       <categoryList>
         <category>planetary</category>
       </categoryList>
@@ -794,7 +794,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?mmoon"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?mmoon"/>
       <categoryList>
         <category>planetary</category>
       </categoryList>
@@ -810,7 +810,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?amoon"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?amoon"/>
       <categoryList>
         <category>planetary</category>
       </categoryList>
@@ -825,7 +825,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?emoon"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?emoon"/>
       <categoryList>
         <category>planetary</category>
       </categoryList>
@@ -841,7 +841,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?sigmae"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?sigmae"/>
       <categoryList>
         <category>electromagnetic</category>
         <category>nuclear</category>
@@ -858,7 +858,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?me"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?me"/>
       <categoryList>
         <category>electromagnetic</category>
         <category>nuclear</category>
@@ -875,7 +875,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?mp"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?mp"/>
       <categoryList>
         <category>nuclear</category>
       </categoryList>
@@ -891,7 +891,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?mn"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?mn"/>
       <categoryList>
         <category>nuclear</category>
       </categoryList>
@@ -909,7 +909,7 @@ This value is from the IUPAC and is a little smaller than MASS_PROTON + MASS_ELE
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="https://www.degruyter.com/downloadpdf/j/pac.2016.88.issue-3/pac-2015-0305/pac-2015-0305.pdf"/>
+      <source url="https://www.degruyter.com/downloadpdf/j/pac.2016.88.issue-3/pac-2015-0305/pac-2015-0305.pdf"/>
       <categoryList>
         <category>nuclear</category>
       </categoryList>
@@ -923,7 +923,7 @@ This value is from the IUPAC and is a little smaller than MASS_PROTON + MASS_ELE
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?mal"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?mal"/>
       <categoryList>
         <category>nuclear</category>
       </categoryList>
@@ -939,7 +939,7 @@ This value is from the IUPAC and is a little smaller than MASS_PROTON + MASS_ELE
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?re"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?re"/>
       <categoryList>
         <category>nuclear</category>
         <category>electromagnetic</category>
@@ -956,7 +956,7 @@ This value is from the IUPAC and is a little smaller than MASS_PROTON + MASS_ELE
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <url href="http://physics.nist.gov/cgi-bin/cuu/Value?bohrrada0"/>
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?bohrrada0"/>
       <categoryList>
         <category>electromagnetic</category>
         <category>nuclear</category>
@@ -971,7 +971,7 @@ This value is from the IUPAC and is a little smaller than MASS_PROTON + MASS_ELE
       <dimensions>length</dimensions>
       <maxValue/>
       <minValue/>
-      <url href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/jupiterfact.html"/>
+      <source url="https://nssdc.gsfc.nasa.gov/planetary/factsheet/jupiterfact.html"/>
       <categoryList>
         <category>planetary</category>
       </categoryList>
@@ -985,7 +985,7 @@ This value is from the IUPAC and is a little smaller than MASS_PROTON + MASS_ELE
       <dimensions>mass</dimensions>
       <maxValue/>
       <minValue/>
-      <url href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/jupiterfact.html"/>
+      <source url="https://nssdc.gsfc.nasa.gov/planetary/factsheet/jupiterfact.html"/>
       <categoryList>
         <category>planetary</category>
       </categoryList>

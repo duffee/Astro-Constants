@@ -6,11 +6,11 @@ supporting the PhysicalConstants.xsd file.
 ## Collection
 
 The main container for everything.  It holds
-* **title**	- the title of the collection
+* **title**	- the title of this collection
 * **description**	- describes how the constants are used
 * **timestamp**	- when the file was last written
 * **version**	- a version number for this PhysicalConstants file [v0.12, v0.10]
-* **source**	- main source for the constant values [CODATA 2014, ]
+* **reference_standard**	- main reference data set for the constant values [CODATA 2014, ]
 * **link**	- a url to the source or author of the file
 * **items**	- the list of *PhysicalConstant* items
 
@@ -32,7 +32,7 @@ Options are enclosed in [ ]'s and defaults are **bolded**.
 * **dimensions**	- for future use in dimensional analysis,  lists which of the 7 dimensions the constant consists of (e.g. M for mass, L for length, L3 for volume, ML-3 for density)
 * **minValue**	- minimum value for the constant, for constants that have values not best described by uncertainty
 * **maxValue**	- maximum value for the constant, for constants that have values not best described by uncertainty
-* **url**	- a source for the value of the constant
+* **source**	- a source url for the value of the constant
 * **categoryList**	- a list of *category* items that the constant belongs to
 * **deprecated**	- used to flag a constant that has been deprecated and will be removed from future versions. 
   - *date*	- date of deprecation decision
@@ -76,4 +76,6 @@ This is what I think the Schema should become.
 
 # Proposed Changes
 
-* change ```<url href=""/>``` to ```<source url="http://site" />``` in v0.14
+## Changed in v0.14
+* change ```<url href=""/>``` to ```<source url="http://site" />```
+* change ```<source>``` to ```<reference_standard>``` in main heading
