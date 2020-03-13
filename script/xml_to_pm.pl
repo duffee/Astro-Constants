@@ -123,8 +123,6 @@ HEADER
 		print $fh "use base qw/Exporter/;\n\n";
 	}
 	if ($name eq 'Astro::Constants::CGS') {
-		print $fh qq(warn "use of $name is deprecated and will be removed from the package in version 0.15";\n);
-		print $fh qq(warn "write new code to use Astro::Constants::MKS instead";\n\n);
 		print $fh <<"NOTICE";
 warn "use of $name is deprecated and will be removed from the package in version 0.15";
 warn "write new code to use Astro::Constants::MKS instead";
@@ -194,7 +192,6 @@ sub write_method_pod {
 
 	my $display;
 	$display .= "    $values->{mks}\tMKS\n" if $values->{mks};
-	$display .= "    $values->{cgs}\tCGS\n" if $values->{cgs};
 	$display ||= "    $values->{value}\n";
 
 	say $fh <<"POD";	# writing for Dist::Zilla enhanced Pod
@@ -239,13 +236,7 @@ sub write_pod_synopsis {
 =head1 DESCRIPTION
 
 This module provides physical and mathematical constants for use
-in Astronomy and Astrophysics.  The two metric systems of units,
-MKS and CGS, are kept in two separate modules and are called by
-name explicitly.
-It allows you to choose between constants in units of
-centimetres /grams /seconds
-with B<Astro::Constants::CGS> and metres /kilograms /seconds with
-B<Astro::Constants::MKS>.
+in Astronomy and Astrophysics.
 
 The C<:long> tag imports all the constants in their long name forms
 (i.e. GRAVITATIONAL).  Useful subsets can be imported with these tags:
