@@ -30,7 +30,7 @@ write_module_header($cgs_fh, 'Astro::Constants::CGS');
 write_pod_synopsis($ac_fh);
 
 for my $constant ( $xml->getElementsByTagName('PhysicalConstant') ) {
-	my ($short_name, $long_name, $mks_value, $cgs_value, $values, ) = undef;
+	my ($short_name, $long_name, $mks_value, $cgs_value, $values, $options, ) = undef;
 
 	for my $name ( $constant->getChildrenByTagName('name') ) {
 		$short_name = $name->textContent() if $name->getAttribute('type') eq 'short';
@@ -72,10 +72,11 @@ for my $constant ( $xml->getElementsByTagName('PhysicalConstant') ) {
 				if $values->{cgs} || $values->{value};
 		}
 	}
+	$options->{deprecated} = 1 if $constant->getChildrenByTagName('deprecated');
 
 	#### write to the module files
 	write_method_pod($ac_fh, $long_name, $short_name, $description, $values, \@alternates);
-	write_constant($mks_fh, ($values->{mks} || $values->{value}), $long_name, $short_name) 
+	write_constant($mks_fh, ($values->{mks} || $values->{value}), $long_name, $short_name, $options) 
 			if $values->{mks} || $values->{value};
 	write_constant($cgs_fh, ($values->{cgs} || $values->{value}), $long_name, $short_name) 
 			if $values->{cgs} || $values->{value};
@@ -439,10 +440,17 @@ POD
 }
 
 sub write_constant {
-	my ($fh, $value, $long_name, $short_name) = @_;
+	my ($fh, $value, $long_name, $short_name, $options) = @_;
 
-	say $fh "use constant $long_name => $value;";
-	say $fh "\*$short_name = \\$value;" if $short_name;
+	if ($options && $options->{deprecated}) {
+		print $fh <<"WARNING";
+sub $long_name { warn "$long_name deprecated"; return $value; }
+WARNING
+	}
+	else {
+		say $fh "use constant $long_name => $value;";
+		say $fh "\*$short_name = \\$value;" if $short_name;
+	}
 }
 
 my %precision;
