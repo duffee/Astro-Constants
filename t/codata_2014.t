@@ -1,7 +1,8 @@
 use strict;
-use Test::More;
+use Test::More skip_all => 'waiting for Astro::Constants::CODATA::2014';
 use Astro::Constants::MKS qw/:long/;
 
+skip
 diag("Testing values from CODATA 2014");
 
 subtest fundamental => sub {
