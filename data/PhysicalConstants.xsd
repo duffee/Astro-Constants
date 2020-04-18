@@ -41,7 +41,7 @@
         <xs:element name="description" type="xs:string"/>
         <xs:element ref="value" minOccurs="1" maxOccurs="unbounded"/>
         <xs:element ref="uncertainty" maxOccurs="unbounded"/>
-        <xs:element name="dimensions" type="xs:string"/>
+        <xs:element name="dimensions" maxOccurs="1"/>
         <xs:element name="maxValue" type="xs:string"/>
         <xs:element name="minValue" type="xs:string"/>
         <xs:element ref="source" maxOccurs="unbounded"/>
@@ -82,6 +82,30 @@
   <xs:element name="uncertainty">
     <xs:complexType mixed="true">
       <xs:attribute name="type" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="dimensions">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+	      The seven SI base units and their dimensions
+	      as set out under BIPM in 2019
+	      s    second    time
+	      m    metre     length
+	      kg   kilogram  mass
+	      A    ampere    electric current
+	      K	   kelvin    thermodynamic temperature
+	      mol  mole      amount of substance (enplethy)
+	      cd   candela   luminous intensity
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="time" type="xs:integer" default="0"/>
+      <xs:attribute name="length" type="xs:integer" default="0"/>
+      <xs:attribute name="mass" type="xs:integer" default="0"/>
+      <xs:attribute name="current" type="xs:integer" default="0"/>
+      <xs:attribute name="temperature" type="xs:integer" default="0"/>
+      <xs:attribute name="mole" type="xs:integer" default="0"/>
+      <xs:attribute name="candela" type="xs:integer" default="0"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="source">
