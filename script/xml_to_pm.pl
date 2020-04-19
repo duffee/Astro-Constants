@@ -457,6 +457,10 @@ my %precision;
 sub store_precision {
 	my ($name, $precision, $type) = @_;
 
+	if ($type eq 'defined') {
+		$type = 'relative';
+		$precision = 0;
+	}
 	$precision{$name}->{value} = $precision;
 	$precision{$name}->{type} = $type;
 }

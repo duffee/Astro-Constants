@@ -179,7 +179,7 @@ my %_precision = (
 	H_BAR 	=> {value => 1.5e-9, 	type => 'relative'},
 	IMPEDANCE_VACUUM 	=> {value => 1e-50, 	type => 'relative'},
 	JANSKY 	=> {value => 0, 	type => 'relative'},
-	LIGHT_YEAR 	=> {value => , 	type => 'defined'},
+	LIGHT_YEAR 	=> {value => 0, 	type => 'relative'},
 	LUMINOSITY_SOLAR 	=> {value => 0.0003, 	type => 'relative'},
 	MAGNITUDE_SOLAR_V 	=> {value => 0.0004, 	type => 'relative'},
 	MAGNITUDE_SOLAR_V_ABSOLUTE 	=> {value => 0.002, 	type => 'relative'},
