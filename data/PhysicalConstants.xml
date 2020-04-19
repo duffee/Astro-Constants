@@ -602,14 +602,14 @@
       <alternateName>RHO_C</alternateName>
       <symbol>
 	<symbolRepresentation>
-		<latex>\frac{\rho_{c}{H^{2}}}</latex>
+		<latex>\frac{\rho_{c}{h^{2}}}</latex>
         </symbolRepresentation>
       </symbol>
-      <description>normalized critical density $\frac{\rho_{c}}{H^{2}} = \frac{3}{8 pi G}$</description>
-      <value system="MKS">1.7885e9</value>
-      <value system="CGS">1.7885e12</value>
-      <uncertainty type="relative">4.7e-5</uncertainty>
-      <dimensions time="2"/>
+      <description>Critical Density parameter expressed in terms of  $\frac{\rho_{c}}{h^{2}} = \frac{3 \times (100 km s^{−1} Mpc^{−1})^{2} }{8 \pi G}$  Multiply by the square of the dimensionless Hubble parameter, h, in your calculations to get the actual value</description>
+      <value system="MKS">1.87834e-26</value>
+      <value system="CGS">1.87834e-29</value>
+      <uncertainty type="relative">2.3e-5</uncertainty>
+      <dimensions mass="1" length="-3"/>
       <maxValue/>
       <minValue/>
       <source url="https://en.wikipedia.org/wiki/Friedmann_equations#Density_parameter"/>

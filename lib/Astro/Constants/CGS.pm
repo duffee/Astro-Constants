@@ -90,9 +90,9 @@ use constant MASS_SOLAR => 1.9884e33;
 use constant SOLAR_LUMINOSITY => 3.828e33;
 use constant LUMINOSITY_SOLAR => 3.828e33;
 *A_Lsun = \3.828e33;
-use constant RHO_C => 1.7885e12;
-use constant DENSITY_CRITICAL_RHOc => 1.7885e12;
-*A_rhoc = \1.7885e12;
+use constant RHO_C => 1.87834e-29;
+use constant DENSITY_CRITICAL_RHOc => 1.87834e-29;
+*A_rhoc = \1.87834e-29;
 use constant HUBBLE_TIME => 3.0853056e17;
 *A_tH = \3.0853056e17;
 use constant CMB_TEMPERATURE => 2.72548;
@@ -173,7 +173,7 @@ my %_precision = (
 	AXIS_SM_LUNAR 	=> {value => 3e-9, 	type => 'relative'},
 	BOLTZMANN 	=> {value => 0, 	type => 'relative'},
 	CHARGE_ELEMENTARY 	=> {value => 0, 	type => 'relative'},
-	DENSITY_CRITICAL_RHOc 	=> {value => 4.7e-5, 	type => 'relative'},
+	DENSITY_CRITICAL_RHOc 	=> {value => 2.3e-5, 	type => 'relative'},
 	DENSITY_EARTH 	=> {value => 0.0002, 	type => 'relative'},
 	DENSITY_RADIATION 	=> {value => 2.3e-6, 	type => 'relative'},
 	DENSITY_SOLAR 	=> {value => 0.001, 	type => 'relative'},

@@ -20,8 +20,8 @@ is_within( HUBBLE_TIME, 1/$hubble_constant, 1.3e-4,
 is_within( DENSITY_RADIATION, 4 * STEFAN_BOLTZMANN / SPEED_LIGHT, 2.3e-6,
 	'The radiation density constant is defined as a = 4 * sigma /c');
 
-is_within( DENSITY_CRITICAL_RHOc, 3 /(8 * PI * GRAVITATIONAL), 5e-5,
-	'normalized critical density of the universe, rho_c divided by Hubble constant squared');
+is_within( DENSITY_CRITICAL_RHOc, 3 /(8 * PI * GRAVITATIONAL * 100 * PARSEC**2), 5e-5,
+	'critical density of the universe, rho_c, divided by the dimensionless Hubble parameter squared');
 
 is_within( PARSEC, 648_000 * ASTRONOMICAL_UNIT/PI, 1e-11,
 	'definition of a parsec is 648000/pi AU');
