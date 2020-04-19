@@ -1,6 +1,16 @@
 v0.14	2020 Apr
 ====
-
+* build script now produces a Raku module for Astro::Constants
+* removed references to CGS in documentation
+* added script that fetches constant values and uncertainties from NIST
+* added warnings to module when using deprecated constants
+* added a script to archive the current PhysicalConstants.xml file
+* added dimensions to constants in terms of the SI base units
+* values that are established by definition are assigned an relative uncertainty of 0
+* clarified definition of critical density parameter, rho_c
+* updated PhysicalConstants.xml schema definition
+  * changed name of **url** element to **source**
+  * added _authority_, _year_ and _reference_ attributes to **source**
 
 v0.13	2018 May
 ====
