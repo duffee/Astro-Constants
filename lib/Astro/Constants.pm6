@@ -1,5 +1,5 @@
 unit module Astro::Constants:ver<0.0.4>:auth<github:DUFFEE>;
-# ABSTRACT: This library provides physical constants for use in Physics and Astronomy based on values from CODATA2014.
+# ABSTRACT: This library provides physical constants for use in Physics and Astronomy based on values from 2018 CODATA.
 
 # 'They are not constant but are changing still. - Cymbeline, Act II, Scene 5'
 
@@ -36,7 +36,7 @@ compatibility with older versions based on Jeremy Bailin's Astroconst
 library and are available through the import tag C<:short>.
 
 The values are stored in F<Physical_Constants.xml> in the B<data> directory
-and are mostly based on the 2014 CODATA values from NIST.
+and are mostly based on the 2018 CODATA values from NIST.
 
 Long name constants are constructed with the L<constant> pragma and
 are not interpolated in double quotish situations because they are 
@@ -91,7 +91,7 @@ Select from the following tags:
 
 =head3 SPEED_LIGHT
 
-    2.99792458e8	MKS
+    299792458	MKS
     2.99792458e10	CGS
 
 speed of light in a vacuum
@@ -100,68 +100,68 @@ This constant is also available using the alternate name C<LIGHT_SPEED> (importe
 
 =end pod
 
-our constant SPEED_LIGHT is export(:fundamental :cosmology :electromagnetic) = 2.99792458e8;
+our constant SPEED_LIGHT is export(:fundamental :cosmology :electromagnetic) = 299792458;
 
 =head3 BOLTZMANN
 
-    1.38064852e-23	MKS
-    1.38064852e-16	CGS
+    1.380649e-23	MKS
+    1.380649e-16	CGS
 
 Boltzmann's constant
 
 =end pod
 
-our constant BOLTZMANN is export(:fundamental :electromagnetic) = 1.38064852e-23;
+our constant BOLTZMANN is export(:fundamental :electromagnetic) = 1.380649e-23;
 
 =head3 GRAVITATIONAL
 
-    6.67408e-11	MKS
-    6.67408e-8	CGS
+    6.67430e-11	MKS
+    6.67430e-8	CGS
 
 universal gravitational constant
 
 =end pod
 
-our constant GRAVITATIONAL is export(:fundamental :cosmology :planetary) = 6.67408e-11;
+our constant GRAVITATIONAL is export(:fundamental :cosmology :planetary) = 6.67430e-11;
 
 =head3 ELECTRON_VOLT
 
-    1.6021766208e-19	MKS
-    1.6021766208e-12	CGS
+    1.602176634e-19	MKS
+    1.602176634e-12	CGS
 
 electron volt
 
 =end pod
 
-our constant ELECTRON_VOLT is export(:fundamental :conversion :electromagnetic :nuclear) = 1.6021766208e-19;
+our constant ELECTRON_VOLT is export(:fundamental :conversion :electromagnetic :nuclear) = 1.602176634e-19;
 
 =head3 PLANCK
 
-    6.626070040e-34	MKS
-    6.626070040e-27	CGS
+    6.62607015e-34	MKS
+    6.62607015e-27	CGS
 
 Planck constant
 
 =end pod
 
-our constant PLANCK is export(:fundamental :cosmology :electromagnetic :nuclear) = 6.626070040e-34;
+our constant PLANCK is export(:fundamental :cosmology :electromagnetic :nuclear) = 6.62607015e-34;
 
 =head3 H_BAR
 
-    1.054571800e-34	MKS
-    1.054571800e-27	CGS
+    1.0545718176763e-34	MKS
+    1.054571817e-27	CGS
 
-Planck's constant /2pi
+the reduced Planck constant, Planck's constant (exact) /2pi
 
 This constant is also available using the alternate name C<HBAR> (imported using the :alternate tag for backwards compatibility)
 
 =end pod
 
-our constant H_BAR is export(:fundamental :cosmology :electromagnetic :nuclear) = 1.054571800e-34;
+our constant H_BAR is export(:fundamental :cosmology :electromagnetic :nuclear) = 1.0545718176763e-34;
 
 =head3 CHARGE_ELEMENTARY
 
-    1.6021766208e-19	MKS
+    1.602176634e-19	MKS
     4.8032046729e-10	CGS
 
 electron charge (defined positive)
@@ -170,18 +170,18 @@ This constant is also available using the alternate name C<ELECTRON_CHARGE> (imp
 
 =end pod
 
-our constant CHARGE_ELEMENTARY is export(:fundamental :electromagnetic :nuclear) = 1.6021766208e-19;
+our constant CHARGE_ELEMENTARY is export(:fundamental :electromagnetic :nuclear) = 1.602176634e-19;
 
 =head3 STEFAN_BOLTZMANN
 
-    5.670367e-8	MKS
+    5.670374419e-8	MKS
     5.670367e-5	CGS
 
 Stefan-Boltzmann constant
 
 =end pod
 
-our constant STEFAN_BOLTZMANN is export(:fundamental :cosmology :electromagnetic :nuclear) = 5.670367e-8;
+our constant STEFAN_BOLTZMANN is export(:fundamental :cosmology :electromagnetic :nuclear) = 5.670374419e-8;
 
 =head3 DENSITY_RADIATION
 
@@ -198,25 +198,25 @@ our constant DENSITY_RADIATION is export(:fundamental :cosmology :electromagneti
 
 =head3 WIEN
 
-    2.8977729e-3	MKS
-    2.8977729e-1	CGS
+    2.897771955e-3	MKS
+    2.897771955e-1	CGS
 
 Wien wavelength displacement law constant
 
 =end pod
 
-our constant WIEN is export(:fundamental :electromagnetic :cosmology :planetary :nuclear) = 2.8977729e-3;
+our constant WIEN is export(:fundamental :electromagnetic :cosmology :planetary :nuclear) = 2.897771955e-3;
 
 =head3 ALPHA
 
-    7.2973525664e-3	MKS
-    7.2973525664e-3	CGS
+    7.2973525693e-3	MKS
+    7.2973525693e-3	CGS
 
 fine structure constant
 
 =end pod
 
-our constant ALPHA is export(:fundamental :cosmology :electromagnetic :nuclear) = 7.2973525664e-3;
+our constant ALPHA is export(:fundamental :cosmology :electromagnetic :nuclear) = 7.2973525693e-3;
 
 =head3 IMPEDANCE_VACUUM
 
@@ -232,7 +232,7 @@ our constant IMPEDANCE_VACUUM is export(:fundamental :cosmology :electromagnetic
 
 =head3 PERMITIV_FREE_SPACE
 
-    8.854187817e-12	MKS
+    8.8541878128e-12	MKS
     1	CGS
 
 permittivity of free space, epsilon_0, the electric constant
@@ -241,11 +241,11 @@ This constant is also available using the alternate name C<PERMITIVITY_0> (impor
 
 =end pod
 
-our constant PERMITIV_FREE_SPACE is export(:fundamental :electromagnetic :nuclear) = 8.854187817e-12;
+our constant PERMITIV_FREE_SPACE is export(:fundamental :electromagnetic :nuclear) = 8.8541878128e-12;
 
 =head3 PERMEABL_FREE_SPACE
 
-    1.2566370614e-6	MKS
+    1.25663706212e-6	MKS
     1	CGS
 
 permeability of free space, mu_0, the magnetic constant
@@ -254,7 +254,7 @@ This constant is also available using these alternate names (imported using the 
 
 =end pod
 
-our constant PERMEABL_FREE_SPACE is export(:fundamental :electromagnetic :nuclear) = 1.2566370614e-6;
+our constant PERMEABL_FREE_SPACE is export(:fundamental :electromagnetic :nuclear) = 1.25663706212e-6;
 
 =head3 PI
 
@@ -280,13 +280,13 @@ our constant FOUR_PI is export(:mathematical) = 12.5663706143592;
 
 =head3 STERADIAN
 
-    57.2957795130823
+    3282.80635001174
 
-a measure of solid angle in square degrees
+a measure of solid angle in square degrees and a SI derived unit
 
 =end pod
 
-our constant STERADIAN is export(:conversion) = 57.2957795130823;
+our constant STERADIAN is export(:conversion) = 3282.80635001174;
 
 =head3 EXP
 
@@ -300,14 +300,14 @@ our constant EXP is export(:mathematical) = 2.71828182846;
 
 =head3 ATOMIC_MASS_UNIT
 
-    1.660539040e-27	MKS
-    1.660539040e-24	CGS
+    1.66053906660e-27	MKS
+    1.66053906660e-24	CGS
 
-atomic mass unit, 1 u
+unified atomic mass unit, 1 u
 
 =end pod
 
-our constant ATOMIC_MASS_UNIT is export(:conversion :nuclear) = 1.660539040e-27;
+our constant ATOMIC_MASS_UNIT is export(:conversion :nuclear) = 1.66053906660e-27;
 
 =head3 PARSEC
 
@@ -358,7 +358,7 @@ our constant ANGSTROM is export(:conversion :electromagnetic :nuclear) = 1e-10;
     1e-26	MKS
     1e-23	CGS
 
-Jansky
+Jansky, a unit of flux density
 
 =end pod
 
@@ -366,13 +366,13 @@ our constant JANSKY is export(:conversion :cosmology :electromagnetic) = 1e-26;
 
 =head3 AVOGADRO
 
-    6.022140857e23
+    6.02214076e23
 
 Avogadro's number
 
 =end pod
 
-our constant AVOGADRO is export(:conversion :nuclear) = 6.022140857e23;
+our constant AVOGADRO is export(:conversion :nuclear) = 6.02214076e23;
 
 =head3 YEAR
 
@@ -441,8 +441,8 @@ our constant MASS_SOLAR is export(:cosmology :planetary) = 1.9884e30;
 
 =head3 LUMINOSITY_SOLAR
 
-    3.846e26	MKS
-    3.846e33	CGS
+    3.828e26	MKS
+    3.828e33	CGS
 
 solar luminosity
 
@@ -450,20 +450,22 @@ This constant is also available using the alternate name C<SOLAR_LUMINOSITY> (im
 
 =end pod
 
-our constant LUMINOSITY_SOLAR is export(:cosmology :planetary) = 3.846e26;
+our constant LUMINOSITY_SOLAR is export(:cosmology :planetary) = 3.828e26;
 
 =head3 DENSITY_CRITICAL_RHOc
 
-    1.8791e-26	MKS
-    1.8791e-29	CGS
+    1.87834e-26	MKS
+    1.87834e-29	CGS
 
-critical density /h^2
+Critical Density parameter expressed in terms of
+	<math>{ρ<sub>c</sub><over>h<sup>2</sup>} = {3 × (100 km s<sup>−1</sup> Mpc<sup>−1</sup>)<sup>2</sup> <over>8 π G}</math>
+	Multiply by the square of the dimensionless Hubble parameter, h, in your calculations to get the actual value
 
 This constant is also available using the alternate name C<RHO_C> (imported using the :alternate tag for backwards compatibility)
 
 =end pod
 
-our constant DENSITY_CRITICAL_RHOc is export(:cosmology) = 1.8791e-26;
+our constant DENSITY_CRITICAL_RHOc is export(:cosmology) = 1.87834e-26;
 
 =head3 HUBBLE_TIME
 
@@ -477,7 +479,7 @@ our constant HUBBLE_TIME is export(:cosmology) = 3.0853056e17;
 
 =head3 TEMPERATURE_CMB
 
-    2.725
+    2.72548
 
 cosmic microwave background temperature in Kelvin
 
@@ -485,13 +487,13 @@ This constant is also available using the alternate name C<CMB_TEMPERATURE> (imp
 
 =end pod
 
-our constant TEMPERATURE_CMB is export(:cosmology) = 2.725;
+our constant TEMPERATURE_CMB is export(:cosmology) = 2.72548;
 
 =head3 MAGNITUDE_SOLAR_V
 
     -26.74
 
-solar V magnitude
+visual brightness of the Sun
 
 This constant is also available using the alternate name C<SOLAR_V_MAG> (imported using the :alternate tag for backwards compatibility)
 
@@ -552,15 +554,15 @@ our constant RADIUS_EARTH is export(:planetary) = 6.378_136_6e6;
 
 =head3 TEMPERATURE_SOLAR_SURFACE
 
-    5778
+    5772
 
-surface temperature of sun
+surface temperature of sun (photosphere)
 
 This constant is also available using the alternate name C<SOLAR_TEMPERATURE> (imported using the :alternate tag for backwards compatibility)
 
 =end pod
 
-our constant TEMPERATURE_SOLAR_SURFACE is export(:planetary) = 5778;
+our constant TEMPERATURE_SOLAR_SURFACE is export(:planetary) = 5772;
 
 =head3 DENSITY_SOLAR
 
@@ -577,8 +579,8 @@ our constant DENSITY_SOLAR is export(:planetary) = 1408;
 
 =head3 DENSITY_EARTH
 
-    5514	MKS
-    5.514	CGS
+    5515	MKS
+    5.515	CGS
 
 mean Earth density
 
@@ -586,12 +588,12 @@ This constant is also available using the alternate name C<EARTH_DENSITY> (impor
 
 =end pod
 
-our constant DENSITY_EARTH is export(:planetary) = 5514;
+our constant DENSITY_EARTH is export(:planetary) = 5515;
 
 =head3 GRAVITY_SOLAR
 
-    274.0	MKS
-    27400	CGS
+    274.78	MKS
+    27478	CGS
 
 solar surface gravity
 
@@ -599,12 +601,12 @@ This constant is also available using the alternate name C<SOLAR_GRAVITY> (impor
 
 =end pod
 
-our constant GRAVITY_SOLAR is export(:planetary) = 274.0;
+our constant GRAVITY_SOLAR is export(:planetary) = 274.78;
 
 =head3 GRAVITY_EARTH
 
-    9.78	MKS
-    978	CGS
+    9.80665	MKS
+    980.665	CGS
 
 Earth surface gravity
 
@@ -612,7 +614,7 @@ This constant is also available using the alternate name C<EARTH_GRAVITY> (impor
 
 =end pod
 
-our constant GRAVITY_EARTH is export(:planetary) = 9.78;
+our constant GRAVITY_EARTH is export(:planetary) = 9.80665;
 
 =head3 RADIUS_LUNAR
 
@@ -629,8 +631,8 @@ our constant RADIUS_LUNAR is export(:planetary) = 1.7381e6;
 
 =head3 MASS_LUNAR
 
-    7.342e22	MKS
-    7.342e25	CGS
+    7.346e22	MKS
+    7.346e25	CGS
 
 lunar mass
 
@@ -638,12 +640,12 @@ This constant is also available using the alternate name C<LUNAR_MASS> (imported
 
 =end pod
 
-our constant MASS_LUNAR is export(:planetary) = 7.342e22;
+our constant MASS_LUNAR is export(:planetary) = 7.346e22;
 
 =head3 AXIS_SM_LUNAR
 
-    3.844e8	MKS
-    3.844e10	CGS
+    3.84402e8	MKS
+    3.84402e10	CGS
 
 lunar orbital semi-major axis
 
@@ -651,7 +653,7 @@ This constant is also available using the alternate name C<LUNAR_SM_AXIS> (impor
 
 =end pod
 
-our constant AXIS_SM_LUNAR is export(:planetary) = 3.844e8;
+our constant AXIS_SM_LUNAR is export(:planetary) = 3.84402e8;
 
 =head3 ECCENTRICITY_LUNAR
 
@@ -667,8 +669,8 @@ our constant ECCENTRICITY_LUNAR is export(:planetary) = 0.0549;
 
 =head3 THOMSON_CROSS_SECTION
 
-    6.6524587158e-29	MKS
-    6.6524587158e-25	CGS
+    6.6524587321e-29	MKS
+    6.6524587321e-25	CGS
 
 Thomson cross-section
 
@@ -676,12 +678,12 @@ This constant is also available using the alternate name C<THOMSON_XSECTION> (im
 
 =end pod
 
-our constant THOMSON_CROSS_SECTION is export(:electromagnetic :nuclear) = 6.6524587158e-29;
+our constant THOMSON_CROSS_SECTION is export(:electromagnetic :nuclear) = 6.6524587321e-29;
 
 =head3 MASS_ELECTRON
 
-    9.10938356e-31	MKS
-    9.10938356e-28	CGS
+    9.1093837015e-31	MKS
+    9.1093837015e-28	CGS
 
 mass of electron
 
@@ -689,12 +691,12 @@ This constant is also available using the alternate name C<ELECTRON_MASS> (impor
 
 =end pod
 
-our constant MASS_ELECTRON is export(:electromagnetic :nuclear) = 9.10938356e-31;
+our constant MASS_ELECTRON is export(:electromagnetic :nuclear) = 9.1093837015e-31;
 
 =head3 MASS_PROTON
 
-    1.672621898e-27	MKS
-    1.672621898e-24	CGS
+    1.67262192369e-27	MKS
+    1.67262192369e-24	CGS
 
 mass of proton
 
@@ -702,12 +704,12 @@ This constant is also available using the alternate name C<PROTON_MASS> (importe
 
 =end pod
 
-our constant MASS_PROTON is export(:nuclear) = 1.672621898e-27;
+our constant MASS_PROTON is export(:nuclear) = 1.67262192369e-27;
 
 =head3 MASS_NEUTRON
 
-    1.674927471e-27	MKS
-    1.674927471e-24	CGS
+    1.67492749804e-27	MKS
+    1.67492749804e-24	CGS
 
 neutron mass
 
@@ -715,7 +717,7 @@ This constant is also available using the alternate name C<NEUTRON_MASS> (import
 
 =end pod
 
-our constant MASS_NEUTRON is export(:nuclear) = 1.674927471e-27;
+our constant MASS_NEUTRON is export(:nuclear) = 1.67492749804e-27;
 
 =head3 MASS_HYDROGEN
 
@@ -732,18 +734,18 @@ our constant MASS_HYDROGEN is export(:nuclear) = 1.6738e-27;
 
 =head3 MASS_ALPHA
 
-    6.644_657_230e-27
+    6.6446573357e-27
 
 mass of alpha particle
 
 =end pod
 
-our constant MASS_ALPHA is export(:nuclear) = 6.644_657_230e-27;
+our constant MASS_ALPHA is export(:nuclear) = 6.6446573357e-27;
 
 =head3 RADIUS_ELECTRON
 
-    2.8179403227e-15	MKS
-    2.8179403227e-13	CGS
+    2.8179403262e-15	MKS
+    2.8179403262e-13	CGS
 
 classical electron radius
 
@@ -751,12 +753,12 @@ This constant is also available using the alternate name C<ELECTRON_RADIUS> (imp
 
 =end pod
 
-our constant RADIUS_ELECTRON is export(:nuclear :electromagnetic) = 2.8179403227e-15;
+our constant RADIUS_ELECTRON is export(:nuclear :electromagnetic) = 2.8179403262e-15;
 
 =head3 RADIUS_BOHR
 
-    5.2917721067e-11	MKS
-    5.2917721067e-9	CGS
+    5.29177210903e-11	MKS
+    5.29177210903e-9	CGS
 
 Bohr radius
 
@@ -764,7 +766,7 @@ This constant is also available using the alternate name C<BOHR_RADIUS> (importe
 
 =end pod
 
-our constant RADIUS_BOHR is export(:electromagnetic :nuclear) = 5.2917721067e-11;
+our constant RADIUS_BOHR is export(:electromagnetic :nuclear) = 5.29177210903e-11;
 
 =head3 RADIUS_JUPITER
 

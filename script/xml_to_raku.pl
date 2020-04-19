@@ -20,7 +20,7 @@ my $xml = XML::LibXML->load_xml(location => 'data/PhysicalConstants.xml');
 
 my $lib = 'lib';	# where is the lib directory
 mkdir "$lib/Astro/Constants" unless -d "$lib/Astro/Constants";
-open my $ac_fh, '>', "$lib/Astro/Constants.pm6";
+open my $ac_fh, '>:utf8', "$lib/Astro/Constants.pm6";
 
 write_module_header($ac_fh, 'Astro::Constants', $VERSION);
 
@@ -96,7 +96,7 @@ sub write_module_header {
 
 	print $fh <<HEADER;
 unit module $name:ver<$version>:auth<github:DUFFEE>;
-# ABSTRACT: This library provides physical constants for use in Physics and Astronomy based on values from CODATA2014.
+# ABSTRACT: This library provides physical constants for use in Physics and Astronomy based on values from 2018 CODATA.
 
 # 'They are not constant but are changing still. - Cymbeline, Act II, Scene 5'
 
@@ -174,7 +174,7 @@ compatibility with older versions based on Jeremy Bailin's Astroconst
 library and are available through the import tag C<:short>.
 
 The values are stored in F<Physical_Constants.xml> in the B<data> directory
-and are mostly based on the 2014 CODATA values from NIST.
+and are mostly based on the 2018 CODATA values from NIST.
 
 Long name constants are constructed with the L<constant> pragma and
 are not interpolated in double quotish situations because they are 

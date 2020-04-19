@@ -1,5 +1,5 @@
 package Astro::Constants;
-# ABSTRACT: This library provides physical constants for use in Physics and Astronomy based on values from CODATA2014.
+# ABSTRACT: This library provides physical constants for use in Physics and Astronomy based on values from 2018 CODATA.
 
 use 5.006;
 use strict;
@@ -20,6 +20,14 @@ use warnings;
 This module provides physical and mathematical constants for use
 in Astronomy and Astrophysics.
 
+The values are stored in F<Physical_Constants.xml> in the B<data> directory
+and are mostly based on the 2018 CODATA values from NIST.
+
+B<NOTE:> Other popular languages are still using I<2014> CODATA values
+for their constants and may produce different results in comparison.
+On the roadmap is a set of modules to allow you to specify the year or
+data set for the values of constants, defaulting to the most recent.
+
 The C<:long> tag imports all the constants in their long name forms
 (i.e. GRAVITATIONAL).  Useful subsets can be imported with these tags:
 C<:fundamental> C<:conversion> C<:mathematics> C<:cosmology> 
@@ -30,9 +38,6 @@ to move away from their use, but they have been in the module for years.
 Short forms of the constant names are included to provide backwards
 compatibility with older versions based on Jeremy Bailin's Astroconst
 library and are available through the import tag C<:short>.
-
-The values are stored in F<Physical_Constants.xml> in the B<data> directory
-and are mostly based on the 2014 CODATA values from NIST.
 
 Long name constants are constructed with the L<constant> pragma and
 are not interpolated in double quotish situations because they are 
@@ -58,7 +63,8 @@ and which meeting of which standards body is responsible for its value?
 
 Trusting someone else's code does carry some risk, which you I<should> consider, 
 but have you also considered the risk of doing it yourself with no one else 
-to check your work?
+to check your work?  And, are you going to check for the latest values from NIST
+every 4 years?
 
 =head3 And plus, it's B<FASTER>
 
@@ -418,8 +424,10 @@ as well as the alternate name C<SOLAR_LUMINOSITY> (imported using the :alternate
     1.87834e-26	MKS
 
 Critical Density parameter expressed in terms of
-	<math>{ρ<sub>c</sub><over>h<sup>2</sup>} = {3 × (100 km s<sup>−1</sup> Mpc<sup>−1</sup>)<sup>2</sup> <over>8 π G}</math>
-	Multiply by the square of the dimensionless Hubble parameter, h, in your calculations to get the actual value
+	      
+	      ρ_c / h² = 3 × (100 km s⁻¹ Mpc⁻¹)² / 8πG
+	      
+Multiply by the square of the dimensionless Hubble parameter, h, in your calculations to get the actual value
 
 
 This constant is also available using the short name C<$A_rhoc>

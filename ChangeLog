@@ -1,5 +1,6 @@
 v0.14	2020 Apr
 ====
+* updated values to the **2018 CODATA** standard
 * build script now produces a Raku module for Astro::Constants
 * removed references to CGS in documentation
 * added script that fetches constant values and uncertainties from NIST

@@ -606,8 +606,10 @@
         </symbolRepresentation>
       </symbol>
       <description>Critical Density parameter expressed in terms of
-	&lt;math&gt;{ρ&lt;sub&gt;c&lt;/sub&gt;&lt;over&gt;h&lt;sup&gt;2&lt;/sup&gt;} = {3 × (100 km s&lt;sup&gt;−1&lt;/sup&gt; Mpc&lt;sup&gt;−1&lt;/sup&gt;)&lt;sup&gt;2&lt;/sup&gt; &lt;over&gt;8 π G}&lt;/math&gt;
-	Multiply by the square of the dimensionless Hubble parameter, h, in your calculations to get the actual value</description>
+	      <![CDATA[
+	      ρ_c / h² = 3 × (100 km s⁻¹ Mpc⁻¹)² / 8πG
+	      ]]>
+Multiply by the square of the dimensionless Hubble parameter, h, in your calculations to get the actual value</description>
       <value system="MKS">1.87834e-26</value>
       <value system="CGS">1.87834e-29</value>
       <uncertainty type="relative">2.3e-5</uncertainty>

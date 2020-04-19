@@ -41,7 +41,7 @@ The author keeps forgetting how to run dzil.
 * link Constants.pm to Constants/DatasourceYear.pm or move old version of Constants.pm to Constants/2017.pm if changes to values in PhysicalConstants.xml
 * update git repo tag to new version number
 * build CPAN release - ```dzil release```
-* [upload](https://pause.perl.org/pause/authenquery?ACTION=add_uri) to CPAN (dzil could do this)
+* [upload](https://pause.perl.org/pause/authenquery?ACTION=add_uri) to CPAN (dzil does this)
 * email announcement to the Quantified Onion group
 * add missing steps to this checklist
 
