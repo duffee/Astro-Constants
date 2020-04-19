@@ -31,7 +31,7 @@ my $nist_parser = HTML::Parser->new(
 
 configure_parsers();
 
-for my $constant ( shuffle $xml->getElementsByTagName('PhysicalConstant') ) {
+for my $constant ( $xml->getElementsByTagName('PhysicalConstant') ) {
 	my ($long_name, $old_value, ) = undef;
 
 	for my $name ( $constant->getChildrenByTagName('name') ) {

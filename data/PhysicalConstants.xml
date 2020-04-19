@@ -15,7 +15,7 @@
       <value system="MKS">299792458</value>
       <value system="CGS">2.99792458e10</value>
       <uncertainty type="relative">0</uncertainty>
-      <dimensions/>
+      <dimensions length="1" time="-2"/>
       <maxValue/>
       <minValue/>
       <source url="http://physics.nist.gov/cgi-bin/cuu/Value?c" authority="2018 CODATA" year="2019" />
@@ -33,7 +33,7 @@
       <value system="MKS">1.380649e-23</value>
       <value system="CGS">1.380649e-16</value>
       <uncertainty type="relative">0</uncertainty>
-      <dimensions/>
+      <dimensions mass="1" length="2" time="-2" temperature="-1"/>
       <maxValue/>
       <minValue/>
       <source url="http://physics.nist.gov/cgi-bin/cuu/Value?k" authority="2018 CODATA" year="2019" />
@@ -51,7 +51,7 @@
       <value system="MKS">6.67430e-11</value>
       <value system="CGS">6.67430e-8</value>
       <uncertainty type="relative">2.2e-5</uncertainty>
-      <dimensions/>
+      <dimensions length="3" mass="-1" time="-2"/>
       <maxValue/>
       <minValue/>
       <source url="http://physics.nist.gov/cgi-bin/cuu/Value?bg" authority="2018 CODATA" year="2019" />
@@ -69,7 +69,7 @@
       <value system="MKS">1.602176634e-19</value>
       <value system="CGS">1.602176634e-12</value>
       <uncertainty type="relative">0</uncertainty>
-      <dimensions/>
+      <dimensions mass="1" length="2" time="-2"/>
       <maxValue/>
       <minValue/>
       <source url="http://physics.nist.gov/cgi-bin/cuu/Value?evj"/>
@@ -88,7 +88,7 @@
       <value system="MKS">6.62607015e-34</value>
       <value system="CGS">6.62607015e-27</value>
       <uncertainty type="relative">0</uncertainty>
-      <dimensions/>
+      <dimensions mass="1" length="2" time="-1"/>
       <maxValue/>
       <minValue/>
       <source url="http://physics.nist.gov/cgi-bin/cuu/Value?h" authority="2018 CODATA" year="2019"/>
@@ -107,7 +107,7 @@
       <value system="MKS">1.0545718176763e-34</value>
       <value system="CGS">1.054571817e-27</value>
       <uncertainty type="relative">1.5e-9</uncertainty>
-      <dimensions/>
+      <dimensions mass="1" length="2" time="-1"/>
       <maxValue/>
       <minValue/>
       <source url="http://physics.nist.gov/cgi-bin/cuu/Value?hbar" authority="2018 CODATA" year="2019"/>
@@ -126,7 +126,7 @@
       <value system="MKS">1.602176634e-19</value>
       <value system="CGS">4.8032046729e-10</value>
       <uncertainty type="relative">0</uncertainty>
-      <dimensions/>
+      <dimensions current="1" time="1"/>
       <maxValue/>
       <minValue/>
       <source url="http://physics.nist.gov/cgi-bin/cuu/Value?e"/>
@@ -151,7 +151,7 @@
       <value system="MKS">5.670374419e-8</value>
       <value system="CGS">5.670367e-5</value>
       <uncertainty type="relative">1.7e-10</uncertainty>
-      <dimensions/>
+      <dimensions mass="1" time="-3" temperature="-4"/>
       <maxValue/>
       <minValue/>
       <source url="http://physics.nist.gov/cgi-bin/cuu/Value?sigma" authority="2018 CODATA" year="2019" />
@@ -167,14 +167,16 @@
       <name type="long">DENSITY_RADIATION</name>
       <name type="short">A_arad</name>
       <alternateName>A_RAD</alternateName>
+      <symbol>a</symbol>
       <description>radiation density constant, 4 * sigma / c</description>
       <value system="MKS">7.565723e-16</value>
       <value system="CGS">7.565723e-15</value>
       <uncertainty type="relative">2.3e-6</uncertainty>
-      <dimensions/>
+      <dimensions mass="1" length="-1" time="-1" temperature="-4"/>
       <maxValue/>
       <minValue/>
       <source url="https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_constant"/>
+      <source url="http://scienceworld.wolfram.com/physics/RadiationConstant.html"/>
       <categoryList>
         <category>fundamental</category>
         <category>cosmology</category>
@@ -191,7 +193,7 @@
       <value system="MKS">2.897771955e-3</value>
       <value system="CGS">2.897771955e-1</value>
       <uncertainty type="relative">1e-10</uncertainty>
-      <dimensions/>
+      <dimensions length="1" temperature="1"/>
       <maxValue/>
       <minValue/>
       <source url="http://physics.nist.gov/cgi-bin/cuu/Value?bwien" authority="2018 CODATA" year="2019" />
@@ -241,7 +243,7 @@
       <description>characteristic impedance of vacuum</description>
       <value>376.730313461</value>
       <uncertainty type="relative">1e-50</uncertainty>
-      <dimensions/>
+      <dimensions mass="1" lenghth="2" time="-3" current="-2"/>
       <maxValue/>
       <minValue/>
       <source url="http://physics.nist.gov/cgi-bin/cuu/Value?z0"/>
@@ -265,7 +267,7 @@
       <value system="MKS">8.8541878128e-12</value>
       <value system="CGS">1</value>
       <uncertainty type="relative">1.5e-10</uncertainty>
-      <dimensions/>
+      <dimensions time="4" current="2" length="-3" mass="-1"/>
       <maxValue/>
       <minValue/>
       <source url="http://physics.nist.gov/cgi-bin/cuu/Value?ep0" authority="2018 CODATA" year="2019" />
@@ -289,7 +291,7 @@
       <value system="MKS">1.25663706212e-6</value>
       <value system="CGS">1</value>
       <uncertainty type="relative">1.5e-10</uncertainty>
-      <dimensions/>
+      <dimensions mass="1" length="1" time="-2" current="-2"/>
       <maxValue/>
       <minValue/>
       <source url="http://physics.nist.gov/cgi-bin/cuu/Value?mu0" authority="2018 CODATA" year="2019"/>
@@ -368,7 +370,7 @@
       <value system="MKS">1.66053906660e-27</value>
       <value system="CGS">1.66053906660e-24</value>
       <uncertainty type="relative">3.0e-10</uncertainty>
-      <dimensions/>
+      <dimensions mass="1"/>
       <maxValue/>
       <minValue/>
       <source url="http://physics.nist.gov/cgi-bin/cuu/Value?ukg" authority="2018 CODATA" year="2019" />
@@ -385,7 +387,7 @@
       <value system="MKS">3.08567758149e16</value>
       <value system="CGS">3.08567758149e18</value>
       <uncertainty type="relative">1e-11</uncertainty>
-      <dimensions/>
+      <dimensions length="1"/>
       <maxValue/>
       <minValue/>
       <source url="https://en.wikipedia.org/wiki/Parsec" year="2015"/>
@@ -403,7 +405,7 @@
       <value system="MKS">149_597_870_700</value>
       <value system="CGS">1.496e13</value>
       <uncertainty type="relative">0</uncertainty>
-      <dimensions/>
+      <dimensions length="1"/>
       <maxValue/>
       <minValue/>
       <source url="https://cneos.jpl.nasa.gov/glossary/au.html" authority="IAU" />
@@ -421,7 +423,7 @@
       <value system="MKS">9_460_730_472_580_800</value>
       <value system="CGS">9.4607304725808e17</value>
       <uncertainty type="defined"/>
-      <dimensions/>
+      <dimensions length="1"/>
       <maxValue/>
       <minValue/>
       <source url="https://en.wikipedia.org/wiki/Light-year"/>
@@ -439,7 +441,7 @@
       <value system="MKS">1e-10</value>
       <value system="CGS">1e-8</value>
       <uncertainty type="relative">0</uncertainty>
-      <dimensions/>
+      <dimensions length="1"/>
       <maxValue/>
       <minValue/>
       <source url="https://en.wikipedia.org/wiki/Angstrom"/>
@@ -458,7 +460,7 @@
       <value system="MKS">1e-26</value>
       <value system="CGS">1e-23</value>
       <uncertainty type="relative">0</uncertainty>
-      <dimensions/>
+      <dimensions mass="1" time="-2"/>
       <maxValue/>
       <minValue/>
       <source url="https://en.wikipedia.org/wiki/Jansky" authority="IAU" />
@@ -475,7 +477,7 @@
       <description>Avogadro's number</description>
       <value>6.02214076e23</value>
       <uncertainty type="relative">0</uncertainty>
-      <dimensions/>
+      <dimensions amountOfSubstance="-1"/>
       <maxValue/>
       <minValue/>
       <source url="http://physics.nist.gov/cgi-bin/cuu/Value?na" authority="2018 CODATA" year="2019" />
@@ -491,7 +493,7 @@
       <description>defined as exactly 365.25 days of 86400 SI seconds</description>
       <value>31_557_600</value>
       <uncertainty type="relative">0</uncertainty>
-      <dimensions/>
+      <dimensions time="1"/>
       <maxValue/>
       <minValue/>
       <source url="https://en.wikipedia.org/wiki/Julian_year_(astronomy)"/>
@@ -506,7 +508,7 @@
       <description>the period of time for the ecliptic longitude of the Sun to increase 360 degrees, approximated by the Gregorian calendar</description>
       <value>31_556_925.1</value>
       <uncertainty type="absolute">0.1</uncertainty>
-      <dimensions/>
+      <dimensions time="1"/>
       <maxValue>31556959</maxValue>
       <minValue>31556892</minValue>
       <source url="https://en.wikipedia.org/wiki/Tropical_year"/>
@@ -521,7 +523,7 @@
       <description>the period of revolution of the Earth around the Sun in a fixed reference frame</description>
       <value>31_558_149.8</value>
       <uncertainty type="absolute">1</uncertainty>
-      <dimensions/>
+      <dimensions time="1"/>
       <maxValue/>
       <minValue/>
       <source url="https://en.wikipedia.org/wiki/Sidereal_year"/>
@@ -536,7 +538,7 @@
       <description>the period between successive passages of the Earth through perihelion</description>
       <value>31_558_432.6</value>
       <uncertainty type="absolute">0.1</uncertainty>
-      <dimensions/>
+      <dimensions time="1"/>
       <maxValue/>
       <minValue/>
       <source url="https://en.wikipedia.org/wiki/Year#Sidereal,_tropical,_and_anomalistic_years"/>
@@ -551,7 +553,7 @@
       <description>the period between successive passages of the Sun (as seen from the geocenter) through the same lunar node</description>
       <value>29_947_974.3</value>
       <uncertainty type="absolute">0.1</uncertainty>
-      <dimensions/>
+      <dimensions time="1"/>
       <maxValue/>
       <minValue/>
       <source url="https://en.wikipedia.org/wiki/Year#Draconic_year"/>
@@ -568,7 +570,7 @@
       <value system="MKS">1.9884e30</value>
       <value system="CGS">1.9884e33</value>
       <uncertainty type="relative">0.0001</uncertainty>
-      <dimensions/>
+      <dimensions mass="1"/>
       <maxValue/>
       <minValue/>
       <source url="https://en.wikipedia.org/wiki/Solar_mass" authority="USNO" year="2014"/>
@@ -585,7 +587,7 @@
       <value system="MKS">3.828e26</value>
       <value system="CGS">3.828e33</value>
       <uncertainty type="relative">0.0003</uncertainty>
-      <dimensions/>
+      <dimensions mass="1" length="2" time="-3"/>
       <maxValue/>
       <minValue/>
       <source url="https://en.wikipedia.org/wiki/Solar_luminosity" authority="IAU" year="2015" />
@@ -607,7 +609,7 @@
       <value system="MKS">1.7885e9</value>
       <value system="CGS">1.7885e12</value>
       <uncertainty type="relative">4.7e-5</uncertainty>
-      <dimensions/>
+      <dimensions time="2"/>
       <maxValue/>
       <minValue/>
       <source url="https://en.wikipedia.org/wiki/Friedmann_equations#Density_parameter"/>
@@ -622,7 +624,7 @@
       <description>Hubble time *h, the inverse of Hubble's constant valued at 100 km/s/Mpc (DEPRECATED - see ChangeLog)</description>
       <value>3.0853056e17</value>
       <uncertainty type="relative">0.0000001</uncertainty>
-      <dimensions/>
+      <dimensions time="1"/>
       <maxValue/>
       <minValue/>
       <source url=""/>
@@ -639,7 +641,7 @@
       <value>2.72548</value>
       <uncertainty type="absolute">0.00057</uncertainty>
       <uncertainty type="relative">0.0002</uncertainty>
-      <dimensions/>
+      <dimensions temperature="1"/>
       <maxValue/>
       <minValue/>
       <source url="https://en.wikipedia.org/wiki/Cosmic_microwave_background" reference="Bibcode:2009ApJ...707..916F" year="2009" />
@@ -687,7 +689,7 @@
       <value system="MKS">6.96e8</value>
       <value system="CGS">6.96e10</value>
       <uncertainty type="relative">0.002</uncertainty>
-      <dimensions/>
+      <dimensions length="1"/>
       <maxValue/>
       <minValue/>
       <source url="http://asa.usno.navy.mil/static/files/2016/Astronomical_Constants_2016.pdf"/>
@@ -703,7 +705,7 @@
       <value system="MKS">5.9722e24</value>
       <value system="CGS">5.9722e27</value>
       <uncertainty type="absolute">6e20</uncertainty>
-      <dimensions/>
+      <dimensions mass="1"/>
       <maxValue/>
       <minValue/>
       <source url="http://asa.usno.navy.mil/static/files/2016/Astronomical_Constants_2016.pdf"/>
@@ -719,7 +721,7 @@
       <value system="MKS">6.378_136_6e6</value>
       <value system="CGS">6.378_136_6e8</value>
       <uncertainty type="absolute">0.1</uncertainty>
-      <dimensions/>
+      <dimensions length="1"/>
       <maxValue/>
       <minValue/>
       <source url="http://asa.usno.navy.mil/static/files/2016/Astronomical_Constants_2016.pdf"/>
@@ -734,7 +736,7 @@
       <description>surface temperature of sun (photosphere)</description>
       <value>5772</value>
       <uncertainty type="relative">0.0002</uncertainty>
-      <dimensions/>
+      <dimensions temperatur="1"/>
       <maxValue/>
       <minValue/>
       <source url="https://en.wikipedia.org/wiki/Sun" authority="NASA" year="2010"/>
@@ -750,7 +752,7 @@
       <value system="MKS">1408</value>
       <value system="CGS">1.408</value>
       <uncertainty type="relative">0.001</uncertainty>
-      <dimensions/>
+      <dimensions mass="1" length="-3"/>
       <maxValue/>
       <minValue/>
       <source url="https://en.wikipedia.org/wiki/Sun" authority="NASA" year="2010"/>
@@ -766,7 +768,7 @@
       <value system="MKS">5515</value>
       <value system="CGS">5.515</value>
       <uncertainty type="relative">0.0002</uncertainty>
-      <dimensions/>
+      <dimensions mass="1" length="-3"/>
       <maxValue/>
       <minValue/>
       <source url="https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html" authority="NASA" year="2010"/>
@@ -782,7 +784,7 @@
       <value system="MKS">274.78</value>
       <value system="CGS">27478</value>
       <uncertainty type="relative">0.0004</uncertainty>
-      <dimensions/>
+      <dimensions length="1" time="-2"/>
       <maxValue/>
       <minValue/>
       <source url="https://en.wikipedia.org/wiki/Surface_gravity"/>
@@ -798,7 +800,7 @@
       <value system="MKS">9.80665</value>
       <value system="CGS">980.665</value>
       <uncertainty type="relative">0.000001</uncertainty>
-      <dimensions/>
+      <dimensions length="1" time="-2"/>
       <maxValue/>
       <minValue/>
       <source url="https://en.wikipedia.org/wiki/Surface_gravity" authority="ISO 80000" year="2019"/>
@@ -814,7 +816,7 @@
       <value system="MKS">1.7381e6</value>
       <value system="CGS">1.7381e8</value>
       <uncertainty type="relative">6e-5</uncertainty>
-      <dimensions/>
+      <dimensions length="1"/>
       <maxValue/>
       <minValue/>
       <source url="https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html" authority="NASA" year="2020"/>
@@ -830,7 +832,7 @@
       <value system="MKS">7.346e22</value>
       <value system="CGS">7.346e25</value>
       <uncertainty type="relative">0.0002</uncertainty>
-      <dimensions/>
+      <dimensions mass="kg"/>
       <maxValue/>
       <minValue/>
       <source url="https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html" authority="NASA" year="2020"/>
@@ -846,7 +848,7 @@
       <value system="MKS">3.84402e8</value>
       <value system="CGS">3.84402e10</value>
       <uncertainty type="relative">3e-9</uncertainty>
-      <dimensions/>
+      <dimensions length="1"/>
       <maxValue/>
       <minValue/>
       <source url="https://en.wikipedia.org/wiki/Lunar_distance_(astronomy)" reference="Bibcode:2009PASP..121...29B" year="2009"/>
@@ -882,7 +884,7 @@
       <value system="MKS">6.6524587321e-29</value>
       <value system="CGS">6.6524587321e-25</value>
       <uncertainty type="relative">9.1e-10</uncertainty>
-      <dimensions/>
+      <dimensions length="2"/>
       <maxValue/>
       <minValue/>
       <source url="http://physics.nist.gov/cgi-bin/cuu/Value?sigmae" authority="2018 CODATA" year="2019" />
@@ -899,7 +901,7 @@
       <value system="MKS">9.1093837015e-31</value>
       <value system="CGS">9.1093837015e-28</value>
       <uncertainty type="relative">3e-10</uncertainty>
-      <dimensions/>
+      <dimensions mass="1"/>
       <maxValue/>
       <minValue/>
       <source url="http://physics.nist.gov/cgi-bin/cuu/Value?me" authority="2018 CODATA" year="2019"/>
@@ -916,7 +918,7 @@
       <value system="MKS">1.67262192369e-27</value>
       <value system="CGS">1.67262192369e-24</value>
       <uncertainty type="relative">3.1e-10</uncertainty>
-      <dimensions/>
+      <dimensions mass="1"/>
       <maxValue/>
       <minValue/>
       <source url="http://physics.nist.gov/cgi-bin/cuu/Value?mp" authority="2018 CODATA" year="2019" />
@@ -932,7 +934,7 @@
       <value system="MKS">1.67492749804e-27</value>
       <value system="CGS">1.67492749804e-24</value>
       <uncertainty type="relative">5.7e-10</uncertainty>
-      <dimensions/>
+      <dimensions mass="1"/>
       <maxValue/>
       <minValue/>
       <source url="http://physics.nist.gov/cgi-bin/cuu/Value?mn" authority="2018 CODATA" year="2019" />
@@ -950,7 +952,7 @@ This value is from the IUPAC and is a little smaller than MASS_PROTON + MASS_ELE
       <value>1.6738e-27</value>
       <uncertainty type="absolute">3.3e-31</uncertainty>
       <uncertainty type="relative">0.0002</uncertainty>
-      <dimensions/>
+      <dimensions mass="1"/>
       <maxValue/>
       <minValue/>
       <source url="https://www.degruyter.com/downloadpdf/j/pac.2016.88.issue-3/pac-2015-0305/pac-2015-0305.pdf" authority="IUPAC" />
@@ -969,7 +971,7 @@ This value is from the IUPAC and is a little smaller than MASS_PROTON + MASS_ELE
       <description>mass of alpha particle</description>
       <value>6.6446573357e-27</value>
       <uncertainty type="relative">3.0e-10</uncertainty>
-      <dimensions/>
+      <dimensions mass="1"/>
       <maxValue/>
       <minValue/>
       <source url="http://physics.nist.gov/cgi-bin/cuu/Value?mal" authority="2018 CODATA" year="2019" />
@@ -990,7 +992,7 @@ This value is from the IUPAC and is a little smaller than MASS_PROTON + MASS_ELE
       <value system="MKS">2.8179403262e-15</value>
       <value system="CGS">2.8179403262e-13</value>
       <uncertainty type="relative">4.5e-10</uncertainty>
-      <dimensions/>
+      <dimensions length="1"/>
       <maxValue/>
       <minValue/>
       <source url="http://physics.nist.gov/cgi-bin/cuu/Value?re" authority="2018 CODATA" year="2019" />
@@ -1012,7 +1014,7 @@ This value is from the IUPAC and is a little smaller than MASS_PROTON + MASS_ELE
       <value system="MKS">5.29177210903e-11</value>
       <value system="CGS">5.29177210903e-9</value>
       <uncertainty type="relative">1.5e-10</uncertainty>
-      <dimensions/>
+      <dimensions length="1"/>
       <maxValue/>
       <minValue/>
       <source url="http://physics.nist.gov/cgi-bin/cuu/Value?bohrrada0" authority="2018 CODATA" year="2019" />
@@ -1027,7 +1029,7 @@ This value is from the IUPAC and is a little smaller than MASS_PROTON + MASS_ELE
       <description>Volumetric mean radius of Jupiter</description>
       <value system="MKS">69_911_000</value>
       <uncertainty type="relative">1.5e-5</uncertainty>
-      <dimensions>length</dimensions>
+      <dimensions length="1"/>
       <maxValue/>
       <minValue/>
       <source url="https://nssdc.gsfc.nasa.gov/planetary/factsheet/jupiterfact.html"/>
@@ -1041,7 +1043,7 @@ This value is from the IUPAC and is a little smaller than MASS_PROTON + MASS_ELE
       <description>mass of Jupiter</description>
       <value system="MKS">1.89819e27</value>
       <uncertainty type="relative">5e-6</uncertainty>
-      <dimensions>mass</dimensions>
+      <dimensions mass="1"/>
       <maxValue/>
       <minValue/>
       <source url="https://nssdc.gsfc.nasa.gov/planetary/factsheet/jupiterfact.html"/>
