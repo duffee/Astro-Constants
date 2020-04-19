@@ -417,7 +417,9 @@ as well as the alternate name C<SOLAR_LUMINOSITY> (imported using the :alternate
 
     1.87834e-26	MKS
 
-Critical Density parameter expressed in terms of  $\frac{\rho_{c}}{h^{2}} = \frac{3 \times (100 km s^{−1} Mpc^{−1})^{2} }{8 \pi G}$  Multiply by the square of the dimensionless Hubble parameter, h, in your calculations to get the actual value
+Critical Density parameter expressed in terms of
+	<math>{ρ<sub>c</sub><over>h<sup>2</sup>} = {3 × (100 km s<sup>−1</sup> Mpc<sup>−1</sup>)<sup>2</sup> <over>8 π G}</math>
+	Multiply by the square of the dimensionless Hubble parameter, h, in your calculations to get the actual value
 
 
 This constant is also available using the short name C<$A_rhoc>
