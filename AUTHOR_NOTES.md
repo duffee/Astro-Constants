@@ -17,6 +17,7 @@ As always check
 [the github repository](https://github.com/duffee/Astro-Constants/issues "Astro::Constants issues")
 for current status on issues.
 
+Only use decimal version numbers; 0.14.1 will not be indexed
 
 # How to Release
 
@@ -38,6 +39,7 @@ The author keeps forgetting how to run dzil.
 * check [RT](https://rt.cpan.org/Public/Dist/Display.html?Name=Astro-Constants)
 * check [Git Pulse](https://github.com/duffee/Astro-Constants/pulse/monthly) for pending issues and pull requests
 * update ChangeLog with history from ```git log```
+* check POD matches current state of the module
 * link Constants.pm to Constants/DatasourceYear.pm or move old version of Constants.pm to Constants/2017.pm if changes to values in PhysicalConstants.xml
 * update git repo tag to new version number
 * build CPAN release - ```dzil release```
