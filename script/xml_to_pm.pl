@@ -21,16 +21,14 @@ my $lib = 'lib';	# where is the lib directory
 mkdir "$lib/Astro/Constants" unless -d "$lib/Astro/Constants";
 open my $ac_fh, '>:utf8', "$lib/Astro/Constants.pm";
 open my $mks_fh, '>:utf8', "$lib/Astro/Constants/MKS.pm";
-open my $cgs_fh, '>:utf8', "$lib/Astro/Constants/CGS.pm";
 
 write_module_header($ac_fh, 'Astro::Constants');
 write_module_header($mks_fh, 'Astro::Constants::MKS');
-write_module_header($cgs_fh, 'Astro::Constants::CGS');
 
 write_pod_synopsis($ac_fh);
 
 for my $constant ( $xml->getElementsByTagName('PhysicalConstant') ) {
-	my ($short_name, $long_name, $mks_value, $cgs_value, $values, $options, ) = undef;
+	my ($short_name, $long_name, $mks_value, $values, $options, ) = undef;
 
 	for my $name ( $constant->getChildrenByTagName('name') ) {
 		$short_name = $name->textContent() if $name->getAttribute('type') eq 'short';
@@ -41,7 +39,6 @@ for my $constant ( $xml->getElementsByTagName('PhysicalConstant') ) {
 	for my $value ( $constant->getChildrenByTagName('value') ) {
 		if ( $value->hasAttribute('system') ) {
 			$values->{mks} = $value->textContent() if $value->getAttribute('system') eq 'MKS';
-			$values->{cgs} = $value->textContent() if $value->getAttribute('system') eq 'CGS';
 		}
 		else {
 			$values->{value} = $value->textContent();
@@ -68,8 +65,6 @@ for my $constant ( $xml->getElementsByTagName('PhysicalConstant') ) {
 
 			write_constant($mks_fh, ($values->{mks} || $values->{value}), $alternate) 
 				if $values->{mks} || $values->{value};
-			write_constant($cgs_fh, ($values->{cgs} || $values->{value}), $alternate) 
-				if $values->{cgs} || $values->{value};
 		}
 	}
 	$options->{deprecated} = 1 if $constant->getChildrenByTagName('deprecated');
@@ -78,8 +73,6 @@ for my $constant ( $xml->getElementsByTagName('PhysicalConstant') ) {
 	write_method_pod($ac_fh, $long_name, $short_name, $description, $values, \@alternates);
 	write_constant($mks_fh, ($values->{mks} || $values->{value}), $long_name, $short_name, $options) 
 			if $values->{mks} || $values->{value};
-	write_constant($cgs_fh, ($values->{cgs} || $values->{value}), $long_name, $short_name) 
-			if $values->{cgs} || $values->{value};
 
 	push @{$tagname->{long}}, $long_name if $long_name;
 	push @{$tagname->{short}}, '$' . $short_name if $short_name;
@@ -100,7 +93,6 @@ for my $constant ( $xml->getElementsByTagName('PhysicalConstant') ) {
 
 write_pod_footer($ac_fh);
 write_module_footer($mks_fh, $tagname);
-write_module_footer($cgs_fh, $tagname);
 
 exit;
 
@@ -122,22 +114,6 @@ HEADER
 	}
 	else {
 		print $fh "use base qw/Exporter/;\n\n";
-	}
-	if ($name eq 'Astro::Constants::CGS') {
-		print $fh <<"NOTICE";
-warn "use of $name is deprecated and will be removed from the package in version 0.15";
-warn "write new code to use Astro::Constants::MKS instead";
-
-=head1 NOTICE OF DEPRECATION
-
-This module is now deprecated and will be removed from the package in version 0.15.
-Write new code to use L<Astro::Constants> or check the documentation.
-The IAU stopped using cgs units last century, so it's about time this module was archived.
-
-=cut
-
-
-NOTICE
 	}
 }
 
