@@ -1,18 +1,28 @@
 package Astro::Constants;
-# ABSTRACT: This library provides physical constants for use in Physics and Astronomy based on values from 2018 CODATA.
+# ABSTRACT: This library provides physical constants for use in Physics and Astronomy
+#           based on values from 2018 CODATA.
+#
+#  They are not constant but are changing still. - Cymbeline, Act II, Scene 5
 
 use 5.006;
 use strict;
 use warnings;
 
-  'They are not constant but are changing still. - Cymbeline, Act II, Scene 5';
+use base qw(Exporter);
+
+=encoding utf8
+
+=head1 NAME
+
+Astro::Constants - provides physical constants for use in Physics and Astronomy
 
 =head1 SYNOPSIS
 
-    use strict;		# important!
-    use Astro::Constants::MKS qw/:long/;
+    use strict;
+    use Astro::Constants qw( :all );
 
-    # to calculate the gravitational force of the Sun on the Earth in Newtons, use GMm/r^2
+    # to calculate the gravitational force of the Sun on the Earth
+    # in Newtons, use GMm/r^2
     my $force_sun_earth = GRAVITATIONAL * MASS_SOLAR * MASS_EARTH / ASTRONOMICAL_UNIT**2;
 
 =head1 DESCRIPTION
@@ -28,23 +38,20 @@ for their constants and may produce different results in comparison.
 On the roadmap is a set of modules to allow you to specify the year or
 data set for the values of constants, defaulting to the most recent.
 
-The C<:long> tag imports all the constants in their long name forms
+The C<:all> tag imports all the constants in their long name forms
 (i.e. GRAVITATIONAL).  Useful subsets can be imported with these tags:
 C<:fundamental> C<:conversion> C<:mathematics> C<:cosmology> 
 C<:planetary> C<:electromagnetic> or C<:nuclear>.
 Alternate names such as LIGHT_SPEED instead of SPEED_LIGHT or HBAR
 instead of H_BAR are imported with C<:alternates>.  I'd like
 to move away from their use, but they have been in the module for years.
-Short forms of the constant names are included to provide backwards
-compatibility with older versions based on Jeremy Bailin's Astroconst
-library and are available through the import tag C<:short>.
 
 Long name constants are constructed with the L<constant> pragma and
 are not interpolated in double quotish situations because they are 
 really inlined functions.
-Short name constants are constructed with the age-old idiom of fiddling
+Short name constants were constructed with the age-old idiom of fiddling
 with the symbol table using typeglobs, e.g. C<*PI = \3.14159>,
-and may be slower than the long name constants.
+and can be slower than the long name constants.
 
 =head2 Why use this module
 
@@ -79,8 +86,7 @@ Nothing is exported by default, so the module doesn't clobber any of your variab
 Select from the following tags:
 
 =for :list
-* C<:long>                (use this one to get the most constants)
-* C<:short>
+* C<:all>             (everything except :deprecated)
 * C<:fundamental>
 * C<:conversion>
 * C<:mathematics>
@@ -89,122 +95,177 @@ Select from the following tags:
 * C<:electromagnetic>
 * C<:nuclear>
 * C<:alternates>
+* C<:deprecated>
+=cut
 
-
+use constant LIGHT_SPEED => 299792458;
+use constant SPEED_LIGHT => 299792458;
+use constant BOLTZMANN => 1.380649e-23;
+use constant GRAVITATIONAL => 6.67430e-11;
+use constant ELECTRON_VOLT => 1.602176634e-19;
+use constant PLANCK => 6.62607015e-34;
+use constant HBAR => 1.0545718176763e-34;
+use constant H_BAR => 1.0545718176763e-34;
+use constant ELECTRON_CHARGE => 1.602176634e-19;
+use constant CHARGE_ELEMENTARY => 1.602176634e-19;
+use constant STEFAN_BOLTZMANN => 5.670374419e-8;
+use constant A_RAD => 7.565723e-16;
+use constant DENSITY_RADIATION => 7.565723e-16;
+use constant WIEN => 2.897771955e-3;
+use constant ALPHA => 7.2973525693e-3;
+use constant VACUUM_IMPEDANCE => 376.730313461;
+use constant IMPEDANCE_VACUUM => 376.730313461;
+use constant PERMITIVITY_0 => 8.8541878128e-12;
+use constant PERMITIV_FREE_SPACE => 8.8541878128e-12;
+use constant PERMEABILITY_0 => 1.25663706212e-6;
+use constant CONSTANT_MAGNETIC => 1.25663706212e-6;
+use constant PERMEABL_FREE_SPACE => 1.25663706212e-6;
+use constant PI => 3.14159265358979324;
+use constant FOURPI => 12.5663706143592;
+use constant FOUR_PI => 12.5663706143592;
+use constant STERADIAN => 3282.80635001174;
+use constant EXP => 2.71828182846;
+use constant ATOMIC_MASS_UNIT => 1.66053906660e-27;
+use constant PARSEC => 3.08567758149e16;
+use constant ASTRONOMICAL_UNIT => 149_597_870_700;
+use constant LIGHT_YEAR => 9_460_730_472_580_800;
+use constant ANGSTROM => 1e-10;
+use constant JANSKY => 1e-26;
+use constant AVOGADRO => 6.02214076e23;
+use constant YEAR_JULIAN => 31_557_600;
+use constant YEAR => 31_557_600;
+use constant YEAR_TROPICAL => 31_556_925.1;
+use constant YEAR_SIDEREAL => 31_558_149.8;
+use constant YEAR_ANOMALISTIC => 31_558_432.6;
+use constant YEAR_ECLIPSE => 29_947_974.3;
+use constant SOLAR_MASS => 1.9884e30;
+use constant MASS_SOLAR => 1.9884e30;
+use constant SOLAR_LUMINOSITY => 3.828e26;
+use constant LUMINOSITY_SOLAR => 3.828e26;
+use constant RHO_C => 1.87834e-26;
+use constant DENSITY_CRITICAL_RHOc => 1.87834e-26;
+sub HUBBLE_TIME { warn "HUBBLE_TIME deprecated"; return 3.0853056e17; }
+use constant CMB_TEMPERATURE => 2.72548;
+use constant TEMPERATURE_CMB => 2.72548;
+use constant SOLAR_V_MAG => -26.74;
+use constant MAGNITUDE_SOLAR_V => -26.74;
+use constant SOLAR_V_ABS_MAG => 4.83;
+use constant MAGNITUDE_SOLAR_V_ABSOLUTE => 4.83;
+use constant SOLAR_RADIUS => 6.96e8;
+use constant RADIUS_SOLAR => 6.96e8;
+use constant EARTH_MASS => 5.9722e24;
+use constant MASS_EARTH => 5.9722e24;
+use constant EARTH_RADIUS => 6.378_136_6e6;
+use constant RADIUS_EARTH => 6.378_136_6e6;
+use constant SOLAR_TEMPERATURE => 5772;
+use constant TEMPERATURE_SOLAR_SURFACE => 5772;
+use constant SOLAR_DENSITY => 1408;
+use constant DENSITY_SOLAR => 1408;
+use constant EARTH_DENSITY => 5515;
+use constant DENSITY_EARTH => 5515;
+use constant SOLAR_GRAVITY => 274.78;
+use constant GRAVITY_SOLAR => 274.78;
+use constant EARTH_GRAVITY => 9.80665;
+use constant GRAVITY_EARTH => 9.80665;
+use constant LUNAR_RADIUS => 1.7381e6;
+use constant RADIUS_LUNAR => 1.7381e6;
+use constant LUNAR_MASS => 7.346e22;
+use constant MASS_LUNAR => 7.346e22;
+use constant LUNAR_SM_AXIS => 3.84402e8;
+use constant AXIS_SM_LUNAR => 3.84402e8;
+use constant LUNAR_ECCENTRICITY => 0.0549;
+use constant ECCENTRICITY_LUNAR => 0.0549;
+use constant THOMSON_XSECTION => 6.6524587321e-29;
+use constant THOMSON_CROSS_SECTION => 6.6524587321e-29;
+use constant ELECTRON_MASS => 9.1093837015e-31;
+use constant MASS_ELECTRON => 9.1093837015e-31;
+use constant PROTON_MASS => 1.67262192369e-27;
+use constant MASS_PROTON => 1.67262192369e-27;
+use constant NEUTRON_MASS => 1.67492749804e-27;
+use constant MASS_NEUTRON => 1.67492749804e-27;
+use constant HYDROGEN_MASS => 1.6738e-27;
+use constant MASS_HYDROGEN => 1.6738e-27;
+use constant MASS_ALPHA => 6.6446573357e-27;
+use constant ELECTRON_RADIUS => 2.8179403262e-15;
+use constant RADIUS_ELECTRON => 2.8179403262e-15;
+use constant BOHR_RADIUS => 5.29177210903e-11;
+use constant RADIUS_BOHR => 5.29177210903e-11;
+use constant RADIUS_JUPITER => 69_911_000;
+use constant MASS_JUPITER => 1.89819e27;
 
 =method SPEED_LIGHT
 
-    299792458	MKS
+    299792458
 
 speed of light in a vacuum
 
-
-This constant is also available using the short name C<$A_c>
-as well as the alternate name C<LIGHT_SPEED> (imported using the :alternate tag for backwards compatibility)
-
+This constant is also available using the alternate name C<LIGHT_SPEED> (imported using the :alternate tag for backwards compatibility)
 
 =method BOLTZMANN
 
-    1.380649e-23	MKS
+    1.380649e-23
 
 Boltzmann's constant
 
-
-This constant is also available using the short name C<$A_k>
-
-
 =method GRAVITATIONAL
 
-    6.67430e-11	MKS
+    6.67430e-11
 
 universal gravitational constant
 
-
-This constant is also available using the short name C<$A_G>
-
-
 =method ELECTRON_VOLT
 
-    1.602176634e-19	MKS
+    1.602176634e-19
 
 electron volt
 
-
-This constant is also available using the short name C<$A_eV>
-
-
 =method PLANCK
 
-    6.62607015e-34	MKS
+    6.62607015e-34
 
 Planck constant
 
-
-This constant is also available using the short name C<$A_h>
-
-
 =method H_BAR
 
-    1.0545718176763e-34	MKS
+    1.0545718176763e-34
 
 the reduced Planck constant, Planck's constant (exact) /2pi
 
-
-This constant is also available using the short name C<$A_hbar>
-as well as the alternate name C<HBAR> (imported using the :alternate tag for backwards compatibility)
-
+This constant is also available using the alternate name C<HBAR> (imported using the :alternate tag for backwards compatibility)
 
 =method CHARGE_ELEMENTARY
 
-    1.602176634e-19	MKS
+    1.602176634e-19
 
 electron charge (defined positive)
 
-
-This constant is also available using the short name C<$A_e>
-as well as the alternate name C<ELECTRON_CHARGE> (imported using the :alternate tag for backwards compatibility)
-
+This constant is also available using the alternate name C<ELECTRON_CHARGE> (imported using the :alternate tag for backwards compatibility)
 
 =method STEFAN_BOLTZMANN
 
-    5.670374419e-8	MKS
+    5.670374419e-8
 
 Stefan-Boltzmann constant
 
-
-This constant is also available using the short name C<$A_sigma>
-
-
 =method DENSITY_RADIATION
 
-    7.565723e-16	MKS
+    7.565723e-16
 
 radiation density constant, 4 * sigma / c
 
-
-This constant is also available using the short name C<$A_arad>
-as well as the alternate name C<A_RAD> (imported using the :alternate tag for backwards compatibility)
-
+This constant is also available using the alternate name C<A_RAD> (imported using the :alternate tag for backwards compatibility)
 
 =method WIEN
 
-    2.897771955e-3	MKS
+    2.897771955e-3
 
 Wien wavelength displacement law constant
 
-
-This constant is also available using the short name C<$A_Wien>
-
-
 =method ALPHA
 
-    7.2973525693e-3	MKS
+    7.2973525693e-3
 
 fine structure constant
-
-
-This constant is also available using the short name C<$A_alpha>
-
 
 =method IMPEDANCE_VACUUM
 
@@ -212,32 +273,23 @@ This constant is also available using the short name C<$A_alpha>
 
 characteristic impedance of vacuum
 
-
-This constant is also available using the short name C<$A_Z0>
-as well as the alternate name C<VACUUM_IMPEDANCE> (imported using the :alternate tag for backwards compatibility)
-
+This constant is also available using the alternate name C<VACUUM_IMPEDANCE> (imported using the :alternate tag for backwards compatibility)
 
 =method PERMITIV_FREE_SPACE
 
-    8.8541878128e-12	MKS
+    8.8541878128e-12
 
 permittivity of free space, epsilon_0, the electric constant
 
-
-This constant is also available using the short name C<$A_eps0>
-as well as the alternate name C<PERMITIVITY_0> (imported using the :alternate tag for backwards compatibility)
-
+This constant is also available using the alternate name C<PERMITIVITY_0> (imported using the :alternate tag for backwards compatibility)
 
 =method PERMEABL_FREE_SPACE
 
-    1.25663706212e-6	MKS
+    1.25663706212e-6
 
 permeability of free space, mu_0, the magnetic constant
 
-
-This constant is also available using the short name C<$A_mu0>
-as well as these alternate names (imported using the :alternate tag): PERMEABILITY_0, CONSTANT_MAGNETIC
-
+This constant is also available using these alternate names (imported using the :alternate tag): PERMEABILITY_0, CONSTANT_MAGNETIC
 
 =method PI
 
@@ -245,20 +297,13 @@ as well as these alternate names (imported using the :alternate tag): PERMEABILI
 
 trig constant pi
 
-
-This constant is also available using the short name C<$A_pi>
-
-
 =method FOUR_PI
 
     12.5663706143592
 
 trig constant pi times 4 (shorthand for some calculations)
 
-
-This constant is also available using the short name C<$A_4pi>
-as well as the alternate name C<FOURPI> (imported using the :alternate tag for backwards compatibility)
-
+This constant is also available using the alternate name C<FOURPI> (imported using the :alternate tag for backwards compatibility)
 
 =method STERADIAN
 
@@ -266,79 +311,47 @@ as well as the alternate name C<FOURPI> (imported using the :alternate tag for b
 
 a measure of solid angle in square degrees and a SI derived unit
 
-
-This constant is also available using the short name C<$A_ster>
-
-
 =method EXP
 
     2.71828182846
 
 base of natural logarithm
 
-
-This constant is also available using the short name C<$A_exp>
-
-
 =method ATOMIC_MASS_UNIT
 
-    1.66053906660e-27	MKS
+    1.66053906660e-27
 
 unified atomic mass unit, 1 u
 
-
-This constant is also available using the short name C<$A_amu>
-
-
 =method PARSEC
 
-    3.08567758149e16	MKS
+    3.08567758149e16
 
 parsec
 
-
-This constant is also available using the short name C<$A_pc>
-
-
 =method ASTRONOMICAL_UNIT
 
-    149_597_870_700	MKS
+    149_597_870_700
 
 astronomical unit
 
-
-This constant is also available using the short name C<$A_AU>
-
-
 =method LIGHT_YEAR
 
-    9_460_730_472_580_800	MKS
+    9_460_730_472_580_800
 
 the distance that light travels in vacuum in one Julian year
 
-
-This constant is also available using the short name C<$A_ly>
-
-
 =method ANGSTROM
 
-    1e-10	MKS
+    1e-10
 
 Angstrom
 
-
-This constant is also available using the short name C<$A_AA>
-
-
 =method JANSKY
 
-    1e-26	MKS
+    1e-26
 
 Jansky, a unit of flux density
-
-
-This constant is also available using the short name C<$A_Jy>
-
 
 =method AVOGADRO
 
@@ -346,20 +359,13 @@ This constant is also available using the short name C<$A_Jy>
 
 Avogadro's number
 
-
-This constant is also available using the short name C<$A_NA>
-
-
 =method YEAR
 
     31_557_600
 
 defined as exactly 365.25 days of 86400 SI seconds
 
-
-This constant is also available using the short name C<$A_yr>
-as well as the alternate name C<YEAR_JULIAN> (imported using the :alternate tag for backwards compatibility)
-
+This constant is also available using the alternate name C<YEAR_JULIAN> (imported using the :alternate tag for backwards compatibility)
 
 =method YEAR_TROPICAL
 
@@ -367,17 +373,11 @@ as well as the alternate name C<YEAR_JULIAN> (imported using the :alternate tag 
 
 the period of time for the ecliptic longitude of the Sun to increase 360 degrees, approximated by the Gregorian calendar
 
-
-
-
 =method YEAR_SIDEREAL
 
     31_558_149.8
 
 the period of revolution of the Earth around the Sun in a fixed reference frame
-
-
-
 
 =method YEAR_ANOMALISTIC
 
@@ -385,43 +385,31 @@ the period of revolution of the Earth around the Sun in a fixed reference frame
 
 the period between successive passages of the Earth through perihelion
 
-
-
-
 =method YEAR_ECLIPSE
 
     29_947_974.3
 
 the period between successive passages of the Sun (as seen from the geocenter) through the same lunar node
 
-
-
-
 =method MASS_SOLAR
 
-    1.9884e30	MKS
+    1.9884e30
 
 solar mass
 
-
-This constant is also available using the short name C<$A_msun>
-as well as the alternate name C<SOLAR_MASS> (imported using the :alternate tag for backwards compatibility)
-
+This constant is also available using the alternate name C<SOLAR_MASS> (imported using the :alternate tag for backwards compatibility)
 
 =method LUMINOSITY_SOLAR
 
-    3.828e26	MKS
+    3.828e26
 
 solar luminosity
 
-
-This constant is also available using the short name C<$A_Lsun>
-as well as the alternate name C<SOLAR_LUMINOSITY> (imported using the :alternate tag for backwards compatibility)
-
+This constant is also available using the alternate name C<SOLAR_LUMINOSITY> (imported using the :alternate tag for backwards compatibility)
 
 =method DENSITY_CRITICAL_RHOc
 
-    1.87834e-26	MKS
+    1.87834e-26
 
 Critical Density parameter expressed in terms of
 	      
@@ -429,10 +417,7 @@ Critical Density parameter expressed in terms of
 	      
 Multiply by the square of the dimensionless Hubble parameter, h, in your calculations to get the actual value
 
-
-This constant is also available using the short name C<$A_rhoc>
-as well as the alternate name C<RHO_C> (imported using the :alternate tag for backwards compatibility)
-
+This constant is also available using the alternate name C<RHO_C> (imported using the :alternate tag for backwards compatibility)
 
 =method HUBBLE_TIME
 
@@ -440,20 +425,13 @@ as well as the alternate name C<RHO_C> (imported using the :alternate tag for ba
 
 Hubble time *h, the inverse of Hubble's constant valued at 100 km/s/Mpc (DEPRECATED - see ChangeLog)
 
-
-This constant is also available using the short name C<$A_tH>
-
-
 =method TEMPERATURE_CMB
 
     2.72548
 
 cosmic microwave background temperature in Kelvin
 
-
-This constant is also available using the short name C<$A_TCMB>
-as well as the alternate name C<CMB_TEMPERATURE> (imported using the :alternate tag for backwards compatibility)
-
+This constant is also available using the alternate name C<CMB_TEMPERATURE> (imported using the :alternate tag for backwards compatibility)
 
 =method MAGNITUDE_SOLAR_V
 
@@ -461,10 +439,7 @@ as well as the alternate name C<CMB_TEMPERATURE> (imported using the :alternate 
 
 visual brightness of the Sun
 
-
-This constant is also available using the short name C<$A_Vsun>
-as well as the alternate name C<SOLAR_V_MAG> (imported using the :alternate tag for backwards compatibility)
-
+This constant is also available using the alternate name C<SOLAR_V_MAG> (imported using the :alternate tag for backwards compatibility)
 
 =method MAGNITUDE_SOLAR_V_ABSOLUTE
 
@@ -472,43 +447,31 @@ as well as the alternate name C<SOLAR_V_MAG> (imported using the :alternate tag 
 
 solar absolute V magnitude
 
-
-This constant is also available using the short name C<$A_MVsun>
-as well as the alternate name C<SOLAR_V_ABS_MAG> (imported using the :alternate tag for backwards compatibility)
-
+This constant is also available using the alternate name C<SOLAR_V_ABS_MAG> (imported using the :alternate tag for backwards compatibility)
 
 =method RADIUS_SOLAR
 
-    6.96e8	MKS
+    6.96e8
 
 solar radius
 
-
-This constant is also available using the short name C<$A_rsun>
-as well as the alternate name C<SOLAR_RADIUS> (imported using the :alternate tag for backwards compatibility)
-
+This constant is also available using the alternate name C<SOLAR_RADIUS> (imported using the :alternate tag for backwards compatibility)
 
 =method MASS_EARTH
 
-    5.9722e24	MKS
+    5.9722e24
 
 mass of Earth
 
-
-This constant is also available using the short name C<$A_mearth>
-as well as the alternate name C<EARTH_MASS> (imported using the :alternate tag for backwards compatibility)
-
+This constant is also available using the alternate name C<EARTH_MASS> (imported using the :alternate tag for backwards compatibility)
 
 =method RADIUS_EARTH
 
-    6.378_136_6e6	MKS
+    6.378_136_6e6
 
 radius of Earth
 
-
-This constant is also available using the short name C<$A_rearth>
-as well as the alternate name C<EARTH_RADIUS> (imported using the :alternate tag for backwards compatibility)
-
+This constant is also available using the alternate name C<EARTH_RADIUS> (imported using the :alternate tag for backwards compatibility)
 
 =method TEMPERATURE_SOLAR_SURFACE
 
@@ -516,87 +479,63 @@ as well as the alternate name C<EARTH_RADIUS> (imported using the :alternate tag
 
 surface temperature of sun (photosphere)
 
-
-This constant is also available using the short name C<$A_Tsun>
-as well as the alternate name C<SOLAR_TEMPERATURE> (imported using the :alternate tag for backwards compatibility)
-
+This constant is also available using the alternate name C<SOLAR_TEMPERATURE> (imported using the :alternate tag for backwards compatibility)
 
 =method DENSITY_SOLAR
 
-    1408	MKS
+    1408
 
 mean solar density
 
-
-This constant is also available using the short name C<$A_dsun>
-as well as the alternate name C<SOLAR_DENSITY> (imported using the :alternate tag for backwards compatibility)
-
+This constant is also available using the alternate name C<SOLAR_DENSITY> (imported using the :alternate tag for backwards compatibility)
 
 =method DENSITY_EARTH
 
-    5515	MKS
+    5515
 
 mean Earth density
 
-
-This constant is also available using the short name C<$A_dearth>
-as well as the alternate name C<EARTH_DENSITY> (imported using the :alternate tag for backwards compatibility)
-
+This constant is also available using the alternate name C<EARTH_DENSITY> (imported using the :alternate tag for backwards compatibility)
 
 =method GRAVITY_SOLAR
 
-    274.78	MKS
+    274.78
 
 solar surface gravity
 
-
-This constant is also available using the short name C<$A_gsun>
-as well as the alternate name C<SOLAR_GRAVITY> (imported using the :alternate tag for backwards compatibility)
-
+This constant is also available using the alternate name C<SOLAR_GRAVITY> (imported using the :alternate tag for backwards compatibility)
 
 =method GRAVITY_EARTH
 
-    9.80665	MKS
+    9.80665
 
 Earth surface gravity
 
-
-This constant is also available using the short name C<$A_gearth>
-as well as the alternate name C<EARTH_GRAVITY> (imported using the :alternate tag for backwards compatibility)
-
+This constant is also available using the alternate name C<EARTH_GRAVITY> (imported using the :alternate tag for backwards compatibility)
 
 =method RADIUS_LUNAR
 
-    1.7381e6	MKS
+    1.7381e6
 
 lunar radius
 
-
-This constant is also available using the short name C<$A_rmoon>
-as well as the alternate name C<LUNAR_RADIUS> (imported using the :alternate tag for backwards compatibility)
-
+This constant is also available using the alternate name C<LUNAR_RADIUS> (imported using the :alternate tag for backwards compatibility)
 
 =method MASS_LUNAR
 
-    7.346e22	MKS
+    7.346e22
 
 lunar mass
 
-
-This constant is also available using the short name C<$A_mmoon>
-as well as the alternate name C<LUNAR_MASS> (imported using the :alternate tag for backwards compatibility)
-
+This constant is also available using the alternate name C<LUNAR_MASS> (imported using the :alternate tag for backwards compatibility)
 
 =method AXIS_SM_LUNAR
 
-    3.84402e8	MKS
+    3.84402e8
 
 lunar orbital semi-major axis
 
-
-This constant is also available using the short name C<$A_amoon>
-as well as the alternate name C<LUNAR_SM_AXIS> (imported using the :alternate tag for backwards compatibility)
-
+This constant is also available using the alternate name C<LUNAR_SM_AXIS> (imported using the :alternate tag for backwards compatibility)
 
 =method ECCENTRICITY_LUNAR
 
@@ -604,54 +543,39 @@ as well as the alternate name C<LUNAR_SM_AXIS> (imported using the :alternate ta
 
 lunar orbital eccentricity
 
-
-This constant is also available using the short name C<$A_emoon>
-as well as the alternate name C<LUNAR_ECCENTRICITY> (imported using the :alternate tag for backwards compatibility)
-
+This constant is also available using the alternate name C<LUNAR_ECCENTRICITY> (imported using the :alternate tag for backwards compatibility)
 
 =method THOMSON_CROSS_SECTION
 
-    6.6524587321e-29	MKS
+    6.6524587321e-29
 
 Thomson cross-section
 
-
-This constant is also available using the short name C<$A_sigmaT>
-as well as the alternate name C<THOMSON_XSECTION> (imported using the :alternate tag for backwards compatibility)
-
+This constant is also available using the alternate name C<THOMSON_XSECTION> (imported using the :alternate tag for backwards compatibility)
 
 =method MASS_ELECTRON
 
-    9.1093837015e-31	MKS
+    9.1093837015e-31
 
 mass of electron
 
-
-This constant is also available using the short name C<$A_me>
-as well as the alternate name C<ELECTRON_MASS> (imported using the :alternate tag for backwards compatibility)
-
+This constant is also available using the alternate name C<ELECTRON_MASS> (imported using the :alternate tag for backwards compatibility)
 
 =method MASS_PROTON
 
-    1.67262192369e-27	MKS
+    1.67262192369e-27
 
 mass of proton
 
-
-This constant is also available using the short name C<$A_mp>
-as well as the alternate name C<PROTON_MASS> (imported using the :alternate tag for backwards compatibility)
-
+This constant is also available using the alternate name C<PROTON_MASS> (imported using the :alternate tag for backwards compatibility)
 
 =method MASS_NEUTRON
 
-    1.67492749804e-27	MKS
+    1.67492749804e-27
 
 neutron mass
 
-
-This constant is also available using the short name C<$A_mn>
-as well as the alternate name C<NEUTRON_MASS> (imported using the :alternate tag for backwards compatibility)
-
+This constant is also available using the alternate name C<NEUTRON_MASS> (imported using the :alternate tag for backwards compatibility)
 
 =method MASS_HYDROGEN
 
@@ -661,10 +585,7 @@ mass of Hydrogen atom --
 This value is from the IUPAC and is a little smaller than MASS_PROTON + MASS_ELECTRON, but within the uncertainty given here.  The current value is 1.008u +/- 0.0002 derived from a range of terrestrial materials.  If this is for precision work, you had best understand what you're using.  See https://iupac.org/what-we-do/periodic-table-of-elements/
 
 
-
-This constant is also available using the short name C<$A_mH>
-as well as the alternate name C<HYDROGEN_MASS> (imported using the :alternate tag for backwards compatibility)
-
+This constant is also available using the alternate name C<HYDROGEN_MASS> (imported using the :alternate tag for backwards compatibility)
 
 =method MASS_ALPHA
 
@@ -672,62 +593,47 @@ as well as the alternate name C<HYDROGEN_MASS> (imported using the :alternate ta
 
 mass of alpha particle
 
-
-This constant is also available using the short name C<$A_ma>
-
-
 =method RADIUS_ELECTRON
 
-    2.8179403262e-15	MKS
+    2.8179403262e-15
 
 classical electron radius
 
-
-This constant is also available using the short name C<$A_re>
-as well as the alternate name C<ELECTRON_RADIUS> (imported using the :alternate tag for backwards compatibility)
-
+This constant is also available using the alternate name C<ELECTRON_RADIUS> (imported using the :alternate tag for backwards compatibility)
 
 =method RADIUS_BOHR
 
-    5.29177210903e-11	MKS
+    5.29177210903e-11
 
 Bohr radius
 
-
-This constant is also available using the short name C<$A_a0>
-as well as the alternate name C<BOHR_RADIUS> (imported using the :alternate tag for backwards compatibility)
-
+This constant is also available using the alternate name C<BOHR_RADIUS> (imported using the :alternate tag for backwards compatibility)
 
 =method RADIUS_JUPITER
 
-    69_911_000	MKS
+    69_911_000
 
 Volumetric mean radius of Jupiter
 
-
-This constant is also available using the short name C<$A_rjup>
-
-
 =method MASS_JUPITER
 
-    1.89819e27	MKS
+    1.89819e27
 
 mass of Jupiter
 
+=head1 FUNCTIONS
 
-This constant is also available using the short name C<$A_mjup>
-
-=method pretty
+=head2 pretty
 
 This is a helper function that rounds a value or list of values to 5 significant figures.
 
-=method precision
+=head2 precision
 
 Give this method the string of the constant and it returns the precision or uncertainty
 listed.
 
-  $rel_precision = precision('GRAVITATIONAL');
-  $abs_precision = precision('MASS_EARTH');
+  \$rel_precision = precision('GRAVITATIONAL');
+  \$abs_precision = precision('MASS_EARTH');
 
 At the moment you need to know whether the uncertainty is relative or absolute.
 Looking to fix this in future versions.
@@ -791,8 +697,7 @@ the original astroconst sites have disappeared
 
 =head1 ROADMAP
 
-I plan to deprecate the short names and change the order in which
-long names are constructed, moving to a I<noun_adjective> format.
+I have moved to a I<noun_adjective> format for long names.
 LIGHT_SPEED and SOLAR_MASS become SPEED_LIGHT and MASS_SOLAR.
 This principle should make the code easier to read with the most
 important information coming at the beginning of the name.
@@ -843,4 +748,100 @@ documentation.
 
 =cut
 
+my %_precision = (
+	ALPHA 	=> {value => 1.5e-10, 	type => 'relative'},
+	ANGSTROM 	=> {value => 0, 	type => 'relative'},
+	ASTRONOMICAL_UNIT 	=> {value => 0, 	type => 'relative'},
+	ATOMIC_MASS_UNIT 	=> {value => 3.0e-10, 	type => 'relative'},
+	AVOGADRO 	=> {value => 0, 	type => 'relative'},
+	AXIS_SM_LUNAR 	=> {value => 3e-9, 	type => 'relative'},
+	BOLTZMANN 	=> {value => 0, 	type => 'relative'},
+	CHARGE_ELEMENTARY 	=> {value => 0, 	type => 'relative'},
+	DENSITY_CRITICAL_RHOc 	=> {value => 2.3e-5, 	type => 'relative'},
+	DENSITY_EARTH 	=> {value => 0.0002, 	type => 'relative'},
+	DENSITY_RADIATION 	=> {value => 2.3e-6, 	type => 'relative'},
+	DENSITY_SOLAR 	=> {value => 0.001, 	type => 'relative'},
+	ECCENTRICITY_LUNAR 	=> {value => 0.002, 	type => 'relative'},
+	ELECTRON_VOLT 	=> {value => 0, 	type => 'relative'},
+	EXP 	=> {value => 0.00000000001, 	type => 'relative'},
+	FOUR_PI 	=> {value => 0.0000000000001, 	type => 'relative'},
+	GRAVITATIONAL 	=> {value => 2.2e-5, 	type => 'relative'},
+	GRAVITY_EARTH 	=> {value => 0.000001, 	type => 'relative'},
+	GRAVITY_SOLAR 	=> {value => 0.0004, 	type => 'relative'},
+	HUBBLE_TIME 	=> {value => 0.0000001, 	type => 'relative'},
+	H_BAR 	=> {value => 1.5e-9, 	type => 'relative'},
+	IMPEDANCE_VACUUM 	=> {value => 1e-50, 	type => 'relative'},
+	JANSKY 	=> {value => 0, 	type => 'relative'},
+	LIGHT_YEAR 	=> {value => 0, 	type => 'relative'},
+	LUMINOSITY_SOLAR 	=> {value => 0.0003, 	type => 'relative'},
+	MAGNITUDE_SOLAR_V 	=> {value => 0.0004, 	type => 'relative'},
+	MAGNITUDE_SOLAR_V_ABSOLUTE 	=> {value => 0.002, 	type => 'relative'},
+	MASS_ALPHA 	=> {value => 3.0e-10, 	type => 'relative'},
+	MASS_EARTH 	=> {value => 6e20, 	type => 'absolute'},
+	MASS_ELECTRON 	=> {value => 3e-10, 	type => 'relative'},
+	MASS_HYDROGEN 	=> {value => 3.3e-31, 	type => 'absolute'},
+	MASS_JUPITER 	=> {value => 5e-6, 	type => 'relative'},
+	MASS_LUNAR 	=> {value => 0.0002, 	type => 'relative'},
+	MASS_NEUTRON 	=> {value => 5.7e-10, 	type => 'relative'},
+	MASS_PROTON 	=> {value => 3.1e-10, 	type => 'relative'},
+	MASS_SOLAR 	=> {value => 0.0001, 	type => 'relative'},
+	PARSEC 	=> {value => 1e-11, 	type => 'relative'},
+	PERMEABL_FREE_SPACE 	=> {value => 1.5e-10, 	type => 'relative'},
+	PERMITIV_FREE_SPACE 	=> {value => 1.5e-10, 	type => 'relative'},
+	PI 	=> {value => 0.00000000000000001, 	type => 'relative'},
+	PLANCK 	=> {value => 0, 	type => 'relative'},
+	RADIUS_BOHR 	=> {value => 1.5e-10, 	type => 'relative'},
+	RADIUS_EARTH 	=> {value => 0.1, 	type => 'absolute'},
+	RADIUS_ELECTRON 	=> {value => 4.5e-10, 	type => 'relative'},
+	RADIUS_JUPITER 	=> {value => 1.5e-5, 	type => 'relative'},
+	RADIUS_LUNAR 	=> {value => 6e-5, 	type => 'relative'},
+	RADIUS_SOLAR 	=> {value => 0.002, 	type => 'relative'},
+	SPEED_LIGHT 	=> {value => 0, 	type => 'relative'},
+	STEFAN_BOLTZMANN 	=> {value => 1.7e-10, 	type => 'relative'},
+	STERADIAN 	=> {value => 0.00000000000001, 	type => 'relative'},
+	TEMPERATURE_CMB 	=> {value => 0.00057, 	type => 'absolute'},
+	TEMPERATURE_SOLAR_SURFACE 	=> {value => 0.0002, 	type => 'relative'},
+	THOMSON_CROSS_SECTION 	=> {value => 9.1e-10, 	type => 'relative'},
+	WIEN 	=> {value => 1e-10, 	type => 'relative'},
+	YEAR 	=> {value => 0, 	type => 'relative'},
+	YEAR_ANOMALISTIC 	=> {value => 0.1, 	type => 'absolute'},
+	YEAR_ECLIPSE 	=> {value => 0.1, 	type => 'absolute'},
+	YEAR_SIDEREAL 	=> {value => 1, 	type => 'absolute'},
+	YEAR_TROPICAL 	=> {value => 0.1, 	type => 'absolute'},
+);
 
+# some helper functions
+sub pretty {
+	if (@_ > 1) {
+		return map { sprintf("%1.3e", $_) } @_;
+	}
+	return sprintf("%1.3e", shift);
+}
+
+sub precision {
+	my ($name, $type) = @_;
+	warn "precision() requires a string, not the constant value" 
+		unless exists $_precision{$name};
+
+	return $_precision{$name}->{value};
+}
+
+our @EXPORT_OK = qw(
+	LIGHT_SPEED SPEED_LIGHT BOLTZMANN GRAVITATIONAL ELECTRON_VOLT PLANCK HBAR H_BAR ELECTRON_CHARGE CHARGE_ELEMENTARY STEFAN_BOLTZMANN A_RAD DENSITY_RADIATION WIEN ALPHA VACUUM_IMPEDANCE IMPEDANCE_VACUUM PERMITIVITY_0 PERMITIV_FREE_SPACE PERMEABILITY_0 CONSTANT_MAGNETIC PERMEABL_FREE_SPACE PI FOURPI FOUR_PI STERADIAN EXP ATOMIC_MASS_UNIT PARSEC ASTRONOMICAL_UNIT LIGHT_YEAR ANGSTROM JANSKY AVOGADRO YEAR_JULIAN YEAR YEAR_TROPICAL YEAR_SIDEREAL YEAR_ANOMALISTIC YEAR_ECLIPSE SOLAR_MASS MASS_SOLAR SOLAR_LUMINOSITY LUMINOSITY_SOLAR RHO_C DENSITY_CRITICAL_RHOc HUBBLE_TIME CMB_TEMPERATURE TEMPERATURE_CMB SOLAR_V_MAG MAGNITUDE_SOLAR_V SOLAR_V_ABS_MAG MAGNITUDE_SOLAR_V_ABSOLUTE SOLAR_RADIUS RADIUS_SOLAR EARTH_MASS MASS_EARTH EARTH_RADIUS RADIUS_EARTH SOLAR_TEMPERATURE TEMPERATURE_SOLAR_SURFACE SOLAR_DENSITY DENSITY_SOLAR EARTH_DENSITY DENSITY_EARTH SOLAR_GRAVITY GRAVITY_SOLAR EARTH_GRAVITY GRAVITY_EARTH LUNAR_RADIUS RADIUS_LUNAR LUNAR_MASS MASS_LUNAR LUNAR_SM_AXIS AXIS_SM_LUNAR LUNAR_ECCENTRICITY ECCENTRICITY_LUNAR THOMSON_XSECTION THOMSON_CROSS_SECTION ELECTRON_MASS MASS_ELECTRON PROTON_MASS MASS_PROTON NEUTRON_MASS MASS_NEUTRON HYDROGEN_MASS MASS_HYDROGEN MASS_ALPHA ELECTRON_RADIUS RADIUS_ELECTRON BOHR_RADIUS RADIUS_BOHR RADIUS_JUPITER MASS_JUPITER
+	LIGHT_SPEED HBAR ELECTRON_CHARGE A_RAD VACUUM_IMPEDANCE PERMITIVITY_0 PERMEABILITY_0 CONSTANT_MAGNETIC FOURPI YEAR_JULIAN SOLAR_MASS SOLAR_LUMINOSITY RHO_C CMB_TEMPERATURE SOLAR_V_MAG SOLAR_V_ABS_MAG SOLAR_RADIUS EARTH_MASS EARTH_RADIUS SOLAR_TEMPERATURE SOLAR_DENSITY EARTH_DENSITY SOLAR_GRAVITY EARTH_GRAVITY LUNAR_RADIUS LUNAR_MASS LUNAR_SM_AXIS LUNAR_ECCENTRICITY THOMSON_XSECTION ELECTRON_MASS PROTON_MASS NEUTRON_MASS HYDROGEN_MASS ELECTRON_RADIUS BOHR_RADIUS
+	pretty precision
+);
+
+our %EXPORT_TAGS = (
+	all => [qw( LIGHT_SPEED SPEED_LIGHT BOLTZMANN GRAVITATIONAL ELECTRON_VOLT PLANCK HBAR H_BAR ELECTRON_CHARGE CHARGE_ELEMENTARY STEFAN_BOLTZMANN A_RAD DENSITY_RADIATION WIEN ALPHA VACUUM_IMPEDANCE IMPEDANCE_VACUUM PERMITIVITY_0 PERMITIV_FREE_SPACE PERMEABILITY_0 CONSTANT_MAGNETIC PERMEABL_FREE_SPACE PI FOURPI FOUR_PI STERADIAN EXP ATOMIC_MASS_UNIT PARSEC ASTRONOMICAL_UNIT LIGHT_YEAR ANGSTROM JANSKY AVOGADRO YEAR_JULIAN YEAR YEAR_TROPICAL YEAR_SIDEREAL YEAR_ANOMALISTIC YEAR_ECLIPSE SOLAR_MASS MASS_SOLAR SOLAR_LUMINOSITY LUMINOSITY_SOLAR RHO_C DENSITY_CRITICAL_RHOc HUBBLE_TIME CMB_TEMPERATURE TEMPERATURE_CMB SOLAR_V_MAG MAGNITUDE_SOLAR_V SOLAR_V_ABS_MAG MAGNITUDE_SOLAR_V_ABSOLUTE SOLAR_RADIUS RADIUS_SOLAR EARTH_MASS MASS_EARTH EARTH_RADIUS RADIUS_EARTH SOLAR_TEMPERATURE TEMPERATURE_SOLAR_SURFACE SOLAR_DENSITY DENSITY_SOLAR EARTH_DENSITY DENSITY_EARTH SOLAR_GRAVITY GRAVITY_SOLAR EARTH_GRAVITY GRAVITY_EARTH LUNAR_RADIUS RADIUS_LUNAR LUNAR_MASS MASS_LUNAR LUNAR_SM_AXIS AXIS_SM_LUNAR LUNAR_ECCENTRICITY ECCENTRICITY_LUNAR THOMSON_XSECTION THOMSON_CROSS_SECTION ELECTRON_MASS MASS_ELECTRON PROTON_MASS MASS_PROTON NEUTRON_MASS MASS_NEUTRON HYDROGEN_MASS MASS_HYDROGEN MASS_ALPHA ELECTRON_RADIUS RADIUS_ELECTRON BOHR_RADIUS RADIUS_BOHR RADIUS_JUPITER MASS_JUPITER )],
+	alternates => [qw( LIGHT_SPEED HBAR ELECTRON_CHARGE A_RAD VACUUM_IMPEDANCE PERMITIVITY_0 PERMEABILITY_0 CONSTANT_MAGNETIC FOURPI YEAR_JULIAN SOLAR_MASS SOLAR_LUMINOSITY RHO_C CMB_TEMPERATURE SOLAR_V_MAG SOLAR_V_ABS_MAG SOLAR_RADIUS EARTH_MASS EARTH_RADIUS SOLAR_TEMPERATURE SOLAR_DENSITY EARTH_DENSITY SOLAR_GRAVITY EARTH_GRAVITY LUNAR_RADIUS LUNAR_MASS LUNAR_SM_AXIS LUNAR_ECCENTRICITY THOMSON_XSECTION ELECTRON_MASS PROTON_MASS NEUTRON_MASS HYDROGEN_MASS ELECTRON_RADIUS BOHR_RADIUS )],
+	conversion => [qw( ELECTRON_VOLT STERADIAN ATOMIC_MASS_UNIT PARSEC ASTRONOMICAL_UNIT LIGHT_YEAR ANGSTROM JANSKY AVOGADRO YEAR YEAR_JULIAN YEAR_TROPICAL YEAR_SIDEREAL YEAR_ANOMALISTIC YEAR_ECLIPSE )],
+	cosmology => [qw( SPEED_LIGHT LIGHT_SPEED GRAVITATIONAL PLANCK H_BAR HBAR STEFAN_BOLTZMANN DENSITY_RADIATION A_RAD WIEN ALPHA IMPEDANCE_VACUUM VACUUM_IMPEDANCE PARSEC ASTRONOMICAL_UNIT LIGHT_YEAR JANSKY YEAR YEAR_JULIAN YEAR_TROPICAL YEAR_SIDEREAL MASS_SOLAR SOLAR_MASS LUMINOSITY_SOLAR SOLAR_LUMINOSITY DENSITY_CRITICAL_RHOc RHO_C HUBBLE_TIME TEMPERATURE_CMB CMB_TEMPERATURE MAGNITUDE_SOLAR_V SOLAR_V_MAG MAGNITUDE_SOLAR_V_ABSOLUTE SOLAR_V_ABS_MAG )],
+	electromagnetic => [qw( SPEED_LIGHT LIGHT_SPEED BOLTZMANN ELECTRON_VOLT PLANCK H_BAR HBAR CHARGE_ELEMENTARY ELECTRON_CHARGE STEFAN_BOLTZMANN DENSITY_RADIATION A_RAD WIEN ALPHA IMPEDANCE_VACUUM VACUUM_IMPEDANCE PERMITIV_FREE_SPACE PERMITIVITY_0 PERMEABL_FREE_SPACE CONSTANT_MAGNETIC ANGSTROM JANSKY THOMSON_CROSS_SECTION THOMSON_XSECTION MASS_ELECTRON ELECTRON_MASS RADIUS_ELECTRON ELECTRON_RADIUS RADIUS_BOHR BOHR_RADIUS )],
+	fundamental => [qw( SPEED_LIGHT LIGHT_SPEED BOLTZMANN GRAVITATIONAL ELECTRON_VOLT PLANCK H_BAR HBAR CHARGE_ELEMENTARY ELECTRON_CHARGE STEFAN_BOLTZMANN DENSITY_RADIATION A_RAD WIEN ALPHA IMPEDANCE_VACUUM VACUUM_IMPEDANCE PERMITIV_FREE_SPACE PERMITIVITY_0 PERMEABL_FREE_SPACE CONSTANT_MAGNETIC )],
+	mathematical => [qw( PI FOUR_PI FOURPI EXP )],
+	nuclear => [qw( ELECTRON_VOLT PLANCK H_BAR HBAR CHARGE_ELEMENTARY ELECTRON_CHARGE STEFAN_BOLTZMANN DENSITY_RADIATION A_RAD WIEN ALPHA IMPEDANCE_VACUUM VACUUM_IMPEDANCE PERMITIV_FREE_SPACE PERMITIVITY_0 PERMEABL_FREE_SPACE CONSTANT_MAGNETIC ATOMIC_MASS_UNIT ANGSTROM AVOGADRO THOMSON_CROSS_SECTION THOMSON_XSECTION MASS_ELECTRON ELECTRON_MASS MASS_PROTON PROTON_MASS MASS_NEUTRON NEUTRON_MASS MASS_HYDROGEN HYDROGEN_MASS MASS_ALPHA RADIUS_ELECTRON ELECTRON_RADIUS RADIUS_BOHR BOHR_RADIUS )],
+	planetary => [qw( GRAVITATIONAL WIEN PARSEC ASTRONOMICAL_UNIT LIGHT_YEAR YEAR_ANOMALISTIC YEAR_ECLIPSE MASS_SOLAR SOLAR_MASS LUMINOSITY_SOLAR SOLAR_LUMINOSITY MAGNITUDE_SOLAR_V SOLAR_V_MAG MAGNITUDE_SOLAR_V_ABSOLUTE SOLAR_V_ABS_MAG RADIUS_SOLAR SOLAR_RADIUS MASS_EARTH EARTH_MASS RADIUS_EARTH EARTH_RADIUS TEMPERATURE_SOLAR_SURFACE SOLAR_TEMPERATURE DENSITY_SOLAR SOLAR_DENSITY DENSITY_EARTH EARTH_DENSITY GRAVITY_SOLAR SOLAR_GRAVITY GRAVITY_EARTH EARTH_GRAVITY RADIUS_LUNAR LUNAR_RADIUS MASS_LUNAR LUNAR_MASS AXIS_SM_LUNAR LUNAR_SM_AXIS ECCENTRICITY_LUNAR LUNAR_ECCENTRICITY RADIUS_JUPITER MASS_JUPITER )],
+);
+
+1; # Perl is my Igor

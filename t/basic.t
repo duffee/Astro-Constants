@@ -1,7 +1,7 @@
 #!perl -T
 
 use Test::More tests => 2;
-use Astro::Constants::MKS qw/SPEED_LIGHT/;
+use Astro::Constants qw( SPEED_LIGHT );
 
 is( SPEED_LIGHT, 2.99792458e8, 'SPEED_LIGHT in MKS' );
 
