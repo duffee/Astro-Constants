@@ -35,26 +35,22 @@
   <xs:element name="PhysicalConstant">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="name" maxOccurs="unbounded" minOccurs="1"/>
+        <xs:element name="name" type="xs:string"/>
         <xs:element ref="alternateName" minOccurs="0" maxOccurs="unbounded"/>
         <xs:element ref="symbol" minOccurs="0" maxOccurs="unbounded"/>
         <xs:element name="description" type="xs:string"/>
-        <xs:element ref="value" minOccurs="1" maxOccurs="unbounded"/>
+        <xs:element name="value" type="xs:float"/>
         <xs:element ref="uncertainty" maxOccurs="unbounded"/>
         <xs:element name="dimensions" maxOccurs="1"/>
-        <xs:element name="maxValue" type="xs:string"/>
-        <xs:element name="minValue" type="xs:string"/>
+        <xs:element name="maxValue" type="xs:float" default="0"/>
+        <xs:element name="minValue" type="xs:float" default="0"/>
         <xs:element ref="source" maxOccurs="unbounded"/>
         <xs:element ref="categoryList"/>
         <xs:element ref="deprecated" minOccurs="0"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="name">
-    <xs:complexType mixed="true">
-      <xs:attribute name="type" type="xs:string" use="required"/>
-    </xs:complexType>
-  </xs:element>
+  <xs:element name="name" type="xs:string"/>
   <xs:element name="alternateName">
     <xs:complexType mixed="true">
       <xs:attribute name="type" type="xs:string"/>
@@ -72,11 +68,6 @@
       <xs:choice>
         <xs:element ref="symbolRepresentation" minOccurs="0"/>
       </xs:choice>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="value">
-    <xs:complexType mixed="true">
-      <xs:attribute name="system" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="uncertainty">

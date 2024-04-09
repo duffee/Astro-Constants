@@ -11,8 +11,7 @@
       <name>SPEED_LIGHT</name>
       <alternateName>LIGHT_SPEED</alternateName>
       <description>speed of light in a vacuum</description>
-      <value system="MKS">299792458</value>
-      <value system="CGS">2.99792458e10</value>
+      <value>299792458</value>
       <uncertainty type="defined"/>
       <dimensions length="1" time="-2"/>
       <maxValue/>
@@ -28,8 +27,7 @@
       <name>BOLTZMANN</name>
       <alternateName/>
       <description>Boltzmann's constant</description>
-      <value system="MKS">1.380649e-23</value>
-      <value system="CGS">1.380649e-16</value>
+      <value>1.380649e-23</value>
       <uncertainty type="relative">0</uncertainty>
       <dimensions mass="1" length="2" time="-2" temperature="-1"/>
       <maxValue/>
@@ -45,8 +43,7 @@
       <alternateName/>
       <symbol>G</symbol>
       <description>universal gravitational constant</description>
-      <value system="MKS">6.67430e-11</value>
-      <value system="CGS">6.67430e-8</value>
+      <value>6.67430e-11</value>
       <uncertainty type="relative">2.2e-5</uncertainty>
       <dimensions length="3" mass="-1" time="-2"/>
       <maxValue/>
@@ -62,8 +59,7 @@
       <name>ELECTRON_VOLT</name>
       <alternateName/>
       <description>electron volt</description>
-      <value system="MKS">1.602176634e-19</value>
-      <value system="CGS">1.602176634e-12</value>
+      <value>1.602176634e-19</value>
       <uncertainty type="relative">0</uncertainty>
       <dimensions mass="1" length="2" time="-2"/>
       <maxValue/>
@@ -80,8 +76,7 @@
       <name>PLANCK</name>
       <alternateName/>
       <description>Planck constant</description>
-      <value system="MKS">6.62607015e-34</value>
-      <value system="CGS">6.62607015e-27</value>
+      <value>6.62607015e-34</value>
       <uncertainty type="relative">0</uncertainty>
       <dimensions mass="1" length="2" time="-1"/>
       <maxValue/>
@@ -98,8 +93,7 @@
       <name>H_BAR</name>
       <alternateName>HBAR</alternateName>
       <description>the reduced Planck constant, Planck's constant (exact) /2pi</description>
-      <value system="MKS">1.0545718176763e-34</value>
-      <value system="CGS">1.054571817e-27</value>
+      <value>1.0545718176763e-34</value>
       <uncertainty type="relative">1.5e-9</uncertainty>
       <dimensions mass="1" length="2" time="-1"/>
       <maxValue/>
@@ -116,8 +110,7 @@
       <name>CHARGE_ELEMENTARY</name>
       <alternateName>ELECTRON_CHARGE</alternateName>
       <description>electron charge (defined positive)</description>
-      <value system="MKS">1.602176634e-19</value>
-      <value system="CGS">4.8032046729e-10</value>
+      <value>1.602176634e-19</value>
       <uncertainty type="relative">0</uncertainty>
       <dimensions current="1" time="1"/>
       <maxValue/>
@@ -140,8 +133,7 @@
         </symbolRepresentation>
       </symbol>
       <description>Stefan-Boltzmann constant</description>
-      <value system="MKS">5.670374419e-8</value>
-      <value system="CGS">5.670367e-5</value>
+      <value>5.670374419e-8</value>
       <uncertainty type="relative">1.7e-10</uncertainty>
       <dimensions mass="1" time="-3" temperature="-4"/>
       <maxValue/>
@@ -160,8 +152,7 @@
       <alternateName>A_RAD</alternateName>
       <symbol>a</symbol>
       <description>radiation density constant, 4 * sigma / c</description>
-      <value system="MKS">7.565723e-16</value>
-      <value system="CGS">7.565723e-15</value>
+      <value>7.565723e-16</value>
       <uncertainty type="relative">2.3e-6</uncertainty>
       <dimensions mass="1" length="-1" time="-1" temperature="-4"/>
       <maxValue/>
@@ -180,8 +171,7 @@
       <alternateName/>
       <symbol>b</symbol>
       <description>Wien wavelength displacement law constant</description>
-      <value system="MKS">2.897771955e-3</value>
-      <value system="CGS">2.897771955e-1</value>
+      <value>2.897771955e-3</value>
       <uncertainty type="relative">1e-10</uncertainty>
       <dimensions length="1" temperature="1"/>
       <maxValue/>
@@ -204,8 +194,7 @@
         </symbolRepresentation>
       </symbol>
       <description>fine structure constant</description>
-      <value system="MKS">7.2973525693e-3</value>
-      <value system="CGS">7.2973525693e-3</value>
+      <value>7.2973525693e-3</value>
       <uncertainty type="relative">1.5e-10</uncertainty>
       <dimensions/>
       <maxValue/>
@@ -251,8 +240,7 @@
         </symbolRepresentation>
       </symbol>
       <description>permittivity of free space, epsilon_0, the electric constant</description>
-      <value system="MKS">8.8541878128e-12</value>
-      <value system="CGS">1</value>
+      <value>8.8541878128e-12</value>
       <uncertainty type="relative">1.5e-10</uncertainty>
       <dimensions time="4" current="2" length="-3" mass="-1"/>
       <maxValue/>
@@ -274,8 +262,7 @@
         </symbolRepresentation>
       </symbol>
       <description>permeability of free space, mu_0, the magnetic constant</description>
-      <value system="MKS">1.25663706212e-6</value>
-      <value system="CGS">1</value>
+      <value>1.25663706212e-6</value>
       <uncertainty type="relative">1.5e-10</uncertainty>
       <dimensions mass="1" length="1" time="-2" current="-2"/>
       <maxValue/>
@@ -348,8 +335,7 @@
       <alternateName/>
       <symbol>u</symbol>
       <description>unified atomic mass unit, 1 u</description>
-      <value system="MKS">1.66053906660e-27</value>
-      <value system="CGS">1.66053906660e-24</value>
+      <value>1.66053906660e-27</value>
       <uncertainty type="relative">3.0e-10</uncertainty>
       <dimensions mass="1"/>
       <maxValue/>
@@ -364,8 +350,7 @@
       <name>PARSEC</name>
       <alternateName/>
       <description>parsec</description>
-      <value system="MKS">3.08567758149e16</value>
-      <value system="CGS">3.08567758149e18</value>
+      <value>3.08567758149e16</value>
       <uncertainty type="relative">1e-11</uncertainty>
       <dimensions length="1"/>
       <maxValue/>
@@ -381,8 +366,8 @@
       <name>ASTRONOMICAL_UNIT</name>
       <alternateName/>
       <description>astronomical unit</description>
-      <value system="MKS">149_597_870_700</value>
-      <value system="CGS">1.496e13</value>
+      <value>149597870700</value>
+      <!-- <value>149_597_870_700</value> -->
       <uncertainty type="relative">0</uncertainty>
       <dimensions length="1"/>
       <maxValue/>
@@ -398,8 +383,8 @@
       <name>LIGHT_YEAR</name>
       <alternateName/>
       <description>the distance that light travels in vacuum in one Julian year</description>
-      <value system="MKS">9_460_730_472_580_800</value>
-      <value system="CGS">9.4607304725808e17</value>
+      <value>9460730472580800</value>
+      <!-- <value>9_460_730_472_580_800</value> -->
       <uncertainty type="defined"/>
       <dimensions length="1"/>
       <maxValue/>
@@ -415,8 +400,7 @@
       <name>ANGSTROM</name>
       <alternateName/>
       <description>Angstrom</description>
-      <value system="MKS">1e-10</value>
-      <value system="CGS">1e-8</value>
+      <value>1e-10</value>
       <uncertainty type="relative">0</uncertainty>
       <dimensions length="1"/>
       <maxValue/>
@@ -433,8 +417,7 @@
       <alternateName/>
       <symbol>Jy</symbol>
       <description>Jansky, a unit of flux density</description>
-      <value system="MKS">1e-26</value>
-      <value system="CGS">1e-23</value>
+      <value>1e-26</value>
       <uncertainty type="relative">0</uncertainty>
       <dimensions mass="1" time="-2"/>
       <maxValue/>
@@ -465,7 +448,8 @@
       <name>YEAR</name>
       <alternateName>YEAR_JULIAN</alternateName>
       <description>defined as exactly 365.25 days of 86400 SI seconds</description>
-      <value>31_557_600</value>
+      <value>31557600</value>
+      <!-- <value>31_557_600</value> -->
       <uncertainty type="relative">0</uncertainty>
       <dimensions time="1"/>
       <maxValue/>
@@ -480,7 +464,8 @@
       <name>YEAR_TROPICAL</name>
       <alternateName/>
       <description>the period of time for the ecliptic longitude of the Sun to increase 360 degrees, approximated by the Gregorian calendar</description>
-      <value>31_556_925.1</value>
+      <value>31556925.1</value>
+      <!-- <value>31_556_925.1</value> -->
       <uncertainty type="absolute">0.1</uncertainty>
       <dimensions time="1"/>
       <maxValue>31556959</maxValue>
@@ -495,7 +480,8 @@
       <name>YEAR_SIDEREAL</name>
       <alternateName/>
       <description>the period of revolution of the Earth around the Sun in a fixed reference frame</description>
-      <value>31_558_149.8</value>
+      <value>31558149.8</value>
+      <!-- <value>31_558_149.8</value> -->
       <uncertainty type="absolute">1</uncertainty>
       <dimensions time="1"/>
       <maxValue/>
@@ -510,7 +496,8 @@
       <name>YEAR_ANOMALISTIC</name>
       <alternateName/>
       <description>the period between successive passages of the Earth through perihelion</description>
-      <value>31_558_432.6</value>
+      <value>31558432.6</value>
+      <!-- <value>31_558_432.6</value> -->
       <uncertainty type="absolute">0.1</uncertainty>
       <dimensions time="1"/>
       <maxValue/>
@@ -525,7 +512,8 @@
       <name>YEAR_ECLIPSE</name>
       <alternateName/>
       <description>the period between successive passages of the Sun (as seen from the geocenter) through the same lunar node</description>
-      <value>29_947_974.3</value>
+      <value>29947974.3</value>
+      <!-- <value>29_947_974.3</value> -->
       <uncertainty type="absolute">0.1</uncertainty>
       <dimensions time="1"/>
       <maxValue/>
@@ -540,8 +528,7 @@
       <name>MASS_SOLAR</name>
       <alternateName>SOLAR_MASS</alternateName>
       <description>solar mass</description>
-      <value system="MKS">1.9884e30</value>
-      <value system="CGS">1.9884e33</value>
+      <value>1.9884e30</value>
       <uncertainty type="relative">0.0001</uncertainty>
       <dimensions mass="1"/>
       <maxValue/>
@@ -556,8 +543,7 @@
       <name>LUMINOSITY_SOLAR</name>
       <alternateName>SOLAR_LUMINOSITY</alternateName>
       <description>solar luminosity</description>
-      <value system="MKS">3.828e26</value>
-      <value system="CGS">3.828e33</value>
+      <value>3.828e26</value>
       <uncertainty type="relative">0.0003</uncertainty>
       <dimensions mass="1" length="2" time="-3"/>
       <maxValue/>
@@ -581,8 +567,7 @@
 	      ρ_c / h² = 3 × (100 km s⁻¹ Mpc⁻¹)² / 8πG
 	      ]]>
 Multiply by the square of the dimensionless Hubble parameter, h, in your calculations to get the actual value</description>
-      <value system="MKS">1.87834e-26</value>
-      <value system="CGS">1.87834e-29</value>
+      <value>1.87834e-26</value>
       <uncertainty type="relative">2.3e-5</uncertainty>
       <dimensions mass="1" length="-3"/>
       <maxValue/>
@@ -656,8 +641,7 @@ Multiply by the square of the dimensionless Hubble parameter, h, in your calcula
       <name>RADIUS_SOLAR</name>
       <alternateName>SOLAR_RADIUS</alternateName>
       <description>solar radius</description>
-      <value system="MKS">6.96e8</value>
-      <value system="CGS">6.96e10</value>
+      <value>6.96e8</value>
       <uncertainty type="relative">0.002</uncertainty>
       <dimensions length="1"/>
       <maxValue/>
@@ -671,8 +655,7 @@ Multiply by the square of the dimensionless Hubble parameter, h, in your calcula
       <name>MASS_EARTH</name>
       <alternateName>EARTH_MASS</alternateName>
       <description>mass of Earth</description>
-      <value system="MKS">5.9722e24</value>
-      <value system="CGS">5.9722e27</value>
+      <value>5.9722e24</value>
       <uncertainty type="absolute">6e20</uncertainty>
       <dimensions mass="1"/>
       <maxValue/>
@@ -686,8 +669,8 @@ Multiply by the square of the dimensionless Hubble parameter, h, in your calcula
       <name>RADIUS_EARTH</name>
       <alternateName>EARTH_RADIUS</alternateName>
       <description>radius of Earth</description>
-      <value system="MKS">6.378_136_6e6</value>
-      <value system="CGS">6.378_136_6e8</value>
+      <value>6.3781366e6</value>
+      <!-- <value>6.378_136_6e6</value> -->
       <uncertainty type="absolute">0.1</uncertainty>
       <dimensions length="1"/>
       <maxValue/>
@@ -715,8 +698,7 @@ Multiply by the square of the dimensionless Hubble parameter, h, in your calcula
       <name>DENSITY_SOLAR</name>
       <alternateName>SOLAR_DENSITY</alternateName>
       <description>mean solar density</description>
-      <value system="MKS">1408</value>
-      <value system="CGS">1.408</value>
+      <value>1408</value>
       <uncertainty type="relative">0.001</uncertainty>
       <dimensions mass="1" length="-3"/>
       <maxValue/>
@@ -730,8 +712,7 @@ Multiply by the square of the dimensionless Hubble parameter, h, in your calcula
       <name>DENSITY_EARTH</name>
       <alternateName>EARTH_DENSITY</alternateName>
       <description>mean Earth density</description>
-      <value system="MKS">5515</value>
-      <value system="CGS">5.515</value>
+      <value>5515</value>
       <uncertainty type="relative">0.0002</uncertainty>
       <dimensions mass="1" length="-3"/>
       <maxValue/>
@@ -745,8 +726,7 @@ Multiply by the square of the dimensionless Hubble parameter, h, in your calcula
       <name>GRAVITY_SOLAR</name>
       <alternateName>SOLAR_GRAVITY</alternateName>
       <description>solar surface gravity</description>
-      <value system="MKS">274.78</value>
-      <value system="CGS">27478</value>
+      <value>274.78</value>
       <uncertainty type="relative">0.0004</uncertainty>
       <dimensions length="1" time="-2"/>
       <maxValue/>
@@ -760,8 +740,7 @@ Multiply by the square of the dimensionless Hubble parameter, h, in your calcula
       <name>GRAVITY_EARTH</name>
       <alternateName>EARTH_GRAVITY</alternateName>
       <description>Earth surface gravity</description>
-      <value system="MKS">9.80665</value>
-      <value system="CGS">980.665</value>
+      <value>9.80665</value>
       <uncertainty type="relative">0.000001</uncertainty>
       <dimensions length="1" time="-2"/>
       <maxValue/>
@@ -775,8 +754,7 @@ Multiply by the square of the dimensionless Hubble parameter, h, in your calcula
       <name>RADIUS_LUNAR</name>
       <alternateName>LUNAR_RADIUS</alternateName>
       <description>lunar radius</description>
-      <value system="MKS">1.7381e6</value>
-      <value system="CGS">1.7381e8</value>
+      <value>1.7381e6</value>
       <uncertainty type="relative">6e-5</uncertainty>
       <dimensions length="1"/>
       <maxValue/>
@@ -790,8 +768,7 @@ Multiply by the square of the dimensionless Hubble parameter, h, in your calcula
       <name>MASS_LUNAR</name>
       <alternateName>LUNAR_MASS</alternateName>
       <description>lunar mass</description>
-      <value system="MKS">7.346e22</value>
-      <value system="CGS">7.346e25</value>
+      <value>7.346e22</value>
       <uncertainty type="relative">0.0002</uncertainty>
       <dimensions mass="kg"/>
       <maxValue/>
@@ -805,8 +782,7 @@ Multiply by the square of the dimensionless Hubble parameter, h, in your calcula
       <name>AXIS_SM_LUNAR</name>
       <alternateName>LUNAR_SM_AXIS</alternateName>
       <description>lunar orbital semi-major axis</description>
-      <value system="MKS">3.84402e8</value>
-      <value system="CGS">3.84402e10</value>
+      <value>3.84402e8</value>
       <uncertainty type="relative">3e-9</uncertainty>
       <dimensions length="1"/>
       <maxValue/>
@@ -839,8 +815,7 @@ Multiply by the square of the dimensionless Hubble parameter, h, in your calcula
         </symbolRepresentation>
       </symbol>
       <description>Thomson cross-section</description>
-      <value system="MKS">6.6524587321e-29</value>
-      <value system="CGS">6.6524587321e-25</value>
+      <value>6.6524587321e-29</value>
       <uncertainty type="relative">9.1e-10</uncertainty>
       <dimensions length="2"/>
       <maxValue/>
@@ -855,8 +830,7 @@ Multiply by the square of the dimensionless Hubble parameter, h, in your calcula
       <name>MASS_ELECTRON</name>
       <alternateName>ELECTRON_MASS</alternateName>
       <description>mass of electron</description>
-      <value system="MKS">9.1093837015e-31</value>
-      <value system="CGS">9.1093837015e-28</value>
+      <value>9.1093837015e-31</value>
       <uncertainty type="relative">3e-10</uncertainty>
       <dimensions mass="1"/>
       <maxValue/>
@@ -871,8 +845,7 @@ Multiply by the square of the dimensionless Hubble parameter, h, in your calcula
       <name>MASS_PROTON</name>
       <alternateName>PROTON_MASS</alternateName>
       <description>mass of proton</description>
-      <value system="MKS">1.67262192369e-27</value>
-      <value system="CGS">1.67262192369e-24</value>
+      <value>1.67262192369e-27</value>
       <uncertainty type="relative">3.1e-10</uncertainty>
       <dimensions mass="1"/>
       <maxValue/>
@@ -886,8 +859,7 @@ Multiply by the square of the dimensionless Hubble parameter, h, in your calcula
       <name>MASS_NEUTRON</name>
       <alternateName>NEUTRON_MASS</alternateName>
       <description>neutron mass</description>
-      <value system="MKS">1.67492749804e-27</value>
-      <value system="CGS">1.67492749804e-24</value>
+      <value>1.67492749804e-27</value>
       <uncertainty type="relative">5.7e-10</uncertainty>
       <dimensions mass="1"/>
       <maxValue/>
@@ -941,8 +913,7 @@ This value is from the IUPAC and is a little smaller than MASS_PROTON + MASS_ELE
         </symbolRepresentation>
       </symbol>
       <description>classical electron radius</description>
-      <value system="MKS">2.8179403262e-15</value>
-      <value system="CGS">2.8179403262e-13</value>
+      <value>2.8179403262e-15</value>
       <uncertainty type="relative">4.5e-10</uncertainty>
       <dimensions length="1"/>
       <maxValue/>
@@ -962,8 +933,7 @@ This value is from the IUPAC and is a little smaller than MASS_PROTON + MASS_ELE
         </symbolRepresentation>
       </symbol>
       <description>Bohr radius</description>
-      <value system="MKS">5.29177210903e-11</value>
-      <value system="CGS">5.29177210903e-9</value>
+      <value>5.29177210903e-11</value>
       <uncertainty type="relative">1.5e-10</uncertainty>
       <dimensions length="1"/>
       <maxValue/>
@@ -977,7 +947,8 @@ This value is from the IUPAC and is a little smaller than MASS_PROTON + MASS_ELE
     <PhysicalConstant>
       <name>RADIUS_JUPITER</name>
       <description>Volumetric mean radius of Jupiter</description>
-      <value system="MKS">69_911_000</value>
+      <value>69911000</value>
+      <!-- <value>69_911_000</value> -->
       <uncertainty type="relative">1.5e-5</uncertainty>
       <dimensions length="1"/>
       <maxValue/>
@@ -990,7 +961,7 @@ This value is from the IUPAC and is a little smaller than MASS_PROTON + MASS_ELE
     <PhysicalConstant>
       <name>MASS_JUPITER</name>
       <description>mass of Jupiter</description>
-      <value system="MKS">1.89819e27</value>
+      <value>1.89819e27</value>
       <uncertainty type="relative">5e-6</uncertainty>
       <dimensions mass="1"/>
       <maxValue/>

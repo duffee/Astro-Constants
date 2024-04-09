@@ -11,12 +11,8 @@ my $schema = XML::LibXML::Schema->new( location => $schema_file );
 ok( -f $schema_file, "No schema file at $schema_file");
 ok( -f $xml_file, "No xml file at $xml_file");
 
-TODO: {
-	local $TODO = 'Correct schema to validate PhysicalConstants.xml';
-	eval { $schema->validate( XML::LibXML->load_xml(location => $xml_file) ); };
-	ok( ! $@, "Couldn't validate $xml_file against $schema_file");
-	# diag $@ if $@;
-}
+eval { $schema->validate( XML::LibXML->load_xml(location => $xml_file) ); };
+ok( ! $@, "Couldn't validate $xml_file against $schema_file") or diag $@;
 
 #### Test invalid XML #### 
 #
