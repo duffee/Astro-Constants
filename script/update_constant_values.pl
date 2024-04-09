@@ -5,9 +5,8 @@
 #
 # hard coded to run from top directory and uses only data/PhysicalConstants.xml
 
-use strict;
+use v5.20; # postfix deref
 use autodie;
-use Modern::Perl;
 use XML::LibXML;
 use LWP::Simple;
 use List::Util qw/shuffle/;

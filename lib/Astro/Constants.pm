@@ -12,10 +12,6 @@ use base qw(Exporter);
 
 =encoding utf8
 
-=head1 NAME
-
-Astro::Constants - provides physical constants for use in Physics and Astronomy
-
 =head1 SYNOPSIS
 
     use strict;
@@ -97,6 +93,7 @@ Select from the following tags:
 * C<:alternates>
 * C<:deprecated>
 =cut
+
 
 use constant LIGHT_SPEED => 299792458;
 use constant SPEED_LIGHT => 299792458;

@@ -1,8 +1,6 @@
-# PODNAME: Roadmap.pod
+# PODNAME: Astro::Constants::Roadmap
 
-=head1 ROADMAP
-
-Here we set out the vision for the future of C<Astro::Constants>.
+# ABSTRACT: the vision for the future of C<Astro::Constants>.
 
 =head1 v0.13
 

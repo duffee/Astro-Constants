@@ -184,10 +184,6 @@ sub write_pod_synopsis {
 	say $fh <<'POD';
 =encoding utf8
 
-=head1 NAME
-
-Astro::Constants - provides physical constants for use in Physics and Astronomy
-
 =head1 SYNOPSIS
 
     use strict;
@@ -269,6 +265,7 @@ Select from the following tags:
 * C<:alternates>
 * C<:deprecated>
 =cut
+
 POD
 }
 
@@ -315,19 +312,18 @@ Reference Documents:
 
 =for :list
 * L<IAU 2009 system of astronomical constants|http://aa.usno.navy.mil/publications/reports/Luzumetal2011.pdf>
-* L<Astronomical Constants 2016.pdf|http://asa.usno.navy.mil/static/files/2016/Astronomical_Constants_2016.pdf>
+* L<Astronomical Constants 2016|http://asa.usno.navy.mil/static/files/2016/Astronomical_Constants_2016.pdf>
 * L<IAU recommendations concerning units|https://www.iau.org/publications/proceedings_rules/units>
 * L<Re-definition of the Astronomical Unit|http://syrte.obspm.fr/IAU_resolutions/Res_IAU2012_B2.pdf>
 
 =head1 REPOSITORY
 
-* L<https://github.com/duffee/Astro-Constants>
+* L<github|https://github.com/duffee/Astro-Constants>
 
 =head1 ISSUES
 
-File issues/suggestions at the Github repository L<https://github.com/duffee/Astro-Constants>.
-The venerable L<RT|https://rt.cpan.org/Dist/Display.html?Status=Active&Queue=Astro-Constants>
-is the canonical bug tracker that is clocked by L<meta::cpan|https://metacpan.org/pod/Astro::Constants>.
+Feel free to file bugs or suggestions in the
+L<Issues|https://github.com/duffee/Astro-Constants/issues> section of the Github repository.
 
 Using C<strict> is a must with this code.  Any constants you forgot to import will
 evaluate to 0 and silently introduce errors in your code.  Caveat Programmer.
@@ -336,9 +332,8 @@ If you are using this module, drop me a line using any available means at your
 disposal, including
 *gasp* email (address in the Author section), to let me know how you're using it. 
 What new features would you like to see?
-If you've had an experience with using the module, let other people know what you
-think, good or bad, by rating it at
-L<cpanratings|http://cpanratings.perl.org/rate/?distribution=Astro-Constants>.
+
+Current best method to contact me is via a Github Issue.
 
 =head2 Extending the data set
 
@@ -357,6 +352,7 @@ I have moved to a I<noun_adjective> format for long names.
 LIGHT_SPEED and SOLAR_MASS become SPEED_LIGHT and MASS_SOLAR.
 This principle should make the code easier to read with the most
 important information coming at the beginning of the name.
+See also L<Astro::Constants::Roadmap>
 
 =head1 ASTROCONST  X<ASTROCONST>
 

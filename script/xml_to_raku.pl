@@ -5,9 +5,8 @@
 #
 # hard coded to run from top directory and uses only data/PhysicalConstants.xml
 
-use strict;
+use v5.20; # postfix deref
 use autodie;
-use Modern::Perl;
 use XML::LibXML;
 
 #die "Usage: $0 infile outfile" unless @ARGV == 1;
