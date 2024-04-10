@@ -12,6 +12,7 @@
       <xs:sequence>
         <xs:element name="title" type="xs:string"/>
         <xs:element name="description" type="xs:string"/>
+        <xs:element name="language" type="xs:language"/>
         <xs:element name="timestamp" type="xs:string"/>
         <xs:element name="version" type="xs:string"/>
         <xs:element name="reference_standard" type="xs:string"/>
@@ -35,7 +36,7 @@
   <xs:element name="PhysicalConstant">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="name" type="xs:string"/>
+        <xs:element ref="name" maxOccurs="unbounded" minOccurs="1"/>
         <xs:element ref="alternateName" minOccurs="0" maxOccurs="unbounded"/>
         <xs:element ref="symbol" minOccurs="0" maxOccurs="unbounded"/>
         <xs:element name="description" type="xs:string"/>
@@ -50,7 +51,14 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="name" type="xs:string"/>
+  <xs:element name="name">
+    <xs:complexType mixed="true">
+      <xs:annotation>
+        <xs:documentation xml:lang="en">"lang" can be natural or programming language</xs:documentation>
+      </xs:annotation>
+      <xs:attribute name="lang" type="xs:string" use="optional"/>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="alternateName">
     <xs:complexType mixed="true">
       <xs:attribute name="type" type="xs:string"/>
