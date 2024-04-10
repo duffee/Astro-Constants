@@ -20,6 +20,7 @@ nytprof.out
 /_eumm/
 
 *.swp
+/local/
 
 # Dist::Zilla generated files
 Astro-Constants-*
