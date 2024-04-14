@@ -25,15 +25,15 @@ Only use decimal version numbers; 0.14.1 will not be indexed
 
 The author keeps forgetting how to run dzil.
 
-* ```dzil build```	- builds the module
-* ```dzil test```		- tests the module
-* ```dzil release```	- builds a distribution for uploading to CPAN
+* ```dzil build```      - builds the module
+* ```dzil test```       - tests the module
+* ```dzil release```    - builds a distribution for uploading to CPAN
 * ```dzil authordeps --missing```	- find missing module dependancies
-* ```dzil mkrpmspec```	- part of the Fedora RPM build process
+* ```dzil mkrpmspec```  - part of the Fedora RPM build process
 
 ## Release checklist
 
-* tests pass
+* tests pass with `prove -vlr t xt`
 * update version in dist.ini
 * check [CPANTS](http://matrix.cpantesters.org/?dist=Astro-Constants)
 * check [RT](https://rt.cpan.org/Public/Dist/Display.html?Name=Astro-Constants)
@@ -137,3 +137,10 @@ One step per version.  No faster.
 I chose to keep the Constant definitions in XML for its language independance and validation tools.
 Other people have the ability to edit the file and I'd like a way of verifying that the definition
 file is correct before the processing tools get blown out of the water.
+
+# Packaging for Distros
+
+## Fedora
+
+Looking at [Fedora's 2024 instructions](https://docs.fedoraproject.org/en-US/package-maintainers/Installing_Packager_Tools/)
+I installed `fedora-packager` and  `fedora-review`.

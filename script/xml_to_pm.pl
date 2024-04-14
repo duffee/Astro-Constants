@@ -95,8 +95,7 @@ sub write_module_header {
 
 	print $fh <<HEADER;
 package $name;
-# ABSTRACT: This library provides physical constants for use in Physics and Astronomy
-#           based on values from 2018 CODATA.
+# ABSTRACT: Perl library to provide physical constants for use in Physics and Astronomy based on values from 2018 CODATA.
 #
 #  They are not constant but are changing still. - Cymbeline, Act II, Scene 5
 
@@ -160,7 +159,7 @@ sub write_method_pod {
 
 	my $method_pod = <<"POD";
 
-=method $name
+=constant $name
 
     $value
 

@@ -17,7 +17,7 @@
       <dimensions length="1" time="-2"/>
       <maxValue/>
       <minValue/>
-      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?c" authority="2018 CODATA" year="2019" />
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?c" authority="2018 CODATA" year="2019"/>
       <categoryList>
         <category>fundamental</category>
         <category>cosmology</category>
@@ -33,7 +33,7 @@
       <dimensions mass="1" length="2" time="-2" temperature="-1"/>
       <maxValue/>
       <minValue/>
-      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?k" authority="2018 CODATA" year="2019" />
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?k" authority="2018 CODATA" year="2019"/>
       <categoryList>
         <category>fundamental</category>
         <category>electromagnetic</category>
@@ -49,7 +49,7 @@
       <dimensions length="3" mass="-1" time="-2"/>
       <maxValue/>
       <minValue/>
-      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?bg" authority="2018 CODATA" year="2019" />
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?bg" authority="2018 CODATA" year="2019"/>
       <categoryList>
         <category>fundamental</category>
         <category>cosmology</category>
@@ -139,7 +139,7 @@
       <dimensions mass="1" time="-3" temperature="-4"/>
       <maxValue/>
       <minValue/>
-      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?sigma" authority="2018 CODATA" year="2019" />
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?sigma" authority="2018 CODATA" year="2019"/>
       <source url="https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_constant"/>
       <categoryList>
         <category>fundamental</category>
@@ -177,7 +177,7 @@
       <dimensions length="1" temperature="1"/>
       <maxValue/>
       <minValue/>
-      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?bwien" authority="2018 CODATA" year="2019" />
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?bwien" authority="2018 CODATA" year="2019"/>
       <categoryList>
         <category>fundamental</category>
         <category>electromagnetic</category>
@@ -200,7 +200,7 @@
       <dimensions/>
       <maxValue/>
       <minValue/>
-      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?alph" authority="2018 CODATA" year="2019" />
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?alph" authority="2018 CODATA" year="2019"/>
       <categoryList>
         <category>fundamental</category>
         <category>cosmology</category>
@@ -246,7 +246,7 @@
       <dimensions time="4" current="2" length="-3" mass="-1"/>
       <maxValue/>
       <minValue/>
-      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?ep0" authority="2018 CODATA" year="2019" />
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?ep0" authority="2018 CODATA" year="2019"/>
       <categoryList>
         <category>fundamental</category>
         <category>electromagnetic</category>
@@ -341,7 +341,7 @@
       <dimensions mass="1"/>
       <maxValue/>
       <minValue/>
-      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?ukg" authority="2018 CODATA" year="2019" />
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?ukg" authority="2018 CODATA" year="2019"/>
       <categoryList>
         <category>conversion</category>
         <category>nuclear</category>
@@ -373,7 +373,7 @@
       <dimensions length="1"/>
       <maxValue/>
       <minValue/>
-      <source url="https://cneos.jpl.nasa.gov/glossary/au.html" authority="IAU" />
+      <source url="https://cneos.jpl.nasa.gov/glossary/au.html" authority="IAU"/>
       <categoryList>
         <category>conversion</category>
         <category>cosmology</category>
@@ -423,7 +423,7 @@
       <dimensions mass="1" time="-2"/>
       <maxValue/>
       <minValue/>
-      <source url="https://en.wikipedia.org/wiki/Jansky" authority="IAU" />
+      <source url="https://en.wikipedia.org/wiki/Jansky" authority="IAU"/>
       <categoryList>
         <category>conversion</category>
         <category>cosmology</category>
@@ -439,7 +439,7 @@
       <dimensions amountOfSubstance="-1"/>
       <maxValue/>
       <minValue/>
-      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?na" authority="2018 CODATA" year="2019" />
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?na" authority="2018 CODATA" year="2019"/>
       <categoryList>
         <category>conversion</category>
         <category>nuclear</category>
@@ -549,7 +549,7 @@
       <dimensions mass="1" length="2" time="-3"/>
       <maxValue/>
       <minValue/>
-      <source url="https://en.wikipedia.org/wiki/Solar_luminosity" authority="IAU" year="2015" />
+      <source url="https://en.wikipedia.org/wiki/Solar_luminosity" authority="IAU" year="2015"/>
       <categoryList>
         <category>cosmology</category>
         <category>planetary</category>
@@ -603,7 +603,7 @@ Multiply by the square of the dimensionless Hubble parameter, h, in your calcula
       <dimensions temperature="1"/>
       <maxValue/>
       <minValue/>
-      <source url="https://en.wikipedia.org/wiki/Cosmic_microwave_background" reference="Bibcode:2009ApJ...707..916F" year="2009" />
+      <source url="https://en.wikipedia.org/wiki/Cosmic_microwave_background" reference="Bibcode:2009ApJ...707..916F" year="2009"/>
       <categoryList>
         <category>cosmology</category>
       </categoryList>
@@ -821,7 +821,7 @@ Multiply by the square of the dimensionless Hubble parameter, h, in your calcula
       <dimensions length="2"/>
       <maxValue/>
       <minValue/>
-      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?sigmae" authority="2018 CODATA" year="2019" />
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?sigmae" authority="2018 CODATA" year="2019"/>
       <categoryList>
         <category>electromagnetic</category>
         <category>nuclear</category>
@@ -851,7 +851,7 @@ Multiply by the square of the dimensionless Hubble parameter, h, in your calcula
       <dimensions mass="1"/>
       <maxValue/>
       <minValue/>
-      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?mp" authority="2018 CODATA" year="2019" />
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?mp" authority="2018 CODATA" year="2019"/>
       <categoryList>
         <category>nuclear</category>
       </categoryList>
@@ -865,7 +865,7 @@ Multiply by the square of the dimensionless Hubble parameter, h, in your calcula
       <dimensions mass="1"/>
       <maxValue/>
       <minValue/>
-      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?mn" authority="2018 CODATA" year="2019" />
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?mn" authority="2018 CODATA" year="2019"/>
       <categoryList>
         <category>nuclear</category>
       </categoryList>
@@ -882,7 +882,7 @@ This value is from the IUPAC and is a little smaller than MASS_PROTON + MASS_ELE
       <dimensions mass="1"/>
       <maxValue/>
       <minValue/>
-      <source url="https://www.degruyter.com/downloadpdf/j/pac.2016.88.issue-3/pac-2015-0305/pac-2015-0305.pdf" authority="IUPAC" />
+      <source url="https://www.degruyter.com/downloadpdf/j/pac.2016.88.issue-3/pac-2015-0305/pac-2015-0305.pdf" authority="IUPAC"/>
       <categoryList>
         <category>nuclear</category>
       </categoryList>
@@ -900,7 +900,7 @@ This value is from the IUPAC and is a little smaller than MASS_PROTON + MASS_ELE
       <dimensions mass="1"/>
       <maxValue/>
       <minValue/>
-      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?mal" authority="2018 CODATA" year="2019" />
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?mal" authority="2018 CODATA" year="2019"/>
       <categoryList>
         <category>nuclear</category>
       </categoryList>
@@ -919,7 +919,7 @@ This value is from the IUPAC and is a little smaller than MASS_PROTON + MASS_ELE
       <dimensions length="1"/>
       <maxValue/>
       <minValue/>
-      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?re" authority="2018 CODATA" year="2019" />
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?re" authority="2018 CODATA" year="2019"/>
       <categoryList>
         <category>nuclear</category>
         <category>electromagnetic</category>
@@ -939,7 +939,7 @@ This value is from the IUPAC and is a little smaller than MASS_PROTON + MASS_ELE
       <dimensions length="1"/>
       <maxValue/>
       <minValue/>
-      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?bohrrada0" authority="2018 CODATA" year="2019" />
+      <source url="http://physics.nist.gov/cgi-bin/cuu/Value?bohrrada0" authority="2018 CODATA" year="2019"/>
       <categoryList>
         <category>electromagnetic</category>
         <category>nuclear</category>

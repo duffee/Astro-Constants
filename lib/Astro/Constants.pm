@@ -1,6 +1,5 @@
 package Astro::Constants;
-# ABSTRACT: This library provides physical constants for use in Physics and Astronomy
-#           based on values from 2018 CODATA.
+# ABSTRACT: Perl library to provide physical constants for use in Physics and Astronomy based on values from 2018 CODATA.
 #
 #  They are not constant but are changing still. - Cymbeline, Act II, Scene 5
 
@@ -124,17 +123,17 @@ use constant STERADIAN => 3282.80635001174;
 use constant EXP => 2.71828182846;
 use constant ATOMIC_MASS_UNIT => 1.66053906660e-27;
 use constant PARSEC => 3.08567758149e16;
-use constant ASTRONOMICAL_UNIT => 149_597_870_700;
-use constant LIGHT_YEAR => 9_460_730_472_580_800;
+use constant ASTRONOMICAL_UNIT => 149597870700;
+use constant LIGHT_YEAR => 9460730472580800;
 use constant ANGSTROM => 1e-10;
 use constant JANSKY => 1e-26;
 use constant AVOGADRO => 6.02214076e23;
-use constant YEAR_JULIAN => 31_557_600;
-use constant YEAR => 31_557_600;
-use constant YEAR_TROPICAL => 31_556_925.1;
-use constant YEAR_SIDEREAL => 31_558_149.8;
-use constant YEAR_ANOMALISTIC => 31_558_432.6;
-use constant YEAR_ECLIPSE => 29_947_974.3;
+use constant YEAR_JULIAN => 31557600;
+use constant YEAR => 31557600;
+use constant YEAR_TROPICAL => 31556925.1;
+use constant YEAR_SIDEREAL => 31558149.8;
+use constant YEAR_ANOMALISTIC => 31558432.6;
+use constant YEAR_ECLIPSE => 29947974.3;
 use constant SOLAR_MASS => 1.9884e30;
 use constant MASS_SOLAR => 1.9884e30;
 use constant SOLAR_LUMINOSITY => 3.828e26;
@@ -152,8 +151,8 @@ use constant SOLAR_RADIUS => 6.96e8;
 use constant RADIUS_SOLAR => 6.96e8;
 use constant EARTH_MASS => 5.9722e24;
 use constant MASS_EARTH => 5.9722e24;
-use constant EARTH_RADIUS => 6.378_136_6e6;
-use constant RADIUS_EARTH => 6.378_136_6e6;
+use constant EARTH_RADIUS => 6.3781366e6;
+use constant RADIUS_EARTH => 6.3781366e6;
 use constant SOLAR_TEMPERATURE => 5772;
 use constant TEMPERATURE_SOLAR_SURFACE => 5772;
 use constant SOLAR_DENSITY => 1408;
@@ -187,10 +186,10 @@ use constant ELECTRON_RADIUS => 2.8179403262e-15;
 use constant RADIUS_ELECTRON => 2.8179403262e-15;
 use constant BOHR_RADIUS => 5.29177210903e-11;
 use constant RADIUS_BOHR => 5.29177210903e-11;
-use constant RADIUS_JUPITER => 69_911_000;
+use constant RADIUS_JUPITER => 69911000;
 use constant MASS_JUPITER => 1.89819e27;
 
-=method SPEED_LIGHT
+=constant SPEED_LIGHT
 
     299792458
 
@@ -198,31 +197,31 @@ speed of light in a vacuum
 
 This constant is also available using the alternate name C<LIGHT_SPEED> (imported using the :alternate tag for backwards compatibility)
 
-=method BOLTZMANN
+=constant BOLTZMANN
 
     1.380649e-23
 
 Boltzmann's constant
 
-=method GRAVITATIONAL
+=constant GRAVITATIONAL
 
     6.67430e-11
 
 universal gravitational constant
 
-=method ELECTRON_VOLT
+=constant ELECTRON_VOLT
 
     1.602176634e-19
 
 electron volt
 
-=method PLANCK
+=constant PLANCK
 
     6.62607015e-34
 
 Planck constant
 
-=method H_BAR
+=constant H_BAR
 
     1.0545718176763e-34
 
@@ -230,7 +229,7 @@ the reduced Planck constant, Planck's constant (exact) /2pi
 
 This constant is also available using the alternate name C<HBAR> (imported using the :alternate tag for backwards compatibility)
 
-=method CHARGE_ELEMENTARY
+=constant CHARGE_ELEMENTARY
 
     1.602176634e-19
 
@@ -238,13 +237,13 @@ electron charge (defined positive)
 
 This constant is also available using the alternate name C<ELECTRON_CHARGE> (imported using the :alternate tag for backwards compatibility)
 
-=method STEFAN_BOLTZMANN
+=constant STEFAN_BOLTZMANN
 
     5.670374419e-8
 
 Stefan-Boltzmann constant
 
-=method DENSITY_RADIATION
+=constant DENSITY_RADIATION
 
     7.565723e-16
 
@@ -252,19 +251,19 @@ radiation density constant, 4 * sigma / c
 
 This constant is also available using the alternate name C<A_RAD> (imported using the :alternate tag for backwards compatibility)
 
-=method WIEN
+=constant WIEN
 
     2.897771955e-3
 
 Wien wavelength displacement law constant
 
-=method ALPHA
+=constant ALPHA
 
     7.2973525693e-3
 
 fine structure constant
 
-=method IMPEDANCE_VACUUM
+=constant IMPEDANCE_VACUUM
 
     376.730313461
 
@@ -272,7 +271,7 @@ characteristic impedance of vacuum
 
 This constant is also available using the alternate name C<VACUUM_IMPEDANCE> (imported using the :alternate tag for backwards compatibility)
 
-=method PERMITIV_FREE_SPACE
+=constant PERMITIV_FREE_SPACE
 
     8.8541878128e-12
 
@@ -280,7 +279,7 @@ permittivity of free space, epsilon_0, the electric constant
 
 This constant is also available using the alternate name C<PERMITIVITY_0> (imported using the :alternate tag for backwards compatibility)
 
-=method PERMEABL_FREE_SPACE
+=constant PERMEABL_FREE_SPACE
 
     1.25663706212e-6
 
@@ -288,13 +287,13 @@ permeability of free space, mu_0, the magnetic constant
 
 This constant is also available using these alternate names (imported using the :alternate tag): PERMEABILITY_0, CONSTANT_MAGNETIC
 
-=method PI
+=constant PI
 
     3.14159265358979324
 
 trig constant pi
 
-=method FOUR_PI
+=constant FOUR_PI
 
     12.5663706143592
 
@@ -302,93 +301,93 @@ trig constant pi times 4 (shorthand for some calculations)
 
 This constant is also available using the alternate name C<FOURPI> (imported using the :alternate tag for backwards compatibility)
 
-=method STERADIAN
+=constant STERADIAN
 
     3282.80635001174
 
 a measure of solid angle in square degrees and a SI derived unit
 
-=method EXP
+=constant EXP
 
     2.71828182846
 
 base of natural logarithm
 
-=method ATOMIC_MASS_UNIT
+=constant ATOMIC_MASS_UNIT
 
     1.66053906660e-27
 
 unified atomic mass unit, 1 u
 
-=method PARSEC
+=constant PARSEC
 
     3.08567758149e16
 
 parsec
 
-=method ASTRONOMICAL_UNIT
+=constant ASTRONOMICAL_UNIT
 
-    149_597_870_700
+    149597870700
 
 astronomical unit
 
-=method LIGHT_YEAR
+=constant LIGHT_YEAR
 
-    9_460_730_472_580_800
+    9460730472580800
 
 the distance that light travels in vacuum in one Julian year
 
-=method ANGSTROM
+=constant ANGSTROM
 
     1e-10
 
 Angstrom
 
-=method JANSKY
+=constant JANSKY
 
     1e-26
 
 Jansky, a unit of flux density
 
-=method AVOGADRO
+=constant AVOGADRO
 
     6.02214076e23
 
 Avogadro's number
 
-=method YEAR
+=constant YEAR
 
-    31_557_600
+    31557600
 
 defined as exactly 365.25 days of 86400 SI seconds
 
 This constant is also available using the alternate name C<YEAR_JULIAN> (imported using the :alternate tag for backwards compatibility)
 
-=method YEAR_TROPICAL
+=constant YEAR_TROPICAL
 
-    31_556_925.1
+    31556925.1
 
 the period of time for the ecliptic longitude of the Sun to increase 360 degrees, approximated by the Gregorian calendar
 
-=method YEAR_SIDEREAL
+=constant YEAR_SIDEREAL
 
-    31_558_149.8
+    31558149.8
 
 the period of revolution of the Earth around the Sun in a fixed reference frame
 
-=method YEAR_ANOMALISTIC
+=constant YEAR_ANOMALISTIC
 
-    31_558_432.6
+    31558432.6
 
 the period between successive passages of the Earth through perihelion
 
-=method YEAR_ECLIPSE
+=constant YEAR_ECLIPSE
 
-    29_947_974.3
+    29947974.3
 
 the period between successive passages of the Sun (as seen from the geocenter) through the same lunar node
 
-=method MASS_SOLAR
+=constant MASS_SOLAR
 
     1.9884e30
 
@@ -396,7 +395,7 @@ solar mass
 
 This constant is also available using the alternate name C<SOLAR_MASS> (imported using the :alternate tag for backwards compatibility)
 
-=method LUMINOSITY_SOLAR
+=constant LUMINOSITY_SOLAR
 
     3.828e26
 
@@ -404,7 +403,7 @@ solar luminosity
 
 This constant is also available using the alternate name C<SOLAR_LUMINOSITY> (imported using the :alternate tag for backwards compatibility)
 
-=method DENSITY_CRITICAL_RHOc
+=constant DENSITY_CRITICAL_RHOc
 
     1.87834e-26
 
@@ -416,13 +415,13 @@ Multiply by the square of the dimensionless Hubble parameter, h, in your calcula
 
 This constant is also available using the alternate name C<RHO_C> (imported using the :alternate tag for backwards compatibility)
 
-=method HUBBLE_TIME
+=constant HUBBLE_TIME
 
     3.0853056e17
 
 Hubble time *h, the inverse of Hubble's constant valued at 100 km/s/Mpc (DEPRECATED - see ChangeLog)
 
-=method TEMPERATURE_CMB
+=constant TEMPERATURE_CMB
 
     2.72548
 
@@ -430,7 +429,7 @@ cosmic microwave background temperature in Kelvin
 
 This constant is also available using the alternate name C<CMB_TEMPERATURE> (imported using the :alternate tag for backwards compatibility)
 
-=method MAGNITUDE_SOLAR_V
+=constant MAGNITUDE_SOLAR_V
 
     -26.74
 
@@ -438,7 +437,7 @@ visual brightness of the Sun
 
 This constant is also available using the alternate name C<SOLAR_V_MAG> (imported using the :alternate tag for backwards compatibility)
 
-=method MAGNITUDE_SOLAR_V_ABSOLUTE
+=constant MAGNITUDE_SOLAR_V_ABSOLUTE
 
     4.83
 
@@ -446,7 +445,7 @@ solar absolute V magnitude
 
 This constant is also available using the alternate name C<SOLAR_V_ABS_MAG> (imported using the :alternate tag for backwards compatibility)
 
-=method RADIUS_SOLAR
+=constant RADIUS_SOLAR
 
     6.96e8
 
@@ -454,7 +453,7 @@ solar radius
 
 This constant is also available using the alternate name C<SOLAR_RADIUS> (imported using the :alternate tag for backwards compatibility)
 
-=method MASS_EARTH
+=constant MASS_EARTH
 
     5.9722e24
 
@@ -462,15 +461,15 @@ mass of Earth
 
 This constant is also available using the alternate name C<EARTH_MASS> (imported using the :alternate tag for backwards compatibility)
 
-=method RADIUS_EARTH
+=constant RADIUS_EARTH
 
-    6.378_136_6e6
+    6.3781366e6
 
 radius of Earth
 
 This constant is also available using the alternate name C<EARTH_RADIUS> (imported using the :alternate tag for backwards compatibility)
 
-=method TEMPERATURE_SOLAR_SURFACE
+=constant TEMPERATURE_SOLAR_SURFACE
 
     5772
 
@@ -478,7 +477,7 @@ surface temperature of sun (photosphere)
 
 This constant is also available using the alternate name C<SOLAR_TEMPERATURE> (imported using the :alternate tag for backwards compatibility)
 
-=method DENSITY_SOLAR
+=constant DENSITY_SOLAR
 
     1408
 
@@ -486,7 +485,7 @@ mean solar density
 
 This constant is also available using the alternate name C<SOLAR_DENSITY> (imported using the :alternate tag for backwards compatibility)
 
-=method DENSITY_EARTH
+=constant DENSITY_EARTH
 
     5515
 
@@ -494,7 +493,7 @@ mean Earth density
 
 This constant is also available using the alternate name C<EARTH_DENSITY> (imported using the :alternate tag for backwards compatibility)
 
-=method GRAVITY_SOLAR
+=constant GRAVITY_SOLAR
 
     274.78
 
@@ -502,7 +501,7 @@ solar surface gravity
 
 This constant is also available using the alternate name C<SOLAR_GRAVITY> (imported using the :alternate tag for backwards compatibility)
 
-=method GRAVITY_EARTH
+=constant GRAVITY_EARTH
 
     9.80665
 
@@ -510,7 +509,7 @@ Earth surface gravity
 
 This constant is also available using the alternate name C<EARTH_GRAVITY> (imported using the :alternate tag for backwards compatibility)
 
-=method RADIUS_LUNAR
+=constant RADIUS_LUNAR
 
     1.7381e6
 
@@ -518,7 +517,7 @@ lunar radius
 
 This constant is also available using the alternate name C<LUNAR_RADIUS> (imported using the :alternate tag for backwards compatibility)
 
-=method MASS_LUNAR
+=constant MASS_LUNAR
 
     7.346e22
 
@@ -526,7 +525,7 @@ lunar mass
 
 This constant is also available using the alternate name C<LUNAR_MASS> (imported using the :alternate tag for backwards compatibility)
 
-=method AXIS_SM_LUNAR
+=constant AXIS_SM_LUNAR
 
     3.84402e8
 
@@ -534,7 +533,7 @@ lunar orbital semi-major axis
 
 This constant is also available using the alternate name C<LUNAR_SM_AXIS> (imported using the :alternate tag for backwards compatibility)
 
-=method ECCENTRICITY_LUNAR
+=constant ECCENTRICITY_LUNAR
 
     0.0549
 
@@ -542,7 +541,7 @@ lunar orbital eccentricity
 
 This constant is also available using the alternate name C<LUNAR_ECCENTRICITY> (imported using the :alternate tag for backwards compatibility)
 
-=method THOMSON_CROSS_SECTION
+=constant THOMSON_CROSS_SECTION
 
     6.6524587321e-29
 
@@ -550,7 +549,7 @@ Thomson cross-section
 
 This constant is also available using the alternate name C<THOMSON_XSECTION> (imported using the :alternate tag for backwards compatibility)
 
-=method MASS_ELECTRON
+=constant MASS_ELECTRON
 
     9.1093837015e-31
 
@@ -558,7 +557,7 @@ mass of electron
 
 This constant is also available using the alternate name C<ELECTRON_MASS> (imported using the :alternate tag for backwards compatibility)
 
-=method MASS_PROTON
+=constant MASS_PROTON
 
     1.67262192369e-27
 
@@ -566,7 +565,7 @@ mass of proton
 
 This constant is also available using the alternate name C<PROTON_MASS> (imported using the :alternate tag for backwards compatibility)
 
-=method MASS_NEUTRON
+=constant MASS_NEUTRON
 
     1.67492749804e-27
 
@@ -574,7 +573,7 @@ neutron mass
 
 This constant is also available using the alternate name C<NEUTRON_MASS> (imported using the :alternate tag for backwards compatibility)
 
-=method MASS_HYDROGEN
+=constant MASS_HYDROGEN
 
     1.6738e-27
 
@@ -584,13 +583,13 @@ This value is from the IUPAC and is a little smaller than MASS_PROTON + MASS_ELE
 
 This constant is also available using the alternate name C<HYDROGEN_MASS> (imported using the :alternate tag for backwards compatibility)
 
-=method MASS_ALPHA
+=constant MASS_ALPHA
 
     6.6446573357e-27
 
 mass of alpha particle
 
-=method RADIUS_ELECTRON
+=constant RADIUS_ELECTRON
 
     2.8179403262e-15
 
@@ -598,7 +597,7 @@ classical electron radius
 
 This constant is also available using the alternate name C<ELECTRON_RADIUS> (imported using the :alternate tag for backwards compatibility)
 
-=method RADIUS_BOHR
+=constant RADIUS_BOHR
 
     5.29177210903e-11
 
@@ -606,13 +605,13 @@ Bohr radius
 
 This constant is also available using the alternate name C<BOHR_RADIUS> (imported using the :alternate tag for backwards compatibility)
 
-=method RADIUS_JUPITER
+=constant RADIUS_JUPITER
 
-    69_911_000
+    69911000
 
 Volumetric mean radius of Jupiter
 
-=method MASS_JUPITER
+=constant MASS_JUPITER
 
     1.89819e27
 
@@ -656,19 +655,18 @@ Reference Documents:
 
 =for :list
 * L<IAU 2009 system of astronomical constants|http://aa.usno.navy.mil/publications/reports/Luzumetal2011.pdf>
-* L<Astronomical Constants 2016.pdf|http://asa.usno.navy.mil/static/files/2016/Astronomical_Constants_2016.pdf>
+* L<Astronomical Constants 2016|http://asa.usno.navy.mil/static/files/2016/Astronomical_Constants_2016.pdf>
 * L<IAU recommendations concerning units|https://www.iau.org/publications/proceedings_rules/units>
 * L<Re-definition of the Astronomical Unit|http://syrte.obspm.fr/IAU_resolutions/Res_IAU2012_B2.pdf>
 
 =head1 REPOSITORY
 
-* L<https://github.com/duffee/Astro-Constants>
+* L<github|https://github.com/duffee/Astro-Constants>
 
 =head1 ISSUES
 
-File issues/suggestions at the Github repository L<https://github.com/duffee/Astro-Constants>.
-The venerable L<RT|https://rt.cpan.org/Dist/Display.html?Status=Active&Queue=Astro-Constants>
-is the canonical bug tracker that is clocked by L<meta::cpan|https://metacpan.org/pod/Astro::Constants>.
+Feel free to file bugs or suggestions in the
+L<Issues|https://github.com/duffee/Astro-Constants/issues> section of the Github repository.
 
 Using C<strict> is a must with this code.  Any constants you forgot to import will
 evaluate to 0 and silently introduce errors in your code.  Caveat Programmer.
@@ -677,9 +675,8 @@ If you are using this module, drop me a line using any available means at your
 disposal, including
 *gasp* email (address in the Author section), to let me know how you're using it. 
 What new features would you like to see?
-If you've had an experience with using the module, let other people know what you
-think, good or bad, by rating it at
-L<cpanratings|http://cpanratings.perl.org/rate/?distribution=Astro-Constants>.
+
+Current best method to contact me is via a Github Issue.
 
 =head2 Extending the data set
 
@@ -698,6 +695,7 @@ I have moved to a I<noun_adjective> format for long names.
 LIGHT_SPEED and SOLAR_MASS become SPEED_LIGHT and MASS_SOLAR.
 This principle should make the code easier to read with the most
 important information coming at the beginning of the name.
+See also L<Astro::Constants::Roadmap>
 
 =head1 ASTROCONST  X<ASTROCONST>
 

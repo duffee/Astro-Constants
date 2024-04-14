@@ -9,6 +9,7 @@ on 'develop' => sub {
   requires 'perl' => '5.020';
   requires 'XML::LibXML';
 
+  recommends 'FindBin';
   recommends 'Module::Util';
   recommends 'Pod::Elemental::Transformer::List';
 };
