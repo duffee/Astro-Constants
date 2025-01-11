@@ -1,5 +1,4 @@
-use strict;
-use Test::More;
+use Test2::V0;
 use Astro::Constants qw( :all );
 
 # test that all of a constant's alternate values are included
