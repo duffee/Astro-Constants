@@ -873,7 +873,7 @@ Multiply by the square of the dimensionless Hubble parameter, h, in your calcula
     <PhysicalConstant>
       <name>MASS_HYDROGEN</name>
       <alternateName>HYDROGEN_MASS</alternateName>
-      <description>mass of Hydrogen atom --   
+      <description>mass of Hydrogen atom --
 This value is from the IUPAC and is a little smaller than MASS_PROTON + MASS_ELECTRON, but within the uncertainty given here.  The current value is 1.008u +/- 0.0002 derived from a range of terrestrial materials.  If this is for precision work, you had best understand what you're using.  See https://iupac.org/what-we-do/periodic-table-of-elements/
 </description>
       <value>1.6738e-27</value>

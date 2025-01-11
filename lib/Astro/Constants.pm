@@ -35,14 +35,14 @@ data set for the values of constants, defaulting to the most recent.
 
 The C<:all> tag imports all the constants in their long name forms
 (i.e. GRAVITATIONAL).  Useful subsets can be imported with these tags:
-C<:fundamental> C<:conversion> C<:mathematics> C<:cosmology> 
+C<:fundamental> C<:conversion> C<:mathematics> C<:cosmology>
 C<:planetary> C<:electromagnetic> or C<:nuclear>.
 Alternate names such as LIGHT_SPEED instead of SPEED_LIGHT or HBAR
 instead of H_BAR are imported with C<:alternates>.  I'd like
 to move away from their use, but they have been in the module for years.
 
 Long name constants are constructed with the L<constant> pragma and
-are not interpolated in double quotish situations because they are 
+are not interpolated in double quotish situations because they are
 really inlined functions.
 Short name constants were constructed with the age-old idiom of fiddling
 with the symbol table using typeglobs, e.g. C<*PI = \3.14159>,
@@ -55,15 +55,15 @@ all correct.  How many significant figures is enough or too much?  Where's the
 definitive source, Wikipedia?  And which mass does "$m1" refer to, solar or lunar?
 
 The constant values in this module are protected against accidental re-assignment
-in your code.  The test suite protects them against accidental finger trouble in my code. 
+in your code.  The test suite protects them against accidental finger trouble in my code.
 Other people are using this module, so more eyeballs are looking for errors
 and we all benefit.  The constant names are a little longer than you might like,
 but you gain in the long run from readable, sharable code that is clear in meaning.
-Your programming errors are a little easier to find when you can see that the units 
+Your programming errors are a little easier to find when you can see that the units
 don't match.  Isn't it reassuring that you can verify how a number is produced
 and which meeting of which standards body is responsible for its value?
 
-Trusting someone else's code does carry some risk, which you I<should> consider, 
+Trusting someone else's code does carry some risk, which you I<should> consider,
 but have you also considered the risk of doing it yourself with no one else 
 to check your work?  And, are you going to check for the latest values from NIST
 every 4 years?
@@ -77,7 +77,7 @@ this is the module to do it with.
 
 =head1 EXPORT
 
-Nothing is exported by default, so the module doesn't clobber any of your variables.  
+Nothing is exported by default, so the module doesn't clobber any of your variables.
 Select from the following tags:
 
 =for :list
@@ -668,7 +668,7 @@ This constant is also available using the alternate name C<NEUTRON_MASS>
 
     1.6738e-27
 
-mass of Hydrogen atom --   
+mass of Hydrogen atom --
 This value is from the IUPAC and is a little smaller than MASS_PROTON + MASS_ELECTRON, but within the uncertainty given here.  The current value is 1.008u +/- 0.0002 derived from a range of terrestrial materials.  If this is for precision work, you had best understand what you're using.  See https://iupac.org/what-we-do/periodic-table-of-elements/
 
 This constant is also available using the alternate name C<HYDROGEN_MASS>
