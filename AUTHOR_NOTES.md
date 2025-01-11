@@ -41,6 +41,7 @@ The author keeps forgetting how to run dzil.
 * update ChangeLog with history from ```git log```
 * check POD matches current state of the module
 * link Constants.pm to Constants/DatasourceYear.pm or move old version of Constants.pm to Constants/2017.pm if changes to values in PhysicalConstants.xml
+* commit all files in repository
 * update git repo tag to new version number
 * build CPAN release - ```dzil release```
 * [upload](https://pause.perl.org/pause/authenquery?ACTION=add_uri) to CPAN (dzil does this)
@@ -48,6 +49,14 @@ The author keeps forgetting how to run dzil.
 * add missing steps to this checklist
 
 # Design Decisions
+
+## Dist::Zilla and PodWeaver
+
+Dzil can be a pain, but it makes the release to CPAN step easier and promises to build me an RPM spec file.
+PodWeaver adds in the NAME and VERSION sections of the Pod,
+in case you're wondering why it's not in the **build_module.pl** script.
+
+Need to remember to commit all the files in the repository before releasing.
 
 ## Perl Critic
 
