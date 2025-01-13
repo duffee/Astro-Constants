@@ -28,7 +28,7 @@ in Astronomy and Astrophysics.
 The values are stored in F<Physical_Constants.xml> in the B<data> directory
 and are mostly based on the 2018 CODATA values from NIST.
 
-B<NOTE:> Other popular languages are still using I<2014> CODATA values
+B<NOTE:> Other popular languages are still using I<older> CODATA values
 for their constants and may produce different results in comparison.
 On the roadmap is a set of modules to allow you to specify the year or
 data set for the values of constants, defaulting to the most recent.
@@ -41,12 +41,12 @@ Alternate names such as LIGHT_SPEED instead of SPEED_LIGHT or HBAR
 instead of H_BAR are imported with C<:alternates>.  I'd like
 to move away from their use, but they have been in the module for years.
 
-Long name constants are constructed with the L<constant> pragma and
-are not interpolated in double quotish situations because they are
-really inlined functions.
-Short name constants were constructed with the age-old idiom of fiddling
-with the symbol table using typeglobs, e.g. C<*PI = \3.14159>,
-and can be slower than the long name constants.
+Constants are constructed with the L<constant> pragma and are not interpolated
+in double quotish situations because they are really inlined functions.
+You can resolve the constant
+L<with a backslash|https://dev.to/kirklewis/string-interpolation-of-constants-in-perl-5-181o>
+
+    say "My value for the speed of light is ${ \SPEED_LIGHT } m/s";
 
 =head2 Why use this module
 
@@ -64,7 +64,7 @@ don't match.  Isn't it reassuring that you can verify how a number is produced
 and which meeting of which standards body is responsible for its value?
 
 Trusting someone else's code does carry some risk, which you I<should> consider,
-but have you also considered the risk of doing it yourself with no one else 
+but have you also considered the risk of doing it yourself with no one else
 to check your work?  And, are you going to check for the latest values from NIST
 every 4 years?
 
@@ -99,28 +99,28 @@ use constant BOLTZMANN => 1.380649e-23;
 use constant GRAVITATIONAL => 6.67430e-11;
 use constant ELECTRON_VOLT => 1.602176634e-19;
 use constant PLANCK => 6.62607015e-34;
-use constant H_BAR => 1.0545718176763e-34;
-use constant HBAR => 1.0545718176763e-34;
+use constant H_BAR => 1.054571817e-34;
+use constant HBAR => 1.054571817e-34;
 use constant CHARGE_ELEMENTARY => 1.602176634e-19;
 use constant ELECTRON_CHARGE => 1.602176634e-19;
 use constant STEFAN_BOLTZMANN => 5.670374419e-8;
 use constant DENSITY_RADIATION => 7.565723e-16;
 use constant A_RAD => 7.565723e-16;
 use constant WIEN => 2.897771955e-3;
-use constant ALPHA => 7.2973525693e-3;
-use constant IMPEDANCE_VACUUM => 376.730313461;
-use constant VACUUM_IMPEDANCE => 376.730313461;
-use constant PERMITIV_FREE_SPACE => 8.8541878128e-12;
-use constant PERMITIVITY_0 => 8.8541878128e-12;
-use constant PERMEABL_FREE_SPACE => 1.25663706212e-6;
-use constant PERMEABILITY_0 => 1.25663706212e-6;
-use constant CONSTANT_MAGNETIC => 1.25663706212e-6;
+use constant ALPHA => 7.2973525643e-3;
+use constant IMPEDANCE_VACUUM => 376.730313412;
+use constant VACUUM_IMPEDANCE => 376.730313412;
+use constant PERMITIV_FREE_SPACE => 8.8541878188e-12;
+use constant PERMITIVITY_0 => 8.8541878188e-12;
+use constant PERMEABL_FREE_SPACE => 1.25663706127e-6;
+use constant PERMEABILITY_0 => 1.25663706127e-6;
+use constant CONSTANT_MAGNETIC => 1.25663706127e-6;
 use constant PI => 3.14159265358979324;
 use constant FOUR_PI => 12.5663706143592;
 use constant FOURPI => 12.5663706143592;
 use constant STERADIAN => 3282.80635001174;
 use constant EXP => 2.71828182846;
-use constant ATOMIC_MASS_UNIT => 1.66053906660e-27;
+use constant ATOMIC_MASS_UNIT => 1.66053906892e-27;
 use constant PARSEC => 3.08567758149e16;
 use constant ASTRONOMICAL_UNIT => 149597870700;
 use constant LIGHT_YEAR => 9460730472580800;
@@ -170,29 +170,29 @@ use constant AXIS_SM_LUNAR => 3.84402e8;
 use constant LUNAR_SM_AXIS => 3.84402e8;
 use constant ECCENTRICITY_LUNAR => 0.0549;
 use constant LUNAR_ECCENTRICITY => 0.0549;
-use constant THOMSON_CROSS_SECTION => 6.6524587321e-29;
-use constant THOMSON_XSECTION => 6.6524587321e-29;
-use constant MASS_ELECTRON => 9.1093837015e-31;
-use constant ELECTRON_MASS => 9.1093837015e-31;
-use constant MASS_PROTON => 1.67262192369e-27;
-use constant PROTON_MASS => 1.67262192369e-27;
-use constant MASS_NEUTRON => 1.67492749804e-27;
-use constant NEUTRON_MASS => 1.67492749804e-27;
+use constant THOMSON_CROSS_SECTION => 6.6524587051e-29;
+use constant THOMSON_XSECTION => 6.6524587051e-29;
+use constant MASS_ELECTRON => 9.1093837139e-31;
+use constant ELECTRON_MASS => 9.1093837139e-31;
+use constant MASS_PROTON => 1.67262192595e-27;
+use constant PROTON_MASS => 1.67262192595e-27;
+use constant MASS_NEUTRON => 1.67492750056e-27;
+use constant NEUTRON_MASS => 1.67492750056e-27;
 use constant MASS_HYDROGEN => 1.6738e-27;
 use constant HYDROGEN_MASS => 1.6738e-27;
-use constant MASS_ALPHA => 6.6446573357e-27;
-use constant RADIUS_ELECTRON => 2.8179403262e-15;
-use constant ELECTRON_RADIUS => 2.8179403262e-15;
-use constant RADIUS_BOHR => 5.29177210903e-11;
-use constant BOHR_RADIUS => 5.29177210903e-11;
+use constant MASS_ALPHA => 6.6446573450e-27;
+use constant RADIUS_ELECTRON => 2.8179403205e-15;
+use constant ELECTRON_RADIUS => 2.8179403205e-15;
+use constant RADIUS_BOHR => 5.29177210544e-11;
+use constant BOHR_RADIUS => 5.29177210544e-11;
 use constant RADIUS_JUPITER => 69911000;
 use constant MASS_JUPITER => 1.89819e27;
 
 my %_precision = (
-    ALPHA => {value => 1.5e-10, type => 'relative'},
+    ALPHA => {value => 1.6e-10, type => 'relative'},
     ANGSTROM => {value => 0, type => 'relative'},
     ASTRONOMICAL_UNIT => {value => 0, type => 'relative'},
-    ATOMIC_MASS_UNIT => {value => 3.0e-10, type => 'relative'},
+    ATOMIC_MASS_UNIT => {value => 3.1e-10, type => 'relative'},
     AVOGADRO => {value => 0, type => 'relative'},
     AXIS_SM_LUNAR => {value => 3e-9, type => 'relative'},
     BOLTZMANN => {value => 0, type => 'relative'},
@@ -209,30 +209,30 @@ my %_precision = (
     GRAVITY_EARTH => {value => 0.000001, type => 'relative'},
     GRAVITY_SOLAR => {value => 0.0004, type => 'relative'},
     HUBBLE_TIME => {value => 0.0000001, type => 'relative'},
-    H_BAR => {value => 1.5e-9, type => 'relative'},
-    IMPEDANCE_VACUUM => {value => 1e-50, type => 'relative'},
+    H_BAR => {value => 0, type => 'relative'},
+    IMPEDANCE_VACUUM => {value => 1.6e-10, type => 'relative'},
     JANSKY => {value => 0, type => 'relative'},
     LIGHT_YEAR => {value => 0, type => 'relative'},
     LUMINOSITY_SOLAR => {value => 0.0003, type => 'relative'},
     MAGNITUDE_SOLAR_V => {value => 0.0004, type => 'relative'},
     MAGNITUDE_SOLAR_V_ABSOLUTE => {value => 0.002, type => 'relative'},
-    MASS_ALPHA => {value => 3.0e-10, type => 'relative'},
+    MASS_ALPHA => {value => 3.1e-10, type => 'relative'},
     MASS_EARTH => {value => 6e20, type => 'absolute'},
-    MASS_ELECTRON => {value => 3e-10, type => 'relative'},
+    MASS_ELECTRON => {value => 3.1e-10, type => 'relative'},
     MASS_HYDROGEN => {value => 3.3e-31, type => 'absolute'},
     MASS_JUPITER => {value => 5e-6, type => 'relative'},
     MASS_LUNAR => {value => 0.0002, type => 'relative'},
-    MASS_NEUTRON => {value => 5.7e-10, type => 'relative'},
+    MASS_NEUTRON => {value => 5.1e-10, type => 'relative'},
     MASS_PROTON => {value => 3.1e-10, type => 'relative'},
     MASS_SOLAR => {value => 0.0001, type => 'relative'},
     PARSEC => {value => 1e-11, type => 'relative'},
-    PERMEABL_FREE_SPACE => {value => 1.5e-10, type => 'relative'},
-    PERMITIV_FREE_SPACE => {value => 1.5e-10, type => 'relative'},
+    PERMEABL_FREE_SPACE => {value => 1.6e-10, type => 'relative'},
+    PERMITIV_FREE_SPACE => {value => 1.6e-10, type => 'relative'},
     PI => {value => 0.00000000000000001, type => 'relative'},
     PLANCK => {value => 0, type => 'relative'},
-    RADIUS_BOHR => {value => 1.5e-10, type => 'relative'},
+    RADIUS_BOHR => {value => 1.6e-10, type => 'relative'},
     RADIUS_EARTH => {value => 0.1, type => 'absolute'},
-    RADIUS_ELECTRON => {value => 4.5e-10, type => 'relative'},
+    RADIUS_ELECTRON => {value => 4.7e-10, type => 'relative'},
     RADIUS_JUPITER => {value => 1.5e-5, type => 'relative'},
     RADIUS_LUNAR => {value => 6e-5, type => 'relative'},
     RADIUS_SOLAR => {value => 0.002, type => 'relative'},
@@ -241,7 +241,7 @@ my %_precision = (
     STERADIAN => {value => 0.00000000000001, type => 'relative'},
     TEMPERATURE_CMB => {value => 0.00057, type => 'absolute'},
     TEMPERATURE_SOLAR_SURFACE => {value => 0.0002, type => 'relative'},
-    THOMSON_CROSS_SECTION => {value => 9.1e-10, type => 'relative'},
+    THOMSON_CROSS_SECTION => {value => 9.3e-10, type => 'relative'},
     WIEN => {value => 1e-10, type => 'relative'},
     YEAR => {value => 0, type => 'relative'},
     YEAR_ANOMALISTIC => {value => 0.1, type => 'absolute'},
@@ -285,7 +285,7 @@ Planck constant
 
 =constant H_BAR
 
-    1.0545718176763e-34
+    1.054571817e-34
 
 the reduced Planck constant, Planck's constant (exact) /2pi
 
@@ -324,13 +324,13 @@ Wien wavelength displacement law constant
 
 =constant ALPHA
 
-    7.2973525693e-3
+    7.2973525643e-3
 
 fine structure constant
 
 =constant IMPEDANCE_VACUUM
 
-    376.730313461
+    376.730313412
 
 characteristic impedance of vacuum
 
@@ -339,7 +339,7 @@ This constant is also available using the alternate name C<VACUUM_IMPEDANCE>
 
 =constant PERMITIV_FREE_SPACE
 
-    8.8541878128e-12
+    8.8541878188e-12
 
 permittivity of free space, epsilon_0, the electric constant
 
@@ -348,7 +348,7 @@ This constant is also available using the alternate name C<PERMITIVITY_0>
 
 =constant PERMEABL_FREE_SPACE
 
-    1.25663706212e-6
+    1.25663706127e-6
 
 permeability of free space, mu_0, the magnetic constant
 
@@ -383,7 +383,7 @@ base of natural logarithm
 
 =constant ATOMIC_MASS_UNIT
 
-    1.66053906660e-27
+    1.66053906892e-27
 
 unified atomic mass unit, 1 u
 
@@ -630,7 +630,7 @@ This constant is also available using the alternate name C<LUNAR_ECCENTRICITY>
 
 =constant THOMSON_CROSS_SECTION
 
-    6.6524587321e-29
+    6.6524587051e-29
 
 Thomson cross-section
 
@@ -639,7 +639,7 @@ This constant is also available using the alternate name C<THOMSON_XSECTION>
 
 =constant MASS_ELECTRON
 
-    9.1093837015e-31
+    9.1093837139e-31
 
 mass of electron
 
@@ -648,7 +648,7 @@ This constant is also available using the alternate name C<ELECTRON_MASS>
 
 =constant MASS_PROTON
 
-    1.67262192369e-27
+    1.67262192595e-27
 
 mass of proton
 
@@ -657,7 +657,7 @@ This constant is also available using the alternate name C<PROTON_MASS>
 
 =constant MASS_NEUTRON
 
-    1.67492749804e-27
+    1.67492750056e-27
 
 neutron mass
 
@@ -676,13 +676,13 @@ This constant is also available using the alternate name C<HYDROGEN_MASS>
 
 =constant MASS_ALPHA
 
-    6.6446573357e-27
+    6.6446573450e-27
 
 mass of alpha particle
 
 =constant RADIUS_ELECTRON
 
-    2.8179403262e-15
+    2.8179403205e-15
 
 classical electron radius
 
@@ -691,7 +691,7 @@ This constant is also available using the alternate name C<ELECTRON_RADIUS>
 
 =constant RADIUS_BOHR
 
-    5.29177210903e-11
+    5.29177210544e-11
 
 Bohr radius
 
@@ -765,9 +765,9 @@ L<Issues|https://github.com/duffee/Astro-Constants/issues> section of the Github
 Using C<strict> is a must with this code.  Any constants you forgot to import will
 evaluate to 0 and silently introduce errors in your code.  Caveat Programmer.
 
-If you are using this module, drop me a line using any available means at your 
+If you are using this module, drop me a line using any available means at your
 disposal, including
-*gasp* email (address in the Author section), to let me know how you're using it. 
+*gasp* email (address in the Author section), to let me know how you're using it.
 What new features would you like to see?
 
 Current best method to contact me is via a Github Issue.
