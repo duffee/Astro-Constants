@@ -68,8 +68,12 @@ for my $datafile ( @ARGV ) {
 	}
 }
 
+#### transform constants to desired output
+if ( $template eq 'raku' ) { names_to_raku( @constants ); }
+
 #### output module templates
 open my $fh, '>', $output or die "Couldn't write to $output: $!\n";
+
 # TODO do the loops in the templates
 say $fh $mt->render($t{module_header}, $name, '2018 CODATA');
 for my $constant ( @constants ) {
@@ -148,9 +152,9 @@ This module provides physical and mathematical constants for use
 in Astronomy and Astrophysics.
 
 The values are stored in F<Physical_Constants.xml> in the B<data> directory
-and are mostly based on the 2018 CODATA values from NIST.
+and are mostly based on the <%= $source %> values from NIST.
 
-B<NOTE:> Other popular languages are still using I<2014> CODATA values
+B<NOTE:> Other popular languages are still using I<older> CODATA values
 for their constants and may produce different results in comparison.
 On the roadmap is a set of modules to allow you to specify the year or
 data set for the values of constants, defaulting to the most recent.
@@ -163,12 +167,12 @@ Alternate names such as LIGHT_SPEED instead of SPEED_LIGHT or HBAR
 instead of H_BAR are imported with C<:alternates>.  I'd like
 to move away from their use, but they have been in the module for years.
 
-Long name constants are constructed with the L<constant> pragma and
-are not interpolated in double quotish situations because they are
-really inlined functions.
-Short name constants were constructed with the age-old idiom of fiddling
-with the symbol table using typeglobs, e.g. C<*PI = \3.14159>,
-and can be slower than the long name constants.
+Constants are constructed with the L<constant> pragma and are not interpolated
+in double quotish situations because they are really inlined functions.
+You can resolve the constant
+L<with a backslash|https://dev.to/kirklewis/string-interpolation-of-constants-in-perl-5-181o>
+
+    say "My value for the speed of light is ${ \SPEED_LIGHT } m/s";
 
 =head2 Why use this module
 
@@ -419,6 +423,23 @@ This constant is also available using the alternate name C<<%= $c->{alternates}[
 <% } %>
 EOT
         },
+
+#### TODO inherit common template from perl files
+        raku => {
+            constant_code => <<'EOT',
+% my $c = shift;
+% if ($c->{deprecated}) {
+sub <%= $c->{name} %> { warn "<%= $c->{name} %> deprecated"; return <%= $c->{value} %>; }
+% } else {
+constant <%= $c->{name} %> => <%= $c->{value} %>;
+  % if ($c->{alternates}) {
+    % for my $alt_name ( $c->{alternates}->@* ) {
+constant <%= $alt_name %> => <%= $c->{value} %>;
+    % }
+  % }
+% }
+EOT
+        },
     );
 
     unless (exists $template{$style}) {
@@ -492,4 +513,12 @@ sub extract_constant {
 		$precision->getAttribute('type'));
 
     return $constant;
+}
+
+sub names_to_raku {
+# converts names in screaming snake case to kebab case
+    for my $c ( @_ ) {
+        $c->{name} = lc $c->{name} =~ tr/_/-/;
+        $c->{alternates}->@* = map { tr/_/-/; lc } $c->{alternates}->@*;
+    }
 }

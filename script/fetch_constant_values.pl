@@ -4,6 +4,8 @@
 # Boyd Duffee, Mar 2020
 #
 # hard coded to run from top directory and uses only data/PhysicalConstants.xml
+#
+# nice regex for base_units in extract_value()
 
 use v5.20; # postfix deref
 use autodie;
@@ -19,6 +21,7 @@ use XML::LibXML;
 my $TESTING = 1;
 my $ONLINE = 1;
 my $SLEEP = 0;
+
 
 my $ua = Mojo::UserAgent->new;
 $ua->max_redirects(2);
@@ -77,10 +80,10 @@ CONST
 
 	my ($new_value, $new_uncertainty) = get_constant_value($source);
 	if ( ! defined $new_value ) {
-		warn "Couldn't get value for $long_name from $source_url";
+		warn "Couldn't get value for $name from $source_url";
 	}
 	elsif ( $new_value == $old_value ) {
-			say "No change";
+			say "\n==== No change ====\n";
 	}
 	else {
         $new_uncertainty //= '';
@@ -110,7 +113,6 @@ sub get_constant_value {
 	}
 	say "Getting $url";
 	return 0 unless $ONLINE;
-    $DB::single = 1;
 	my $tx = $ua->get($url);
 	return unless $tx;
 
@@ -120,9 +122,10 @@ sub get_constant_value {
 		return $value;
 	}
 	elsif ( $url =~ /nist\.gov/ ) {
-		mojo_parse($tx->result);
-		return extract_value( @values_parsed ),
-			extract_value( @uncertainties_parsed );
+		my $parsed = mojo_parse($tx->result);
+		return extract_value( $parsed->{data}{'Numerical value'} ),
+			extract_value( $parsed->{data}{'Relative standard uncertainty'} );
+			#extract_value( $parsed->{data}{'Standard uncertainty'} );
 	}
 	else {
 		print $tx->result;
@@ -171,28 +174,32 @@ sub configure_parsers {
 }
 
 sub extract_value {
-	my ($digits, $power, $units) = grep /\w/, @_;
+	my $string = shift;
 
+    my $base_unit_re = qr/(?:m|fm|s|kg|mol|cd|eV|MeV|MeV\/c|GeV|ohm|sr|u|A|C|E_h|F|Hz|MHz|K|J|N|Pa|S|T|V|W|Wb) (?:-?\d)?/x;
+	my ($digits, $power, $units) = $string =~ /([-\d.\x{a0}]+)
+                                           (?:\s* x \x{a0}* 10(\S*)? )?
+                                           (\s+ $base_unit_re (?:\s* $base_unit_re)* )?/x;
 	$power //= ''; $units //= '';
-	$digits =~ s/(?:&nbsp;|\s+)//g;
-	$power =~ s/(?:&nbsp;|\s+)//g;
-	$units =~ s/(?:&nbsp;|\s+)//g;
-	print "From $digits, $power, $units, " if $TESTING;
-	$digits =~ s/\.{3,}//;	# remove ellipsis pertaining to irrational values
+	print "From $string I get $digits, $power, $units, " if $TESTING;
 
-	if ( $digits =~ /exact/ || $power =~ /exact/ || $units =~ /exact/ ) {
+	if ( $string eq '(exact)' ) {
 		say "Returning 0" if $TESTING;
 		say "exact value";
 		return 0;
 	}
-	elsif ( $digits =~ s/x10// ) {
+	elsif ( $digits && $digits =~ s/x10// ) {
 		my $scinotation = join 'e', $digits, $power;
 		say "Extracting $scinotation" if $TESTING;
 		return $scinotation;
 	}
 	else {
+        return unless $digits;
 		say "Extracting $digits" if $TESTING;
+	    $digits =~ s/\.{3,}//;	# remove ellipsis pertaining to irrational values
+	    $digits =~ s/\s+//g;	# remove nbsp \x{a0}
 		$digits =~ s/^(-?\d+\.?\d*).*/$1/;	# removed units for non-scinotation
+        $digits .= "e$power" if $power;
 		return $digits;
 	}
 }
@@ -200,12 +207,14 @@ sub extract_value {
 sub mojo_parse {
     my $r = shift;
 
-    $DB::single = 1;
     my $page = Mojo::DOM->new( $r->dom );
     my $tables = $page->find('table')->to_array;
     my $td = $tables->[3]->find('td')->map('all_text')->grep(qr/\w/)->to_array;
+    shift @$td if $td->[0] eq 'Click symbol for equation'; # remove this entry
+
     my ($name) = $td->[0] =~ /^\s*(.+)\s*$/;
-    my %data = $td->@[1 .. 8];
+    my %data = map { s/^\s*//; s/\s*$//; $_ } $td->@[1 .. 8];
     my ($source) = $td->[10] =~ /Source: (.+)/;
-    say "Source: $source";
+    say "Source: $source" if $TESTING;
+    return {name => $name, source => $source, data => \%data};
 }
