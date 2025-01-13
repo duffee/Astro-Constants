@@ -39,10 +39,11 @@ The author keeps forgetting how to run dzil.
 * check [RT](https://rt.cpan.org/Public/Dist/Display.html?Name=Astro-Constants)
 * check [Git Pulse](https://github.com/duffee/Astro-Constants/pulse/monthly) for pending issues and pull requests
 * update ChangeLog with history from ```git log```
+* update dzil.ini with current year
 * check POD matches current state of the module
 * link Constants.pm to Constants/DatasourceYear.pm or move old version of Constants.pm to Constants/2017.pm if changes to values in PhysicalConstants.xml
 * commit all files in repository
-* update git repo tag to new version number
+* update git repo tag to new version number with `git tag v0.15; git push --tags -u origin master`
 * build CPAN release - ```dzil release```
 * [upload](https://pause.perl.org/pause/authenquery?ACTION=add_uri) to CPAN (dzil does this)
 * email announcement to the Quantified Onion group
@@ -139,13 +140,24 @@ One step per version.  No faster.
 * take a look a the diff between PhysicalConstants.xml and PhysicalConstants_with_symbols.xml
 
 
-# Design decisions
-
 ## PhysicalConstants
 
 I chose to keep the Constant definitions in XML for its language independance and validation tools.
 Other people have the ability to edit the file and I'd like a way of verifying that the definition
 file is correct before the processing tools get blown out of the water.
+
+## System Organization
+
+Astro::Constants holds the most up-to-date version of the constants.
+Astro::Constants::YEAR holds the constants that were published at any point up to 31 Dec of that year.
+The CODATA constants are published every 4 years in the year following the year given.
+Astronomical data is less centralized and may be found in individual papers referenced in the xml file.
+
+I have written the build_module script to take multiple xml files, so that the CODATA values
+are self-contained and other data can be aggregated around a theme. The module maintainer then selects
+all the desired PhysicalConstants.xml files and writes out the named Astro::Constants::YEAR module
+using their knowledge of the constants to be included and which ones are the latest to be published
+up to and including YEAR.
 
 # Packaging for Distros
 

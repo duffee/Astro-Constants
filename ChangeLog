@@ -1,5 +1,9 @@
 {{$NEXT}}
 ====
+* new build_module.pl script cleaner, uses Mojo::Template
+* added Astro::Constants::2019
+* migrating to Test2
+* improved XML schema
 * moved constants into main module, Astro::Constants
 * removed Astro::Constants::CGS from distribution
 * removed short names
