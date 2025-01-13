@@ -1,4 +1,4 @@
-use Test::More;
+use Test2::V0;
 use Astro::Constants qw( :planetary );
 
 is(MASS_EARTH, 5.9722e24, 'MASS_EARTH');

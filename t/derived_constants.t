@@ -1,12 +1,8 @@
-#!perl -T
-
-use warnings;
-use strict;
-use Test::More;
-use Astro::Constants::MKS qw/STEFAN_BOLTZMANN SPEED_LIGHT 
+use Test2::V0;
+use Astro::Constants::MKS qw(STEFAN_BOLTZMANN SPEED_LIGHT 
 	ALPHA GRAVITATIONAL PI PARSEC ASTRONOMICAL_UNIT
 	PLANCK H_BAR PERMEABILITY_0
-	/;
+	);
 
 
 

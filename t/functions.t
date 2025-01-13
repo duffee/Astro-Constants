@@ -1,4 +1,4 @@
-use Test::More;
+use Test2::V0;
 use Astro::Constants qw( :all pretty precision );
 
 can_ok('Astro::Constants', qw/pretty precision/);
@@ -11,12 +11,9 @@ is( pretty(ELECTRON_VOLT), 1.602e-19, 'ELECTRON_VOLT rounded to 3 sig figs');
 is( precision('GRAVITATIONAL'), 2.2e-5, 'relative uncertainty in GRAVITATIONAL');
 is( precision('MASS_EARTH'), 6e20, 'absolute uncertainty in MASS_EARTH');
 
-TODO: {
-	local $todo = q/need to descern between absolute and relative precision/;
-
+todo 'need to descern between absolute and relative precision' => sub {
 	is( precision('GRAVITATIONAL'), 2.2e-5, 'relative uncertainty in GRAVITATIONAL');
 	is( precision('MASS_EARTH'), 6e20, 'absolute uncertainty in MASS_EARTH');
-
-}
+};
 
 done_testing();

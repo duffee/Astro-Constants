@@ -94,8 +94,8 @@
       <name>H_BAR</name>
       <alternateName>HBAR</alternateName>
       <description>the reduced Planck constant, Planck's constant (exact) /2pi</description>
-      <value>1.054571817e-34</value>
-      <uncertainty type="relative">0</uncertainty>
+      <value>1.0545718176763e-34</value>
+      <uncertainty type="relative">1.5e-9</uncertainty>
       <dimensions mass="1" length="2" time="-1"/>
       <maxValue/>
       <minValue/>
@@ -195,8 +195,8 @@
         </symbolRepresentation>
       </symbol>
       <description>fine structure constant</description>
-      <value>7.2973525643e-3</value>
-      <uncertainty type="relative">1.6e-10</uncertainty>
+      <value>7.2973525693e-3</value>
+      <uncertainty type="relative">1.5e-10</uncertainty>
       <dimensions/>
       <maxValue/>
       <minValue/>
@@ -219,8 +219,8 @@
         </symbolRepresentation>
       </symbol>
       <description>characteristic impedance of vacuum</description>
-      <value>376.730313412</value>
-      <uncertainty type="relative">1.6e-10</uncertainty>
+      <value>376.730313461</value>
+      <uncertainty type="relative">1e-50</uncertainty>
       <dimensions mass="1" lenghth="2" time="-3" current="-2"/>
       <maxValue/>
       <minValue/>
@@ -241,8 +241,8 @@
         </symbolRepresentation>
       </symbol>
       <description>permittivity of free space, epsilon_0, the electric constant</description>
-      <value>8.8541878188e-12</value>
-      <uncertainty type="relative">1.6e-10</uncertainty>
+      <value>8.8541878128e-12</value>
+      <uncertainty type="relative">1.5e-10</uncertainty>
       <dimensions time="4" current="2" length="-3" mass="-1"/>
       <maxValue/>
       <minValue/>
@@ -263,8 +263,8 @@
         </symbolRepresentation>
       </symbol>
       <description>permeability of free space, mu_0, the magnetic constant</description>
-      <value>1.25663706127e-6</value>
-      <uncertainty type="relative">1.6e-10</uncertainty>
+      <value>1.25663706212e-6</value>
+      <uncertainty type="relative">1.5e-10</uncertainty>
       <dimensions mass="1" length="1" time="-2" current="-2"/>
       <maxValue/>
       <minValue/>
@@ -336,8 +336,8 @@
       <alternateName/>
       <symbol>u</symbol>
       <description>unified atomic mass unit, 1 u</description>
-      <value>1.66053906892e-27</value>
-      <uncertainty type="relative">3.1e-10</uncertainty>
+      <value>1.66053906660e-27</value>
+      <uncertainty type="relative">3.0e-10</uncertainty>
       <dimensions mass="1"/>
       <maxValue/>
       <minValue/>
@@ -816,8 +816,8 @@ Multiply by the square of the dimensionless Hubble parameter, h, in your calcula
         </symbolRepresentation>
       </symbol>
       <description>Thomson cross-section</description>
-      <value>6.6524587051e-29</value>
-      <uncertainty type="relative">9.3e-10</uncertainty>
+      <value>6.6524587321e-29</value>
+      <uncertainty type="relative">9.1e-10</uncertainty>
       <dimensions length="2"/>
       <maxValue/>
       <minValue/>
@@ -831,8 +831,8 @@ Multiply by the square of the dimensionless Hubble parameter, h, in your calcula
       <name>MASS_ELECTRON</name>
       <alternateName>ELECTRON_MASS</alternateName>
       <description>mass of electron</description>
-      <value>9.1093837139e-31</value>
-      <uncertainty type="relative">3.1e-10</uncertainty>
+      <value>9.1093837015e-31</value>
+      <uncertainty type="relative">3e-10</uncertainty>
       <dimensions mass="1"/>
       <maxValue/>
       <minValue/>
@@ -846,7 +846,7 @@ Multiply by the square of the dimensionless Hubble parameter, h, in your calcula
       <name>MASS_PROTON</name>
       <alternateName>PROTON_MASS</alternateName>
       <description>mass of proton</description>
-      <value>1.67262192595e-27</value>
+      <value>1.67262192369e-27</value>
       <uncertainty type="relative">3.1e-10</uncertainty>
       <dimensions mass="1"/>
       <maxValue/>
@@ -860,8 +860,8 @@ Multiply by the square of the dimensionless Hubble parameter, h, in your calcula
       <name>MASS_NEUTRON</name>
       <alternateName>NEUTRON_MASS</alternateName>
       <description>neutron mass</description>
-      <value>1.67492750056e-27</value>
-      <uncertainty type="relative">5.1e-10</uncertainty>
+      <value>1.67492749804e-27</value>
+      <uncertainty type="relative">5.7e-10</uncertainty>
       <dimensions mass="1"/>
       <maxValue/>
       <minValue/>
@@ -895,8 +895,8 @@ This value is from the IUPAC and is a little smaller than MASS_PROTON + MASS_ELE
         </symbolRepresentation>
       </symbol>
       <description>mass of alpha particle</description>
-      <value>6.6446573450e-27</value>
-      <uncertainty type="relative">3.1e-10</uncertainty>
+      <value>6.6446573357e-27</value>
+      <uncertainty type="relative">3.0e-10</uncertainty>
       <dimensions mass="1"/>
       <maxValue/>
       <minValue/>
@@ -914,8 +914,8 @@ This value is from the IUPAC and is a little smaller than MASS_PROTON + MASS_ELE
         </symbolRepresentation>
       </symbol>
       <description>classical electron radius</description>
-      <value>2.8179403205e-15</value>
-      <uncertainty type="relative">4.7e-10</uncertainty>
+      <value>2.8179403262e-15</value>
+      <uncertainty type="relative">4.5e-10</uncertainty>
       <dimensions length="1"/>
       <maxValue/>
       <minValue/>
@@ -934,8 +934,8 @@ This value is from the IUPAC and is a little smaller than MASS_PROTON + MASS_ELE
         </symbolRepresentation>
       </symbol>
       <description>Bohr radius</description>
-      <value>5.29177210544e-11</value>
-      <uncertainty type="relative">1.6e-10</uncertainty>
+      <value>5.29177210903e-11</value>
+      <uncertainty type="relative">1.5e-10</uncertainty>
       <dimensions length="1"/>
       <maxValue/>
       <minValue/>
