@@ -1,5 +1,5 @@
 use Test2::V0;
-use Astro::Constants qw( :all );
+use Astro::Constants::2019 qw( :all );
 
 # test that all of a constant's alternate values are included
 
@@ -10,11 +10,11 @@ my $charge_e = 1.602_176_634e-19;
 is(CHARGE_ELEMENTARY, $charge_e, 'CHARGE_ELEMENTARY');
 is(ELECTRON_CHARGE, $charge_e, 'ELECTRON_CHARGE');
 
-my $e0 = 8.854_187_818_8e-12;
+my $e0 = 8.854_187_812_8e-12;
 is(PERMITIV_FREE_SPACE, $e0, 'PERMITIV_FREE_SPACE');
 is(PERMITIVITY_0, $e0, 'PERMITIVITY_0');
 
-my $m0 = 1.256_637_061_27e-6;
+my $m0 = 1.256_637_062_12e-6;
 is(PERMEABL_FREE_SPACE, $m0, 'PERMEABL_FREE_SPACE');
 is(PERMEABILITY_0, $m0, 'PERMEABILITY_0');
 is(CONSTANT_MAGNETIC, $m0, 'CONSTANT_MAGNETIC');
