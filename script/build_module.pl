@@ -75,7 +75,7 @@ if ( $template eq 'raku' ) { names_to_raku( @constants ); }
 open my $fh, '>', $output or die "Couldn't write to $output: $!\n";
 
 # TODO do the loops in the templates
-say $fh $mt->render($t{module_header}, $name, '2018 CODATA');
+say $fh $mt->render($t{module_header}, $name, '2022 CODATA');
 for my $constant ( @constants ) {
     print $fh $mt->render($t{constant_code}, $constant);
 }

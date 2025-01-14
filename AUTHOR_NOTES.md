@@ -21,6 +21,12 @@ Only use decimal version numbers; 0.14.1 will not be indexed
 
 # How to Release
 
+## Build the module
+
+`script/build_module.pl data/PhysicalConstants.xml`
+
+will write out **lib/Astro/Constants.pm**
+
 ## Using Dzil
 
 The author keeps forgetting how to run dzil.
@@ -41,6 +47,7 @@ The author keeps forgetting how to run dzil.
 * check [Git Pulse](https://github.com/duffee/Astro-Constants/pulse/monthly) for pending issues and pull requests
 * update ChangeLog with history from ```git log```
 * check POD matches current state of the module
+  * update `$source` passed to the **module_header()** template
 * link Constants.pm to Constants/DatasourceYear.pm or move old version of Constants.pm to Constants/2017.pm if changes to values in PhysicalConstants.xml
 * commit all files in repository
 * try a trial release with `dzil release --trial`
