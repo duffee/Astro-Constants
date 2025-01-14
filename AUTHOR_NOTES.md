@@ -35,12 +35,11 @@ The author keeps forgetting how to run dzil.
 ## Release checklist
 
 * tests pass with `prove -vlr t xt`
-* update version in dist.ini
+* update version and copyright_year in dist.ini
 * check [CPANTS](http://matrix.cpantesters.org/?dist=Astro-Constants)
 * check [RT](https://rt.cpan.org/Public/Dist/Display.html?Name=Astro-Constants)
 * check [Git Pulse](https://github.com/duffee/Astro-Constants/pulse/monthly) for pending issues and pull requests
 * update ChangeLog with history from ```git log```
-* update dzil.ini with current year
 * check POD matches current state of the module
 * link Constants.pm to Constants/DatasourceYear.pm or move old version of Constants.pm to Constants/2017.pm if changes to values in PhysicalConstants.xml
 * commit all files in repository
