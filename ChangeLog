@@ -1,7 +1,11 @@
 {{$NEXT}}
 ====
-* new build_module.pl script cleaner, uses Mojo::Template
+* 2022 CODATA has new values for:
+  * ALPHA ATOMIC_MASS_UNIT H_BAR MASS_ALPHA MASS_ELECTRON
+  * MASS_NEUTRON MASS_PROTON PERMEABL_FREE_SPACE PERMITIV_FREE_SPACE
+  * RADIUS_BOHR RADIUS_ELECTRON THOMSON_CROSS_SECTION VACUUM_IMPEDANCE
 * added Astro::Constants::2019
+* new build_module.pl script cleaner, uses Mojo::Template
 * migrating to Test2
 * improved XML schema
 * moved constants into main module, Astro::Constants

@@ -28,7 +28,8 @@ The author keeps forgetting how to run dzil.
 * ```dzil build```      - builds the module
 * ```dzil test```       - tests the module
 * ```dzil release```    - builds a distribution for uploading to CPAN
-* ```dzil authordeps --missing```	- find missing module dependancies
+* ```dzil release --trial```      - uploads to CPAN but isn't indexed
+* ```dzil authordeps --missing``` - find missing module dependancies
 * ```dzil mkrpmspec```  - part of the Fedora RPM build process
 
 ## Release checklist
@@ -43,9 +44,10 @@ The author keeps forgetting how to run dzil.
 * check POD matches current state of the module
 * link Constants.pm to Constants/DatasourceYear.pm or move old version of Constants.pm to Constants/2017.pm if changes to values in PhysicalConstants.xml
 * commit all files in repository
+* try a trial release with `dzil release --trial`
 * update git repo tag to new version number with `git tag v0.15; git push --tags -u origin master`
 * build CPAN release - ```dzil release```
-* [upload](https://pause.perl.org/pause/authenquery?ACTION=add_uri) to CPAN (dzil does this)
+* [upload](https://pause.perl.org/pause/authenquery?ACTION=add_uri) to CPAN (dzil does this for you)
 * email announcement to the Quantified Onion group
 * add missing steps to this checklist
 
