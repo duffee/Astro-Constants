@@ -1,5 +1,5 @@
 package Astro::Constants;
-# ABSTRACT: Perl library to provide physical constants for use in Physics and Astronomy based on values from 2022 CODATA.
+# ABSTRACT: Perl library to provide physical constants for use in Physics and Astronomy based on values from 2018 CODATA.
 #
 #  They are not constant but are changing still. - Cymbeline, Act II, Scene 5
 
@@ -26,7 +26,7 @@ This module provides physical and mathematical constants for use
 in Astronomy and Astrophysics.
 
 The values are stored in F<Physical_Constants.xml> in the B<data> directory
-and are mostly based on the 2022 CODATA values from NIST.
+and are mostly based on the 2018 CODATA values from NIST.
 
 B<NOTE:> Other popular languages are still using I<older> CODATA values
 for their constants and may produce different results in comparison.
