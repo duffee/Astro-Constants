@@ -1,0 +1,16 @@
+% my $c = shift;
+% my $unit;
+=constant <%= uc $c->{name} %>
+
+    <%= $c->{value} %><%= q{ } . $unit if $unit %>
+
+<%= $c->{description} %>
+<% if ($c->{alternates}) { %>
+  % if ($c->{alternates}->@* > 1) {
+This constant is also available using these alternate names (imported using the :alternate tag): <%= join ', ', $c->{alternates}->@* %>
+  % } else {
+This constant is also available using the alternate name C<<%= $c->{alternates}[0] %>>
+(imported using the :alternate tag for backwards compatibility)
+  % }
+<% } %>
+

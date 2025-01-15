@@ -1,0 +1,157 @@
+% my $tags = shift;
+
+=head1 FUNCTIONS
+
+=head2 pretty
+
+This is a helper function that rounds a value or list of values to 5 significant figures.
+
+=head2 precision
+
+Give this method the string of the constant and it returns the precision or uncertainty
+listed.
+
+  $rel_precision = precision('GRAVITATIONAL');
+  $abs_precision = precision('MASS_EARTH');
+
+At the moment you need to know whether the uncertainty is relative or absolute.
+Looking to fix this in future versions.
+
+=head2 Deprecated functions
+
+I've gotten rid of C<list_constants> and C<describe_constants> because they are now in
+the documentation.  Use C<perldoc Astro::Constants> for that information.
+
+=head1 SEE ALSO
+
+=for :list
+* L<Astro::Cosmology>
+* L<Perl Data Language|PDL>
+* L<NIST|http://physics.nist.gov>
+* L<Astronomical Almanac|http://asa.usno.navy.mil>
+* L<IAU 2015 Resolution B3|http://iopscience.iop.org/article/10.3847/0004-6256/152/2/41/meta>
+* L<Neil Bower's review on providing read-only values|http://neilb.org/reviews/constants.html>
+* L<Test::Number::Delta>
+* L<Test::Deep::NumberTolerant> for testing values within objects
+
+Reference Documents:
+
+=for :list
+* L<IAU 2009 system of astronomical constants|http://aa.usno.navy.mil/publications/reports/Luzumetal2011.pdf>
+* L<Astronomical Constants 2016|http://asa.usno.navy.mil/static/files/2016/Astronomical_Constants_2016.pdf>
+* L<IAU recommendations concerning units|https://www.iau.org/publications/proceedings_rules/units>
+* L<Re-definition of the Astronomical Unit|http://syrte.obspm.fr/IAU_resolutions/Res_IAU2012_B2.pdf>
+
+=head1 REPOSITORY
+
+* L<github|https://github.com/duffee/Astro-Constants>
+
+=head1 ISSUES
+
+Feel free to file bugs or suggestions in the
+L<Issues|https://github.com/duffee/Astro-Constants/issues> section of the Github repository.
+
+Using C<strict> is a must with this code.  Any constants you forgot to import will
+evaluate to 0 and silently introduce errors in your code.  Caveat Programmer.
+
+If you are using this module, drop me a line using any available means at your
+disposal, including
+*gasp* email (address in the Author section), to let me know how you're using it.
+What new features would you like to see?
+
+Current best method to contact me is via a Github Issue.
+
+=head2 Extending the data set
+
+If you want to add in your own constants or override the factory defaults,
+run make, edit the F<PhysicalConstants.xml> file and then run C<dzil build> again.
+If you have a pre-existing F<PhysicalConstants.xml> file, drop it in place
+before running C<dzil build>.
+
+=head2 Availability
+
+the original astroconst sites have disappeared
+
+=head1 ROADMAP
+
+I have moved to a I<noun_adjective> format for long names.
+LIGHT_SPEED and SOLAR_MASS become SPEED_LIGHT and MASS_SOLAR.
+This principle should make the code easier to read with the most
+important information coming at the beginning of the name.
+See also L<Astro::Constants::Roadmap>
+
+=head1 ASTROCONST  X<ASTROCONST>
+
+(Gleaned from the Astroconst home page -
+L<astroconst.org|http://web.astroconst.org> )
+
+Astroconst is a set of header files in various languages (currently C,
+Fortran, Perl, Java, IDL and Gnuplot) that provide a variety of useful
+astrophysical constants without constantly needing to look them up.
+
+The generation of the header files from one data file is automated, so you
+can add new constants to the data file and generate new header files in all
+the appropriate languages without needing to fiddle with each header file
+individually.
+
+This package was created and is maintained by Jeremy Bailin.  It's license
+states that it I<is completely free, both as in speech and as in beer>.
+
+=head1 DISCLAIMER
+
+No warranty expressed or implied.  This is free software.  If you
+want someone to assume the risk of an incorrect value, you better
+be paying them.
+
+(What would you want me to test in order for you to depend on this module?)
+
+I<from Jeremy Bailin's astroconst header files>
+
+The Astroconst values have been gleaned from a variety of sources,
+and have quite different precisions depending both on the known
+precision of the value in question, and in some cases on the
+precision of the source I found it from. These values are not
+guaranteed to be correct. Astroconst is not certified for any use
+whatsoever. If your rocket crashes because the precision of the
+lunar orbital eccentricity isn't high enough, that's too bad.
+
+=head1 ACKNOWLEDGMENTS
+
+Jeremy Balin, for writing the astroconst package and helping
+test and develop this module.
+
+Doug Burke, for giving me the idea to write this module in the
+first place, tidying up Makefile.PL, testing and improving the
+documentation.
+
+=cut
+
+# some helper functions
+sub pretty {
+    if (@_ > 1) {
+        return map { sprintf("%1.3e", $_) } @_;
+    }
+    return sprintf("%1.3e", shift);
+}
+
+sub precision {
+    my ($name, $type) = @_;
+    warn "precision() requires a string, not the constant value"
+        unless exists $_precision{$name};
+
+    return $_precision{$name}->{value};
+}
+
+our @EXPORT_OK = qw(
+    <%= join q{ }, $tags->{all}->@*, $tags->{alternates}->@* %>
+    pretty precision
+);
+
+our %EXPORT_TAGS = (
+% for my $name (sort keys $tags->%* ) {
+    <%= $name %> => [qw( <%= join q{ }, $tags->{$name}->@* %> )],
+% }
+);
+
+1; # Perl is my Igor
+

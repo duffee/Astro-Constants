@@ -1,0 +1,12 @@
+% my $c = shift;
+% if ($c->{deprecated}) {
+sub <%= $c->{name} %> { warn "<%= $c->{name} %> deprecated"; return <%= $c->{value} %>; }
+% } else {
+constant <%= $c->{name} %> => <%= $c->{value} %>;
+  % if ($c->{alternates}) {
+    % for my $alt_name ( $c->{alternates}->@* ) {
+constant <%= $alt_name %> => <%= $c->{value} %>;
+    % }
+  % }
+% }
+

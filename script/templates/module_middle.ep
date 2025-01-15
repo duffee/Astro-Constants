@@ -1,0 +1,8 @@
+% my %precision = @_;
+
+my %_precision = (
+% for my $name (sort keys %precision) {
+  % my ($value, $type) = @{$precision{$name}}{qw(value type)};
+    <%= $name %> => {value => <%= $value %>, type => '<%= $type %>'},
+% }
+);

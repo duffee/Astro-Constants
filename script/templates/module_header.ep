@@ -1,0 +1,96 @@
+% my ($name, $source) = @_;
+package <%= $name %>;
+# ABSTRACT: Perl library to provide physical constants for use in Physics and Astronomy based on values from <%= $source %>.
+#
+#  They are not constant but are changing still. - Cymbeline, Act II, Scene 5
+
+use 5.006;
+use strict;
+use warnings;
+
+use base qw(Exporter);
+
+=encoding utf8
+
+=head1 SYNOPSIS
+
+    use strict;
+    use Astro::Constants qw( :all );
+
+    # to calculate the gravitational force of the Sun on the Earth
+    # in Newtons, use GMm/r^2
+    my $force_sun_earth = GRAVITATIONAL * MASS_SOLAR * MASS_EARTH / ASTRONOMICAL_UNIT**2;
+
+=head1 DESCRIPTION
+
+This module provides physical and mathematical constants for use
+in Astronomy and Astrophysics.
+
+The values are stored in F<Physical_Constants.xml> in the B<data> directory
+and are mostly based on the <%= $source %> values from NIST.
+
+B<NOTE:> Other popular languages are still using I<older> CODATA values
+for their constants and may produce different results in comparison.
+On the roadmap is a set of modules to allow you to specify the year or
+data set for the values of constants, defaulting to the most recent.
+
+The C<:all> tag imports all the constants in their long name forms
+(i.e. GRAVITATIONAL).  Useful subsets can be imported with these tags:
+C<:fundamental> C<:conversion> C<:mathematics> C<:cosmology>
+C<:planetary> C<:electromagnetic> or C<:nuclear>.
+Alternate names such as LIGHT_SPEED instead of SPEED_LIGHT or HBAR
+instead of H_BAR are imported with C<:alternates>.  I'd like
+to move away from their use, but they have been in the module for years.
+
+Constants are constructed with the L<constant> pragma and are not interpolated
+in double quotish situations because they are really inlined functions.
+You can resolve the constant
+L<with a backslash|https://dev.to/kirklewis/string-interpolation-of-constants-in-perl-5-181o>
+
+    say "My value for the speed of light is ${ \SPEED_LIGHT } m/s";
+
+=head2 Why use this module
+
+You are tired of typing in all those numbers and having to make sure that they are
+all correct.  How many significant figures is enough or too much?  Where's the
+definitive source, Wikipedia?  And which mass does "$m1" refer to, solar or lunar?
+
+The constant values in this module are protected against accidental re-assignment
+in your code.  The test suite protects them against accidental finger trouble in my code.
+Other people are using this module, so more eyeballs are looking for errors
+and we all benefit.  The constant names are a little longer than you might like,
+but you gain in the long run from readable, sharable code that is clear in meaning.
+Your programming errors are a little easier to find when you can see that the units
+don't match.  Isn't it reassuring that you can verify how a number is produced
+and which meeting of which standards body is responsible for its value?
+
+Trusting someone else's code does carry some risk, which you I<should> consider,
+but have you also considered the risk of doing it yourself with no one else
+to check your work?  And, are you going to check for the latest values from NIST
+every 4 years?
+
+=head3 And plus, it's B<FASTER>
+
+Benchmarking has shown that the imported constants can be more than 3 times
+faster than using variables or other constant modules because of the way
+the compiler optimizes your code.  So, if you've got a lot of calculating to do,
+this is the module to do it with.
+
+=head1 EXPORT
+
+Nothing is exported by default, so the module doesn't clobber any of your variables.
+Select from the following tags:
+
+=for :list
+* C<:all>             (everything except :deprecated)
+* C<:fundamental>
+* C<:conversion>
+* C<:mathematics>
+* C<:cosmology>
+* C<:planetary>
+* C<:electromagnetic>
+* C<:nuclear>
+* C<:alternates>
+* C<:deprecated>
+=cut
+
