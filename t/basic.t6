@@ -1,4 +1,5 @@
 #!perl -T
+# this test will fail if perl is not compiled with taint support
 
 use v6.c;
 use Test;

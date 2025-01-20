@@ -4,6 +4,8 @@ on 'test' => sub {
   requires 'Test::More';
   requires 'Test::Number::Delta';
   requires 'Test2::V0';
+
+  recommends 'Test::Pod'; # author tests
 };
 
 on 'develop' => sub {
